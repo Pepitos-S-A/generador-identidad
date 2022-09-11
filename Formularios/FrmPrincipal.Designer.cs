@@ -40,14 +40,17 @@
             this.PBxLogotipo = new System.Windows.Forms.PictureBox();
             this.PBxAvatar = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.PBxCerrar = new System.Windows.Forms.PictureBox();
             this.PBxMinimizar = new System.Windows.Forms.PictureBox();
+            this.PBxCerrar = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.LblUsuario = new System.Windows.Forms.Label();
             this.PnlOpciones.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PBxLogotipo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBxAvatar)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PBxCerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBxMinimizar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PBxCerrar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // BtnEditarPerfil
@@ -107,7 +110,7 @@
             // BtnSalir
             // 
             this.BtnSalir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.BtnSalir.Location = new System.Drawing.Point(12, 587);
+            this.BtnSalir.Location = new System.Drawing.Point(12, 585);
             this.BtnSalir.Name = "BtnSalir";
             this.BtnSalir.Size = new System.Drawing.Size(129, 23);
             this.BtnSalir.TabIndex = 0;
@@ -116,7 +119,8 @@
             // 
             // PnlOpciones
             // 
-            this.PnlOpciones.BackColor = System.Drawing.Color.White;
+            this.PnlOpciones.BackColor = System.Drawing.Color.RoyalBlue;
+            this.PnlOpciones.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.PnlOpciones.Controls.Add(this.BtnSalir);
             this.PnlOpciones.Controls.Add(this.PBxLogotipo);
             this.PnlOpciones.Controls.Add(this.BtnBuscar);
@@ -133,26 +137,30 @@
             // 
             // PBxLogotipo
             // 
+            this.PBxLogotipo.Image = ((System.Drawing.Image)(resources.GetObject("PBxLogotipo.Image")));
             this.PBxLogotipo.Location = new System.Drawing.Point(12, 12);
             this.PBxLogotipo.Name = "PBxLogotipo";
-            this.PBxLogotipo.Size = new System.Drawing.Size(129, 50);
+            this.PBxLogotipo.Size = new System.Drawing.Size(129, 71);
+            this.PBxLogotipo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.PBxLogotipo.TabIndex = 0;
             this.PBxLogotipo.TabStop = false;
             // 
             // PBxAvatar
             // 
-            this.PBxAvatar.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PBxAvatar.Image = ((System.Drawing.Image)(resources.GetObject("PBxAvatar.Image")));
-            this.PBxAvatar.Location = new System.Drawing.Point(157, 70);
+            this.PBxAvatar.Location = new System.Drawing.Point(5, 12);
             this.PBxAvatar.Name = "PBxAvatar";
-            this.PBxAvatar.Size = new System.Drawing.Size(926, 552);
-            this.PBxAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PBxAvatar.Size = new System.Drawing.Size(23, 50);
+            this.PBxAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.PBxAvatar.TabIndex = 0;
             this.PBxAvatar.TabStop = false;
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.LblUsuario);
+            this.panel1.Controls.Add(this.PBxAvatar);
             this.panel1.Controls.Add(this.PBxMinimizar);
             this.panel1.Controls.Add(this.PBxCerrar);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -161,28 +169,54 @@
             this.panel1.Size = new System.Drawing.Size(926, 70);
             this.panel1.TabIndex = 2;
             // 
+            // PBxMinimizar
+            // 
+            this.PBxMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PBxMinimizar.Image = ((System.Drawing.Image)(resources.GetObject("PBxMinimizar.Image")));
+            this.PBxMinimizar.Location = new System.Drawing.Point(862, 12);
+            this.PBxMinimizar.Name = "PBxMinimizar";
+            this.PBxMinimizar.Size = new System.Drawing.Size(23, 50);
+            this.PBxMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.PBxMinimizar.TabIndex = 0;
+            this.PBxMinimizar.TabStop = false;
+            // 
             // PBxCerrar
             // 
-            this.PBxCerrar.Location = new System.Drawing.Point(785, 12);
+            this.PBxCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PBxCerrar.Image = ((System.Drawing.Image)(resources.GetObject("PBxCerrar.Image")));
+            this.PBxCerrar.Location = new System.Drawing.Point(891, 12);
             this.PBxCerrar.Name = "PBxCerrar";
-            this.PBxCerrar.Size = new System.Drawing.Size(129, 50);
+            this.PBxCerrar.Size = new System.Drawing.Size(23, 50);
+            this.PBxCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.PBxCerrar.TabIndex = 0;
             this.PBxCerrar.TabStop = false;
             // 
-            // PBxMinimizar
+            // pictureBox1
             // 
-            this.PBxMinimizar.Location = new System.Drawing.Point(650, 12);
-            this.PBxMinimizar.Name = "PBxMinimizar";
-            this.PBxMinimizar.Size = new System.Drawing.Size(129, 50);
-            this.PBxMinimizar.TabIndex = 0;
-            this.PBxMinimizar.TabStop = false;
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(157, 70);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(926, 552);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
+            // LblUsuario
+            // 
+            this.LblUsuario.AutoSize = true;
+            this.LblUsuario.Location = new System.Drawing.Point(34, 31);
+            this.LblUsuario.Name = "LblUsuario";
+            this.LblUsuario.Size = new System.Drawing.Size(35, 13);
+            this.LblUsuario.TabIndex = 1;
+            this.LblUsuario.Text = "label1";
             // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1083, 622);
-            this.Controls.Add(this.PBxAvatar);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.PnlOpciones);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -194,8 +228,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.PBxLogotipo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBxAvatar)).EndInit();
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.PBxCerrar)).EndInit();
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PBxMinimizar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PBxCerrar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -215,5 +251,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox PBxMinimizar;
         private System.Windows.Forms.PictureBox PBxCerrar;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label LblUsuario;
     }
 }
