@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Duisv.Formularios;
 
@@ -17,7 +14,13 @@ namespace Duisv
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmPrincipal());
+
+            var frmInicioSesion = new FrmInicioSesion();
+
+            if (frmInicioSesion.ShowDialog() == DialogResult.OK)
+            {
+                Application.Run(new FrmPrincipal());
+            }            
         }
     }
 }
