@@ -83,6 +83,16 @@ namespace Duisv.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap duisv_fondo_02 {
+            get {
+                object obj = ResourceManager.GetObject("duisv_fondo_02", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap licencia {
             get {
                 object obj = ResourceManager.GetObject("licencia", resourceCulture);

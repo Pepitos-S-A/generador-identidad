@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Formularios\FrmEditarPerfil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmEditarPerfil.Designer.cs">
+      <DependentUpon>FrmEditarPerfil.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\FrmInicioSesion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,6 +66,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Formularios\FrmEditarPerfil.resx">
+      <DependentUpon>FrmEditarPerfil.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmInicioSesion.resx">
       <DependentUpon>FrmInicioSesion.cs</DependentUpon>
     </EmbeddedResource>
@@ -106,6 +115,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\duisv-fondo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\duisv-fondo-02.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
