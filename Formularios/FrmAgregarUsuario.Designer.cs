@@ -1,6 +1,6 @@
 ﻿namespace Duisv.Formularios
 {
-    partial class FrmEditarPerfil
+    partial class FrmAgregarUsuario
     {
         /// <summary>
         /// Required designer variable.
@@ -28,11 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.RBtAdministrador = new System.Windows.Forms.RadioButton();
-            this.label7 = new System.Windows.Forms.Label();
-            this.BtnEliminarFoto = new System.Windows.Forms.Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.RBtEmpleado = new System.Windows.Forms.RadioButton();
+            this.PBxMinimizar = new System.Windows.Forms.PictureBox();
+            this.PBxCerrar = new System.Windows.Forms.PictureBox();
+            this.BtnAgregar = new System.Windows.Forms.Button();
+            this.PBxFoto = new System.Windows.Forms.PictureBox();
             this.MtbTelefono = new System.Windows.Forms.MaskedTextBox();
             this.NudEdad = new System.Windows.Forms.NumericUpDown();
             this.label6 = new System.Windows.Forms.Label();
@@ -40,79 +39,76 @@
             this.TBxDireccion = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.TBxCorreo = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.TBxApellido = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.TBxNombre = new System.Windows.Forms.TextBox();
             this.BtnAgregarFoto = new System.Windows.Forms.Button();
-            this.PBxCerrar = new System.Windows.Forms.PictureBox();
-            this.BtnGuardar = new System.Windows.Forms.Button();
-            this.PBxFoto = new System.Windows.Forms.PictureBox();
-            this.PBxMinimizar = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.NudEdad)).BeginInit();
-            this.panel1.SuspendLayout();
+            this.BtnEliminarFoto = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.RBtEmpleado = new System.Windows.Forms.RadioButton();
+            this.RBtAdministrador = new System.Windows.Forms.RadioButton();
+            ((System.ComponentModel.ISupportInitialize)(this.PBxMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBxCerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBxFoto)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PBxMinimizar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NudEdad)).BeginInit();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
-            // RBtAdministrador
+            // PBxMinimizar
             // 
-            this.RBtAdministrador.AutoSize = true;
-            this.RBtAdministrador.Location = new System.Drawing.Point(201, 306);
-            this.RBtAdministrador.Name = "RBtAdministrador";
-            this.RBtAdministrador.Size = new System.Drawing.Size(110, 19);
-            this.RBtAdministrador.TabIndex = 24;
-            this.RBtAdministrador.TabStop = true;
-            this.RBtAdministrador.Text = "Administrador";
-            this.RBtAdministrador.UseVisualStyleBackColor = true;
+            this.PBxMinimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.PBxMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PBxMinimizar.Image = global::Duisv.Properties.Resources.minimizar;
+            this.PBxMinimizar.Location = new System.Drawing.Point(963, 14);
+            this.PBxMinimizar.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.PBxMinimizar.Name = "PBxMinimizar";
+            this.PBxMinimizar.Size = new System.Drawing.Size(41, 31);
+            this.PBxMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.PBxMinimizar.TabIndex = 21;
+            this.PBxMinimizar.TabStop = false;
+            this.PBxMinimizar.Click += new System.EventHandler(this.PBxMinimizar_Click);
             // 
-            // label7
+            // PBxCerrar
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(14, 13);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(122, 19);
-            this.label7.TabIndex = 32;
-            this.label7.Text = "Editar usuario:";
+            this.PBxCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.PBxCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PBxCerrar.Image = global::Duisv.Properties.Resources.cerrar;
+            this.PBxCerrar.Location = new System.Drawing.Point(1015, 14);
+            this.PBxCerrar.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.PBxCerrar.Name = "PBxCerrar";
+            this.PBxCerrar.Size = new System.Drawing.Size(41, 31);
+            this.PBxCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.PBxCerrar.TabIndex = 22;
+            this.PBxCerrar.TabStop = false;
+            this.PBxCerrar.Click += new System.EventHandler(this.PBxCerrar_Click);
             // 
-            // BtnEliminarFoto
+            // BtnAgregar
             // 
-            this.BtnEliminarFoto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnEliminarFoto.Location = new System.Drawing.Point(206, 69);
-            this.BtnEliminarFoto.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.BtnEliminarFoto.Name = "BtnEliminarFoto";
-            this.BtnEliminarFoto.Size = new System.Drawing.Size(172, 44);
-            this.BtnEliminarFoto.TabIndex = 26;
-            this.BtnEliminarFoto.Text = "Eliminar foto";
-            this.BtnEliminarFoto.UseVisualStyleBackColor = true;
+            this.BtnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnAgregar.Location = new System.Drawing.Point(16, 592);
+            this.BtnAgregar.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.BtnAgregar.Name = "BtnAgregar";
+            this.BtnAgregar.Size = new System.Drawing.Size(172, 44);
+            this.BtnAgregar.TabIndex = 20;
+            this.BtnAgregar.Text = "Agregar";
+            this.BtnAgregar.UseVisualStyleBackColor = true;
+            this.BtnAgregar.Click += new System.EventHandler(this.BtnAgregar_Click);
             // 
-            // pictureBox2
+            // PBxFoto
             // 
-            this.pictureBox2.Image = global::Duisv.Properties.Resources.duisv_fondo_02;
-            this.pictureBox2.Location = new System.Drawing.Point(485, 69);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(573, 554);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 25;
-            this.pictureBox2.TabStop = false;
-            // 
-            // RBtEmpleado
-            // 
-            this.RBtEmpleado.AutoSize = true;
-            this.RBtEmpleado.Location = new System.Drawing.Point(112, 306);
-            this.RBtEmpleado.Name = "RBtEmpleado";
-            this.RBtEmpleado.Size = new System.Drawing.Size(83, 19);
-            this.RBtEmpleado.TabIndex = 24;
-            this.RBtEmpleado.TabStop = true;
-            this.RBtEmpleado.Text = "Empleado";
-            this.RBtEmpleado.UseVisualStyleBackColor = true;
+            this.PBxFoto.Image = global::Duisv.Properties.Resources.usuario;
+            this.PBxFoto.Location = new System.Drawing.Point(16, 70);
+            this.PBxFoto.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.PBxFoto.Name = "PBxFoto";
+            this.PBxFoto.Size = new System.Drawing.Size(179, 162);
+            this.PBxFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.PBxFoto.TabIndex = 15;
+            this.PBxFoto.TabStop = false;
             // 
             // MtbTelefono
             // 
@@ -193,29 +189,6 @@
             this.label3.TabIndex = 15;
             this.label3.Text = "Correo:";
             // 
-            // panel1
-            // 
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.RBtAdministrador);
-            this.panel1.Controls.Add(this.RBtEmpleado);
-            this.panel1.Controls.Add(this.MtbTelefono);
-            this.panel1.Controls.Add(this.NudEdad);
-            this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.TBxDireccion);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.TBxCorreo);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.TBxApellido);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.TBxNombre);
-            this.panel1.Location = new System.Drawing.Point(18, 238);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(458, 346);
-            this.panel1.TabIndex = 28;
-            // 
             // TBxCorreo
             // 
             this.TBxCorreo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -254,6 +227,29 @@
             this.label1.TabIndex = 11;
             this.label1.Text = "Nombre:";
             // 
+            // panel1
+            // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.RBtAdministrador);
+            this.panel1.Controls.Add(this.RBtEmpleado);
+            this.panel1.Controls.Add(this.MtbTelefono);
+            this.panel1.Controls.Add(this.NudEdad);
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.TBxDireccion);
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.TBxCorreo);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.TBxApellido);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.TBxNombre);
+            this.panel1.Location = new System.Drawing.Point(16, 239);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(458, 346);
+            this.panel1.TabIndex = 19;
+            // 
             // TBxNombre
             // 
             this.TBxNombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -266,93 +262,97 @@
             // BtnAgregarFoto
             // 
             this.BtnAgregarFoto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnAgregarFoto.Location = new System.Drawing.Point(206, 120);
+            this.BtnAgregarFoto.Location = new System.Drawing.Point(204, 121);
             this.BtnAgregarFoto.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.BtnAgregarFoto.Name = "BtnAgregarFoto";
             this.BtnAgregarFoto.Size = new System.Drawing.Size(172, 44);
-            this.BtnAgregarFoto.TabIndex = 27;
+            this.BtnAgregarFoto.TabIndex = 18;
             this.BtnAgregarFoto.Text = "Agregar foto";
             this.BtnAgregarFoto.UseVisualStyleBackColor = true;
             // 
-            // PBxCerrar
+            // BtnEliminarFoto
             // 
-            this.PBxCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.PBxCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.PBxCerrar.Image = global::Duisv.Properties.Resources.cerrar;
-            this.PBxCerrar.Location = new System.Drawing.Point(1017, 13);
-            this.PBxCerrar.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.PBxCerrar.Name = "PBxCerrar";
-            this.PBxCerrar.Size = new System.Drawing.Size(41, 31);
-            this.PBxCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.PBxCerrar.TabIndex = 31;
-            this.PBxCerrar.TabStop = false;
-            this.PBxCerrar.Click += new System.EventHandler(this.PBxCerrar_Click);
+            this.BtnEliminarFoto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnEliminarFoto.Location = new System.Drawing.Point(204, 70);
+            this.BtnEliminarFoto.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.BtnEliminarFoto.Name = "BtnEliminarFoto";
+            this.BtnEliminarFoto.Size = new System.Drawing.Size(172, 44);
+            this.BtnEliminarFoto.TabIndex = 17;
+            this.BtnEliminarFoto.Text = "Eliminar foto";
+            this.BtnEliminarFoto.UseVisualStyleBackColor = true;
             // 
-            // BtnGuardar
+            // pictureBox2
             // 
-            this.BtnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnGuardar.Location = new System.Drawing.Point(18, 591);
-            this.BtnGuardar.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.BtnGuardar.Name = "BtnGuardar";
-            this.BtnGuardar.Size = new System.Drawing.Size(172, 44);
-            this.BtnGuardar.TabIndex = 29;
-            this.BtnGuardar.Text = "Guardar";
-            this.BtnGuardar.UseVisualStyleBackColor = true;
-            this.BtnGuardar.Click += new System.EventHandler(this.BtnGuardar_Click);
+            this.pictureBox2.Image = global::Duisv.Properties.Resources.duisv_fondo_02;
+            this.pictureBox2.Location = new System.Drawing.Point(483, 70);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(573, 554);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 16;
+            this.pictureBox2.TabStop = false;
             // 
-            // PBxFoto
+            // label7
             // 
-            this.PBxFoto.Image = global::Duisv.Properties.Resources.usuario;
-            this.PBxFoto.Location = new System.Drawing.Point(18, 69);
-            this.PBxFoto.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.PBxFoto.Name = "PBxFoto";
-            this.PBxFoto.Size = new System.Drawing.Size(179, 162);
-            this.PBxFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.PBxFoto.TabIndex = 24;
-            this.PBxFoto.TabStop = false;
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(12, 14);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(138, 19);
+            this.label7.TabIndex = 23;
+            this.label7.Text = "Agregar usuario:";
             // 
-            // PBxMinimizar
+            // RBtEmpleado
             // 
-            this.PBxMinimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.PBxMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.PBxMinimizar.Image = global::Duisv.Properties.Resources.minimizar;
-            this.PBxMinimizar.Location = new System.Drawing.Point(965, 13);
-            this.PBxMinimizar.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.PBxMinimizar.Name = "PBxMinimizar";
-            this.PBxMinimizar.Size = new System.Drawing.Size(41, 31);
-            this.PBxMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.PBxMinimizar.TabIndex = 30;
-            this.PBxMinimizar.TabStop = false;
-            this.PBxMinimizar.Click += new System.EventHandler(this.PBxMinimizar_Click);
+            this.RBtEmpleado.AutoSize = true;
+            this.RBtEmpleado.Location = new System.Drawing.Point(112, 306);
+            this.RBtEmpleado.Name = "RBtEmpleado";
+            this.RBtEmpleado.Size = new System.Drawing.Size(83, 19);
+            this.RBtEmpleado.TabIndex = 24;
+            this.RBtEmpleado.TabStop = true;
+            this.RBtEmpleado.Text = "Empleado";
+            this.RBtEmpleado.UseVisualStyleBackColor = true;
             // 
-            // FrmEditarPerfil
+            // RBtAdministrador
             // 
+            this.RBtAdministrador.AutoSize = true;
+            this.RBtAdministrador.Location = new System.Drawing.Point(201, 306);
+            this.RBtAdministrador.Name = "RBtAdministrador";
+            this.RBtAdministrador.Size = new System.Drawing.Size(110, 19);
+            this.RBtAdministrador.TabIndex = 24;
+            this.RBtAdministrador.TabStop = true;
+            this.RBtAdministrador.Text = "Administrador";
+            this.RBtAdministrador.UseVisualStyleBackColor = true;
+            // 
+            // FrmAgregarUsuario
+            // 
+            this.AcceptButton = this.BtnAgregar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1072, 648);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.BtnEliminarFoto);
-            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.PBxMinimizar);
+            this.Controls.Add(this.PBxCerrar);
+            this.Controls.Add(this.BtnAgregar);
+            this.Controls.Add(this.PBxFoto);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.BtnAgregarFoto);
-            this.Controls.Add(this.PBxCerrar);
-            this.Controls.Add(this.BtnGuardar);
-            this.Controls.Add(this.PBxFoto);
-            this.Controls.Add(this.PBxMinimizar);
+            this.Controls.Add(this.BtnEliminarFoto);
+            this.Controls.Add(this.pictureBox2);
             this.Font = new System.Drawing.Font("Arial Black", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.Name = "FrmEditarPerfil";
+            this.Name = "FrmAgregarUsuario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmEditarPerfil";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.Text = "FrmAgregarUsuario";
+            ((System.ComponentModel.ISupportInitialize)(this.PBxMinimizar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PBxCerrar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PBxFoto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.NudEdad)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PBxCerrar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PBxFoto)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PBxMinimizar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -360,11 +360,10 @@
 
         #endregion
 
-        private System.Windows.Forms.RadioButton RBtAdministrador;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button BtnEliminarFoto;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.RadioButton RBtEmpleado;
+        private System.Windows.Forms.PictureBox PBxMinimizar;
+        private System.Windows.Forms.PictureBox PBxCerrar;
+        private System.Windows.Forms.Button BtnAgregar;
+        private System.Windows.Forms.PictureBox PBxFoto;
         private System.Windows.Forms.MaskedTextBox MtbTelefono;
         private System.Windows.Forms.NumericUpDown NudEdad;
         private System.Windows.Forms.Label label6;
@@ -372,16 +371,17 @@
         private System.Windows.Forms.TextBox TBxDireccion;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox TBxCorreo;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox TBxApellido;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox TBxNombre;
         private System.Windows.Forms.Button BtnAgregarFoto;
-        private System.Windows.Forms.PictureBox PBxCerrar;
-        private System.Windows.Forms.Button BtnGuardar;
-        private System.Windows.Forms.PictureBox PBxFoto;
-        private System.Windows.Forms.PictureBox PBxMinimizar;
+        private System.Windows.Forms.Button BtnEliminarFoto;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.RadioButton RBtAdministrador;
+        private System.Windows.Forms.RadioButton RBtEmpleado;
+        private System.Windows.Forms.Label label7;
     }
 }

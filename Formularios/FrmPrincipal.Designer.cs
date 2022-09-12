@@ -63,6 +63,7 @@
             this.BtnEditarPerfil.TabIndex = 0;
             this.BtnEditarPerfil.Text = "Editar perfil";
             this.BtnEditarPerfil.UseVisualStyleBackColor = true;
+            this.BtnEditarPerfil.Click += new System.EventHandler(this.BtnEditarPerfil_Click);
             // 
             // BtnAgregarUsuario
             // 
@@ -75,6 +76,7 @@
             this.BtnAgregarUsuario.TabIndex = 0;
             this.BtnAgregarUsuario.Text = "Agregar usuario";
             this.BtnAgregarUsuario.UseVisualStyleBackColor = true;
+            this.BtnAgregarUsuario.Click += new System.EventHandler(this.BtnAgregarUsuario_Click);
             // 
             // BtnEliminarUsuario
             // 

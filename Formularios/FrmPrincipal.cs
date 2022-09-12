@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Duisv.Formularios
@@ -20,6 +13,18 @@ namespace Duisv.Formularios
         private void FrmPrincipal_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void BtnEditarPerfil_Click(object sender, EventArgs e)
+        {
+            var frmEditarPerfil = new FrmEditarPerfil();
+            frmEditarPerfil.ShowDialog();
+        }
+
+        private void BtnAgregarUsuario_Click(object sender, EventArgs e)
+        {
+            var frmAgregarUsuario = new FrmAgregarUsuario();
+            frmAgregarUsuario.ShowDialog();
         }
     }
 }
