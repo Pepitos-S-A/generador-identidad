@@ -1,4 +1,4 @@
-﻿namespace Duisv.Formularios
+﻿namespace Duisv.Formularios.Usuarios
 {
     partial class FrmAgregarUsuario
     {

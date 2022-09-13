@@ -12,7 +12,7 @@ namespace Duisv.Formularios
 
         private void FrmPrincipal_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         private void BtnEditarPerfil_Click(object sender, EventArgs e)
@@ -21,10 +21,24 @@ namespace Duisv.Formularios
             frmEditarPerfil.ShowDialog();
         }
 
-        private void BtnAgregarUsuario_Click(object sender, EventArgs e)
+        private void PBxMinimizar_Click(object sender, EventArgs e)
         {
-            var frmAgregarUsuario = new FrmAgregarUsuario();
-            frmAgregarUsuario.ShowDialog();
+            WindowState = FormWindowState.Minimized;
+        }
+
+        private void PBxCerrar_Click(object sender, EventArgs e)
+        {
+            CerrarFormulario();
+        }
+
+        private void CerrarFormulario()
+        {
+            Close();
+        }
+
+        private void BtnSalir_Click(object sender, EventArgs e)
+        {
+            CerrarFormulario();
         }
     }
 }

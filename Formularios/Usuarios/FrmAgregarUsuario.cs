@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace Duisv.Formularios
+namespace Duisv.Formularios.Usuarios
 {
     public partial class FrmAgregarUsuario : Form
     {

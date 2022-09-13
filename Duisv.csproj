@@ -46,10 +46,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Formularios\FrmAgregarUsuario.cs">
+    <Compile Include="Formularios\Usuarios\FrmAgregarUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\FrmAgregarUsuario.Designer.cs">
+    <Compile Include="Formularios\Usuarios\FrmAgregarUsuario.Designer.cs">
       <DependentUpon>FrmAgregarUsuario.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\FrmEditarPerfil.cs">
@@ -70,9 +70,15 @@
     <Compile Include="Formularios\FrmPrincipal.Designer.cs">
       <DependentUpon>FrmPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Usuarios\FrmUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Usuarios\FrmUsuarios.Designer.cs">
+      <DependentUpon>FrmUsuarios.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Formularios\FrmAgregarUsuario.resx">
+    <EmbeddedResource Include="Formularios\Usuarios\FrmAgregarUsuario.resx">
       <DependentUpon>FrmAgregarUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmEditarPerfil.resx">
@@ -83,6 +89,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmPrincipal.resx">
       <DependentUpon>FrmPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Usuarios\FrmUsuarios.resx">
+      <DependentUpon>FrmUsuarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -127,6 +136,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\duisv-fondo-02.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Formularios\Ciudadanos\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
