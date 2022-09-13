@@ -30,6 +30,7 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.LblUsuario = new System.Windows.Forms.Label();
+            this.PBxAvatar = new System.Windows.Forms.PictureBox();
             this.BtnAgregarUsuario = new System.Windows.Forms.Button();
             this.DgvUsuarios = new System.Windows.Forms.DataGridView();
             this.UsuarioId = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -40,10 +41,9 @@
             this.Ver = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Editar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.PBxAvatar = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DgvUsuarios)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBxAvatar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvUsuarios)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -65,6 +65,16 @@
             this.LblUsuario.Size = new System.Drawing.Size(110, 15);
             this.LblUsuario.TabIndex = 1;
             this.LblUsuario.Text = "Lista de usuarios";
+            // 
+            // PBxAvatar
+            // 
+            this.PBxAvatar.Image = global::Duisv.Properties.Resources.licencia;
+            this.PBxAvatar.Location = new System.Drawing.Point(12, 12);
+            this.PBxAvatar.Name = "PBxAvatar";
+            this.PBxAvatar.Size = new System.Drawing.Size(23, 23);
+            this.PBxAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.PBxAvatar.TabIndex = 0;
+            this.PBxAvatar.TabStop = false;
             // 
             // BtnAgregarUsuario
             // 
@@ -172,16 +182,6 @@
             this.Eliminar.Text = "Eliminar";
             this.Eliminar.UseColumnTextForButtonValue = true;
             // 
-            // PBxAvatar
-            // 
-            this.PBxAvatar.Image = global::Duisv.Properties.Resources.usuario;
-            this.PBxAvatar.Location = new System.Drawing.Point(12, 12);
-            this.PBxAvatar.Name = "PBxAvatar";
-            this.PBxAvatar.Size = new System.Drawing.Size(23, 23);
-            this.PBxAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.PBxAvatar.TabIndex = 0;
-            this.PBxAvatar.TabStop = false;
-            // 
             // FrmUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -199,8 +199,8 @@
             this.Load += new System.EventHandler(this.FrmUsuarios_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DgvUsuarios)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBxAvatar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvUsuarios)).EndInit();
             this.ResumeLayout(false);
 
         }

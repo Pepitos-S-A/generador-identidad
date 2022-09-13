@@ -40,6 +40,7 @@
             this.TBxApellido = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.RBtAdministrador = new System.Windows.Forms.RadioButton();
             this.RBtEmpleado = new System.Windows.Forms.RadioButton();
             this.TBxNombre = new System.Windows.Forms.TextBox();
@@ -47,7 +48,6 @@
             this.BtnEliminarFoto = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.LblUsuario = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.PBxAvatar = new System.Windows.Forms.PictureBox();
             this.PBxFoto = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
@@ -189,6 +189,13 @@
             this.panel1.Size = new System.Drawing.Size(395, 263);
             this.panel1.TabIndex = 0;
             // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(152, 112);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(225, 23);
+            this.dateTimePicker1.TabIndex = 3;
+            // 
             // RBtAdministrador
             // 
             this.RBtAdministrador.AutoSize = true;
@@ -262,16 +269,9 @@
             this.LblUsuario.TabIndex = 1;
             this.LblUsuario.Text = "Agregar usuario";
             // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(152, 112);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(225, 23);
-            this.dateTimePicker1.TabIndex = 3;
-            // 
             // PBxAvatar
             // 
-            this.PBxAvatar.Image = global::Duisv.Properties.Resources.usuario;
+            this.PBxAvatar.Image = global::Duisv.Properties.Resources.licencia;
             this.PBxAvatar.Location = new System.Drawing.Point(13, 12);
             this.PBxAvatar.Name = "PBxAvatar";
             this.PBxAvatar.Size = new System.Drawing.Size(23, 23);
