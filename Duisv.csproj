@@ -52,12 +52,6 @@
     <Compile Include="Formularios\Usuarios\FrmAgregarUsuario.Designer.cs">
       <DependentUpon>FrmAgregarUsuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\FrmEditarPerfil.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\FrmEditarPerfil.Designer.cs">
-      <DependentUpon>FrmEditarPerfil.cs</DependentUpon>
-    </Compile>
     <Compile Include="Formularios\FrmInicioSesion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -70,25 +64,28 @@
     <Compile Include="Formularios\FrmPrincipal.Designer.cs">
       <DependentUpon>FrmPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Usuarios\FrmEditarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Usuarios\FrmEditarUsuario.Designer.cs">
+      <DependentUpon>FrmEditarUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Usuarios\FrmUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formularios\Usuarios\FrmUsuarios.Designer.cs">
       <DependentUpon>FrmUsuarios.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Usuarios\VerUsuario.cs">
+    <Compile Include="Formularios\Usuarios\FrmVerUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\Usuarios\VerUsuario.Designer.cs">
-      <DependentUpon>VerUsuario.cs</DependentUpon>
+    <Compile Include="Formularios\Usuarios\FrmVerUsuario.Designer.cs">
+      <DependentUpon>FrmVerUsuario.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Formularios\Usuarios\FrmAgregarUsuario.resx">
       <DependentUpon>FrmAgregarUsuario.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\FrmEditarPerfil.resx">
-      <DependentUpon>FrmEditarPerfil.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmInicioSesion.resx">
       <DependentUpon>FrmInicioSesion.cs</DependentUpon>
@@ -96,11 +93,14 @@
     <EmbeddedResource Include="Formularios\FrmPrincipal.resx">
       <DependentUpon>FrmPrincipal.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Usuarios\FrmEditarUsuario.resx">
+      <DependentUpon>FrmEditarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Usuarios\FrmUsuarios.resx">
       <DependentUpon>FrmUsuarios.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Usuarios\VerUsuario.resx">
-      <DependentUpon>VerUsuario.cs</DependentUpon>
+    <EmbeddedResource Include="Formularios\Usuarios\FrmVerUsuario.resx">
+      <DependentUpon>FrmVerUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

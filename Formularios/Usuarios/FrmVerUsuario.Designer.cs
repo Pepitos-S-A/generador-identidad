@@ -1,6 +1,6 @@
 ﻿namespace Duisv.Formularios.Usuarios
 {
-    partial class VerUsuario
+    partial class FrmVerUsuario
     {
         /// <summary>
         /// Required designer variable.
@@ -40,13 +40,13 @@
             this.PBxAvatar = new System.Windows.Forms.PictureBox();
             this.TBxApellido = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.MtbTelefono = new System.Windows.Forms.MaskedTextBox();
+            this.TBxRol = new System.Windows.Forms.TextBox();
+            this.TBxFechaNacimiento = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.TBxNombre = new System.Windows.Forms.TextBox();
             this.PBxFoto = new System.Windows.Forms.PictureBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.TBxFechaNacimiento = new System.Windows.Forms.TextBox();
-            this.TBxRol = new System.Windows.Forms.TextBox();
-            this.MtbTelefono = new System.Windows.Forms.MaskedTextBox();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PBxAvatar)).BeginInit();
             this.panel1.SuspendLayout();
@@ -185,6 +185,48 @@
             this.panel1.Size = new System.Drawing.Size(395, 249);
             this.panel1.TabIndex = 22;
             // 
+            // MtbTelefono
+            // 
+            this.MtbTelefono.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.MtbTelefono.Location = new System.Drawing.Point(152, 180);
+            this.MtbTelefono.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.MtbTelefono.Mask = "0000 - 0000";
+            this.MtbTelefono.Name = "MtbTelefono";
+            this.MtbTelefono.ReadOnly = true;
+            this.MtbTelefono.Size = new System.Drawing.Size(225, 23);
+            this.MtbTelefono.TabIndex = 26;
+            this.MtbTelefono.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            // 
+            // TBxRol
+            // 
+            this.TBxRol.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TBxRol.Location = new System.Drawing.Point(152, 210);
+            this.TBxRol.Margin = new System.Windows.Forms.Padding(13, 12, 13, 12);
+            this.TBxRol.Name = "TBxRol";
+            this.TBxRol.ReadOnly = true;
+            this.TBxRol.Size = new System.Drawing.Size(225, 23);
+            this.TBxRol.TabIndex = 25;
+            // 
+            // TBxFechaNacimiento
+            // 
+            this.TBxFechaNacimiento.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TBxFechaNacimiento.Location = new System.Drawing.Point(152, 113);
+            this.TBxFechaNacimiento.Margin = new System.Windows.Forms.Padding(13, 12, 13, 12);
+            this.TBxFechaNacimiento.Name = "TBxFechaNacimiento";
+            this.TBxFechaNacimiento.ReadOnly = true;
+            this.TBxFechaNacimiento.Size = new System.Drawing.Size(225, 23);
+            this.TBxFechaNacimiento.TabIndex = 23;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(10, 212);
+            this.label7.Margin = new System.Windows.Forms.Padding(10, 0, 4, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(31, 15);
+            this.label7.TabIndex = 22;
+            this.label7.Text = "Rol:";
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -217,49 +259,7 @@
             this.PBxFoto.TabIndex = 26;
             this.PBxFoto.TabStop = false;
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(10, 212);
-            this.label7.Margin = new System.Windows.Forms.Padding(10, 0, 4, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(31, 15);
-            this.label7.TabIndex = 22;
-            this.label7.Text = "Rol:";
-            // 
-            // TBxFechaNacimiento
-            // 
-            this.TBxFechaNacimiento.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TBxFechaNacimiento.Location = new System.Drawing.Point(152, 113);
-            this.TBxFechaNacimiento.Margin = new System.Windows.Forms.Padding(13, 12, 13, 12);
-            this.TBxFechaNacimiento.Name = "TBxFechaNacimiento";
-            this.TBxFechaNacimiento.ReadOnly = true;
-            this.TBxFechaNacimiento.Size = new System.Drawing.Size(225, 23);
-            this.TBxFechaNacimiento.TabIndex = 23;
-            // 
-            // TBxRol
-            // 
-            this.TBxRol.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TBxRol.Location = new System.Drawing.Point(152, 210);
-            this.TBxRol.Margin = new System.Windows.Forms.Padding(13, 12, 13, 12);
-            this.TBxRol.Name = "TBxRol";
-            this.TBxRol.ReadOnly = true;
-            this.TBxRol.Size = new System.Drawing.Size(225, 23);
-            this.TBxRol.TabIndex = 25;
-            // 
-            // MtbTelefono
-            // 
-            this.MtbTelefono.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.MtbTelefono.Location = new System.Drawing.Point(152, 180);
-            this.MtbTelefono.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.MtbTelefono.Mask = "0000 - 0000";
-            this.MtbTelefono.Name = "MtbTelefono";
-            this.MtbTelefono.ReadOnly = true;
-            this.MtbTelefono.Size = new System.Drawing.Size(225, 23);
-            this.MtbTelefono.TabIndex = 26;
-            this.MtbTelefono.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
-            // 
-            // VerUsuario
+            // FrmVerUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -271,7 +271,8 @@
             this.Font = new System.Drawing.Font("Arial Black", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.Name = "VerUsuario";
+            this.Name = "FrmVerUsuario";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PBxAvatar)).EndInit();

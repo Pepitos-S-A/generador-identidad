@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Duisv.Formularios.Usuarios
 {
-    public partial class VerUsuario : Form
+    public partial class FrmEditarUsuario : Form
     {
-        public VerUsuario()
+        public FrmEditarUsuario()
         {
             InitializeComponent();
         }
