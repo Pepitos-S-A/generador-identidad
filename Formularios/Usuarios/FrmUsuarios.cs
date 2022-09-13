@@ -36,5 +36,10 @@ namespace Duisv.Formularios.Usuarios
         {
             Close();
         }
+
+        private void FrmUsuarios_Load(object sender, EventArgs e)
+        {
+            DgvUsuarios.Rows.Add();
+        }
     }
 }

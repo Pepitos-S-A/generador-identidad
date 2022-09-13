@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using Duisv.Formularios.Usuarios;
 
 namespace Duisv.Formularios
 {
@@ -21,22 +22,28 @@ namespace Duisv.Formularios
             frmEditarPerfil.ShowDialog();
         }
 
-        private void PBxMinimizar_Click(object sender, EventArgs e)
-        {
-            WindowState = FormWindowState.Minimized;
-        }
-
-        private void PBxCerrar_Click(object sender, EventArgs e)
-        {
-            CerrarFormulario();
-        }
-
         private void CerrarFormulario()
         {
             Close();
         }
 
         private void BtnSalir_Click(object sender, EventArgs e)
+        {
+            CerrarFormulario();
+        }
+
+        private void BtnUsuarios_Click(object sender, EventArgs e)
+        {
+            var frmUsuarios = new FrmUsuarios();
+            frmUsuarios.ShowDialog();
+        }
+
+        private void PBxMinimizar_Click_1(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;
+        }
+
+        private void PBxCerrar_Click(object sender, EventArgs e)
         {
             CerrarFormulario();
         }
