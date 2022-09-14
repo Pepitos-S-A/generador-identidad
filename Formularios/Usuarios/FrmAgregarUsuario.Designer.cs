@@ -40,7 +40,7 @@
             this.TBxApellido = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.DtpFechaNacimiento = new System.Windows.Forms.DateTimePicker();
             this.RBtAdministrador = new System.Windows.Forms.RadioButton();
             this.RBtEmpleado = new System.Windows.Forms.RadioButton();
             this.TBxNombre = new System.Windows.Forms.TextBox();
@@ -169,7 +169,7 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.dateTimePicker1);
+            this.panel1.Controls.Add(this.DtpFechaNacimiento);
             this.panel1.Controls.Add(this.RBtAdministrador);
             this.panel1.Controls.Add(this.RBtEmpleado);
             this.panel1.Controls.Add(this.MtbTelefono);
@@ -189,12 +189,12 @@
             this.panel1.Size = new System.Drawing.Size(395, 263);
             this.panel1.TabIndex = 0;
             // 
-            // dateTimePicker1
+            // DtpFechaNacimiento
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(152, 112);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(225, 23);
-            this.dateTimePicker1.TabIndex = 3;
+            this.DtpFechaNacimiento.Location = new System.Drawing.Point(152, 112);
+            this.DtpFechaNacimiento.Name = "DtpFechaNacimiento";
+            this.DtpFechaNacimiento.Size = new System.Drawing.Size(225, 23);
+            this.DtpFechaNacimiento.TabIndex = 3;
             // 
             // RBtAdministrador
             // 
@@ -338,7 +338,7 @@
         private System.Windows.Forms.Button BtnEliminarFoto;
         private System.Windows.Forms.RadioButton RBtAdministrador;
         private System.Windows.Forms.RadioButton RBtEmpleado;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker DtpFechaNacimiento;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label LblUsuario;
         private System.Windows.Forms.PictureBox PBxAvatar;

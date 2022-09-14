@@ -1,29 +1,50 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Duisv.Modelos;
+using Duisv.Servicios;
 
 namespace Duisv.Formularios.Usuarios
 {
     public partial class FrmUsuarios : Form
     {
+        private readonly UsuarioServicio _usuarioServicio;
+
         public FrmUsuarios()
         {
             InitializeComponent();
+
+            _usuarioServicio = new UsuarioServicio();
         }
 
-        private void BtnAgregarUsuario_Click(object sender, EventArgs e)
+        private async void BtnAgregarUsuario_Click(object sender, EventArgs e)
         {
             var frmAgregarUsuario = new FrmAgregarUsuario();
 
             if (frmAgregarUsuario.ShowDialog() == DialogResult.OK)
             {
-                // Actualizar lista de usuarios
+                Task task = ActualizarLista();
+                task.Start();
+                await task;
+            }
+        }
+
+        private async Task ActualizarLista()
+        {
+            var usuarios = await _usuarioServicio.ObtenerUsuarios();
+
+            DgvUsuarios.Rows.Clear();
+
+            if (usuarios.Count > 0 && usuarios != null)
+            {
+                foreach (var usuario in usuarios)
+                {
+                    DgvUsuarios.Rows.Add(usuario.UsuarioId, usuario.Nombre, usuario.Apellido, usuario.Telefono, usuario.Rol);
+                }
+
+                DgvUsuarios.ClearSelection();
             }
         }
 
@@ -37,9 +58,9 @@ namespace Duisv.Formularios.Usuarios
             Close();
         }
 
-        private void FrmUsuarios_Load(object sender, EventArgs e)
-        {
-            DgvUsuarios.Rows.Add();
+        private async void FrmUsuarios_Load(object sender, EventArgs e)
+        {         
+            await Task.Run(ActualizarLista);
         }
     }
 }

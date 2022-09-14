@@ -1,38 +1,37 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Threading.Tasks;
 using Duisv.Modelos;
-using Microsoft.Data.Sqlite;
 
 namespace Duisv.Servicios
 {
     internal class UsuarioServicio
     {
-        private readonly string rutaDatabase = "Data Source=duisv_db.db";
+        private readonly string cadenaConexion = "Data Source=C:\\Users\\Vaneg\\source\\repos\\Duisv\\Database\\duisv_db.db";
 
-        public async Task<int> AgregarUsuario(Usuario usuario)
+        public int AgregarUsuario(Usuario usuario)
         {
-            using (var conexion = new SqliteConnection(rutaDatabase))
+            using (var conexion = new SqlConnection(cadenaConexion))
             {
                 if (conexion.State != ConnectionState.Open)
                 {
-                    await conexion.OpenAsync();
+                    conexion.Open();
 
-                    using (var consulta = conexion.CreateCommand())
+                    using (var comando = new SqlCommand("AgregarUsuario", conexion))
                     {
-                        consulta.CommandText = "INSERT INTO usuarios (nombre, apellido, correo_electronico, fecha_nacimiento, direccion, telefono, rol) " +
-                            "VALUES ($nombre, $apellido, $correoElectronico, $fechaNacimiento, $direccion, $telefono, $rol);";
+                        comando.CommandType = CommandType.StoredProcedure;
 
-                        consulta.Parameters.AddWithValue("$nombre", usuario.Nombre);
-                        consulta.Parameters.AddWithValue("$apellido", usuario.Apellido);
-                        consulta.Parameters.AddWithValue("$correoElectronico", usuario.CorreoElectronico);
-                        consulta.Parameters.AddWithValue("$fechaNacimiento", usuario.FechaNacimiento);
-                        consulta.Parameters.AddWithValue("$direccion", usuario.Direccion);
-                        consulta.Parameters.AddWithValue("$telefono", usuario.Telefono);
-                        consulta.Parameters.AddWithValue("$rol", usuario.Rol);
+                        comando.Parameters.AddWithValue("@Nombre", usuario.Nombre);
+                        comando.Parameters.AddWithValue("@Apellido", usuario.Apellido);
+                        comando.Parameters.AddWithValue("@CorreoElectronico", usuario.CorreoElectronico);
+                        comando.Parameters.AddWithValue("@FechaNacimiento", usuario.FechaNacimiento);
+                        comando.Parameters.AddWithValue("@Direccion", usuario.Direccion);
+                        comando.Parameters.AddWithValue("@Telefono", usuario.Telefono);
+                        comando.Parameters.AddWithValue("@RolId", usuario.RolId);
 
-                        return await consulta.ExecuteNonQueryAsync();
+                        return comando.ExecuteNonQuery();
                     }
                 }
             }
@@ -40,21 +39,20 @@ namespace Duisv.Servicios
             return 0;
         }
 
-        public async Task<int> EliminarUsuario(int id)
+        public int EliminarUsuario(int id)
         {
-            using (var conexion = new SqliteConnection(rutaDatabase))
+            using (var conexion = new SqlConnection(cadenaConexion))
             {
                 if (conexion.State != ConnectionState.Open)
                 {
-                    await conexion.OpenAsync();
+                    conexion.Open();
 
-                    using (var consulta = conexion.CreateCommand())
+                    using (var comando = new SqlCommand("EliminarUsuario", conexion))
                     {
-                        consulta.CommandText = "DELETE FROM usuarios WHERE usuario_id = $id;";
+                        comando.CommandType = CommandType.StoredProcedure;
+                        comando.Parameters.AddWithValue("@UsuarioId", id);
 
-                        consulta.Parameters.AddWithValue("$id", id);
-
-                        return await consulta.ExecuteNonQueryAsync();
+                        return comando.ExecuteNonQuery();
                     }
                 }
             }
@@ -62,30 +60,28 @@ namespace Duisv.Servicios
             return 0;
         }
 
-        public async Task<int> EditarUsuario(Usuario usuario)
+        public int EditarUsuario(Usuario usuario)
         {
-            using (var conexion = new SqliteConnection(rutaDatabase))
+            using (var conexion = new SqlConnection(cadenaConexion))
             {
                 if (conexion.State != ConnectionState.Open)
                 {
-                    await conexion.OpenAsync();
+                    conexion.Open();
 
-                    using (var consulta = conexion.CreateCommand())
+                    using (var comando = new SqlCommand("EditarUsuario", conexion))
                     {
-                        consulta.CommandText = "UPDATE usuarios " +
-                            "SET nombre = $nombre, apellido = $apellido, correo_electronico = $correoElectronico, fecha_nacimiento = $fechaNacimiento, direccion = $direccion, telefono = $telefono, rol = $rol" +
-                            "WHERE usuario_id = $id;";
+                        comando.CommandType = CommandType.StoredProcedure;
 
-                        consulta.Parameters.AddWithValue("id", usuario.UsuarioId);
-                        consulta.Parameters.AddWithValue("$nombre", usuario.Nombre);
-                        consulta.Parameters.AddWithValue("$apellido", usuario.Apellido);
-                        consulta.Parameters.AddWithValue("$correoElectronico", usuario.CorreoElectronico);
-                        consulta.Parameters.AddWithValue("$fechaNacimiento", usuario.FechaNacimiento);
-                        consulta.Parameters.AddWithValue("$direccion", usuario.Direccion);
-                        consulta.Parameters.AddWithValue("$telefono", usuario.Telefono);
-                        consulta.Parameters.AddWithValue("$rol", usuario.Rol);
+                        comando.Parameters.AddWithValue("@UsuarioId", usuario.UsuarioId);
+                        comando.Parameters.AddWithValue("@Nombre", usuario.Nombre);
+                        comando.Parameters.AddWithValue("@Apellido", usuario.Apellido);
+                        comando.Parameters.AddWithValue("@CorreoElectronico", usuario.CorreoElectronico);
+                        comando.Parameters.AddWithValue("@FechaNacimiento", usuario.FechaNacimiento);
+                        comando.Parameters.AddWithValue("@Direccion", usuario.Direccion);
+                        comando.Parameters.AddWithValue("@Telefono", usuario.Telefono);
+                        comando.Parameters.AddWithValue("@RolId", usuario.RolId);
 
-                        return await consulta.ExecuteNonQueryAsync();
+                        return comando.ExecuteNonQuery();
                     }
                 }
             }
@@ -93,23 +89,21 @@ namespace Duisv.Servicios
             return 0;
         }
 
-        public async Task<List<Usuario>> ObtenerUsuarios()
+        public List<Usuario> ObtenerUsuarios()
         {
             var usuarios = new List<Usuario>();
 
-            using (var conexion = new SqliteConnection(rutaDatabase))
+            using (var conexion = new SqlConnection(cadenaConexion))
             {
                 if (conexion.State != ConnectionState.Open)
                 {
-                    await conexion.OpenAsync();
+                    conexion.Open();
 
-                    using (var consulta = conexion.CreateCommand())
+                    using (var comando = new SqlCommand("ObtenerUsuarios", conexion))
                     {
-                        consulta.CommandText = "SELECT * FROM usuarios;";
-
-                        using (var lector = await consulta.ExecuteReaderAsync())
+                        using (var lector = comando.ExecuteReader())
                         {
-                            while (await lector.ReadAsync())
+                            while (lector.Read())
                             {
                                 var usuario = new Usuario
                                 {
@@ -119,7 +113,7 @@ namespace Duisv.Servicios
                                     Direccion = lector["direccion"].ToString(),
                                     CorreoElectronico = lector["correo_electronico"].ToString(),
                                     FechaNacimiento = lector["fecha_nacimiento"] as DateTime?,
-                                    Rol = lector["rol"].ToString(),
+                                    RolId = lector["rol"] as int?,
                                     Telefono = lector["telefono"].ToString()
                                 };
 
@@ -133,22 +127,21 @@ namespace Duisv.Servicios
             return usuarios;
         }
 
-        public async Task<Usuario> ObtenerUsuarioPorId(int id)
+        public Usuario ObtenerUsuarioPorId(int id)
         {
-            using (var conexion = new SqliteConnection(rutaDatabase))
+            using (var conexion = new SqlConnection(cadenaConexion))
             {
                 if (conexion.State != ConnectionState.Open)
                 {
-                    await conexion.OpenAsync();
+                    conexion.Open();
 
-                    using (var consulta = conexion.CreateCommand())
+                    using (var comando = new SqlCommand("ObtenerUsuarioPorId", conexion))
                     {
-                        consulta.CommandText = "SELECT * FROM usuarios WHERE usuario_id = $id;";
-                        consulta.Parameters.AddWithValue("$id", id);
+                        comando.Parameters.AddWithValue("@UsuarioId", id);
 
-                        using (var lector = await consulta.ExecuteReaderAsync())
+                        using (var lector = comando.ExecuteReader())
                         {
-                            if (await lector.ReadAsync())
+                            if (lector.Read())
                             {
                                 var usuario = new Usuario
                                 {
@@ -158,7 +151,7 @@ namespace Duisv.Servicios
                                     Direccion = lector["direccion"].ToString(),
                                     CorreoElectronico = lector["correo_electronico"].ToString(),
                                     FechaNacimiento = lector["fecha_nacimiento"] as DateTime?,
-                                    Rol = lector["rol"].ToString(),
+                                    RolId = lector["rol"] as int?,
                                     Telefono = lector["telefono"].ToString()
                                 };
 
@@ -172,22 +165,21 @@ namespace Duisv.Servicios
             return null;
         }
         
-        public async Task<Usuario> ObtenerUsuarioPorNombre(string nombre)
+        public Usuario ObtenerUsuarioPorNombre(string nombre)
         {
-            using (var conexion = new SqliteConnection(rutaDatabase))
+            using (var conexion = new SqlConnection(cadenaConexion))
             {
                 if (conexion.State != ConnectionState.Open)
                 {
-                    await conexion.OpenAsync();
+                    conexion.Open();
 
-                    using (var consulta = conexion.CreateCommand())
+                    using (var comando = new SqlCommand("ObtenerUsuarioPorNombre", conexion))
                     {
-                        consulta.CommandText = "SELECT * FROM usuarios WHERE nombre = $nombre;";
-                        consulta.Parameters.AddWithValue("$nombre", nombre);
+                        comando.Parameters.AddWithValue("@Nombre", nombre);
 
-                        using (var lector = await consulta.ExecuteReaderAsync())
+                        using (var lector = comando.ExecuteReader())
                         {
-                            if (await lector.ReadAsync())
+                            if (lector.Read())
                             {
                                 var usuario = new Usuario
                                 {
@@ -197,7 +189,7 @@ namespace Duisv.Servicios
                                     Direccion = lector["direccion"].ToString(),
                                     CorreoElectronico = lector["correo_electronico"].ToString(),
                                     FechaNacimiento = lector["fecha_nacimiento"] as DateTime?,
-                                    Rol = lector["rol"].ToString(),
+                                    RolId = lector["rol"] as int?,
                                     Telefono = lector["telefono"].ToString()
                                 };
 
