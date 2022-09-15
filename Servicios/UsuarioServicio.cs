@@ -2,14 +2,13 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Threading.Tasks;
 using Duisv.Modelos;
 
 namespace Duisv.Servicios
 {
     internal class UsuarioServicio
     {
-        private readonly string cadenaConexion = "Data Source=C:\\Users\\Vaneg\\source\\repos\\Duisv\\Database\\duisv_db.db";
+        private readonly string cadenaConexion = @"Server=HP-1GR12LA\SQLEXPRESS;Database=DuisvDb;Trusted_Connection=True;";
 
         public int AgregarUsuario(Usuario usuario)
         {
@@ -30,6 +29,8 @@ namespace Duisv.Servicios
                         comando.Parameters.AddWithValue("@Direccion", usuario.Direccion);
                         comando.Parameters.AddWithValue("@Telefono", usuario.Telefono);
                         comando.Parameters.AddWithValue("@RolId", usuario.RolId);
+                        comando.Parameters.AddWithValue("@Usuario", usuario.NombreUsuario);
+                        comando.Parameters.AddWithValue("@Clave", usuario.Clave);
 
                         return comando.ExecuteNonQuery();
                     }
@@ -80,6 +81,8 @@ namespace Duisv.Servicios
                         comando.Parameters.AddWithValue("@Direccion", usuario.Direccion);
                         comando.Parameters.AddWithValue("@Telefono", usuario.Telefono);
                         comando.Parameters.AddWithValue("@RolId", usuario.RolId);
+                        comando.Parameters.AddWithValue("@Usuario", usuario.NombreUsuario);
+                        comando.Parameters.AddWithValue("@Clave", usuario.Clave);
 
                         return comando.ExecuteNonQuery();
                     }
@@ -89,7 +92,7 @@ namespace Duisv.Servicios
             return 0;
         }
 
-        public List<Usuario> ObtenerUsuarios()
+        public List<Usuario> ObtenerListaUsuarios()
         {
             var usuarios = new List<Usuario>();
 
@@ -99,22 +102,27 @@ namespace Duisv.Servicios
                 {
                     conexion.Open();
 
-                    using (var comando = new SqlCommand("ObtenerUsuarios", conexion))
+                    using (var comando = new SqlCommand("ObtenerListaUsuarios", conexion))
                     {
+                        comando.CommandType = CommandType.StoredProcedure;
+
                         using (var lector = comando.ExecuteReader())
                         {
                             while (lector.Read())
                             {
                                 var usuario = new Usuario
                                 {
-                                    UsuarioId = lector["usuario_id"] as int?,
-                                    Nombre = lector["nombre"].ToString(),
-                                    Apellido = lector["apellido"].ToString(),
-                                    Direccion = lector["direccion"].ToString(),
-                                    CorreoElectronico = lector["correo_electronico"].ToString(),
-                                    FechaNacimiento = lector["fecha_nacimiento"] as DateTime?,
+                                    UsuarioId = lector["UsuarioId"] as int?,
+                                    Nombre = lector["Nombre"].ToString(),
+                                    Apellido = lector["Apellido"].ToString(),
+                                    Direccion = lector["Direccion"].ToString(),
+                                    CorreoElectronico = lector["CorreoElectronico"].ToString(),
+                                    FechaNacimiento = lector["FechaNacimiento"] as DateTime?,
+                                    Telefono = lector["Telefono"].ToString(),
+                                    NombreUsuario = lector["Usuario"].ToString(),
+                                    Clave = lector["Clave"].ToString(),
+                                    Rol = lector["Rol"].ToString(),
                                     RolId = lector["rol"] as int?,
-                                    Telefono = lector["telefono"].ToString()
                                 };
 
                                 usuarios.Add(usuario);
@@ -138,6 +146,7 @@ namespace Duisv.Servicios
                     using (var comando = new SqlCommand("ObtenerUsuarioPorId", conexion))
                     {
                         comando.Parameters.AddWithValue("@UsuarioId", id);
+                        comando.CommandType = CommandType.StoredProcedure;
 
                         using (var lector = comando.ExecuteReader())
                         {
@@ -145,52 +154,17 @@ namespace Duisv.Servicios
                             {
                                 var usuario = new Usuario
                                 {
-                                    UsuarioId = lector["usuario_id"] as int?,
-                                    Nombre = lector["nombre"].ToString(),
-                                    Apellido = lector["apellido"].ToString(),
-                                    Direccion = lector["direccion"].ToString(),
-                                    CorreoElectronico = lector["correo_electronico"].ToString(),
-                                    FechaNacimiento = lector["fecha_nacimiento"] as DateTime?,
+                                    UsuarioId = lector["UsuarioId"] as int?,
+                                    Nombre = lector["Nombre"].ToString(),
+                                    Apellido = lector["Apellido"].ToString(),
+                                    Direccion = lector["Direccion"].ToString(),
+                                    CorreoElectronico = lector["CorreoElectronico"].ToString(),
+                                    FechaNacimiento = lector["FechaNacimiento"] as DateTime?,
+                                    Telefono = lector["Telefono"].ToString(),
+                                    NombreUsuario = lector["Usuario"].ToString(),
+                                    Clave = lector["Clave"].ToString(),
+                                    Rol = lector["Rol"].ToString(),
                                     RolId = lector["rol"] as int?,
-                                    Telefono = lector["telefono"].ToString()
-                                };
-
-                                return usuario;
-                            }
-                        }
-                    }
-                }
-            }
-
-            return null;
-        }
-        
-        public Usuario ObtenerUsuarioPorNombre(string nombre)
-        {
-            using (var conexion = new SqlConnection(cadenaConexion))
-            {
-                if (conexion.State != ConnectionState.Open)
-                {
-                    conexion.Open();
-
-                    using (var comando = new SqlCommand("ObtenerUsuarioPorNombre", conexion))
-                    {
-                        comando.Parameters.AddWithValue("@Nombre", nombre);
-
-                        using (var lector = comando.ExecuteReader())
-                        {
-                            if (lector.Read())
-                            {
-                                var usuario = new Usuario
-                                {
-                                    UsuarioId = lector["usuario_id"] as int?,
-                                    Nombre = lector["nombre"].ToString(),
-                                    Apellido = lector["apellido"].ToString(),
-                                    Direccion = lector["direccion"].ToString(),
-                                    CorreoElectronico = lector["correo_electronico"].ToString(),
-                                    FechaNacimiento = lector["fecha_nacimiento"] as DateTime?,
-                                    RolId = lector["rol"] as int?,
-                                    Telefono = lector["telefono"].ToString()
                                 };
 
                                 return usuario;

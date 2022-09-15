@@ -1,6 +1,6 @@
 ﻿namespace Duisv.Formularios.Usuarios
 {
-    partial class FrmUsuarios
+    partial class FrmListaUsuarios
     {
         /// <summary>
         /// Required designer variable.

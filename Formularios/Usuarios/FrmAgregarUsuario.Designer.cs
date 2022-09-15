@@ -41,8 +41,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.DtpFechaNacimiento = new System.Windows.Forms.DateTimePicker();
-            this.RBtAdministrador = new System.Windows.Forms.RadioButton();
-            this.RBtEmpleado = new System.Windows.Forms.RadioButton();
             this.TBxNombre = new System.Windows.Forms.TextBox();
             this.BtnAgregarFoto = new System.Windows.Forms.Button();
             this.BtnEliminarFoto = new System.Windows.Forms.Button();
@@ -50,6 +48,15 @@
             this.LblUsuario = new System.Windows.Forms.Label();
             this.PBxAvatar = new System.Windows.Forms.PictureBox();
             this.PBxFoto = new System.Windows.Forms.PictureBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.TBxUsuario = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.TBxClave = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.TBxRepetirClave = new System.Windows.Forms.TextBox();
+            this.CBxVerClaves = new System.Windows.Forms.CheckBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.CbBRoles = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PBxAvatar)).BeginInit();
@@ -59,11 +66,11 @@
             // BtnAgregar
             // 
             this.BtnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnAgregar.Location = new System.Drawing.Point(417, 323);
+            this.BtnAgregar.Location = new System.Drawing.Point(415, 444);
             this.BtnAgregar.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.BtnAgregar.Name = "BtnAgregar";
             this.BtnAgregar.Size = new System.Drawing.Size(172, 44);
-            this.BtnAgregar.TabIndex = 10;
+            this.BtnAgregar.TabIndex = 13;
             this.BtnAgregar.Text = "Agregar";
             this.BtnAgregar.UseVisualStyleBackColor = true;
             this.BtnAgregar.Click += new System.EventHandler(this.BtnAgregar_Click);
@@ -71,7 +78,7 @@
             // MtbTelefono
             // 
             this.MtbTelefono.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.MtbTelefono.Location = new System.Drawing.Point(152, 178);
+            this.MtbTelefono.Location = new System.Drawing.Point(152, 183);
             this.MtbTelefono.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.MtbTelefono.Mask = "0000 - 0000";
             this.MtbTelefono.Name = "MtbTelefono";
@@ -82,7 +89,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(10, 182);
+            this.label6.Location = new System.Drawing.Point(11, 185);
             this.label6.Margin = new System.Windows.Forms.Padding(10, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(61, 15);
@@ -92,7 +99,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(10, 148);
+            this.label5.Location = new System.Drawing.Point(11, 151);
             this.label5.Margin = new System.Windows.Forms.Padding(10, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(68, 15);
@@ -102,7 +109,7 @@
             // TBxDireccion
             // 
             this.TBxDireccion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TBxDireccion.Location = new System.Drawing.Point(152, 145);
+            this.TBxDireccion.Location = new System.Drawing.Point(152, 149);
             this.TBxDireccion.Margin = new System.Windows.Forms.Padding(13, 12, 13, 12);
             this.TBxDireccion.Name = "TBxDireccion";
             this.TBxDireccion.Size = new System.Drawing.Size(225, 23);
@@ -111,7 +118,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(10, 115);
+            this.label4.Location = new System.Drawing.Point(11, 117);
             this.label4.Margin = new System.Windows.Forms.Padding(10, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(134, 15);
@@ -121,7 +128,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(10, 81);
+            this.label3.Location = new System.Drawing.Point(11, 83);
             this.label3.Margin = new System.Windows.Forms.Padding(10, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(51, 15);
@@ -131,7 +138,7 @@
             // TBxCorreo
             // 
             this.TBxCorreo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TBxCorreo.Location = new System.Drawing.Point(152, 79);
+            this.TBxCorreo.Location = new System.Drawing.Point(152, 81);
             this.TBxCorreo.Margin = new System.Windows.Forms.Padding(13, 12, 13, 12);
             this.TBxCorreo.Name = "TBxCorreo";
             this.TBxCorreo.Size = new System.Drawing.Size(225, 23);
@@ -140,7 +147,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(10, 47);
+            this.label2.Location = new System.Drawing.Point(11, 49);
             this.label2.Margin = new System.Windows.Forms.Padding(10, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(60, 15);
@@ -150,7 +157,7 @@
             // TBxApellido
             // 
             this.TBxApellido.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TBxApellido.Location = new System.Drawing.Point(152, 46);
+            this.TBxApellido.Location = new System.Drawing.Point(152, 47);
             this.TBxApellido.Margin = new System.Windows.Forms.Padding(13, 12, 13, 12);
             this.TBxApellido.Name = "TBxApellido";
             this.TBxApellido.Size = new System.Drawing.Size(225, 23);
@@ -159,7 +166,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(10, 14);
+            this.label1.Location = new System.Drawing.Point(11, 15);
             this.label1.Margin = new System.Windows.Forms.Padding(10, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(57, 15);
@@ -169,9 +176,16 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.CbBRoles);
+            this.panel1.Controls.Add(this.label10);
+            this.panel1.Controls.Add(this.CBxVerClaves);
+            this.panel1.Controls.Add(this.label9);
+            this.panel1.Controls.Add(this.TBxRepetirClave);
+            this.panel1.Controls.Add(this.label8);
+            this.panel1.Controls.Add(this.TBxClave);
+            this.panel1.Controls.Add(this.label7);
+            this.panel1.Controls.Add(this.TBxUsuario);
             this.panel1.Controls.Add(this.DtpFechaNacimiento);
-            this.panel1.Controls.Add(this.RBtAdministrador);
-            this.panel1.Controls.Add(this.RBtEmpleado);
             this.panel1.Controls.Add(this.MtbTelefono);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label5);
@@ -186,37 +200,16 @@
             this.panel1.Location = new System.Drawing.Point(194, 54);
             this.panel1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(395, 263);
+            this.panel1.Size = new System.Drawing.Size(393, 384);
             this.panel1.TabIndex = 0;
             // 
             // DtpFechaNacimiento
             // 
-            this.DtpFechaNacimiento.Location = new System.Drawing.Point(152, 112);
+            this.DtpFechaNacimiento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DtpFechaNacimiento.Location = new System.Drawing.Point(152, 115);
             this.DtpFechaNacimiento.Name = "DtpFechaNacimiento";
             this.DtpFechaNacimiento.Size = new System.Drawing.Size(225, 23);
             this.DtpFechaNacimiento.TabIndex = 3;
-            // 
-            // RBtAdministrador
-            // 
-            this.RBtAdministrador.AutoSize = true;
-            this.RBtAdministrador.Location = new System.Drawing.Point(267, 207);
-            this.RBtAdministrador.Name = "RBtAdministrador";
-            this.RBtAdministrador.Size = new System.Drawing.Size(110, 19);
-            this.RBtAdministrador.TabIndex = 7;
-            this.RBtAdministrador.TabStop = true;
-            this.RBtAdministrador.Text = "Administrador";
-            this.RBtAdministrador.UseVisualStyleBackColor = true;
-            // 
-            // RBtEmpleado
-            // 
-            this.RBtEmpleado.AutoSize = true;
-            this.RBtEmpleado.Location = new System.Drawing.Point(152, 208);
-            this.RBtEmpleado.Name = "RBtEmpleado";
-            this.RBtEmpleado.Size = new System.Drawing.Size(83, 19);
-            this.RBtEmpleado.TabIndex = 6;
-            this.RBtEmpleado.TabStop = true;
-            this.RBtEmpleado.Text = "Empleado";
-            this.RBtEmpleado.UseVisualStyleBackColor = true;
             // 
             // TBxNombre
             // 
@@ -234,7 +227,7 @@
             this.BtnAgregarFoto.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.BtnAgregarFoto.Name = "BtnAgregarFoto";
             this.BtnAgregarFoto.Size = new System.Drawing.Size(172, 44);
-            this.BtnAgregarFoto.TabIndex = 9;
+            this.BtnAgregarFoto.TabIndex = 12;
             this.BtnAgregarFoto.Text = "Agregar foto";
             this.BtnAgregarFoto.UseVisualStyleBackColor = true;
             // 
@@ -245,7 +238,7 @@
             this.BtnEliminarFoto.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.BtnEliminarFoto.Name = "BtnEliminarFoto";
             this.BtnEliminarFoto.Size = new System.Drawing.Size(172, 44);
-            this.BtnEliminarFoto.TabIndex = 8;
+            this.BtnEliminarFoto.TabIndex = 11;
             this.BtnEliminarFoto.Text = "Eliminar foto";
             this.BtnEliminarFoto.UseVisualStyleBackColor = true;
             // 
@@ -291,13 +284,101 @@
             this.PBxFoto.TabIndex = 15;
             this.PBxFoto.TabStop = false;
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(11, 219);
+            this.label7.Margin = new System.Windows.Forms.Padding(10, 0, 4, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(57, 15);
+            this.label7.TabIndex = 23;
+            this.label7.Text = "Usuario:";
+            // 
+            // TBxUsuario
+            // 
+            this.TBxUsuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TBxUsuario.Location = new System.Drawing.Point(152, 217);
+            this.TBxUsuario.Margin = new System.Windows.Forms.Padding(13, 12, 13, 12);
+            this.TBxUsuario.Name = "TBxUsuario";
+            this.TBxUsuario.Size = new System.Drawing.Size(225, 23);
+            this.TBxUsuario.TabIndex = 6;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(11, 287);
+            this.label8.Margin = new System.Windows.Forms.Padding(10, 0, 4, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(79, 15);
+            this.label8.TabIndex = 25;
+            this.label8.Text = "Contraseña:";
+            // 
+            // TBxClave
+            // 
+            this.TBxClave.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TBxClave.Location = new System.Drawing.Point(153, 285);
+            this.TBxClave.Margin = new System.Windows.Forms.Padding(13, 12, 13, 12);
+            this.TBxClave.Name = "TBxClave";
+            this.TBxClave.Size = new System.Drawing.Size(225, 23);
+            this.TBxClave.TabIndex = 8;
+            this.TBxClave.UseSystemPasswordChar = true;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(11, 321);
+            this.label9.Margin = new System.Windows.Forms.Padding(10, 0, 4, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(125, 15);
+            this.label9.TabIndex = 27;
+            this.label9.Text = "Repetir contraseña:";
+            // 
+            // TBxRepetirClave
+            // 
+            this.TBxRepetirClave.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TBxRepetirClave.Location = new System.Drawing.Point(153, 319);
+            this.TBxRepetirClave.Margin = new System.Windows.Forms.Padding(13, 12, 13, 12);
+            this.TBxRepetirClave.Name = "TBxRepetirClave";
+            this.TBxRepetirClave.Size = new System.Drawing.Size(225, 23);
+            this.TBxRepetirClave.TabIndex = 9;
+            this.TBxRepetirClave.UseSystemPasswordChar = true;
+            // 
+            // CBxVerClaves
+            // 
+            this.CBxVerClaves.AutoSize = true;
+            this.CBxVerClaves.Location = new System.Drawing.Point(153, 357);
+            this.CBxVerClaves.Name = "CBxVerClaves";
+            this.CBxVerClaves.Size = new System.Drawing.Size(123, 19);
+            this.CBxVerClaves.TabIndex = 10;
+            this.CBxVerClaves.Text = "Ver contraseñas";
+            this.CBxVerClaves.UseVisualStyleBackColor = true;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(11, 253);
+            this.label10.Margin = new System.Windows.Forms.Padding(10, 0, 4, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(31, 15);
+            this.label10.TabIndex = 30;
+            this.label10.Text = "Rol:";
+            // 
+            // CbBRoles
+            // 
+            this.CbBRoles.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CbBRoles.FormattingEnabled = true;
+            this.CbBRoles.Location = new System.Drawing.Point(152, 251);
+            this.CbBRoles.Name = "CbBRoles";
+            this.CbBRoles.Size = new System.Drawing.Size(225, 23);
+            this.CbBRoles.TabIndex = 7;
+            // 
             // FrmAgregarUsuario
             // 
             this.AcceptButton = this.BtnAgregar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(601, 375);
+            this.ClientSize = new System.Drawing.Size(601, 499);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.BtnAgregar);
             this.Controls.Add(this.PBxFoto);
@@ -309,6 +390,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "FrmAgregarUsuario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Load += new System.EventHandler(this.FrmAgregarUsuario_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -336,11 +418,18 @@
         private System.Windows.Forms.TextBox TBxNombre;
         private System.Windows.Forms.Button BtnAgregarFoto;
         private System.Windows.Forms.Button BtnEliminarFoto;
-        private System.Windows.Forms.RadioButton RBtAdministrador;
-        private System.Windows.Forms.RadioButton RBtEmpleado;
         private System.Windows.Forms.DateTimePicker DtpFechaNacimiento;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label LblUsuario;
         private System.Windows.Forms.PictureBox PBxAvatar;
+        private System.Windows.Forms.CheckBox CBxVerClaves;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox TBxRepetirClave;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox TBxClave;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox TBxUsuario;
+        private System.Windows.Forms.ComboBox CbBRoles;
+        private System.Windows.Forms.Label label10;
     }
 }

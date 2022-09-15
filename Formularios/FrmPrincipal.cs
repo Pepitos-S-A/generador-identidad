@@ -34,7 +34,7 @@ namespace Duisv.Formularios
 
         private void BtnUsuarios_Click(object sender, EventArgs e)
         {
-            var frmUsuarios = new FrmUsuarios();
+            var frmUsuarios = new FrmListaUsuarios();
             frmUsuarios.ShowDialog();
         }
 

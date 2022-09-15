@@ -1,40 +1,34 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Duisv.Modelos;
 using Duisv.Servicios;
 
 namespace Duisv.Formularios.Usuarios
 {
-    public partial class FrmUsuarios : Form
+    public partial class FrmListaUsuarios : Form
     {
         private readonly UsuarioServicio _usuarioServicio;
 
-        public FrmUsuarios()
+        public FrmListaUsuarios()
         {
             InitializeComponent();
 
             _usuarioServicio = new UsuarioServicio();
         }
 
-        private async void BtnAgregarUsuario_Click(object sender, EventArgs e)
+        private void BtnAgregarUsuario_Click(object sender, EventArgs e)
         {
             var frmAgregarUsuario = new FrmAgregarUsuario();
 
             if (frmAgregarUsuario.ShowDialog() == DialogResult.OK)
             {
-                Task task = ActualizarLista();
-                task.Start();
-                await task;
+                ActualizarListaUsuarios(_usuarioServicio.ObtenerListaUsuarios());
             }
         }
 
-        private async Task ActualizarLista()
+        private void ActualizarListaUsuarios(List<Usuario> usuarios)
         {
-            var usuarios = await _usuarioServicio.ObtenerUsuarios();
-
             DgvUsuarios.Rows.Clear();
 
             if (usuarios.Count > 0 && usuarios != null)
@@ -58,9 +52,9 @@ namespace Duisv.Formularios.Usuarios
             Close();
         }
 
-        private async void FrmUsuarios_Load(object sender, EventArgs e)
-        {         
-            await Task.Run(ActualizarLista);
+        private void FrmUsuarios_Load(object sender, EventArgs e)
+        {
+            ActualizarListaUsuarios(_usuarioServicio.ObtenerListaUsuarios());
         }
     }
 }
