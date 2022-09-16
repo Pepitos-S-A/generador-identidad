@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
 using Duisv.Modelos;
 using Duisv.Servicios;
@@ -45,7 +47,12 @@ namespace Duisv.Formularios.Usuarios
 
         private void CargarFotoUsuario(string nombreUsuario)
         {
+            var rutaFoto = $@"{Environment.GetFolderPath(Environment.SpecialFolder.MyPictures)}\DUISV\Usuarios\Fotos\{nombreUsuario}.jpg";
 
+            if (File.Exists(rutaFoto))
+            {
+                PBxFoto.Image = Image.FromFile(rutaFoto);
+            }
         }
     }
 }

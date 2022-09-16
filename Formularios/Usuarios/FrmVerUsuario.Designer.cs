@@ -274,7 +274,6 @@
             // 
             // PBxFoto
             // 
-            this.PBxFoto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.PBxFoto.Image = global::Duisv.Properties.Resources.usuario;
             this.PBxFoto.Location = new System.Drawing.Point(13, 97);
             this.PBxFoto.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
