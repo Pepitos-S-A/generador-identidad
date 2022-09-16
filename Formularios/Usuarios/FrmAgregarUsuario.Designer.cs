@@ -40,6 +40,15 @@
             this.TBxApellido = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.CbBRoles = new System.Windows.Forms.ComboBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.CBxVerClaves = new System.Windows.Forms.CheckBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.TBxRepetirClave = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.TBxClave = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.TBxUsuario = new System.Windows.Forms.TextBox();
             this.DtpFechaNacimiento = new System.Windows.Forms.DateTimePicker();
             this.TBxNombre = new System.Windows.Forms.TextBox();
             this.BtnAgregarFoto = new System.Windows.Forms.Button();
@@ -48,15 +57,8 @@
             this.LblUsuario = new System.Windows.Forms.Label();
             this.PBxAvatar = new System.Windows.Forms.PictureBox();
             this.PBxFoto = new System.Windows.Forms.PictureBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.TBxUsuario = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.TBxClave = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.TBxRepetirClave = new System.Windows.Forms.TextBox();
-            this.CBxVerClaves = new System.Windows.Forms.CheckBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.CbBRoles = new System.Windows.Forms.ComboBox();
+            this.BtnTomarFoto = new System.Windows.Forms.Button();
+            this.OfdImportarFoto = new System.Windows.Forms.OpenFileDialog();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PBxAvatar)).BeginInit();
@@ -203,6 +205,94 @@
             this.panel1.Size = new System.Drawing.Size(393, 384);
             this.panel1.TabIndex = 0;
             // 
+            // CbBRoles
+            // 
+            this.CbBRoles.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CbBRoles.FormattingEnabled = true;
+            this.CbBRoles.Location = new System.Drawing.Point(152, 251);
+            this.CbBRoles.Name = "CbBRoles";
+            this.CbBRoles.Size = new System.Drawing.Size(225, 23);
+            this.CbBRoles.TabIndex = 7;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(11, 253);
+            this.label10.Margin = new System.Windows.Forms.Padding(10, 0, 4, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(31, 15);
+            this.label10.TabIndex = 30;
+            this.label10.Text = "Rol:";
+            // 
+            // CBxVerClaves
+            // 
+            this.CBxVerClaves.AutoSize = true;
+            this.CBxVerClaves.Location = new System.Drawing.Point(153, 357);
+            this.CBxVerClaves.Name = "CBxVerClaves";
+            this.CBxVerClaves.Size = new System.Drawing.Size(123, 19);
+            this.CBxVerClaves.TabIndex = 10;
+            this.CBxVerClaves.Text = "Ver contraseñas";
+            this.CBxVerClaves.UseVisualStyleBackColor = true;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(11, 321);
+            this.label9.Margin = new System.Windows.Forms.Padding(10, 0, 4, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(125, 15);
+            this.label9.TabIndex = 27;
+            this.label9.Text = "Repetir contraseña:";
+            // 
+            // TBxRepetirClave
+            // 
+            this.TBxRepetirClave.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TBxRepetirClave.Location = new System.Drawing.Point(153, 319);
+            this.TBxRepetirClave.Margin = new System.Windows.Forms.Padding(13, 12, 13, 12);
+            this.TBxRepetirClave.Name = "TBxRepetirClave";
+            this.TBxRepetirClave.Size = new System.Drawing.Size(225, 23);
+            this.TBxRepetirClave.TabIndex = 9;
+            this.TBxRepetirClave.UseSystemPasswordChar = true;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(11, 287);
+            this.label8.Margin = new System.Windows.Forms.Padding(10, 0, 4, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(79, 15);
+            this.label8.TabIndex = 25;
+            this.label8.Text = "Contraseña:";
+            // 
+            // TBxClave
+            // 
+            this.TBxClave.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TBxClave.Location = new System.Drawing.Point(153, 285);
+            this.TBxClave.Margin = new System.Windows.Forms.Padding(13, 12, 13, 12);
+            this.TBxClave.Name = "TBxClave";
+            this.TBxClave.Size = new System.Drawing.Size(225, 23);
+            this.TBxClave.TabIndex = 8;
+            this.TBxClave.UseSystemPasswordChar = true;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(11, 219);
+            this.label7.Margin = new System.Windows.Forms.Padding(10, 0, 4, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(57, 15);
+            this.label7.TabIndex = 23;
+            this.label7.Text = "Usuario:";
+            // 
+            // TBxUsuario
+            // 
+            this.TBxUsuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TBxUsuario.Location = new System.Drawing.Point(152, 217);
+            this.TBxUsuario.Margin = new System.Windows.Forms.Padding(13, 12, 13, 12);
+            this.TBxUsuario.Name = "TBxUsuario";
+            this.TBxUsuario.Size = new System.Drawing.Size(225, 23);
+            this.TBxUsuario.TabIndex = 6;
+            // 
             // DtpFechaNacimiento
             // 
             this.DtpFechaNacimiento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
@@ -223,18 +313,19 @@
             // BtnAgregarFoto
             // 
             this.BtnAgregarFoto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnAgregarFoto.Location = new System.Drawing.Point(13, 273);
+            this.BtnAgregarFoto.Location = new System.Drawing.Point(14, 230);
             this.BtnAgregarFoto.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.BtnAgregarFoto.Name = "BtnAgregarFoto";
             this.BtnAgregarFoto.Size = new System.Drawing.Size(172, 44);
             this.BtnAgregarFoto.TabIndex = 12;
             this.BtnAgregarFoto.Text = "Agregar foto";
             this.BtnAgregarFoto.UseVisualStyleBackColor = true;
+            this.BtnAgregarFoto.Click += new System.EventHandler(this.BtnAgregarFoto_Click);
             // 
             // BtnEliminarFoto
             // 
             this.BtnEliminarFoto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnEliminarFoto.Location = new System.Drawing.Point(13, 222);
+            this.BtnEliminarFoto.Location = new System.Drawing.Point(14, 394);
             this.BtnEliminarFoto.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.BtnEliminarFoto.Name = "BtnEliminarFoto";
             this.BtnEliminarFoto.Size = new System.Drawing.Size(172, 44);
@@ -274,103 +365,25 @@
             // 
             // PBxFoto
             // 
-            this.PBxFoto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.PBxFoto.Image = global::Duisv.Properties.Resources.usuario;
-            this.PBxFoto.Location = new System.Drawing.Point(13, 54);
+            this.PBxFoto.Location = new System.Drawing.Point(14, 54);
             this.PBxFoto.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.PBxFoto.Name = "PBxFoto";
-            this.PBxFoto.Size = new System.Drawing.Size(172, 162);
+            this.PBxFoto.Size = new System.Drawing.Size(170, 170);
             this.PBxFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.PBxFoto.TabIndex = 15;
             this.PBxFoto.TabStop = false;
             // 
-            // label7
+            // BtnTomarFoto
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(11, 219);
-            this.label7.Margin = new System.Windows.Forms.Padding(10, 0, 4, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(57, 15);
-            this.label7.TabIndex = 23;
-            this.label7.Text = "Usuario:";
-            // 
-            // TBxUsuario
-            // 
-            this.TBxUsuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TBxUsuario.Location = new System.Drawing.Point(152, 217);
-            this.TBxUsuario.Margin = new System.Windows.Forms.Padding(13, 12, 13, 12);
-            this.TBxUsuario.Name = "TBxUsuario";
-            this.TBxUsuario.Size = new System.Drawing.Size(225, 23);
-            this.TBxUsuario.TabIndex = 6;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(11, 287);
-            this.label8.Margin = new System.Windows.Forms.Padding(10, 0, 4, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(79, 15);
-            this.label8.TabIndex = 25;
-            this.label8.Text = "Contraseña:";
-            // 
-            // TBxClave
-            // 
-            this.TBxClave.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TBxClave.Location = new System.Drawing.Point(153, 285);
-            this.TBxClave.Margin = new System.Windows.Forms.Padding(13, 12, 13, 12);
-            this.TBxClave.Name = "TBxClave";
-            this.TBxClave.Size = new System.Drawing.Size(225, 23);
-            this.TBxClave.TabIndex = 8;
-            this.TBxClave.UseSystemPasswordChar = true;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(11, 321);
-            this.label9.Margin = new System.Windows.Forms.Padding(10, 0, 4, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(125, 15);
-            this.label9.TabIndex = 27;
-            this.label9.Text = "Repetir contraseña:";
-            // 
-            // TBxRepetirClave
-            // 
-            this.TBxRepetirClave.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TBxRepetirClave.Location = new System.Drawing.Point(153, 319);
-            this.TBxRepetirClave.Margin = new System.Windows.Forms.Padding(13, 12, 13, 12);
-            this.TBxRepetirClave.Name = "TBxRepetirClave";
-            this.TBxRepetirClave.Size = new System.Drawing.Size(225, 23);
-            this.TBxRepetirClave.TabIndex = 9;
-            this.TBxRepetirClave.UseSystemPasswordChar = true;
-            // 
-            // CBxVerClaves
-            // 
-            this.CBxVerClaves.AutoSize = true;
-            this.CBxVerClaves.Location = new System.Drawing.Point(153, 357);
-            this.CBxVerClaves.Name = "CBxVerClaves";
-            this.CBxVerClaves.Size = new System.Drawing.Size(123, 19);
-            this.CBxVerClaves.TabIndex = 10;
-            this.CBxVerClaves.Text = "Ver contraseñas";
-            this.CBxVerClaves.UseVisualStyleBackColor = true;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(11, 253);
-            this.label10.Margin = new System.Windows.Forms.Padding(10, 0, 4, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(31, 15);
-            this.label10.TabIndex = 30;
-            this.label10.Text = "Rol:";
-            // 
-            // CbBRoles
-            // 
-            this.CbBRoles.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CbBRoles.FormattingEnabled = true;
-            this.CbBRoles.Location = new System.Drawing.Point(152, 251);
-            this.CbBRoles.Name = "CbBRoles";
-            this.CbBRoles.Size = new System.Drawing.Size(225, 23);
-            this.CbBRoles.TabIndex = 7;
+            this.BtnTomarFoto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnTomarFoto.Location = new System.Drawing.Point(14, 280);
+            this.BtnTomarFoto.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.BtnTomarFoto.Name = "BtnTomarFoto";
+            this.BtnTomarFoto.Size = new System.Drawing.Size(172, 44);
+            this.BtnTomarFoto.TabIndex = 22;
+            this.BtnTomarFoto.Text = "Tomar foto";
+            this.BtnTomarFoto.UseVisualStyleBackColor = true;
             // 
             // FrmAgregarUsuario
             // 
@@ -379,6 +392,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(601, 499);
+            this.Controls.Add(this.BtnTomarFoto);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.BtnAgregar);
             this.Controls.Add(this.PBxFoto);
@@ -431,5 +445,7 @@
         private System.Windows.Forms.TextBox TBxUsuario;
         private System.Windows.Forms.ComboBox CbBRoles;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Button BtnTomarFoto;
+        private System.Windows.Forms.OpenFileDialog OfdImportarFoto;
     }
 }

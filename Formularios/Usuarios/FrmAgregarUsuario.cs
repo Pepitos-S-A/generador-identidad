@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
 using Duisv.Modelos;
 using Duisv.Servicios;
@@ -64,6 +66,19 @@ namespace Duisv.Formularios.Usuarios
                 CbBRoles.DataSource = roles;
                 CbBRoles.DisplayMember = "Nombre";
                 CbBRoles.ValueMember = "RolId";
+            }
+        }
+
+        private void BtnAgregarFoto_Click(object sender, EventArgs e)
+        {
+            OfdImportarFoto.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures);
+
+            if (OfdImportarFoto.ShowDialog() == DialogResult.OK)
+            {
+                if (File.Exists(OfdImportarFoto.FileName))
+                {
+                    PBxFoto.Image = Image.FromFile(OfdImportarFoto.FileName);
+                }
             }
         }
     }
