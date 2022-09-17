@@ -13,6 +13,7 @@ namespace Duisv.Modelos
         public string Telefono { get; set; } = string.Empty;
         public string NombreUsuario { get; set; } = string.Empty;
         public string Clave { get; set; } = string.Empty;
+        public string RepetirClave { get; set; } = string.Empty;
         public string Rol { get; set; } = string.Empty;
         public int? RolId { get; set; }
     }
