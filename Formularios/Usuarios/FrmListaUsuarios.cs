@@ -72,7 +72,7 @@ namespace Duisv.Formularios.Usuarios
                         AbrirFormularioVerUsuario(usuarioId);
                         break;
                     case 7:
-                        AbrirFormularioEditarUsuario();
+                        AbrirFormularioEditarUsuario(usuarioId );
                         break;
                     case 8:
                         ConfirmarEliminarUsuario(usuarioId, nombreUsuario);
@@ -89,9 +89,9 @@ namespace Duisv.Formularios.Usuarios
             frmVerUsuario.ShowDialog();
         }
 
-        private void AbrirFormularioEditarUsuario()
+        private void AbrirFormularioEditarUsuario(int usuarioId)
         {
-            var frmEditarUsuario = new FrmEditarUsuario();
+            var frmEditarUsuario = new FrmEditarUsuario(usuarioId);
 
             if (frmEditarUsuario.ShowDialog() == DialogResult.OK)
             {

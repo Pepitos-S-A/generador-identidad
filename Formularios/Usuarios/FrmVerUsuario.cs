@@ -33,6 +33,7 @@ namespace Duisv.Formularios.Usuarios
         private void MostrarDatosUsuario(Usuario usuario)
         {
             LblUsuario.Text = $"Datos del usuario {usuario.NombreUsuario.ToUpper()}";
+            TBxId.Text = usuario.UsuarioId.ToString();
             TBxNombre.Text = usuario.Nombre;
             TBxApellido.Text = usuario.Apellido;
             TBxCorreo.Text = usuario.CorreoElectronico;
@@ -47,12 +48,18 @@ namespace Duisv.Formularios.Usuarios
 
         private void CargarFotoUsuario(string nombreUsuario)
         {
-            var rutaFoto = $@"{Environment.GetFolderPath(Environment.SpecialFolder.MyPictures)}\DUISV\Usuarios\Fotos\{nombreUsuario}.jpg";
+            var rutaFoto = $@"{Environment.GetFolderPath(Environment.SpecialFolder.MyPictures)}\DUISV\Usuarios\Fotos\{nombreUsuario}.png";
 
             if (File.Exists(rutaFoto))
             {
+                PBxFoto.Image.Dispose();
                 PBxFoto.Image = Image.FromFile(rutaFoto);
             }
+        }
+
+        private void BtnCerrar_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

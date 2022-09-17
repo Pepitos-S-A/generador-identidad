@@ -164,7 +164,7 @@ namespace Duisv.Servicios
                                     NombreUsuario = lector["Usuario"].ToString(),
                                     Clave = lector["Clave"].ToString(),
                                     Rol = lector["Rol"].ToString(),
-                                    RolId = lector["rol"] as int?,
+                                    RolId = lector["RolId"] as int?,
                                 };
 
                                 return usuario;

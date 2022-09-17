@@ -57,6 +57,10 @@
             this.TBxNombre = new System.Windows.Forms.TextBox();
             this.BtnAgregarFoto = new System.Windows.Forms.Button();
             this.BtnEliminarFoto = new System.Windows.Forms.Button();
+            this.BtnTomarFoto = new System.Windows.Forms.Button();
+            this.OfdImportarFoto = new System.Windows.Forms.OpenFileDialog();
+            this.label11 = new System.Windows.Forms.Label();
+            this.TBxId = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.PBxAvatar)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PBxFoto)).BeginInit();
@@ -95,22 +99,22 @@
             // BtnGuardar
             // 
             this.BtnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnGuardar.Location = new System.Drawing.Point(415, 447);
+            this.BtnGuardar.Location = new System.Drawing.Point(415, 490);
             this.BtnGuardar.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.BtnGuardar.Name = "BtnGuardar";
             this.BtnGuardar.Size = new System.Drawing.Size(172, 44);
             this.BtnGuardar.TabIndex = 25;
             this.BtnGuardar.Text = "Guardar";
             this.BtnGuardar.UseVisualStyleBackColor = true;
+            this.BtnGuardar.Click += new System.EventHandler(this.BtnGuardar_Click);
             // 
             // PBxFoto
             // 
-            this.PBxFoto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.PBxFoto.Image = global::Duisv.Properties.Resources.usuario;
             this.PBxFoto.Location = new System.Drawing.Point(13, 57);
             this.PBxFoto.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.PBxFoto.Name = "PBxFoto";
-            this.PBxFoto.Size = new System.Drawing.Size(172, 162);
+            this.PBxFoto.Size = new System.Drawing.Size(170, 170);
             this.PBxFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.PBxFoto.TabIndex = 31;
             this.PBxFoto.TabStop = false;
@@ -118,6 +122,8 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.label11);
+            this.panel1.Controls.Add(this.TBxId);
             this.panel1.Controls.Add(this.CbBRoles);
             this.panel1.Controls.Add(this.label10);
             this.panel1.Controls.Add(this.CBxVerClaves);
@@ -142,14 +148,14 @@
             this.panel1.Location = new System.Drawing.Point(194, 57);
             this.panel1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(393, 384);
+            this.panel1.Size = new System.Drawing.Size(393, 427);
             this.panel1.TabIndex = 28;
             // 
             // CbBRoles
             // 
             this.CbBRoles.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CbBRoles.FormattingEnabled = true;
-            this.CbBRoles.Location = new System.Drawing.Point(152, 251);
+            this.CbBRoles.Location = new System.Drawing.Point(152, 284);
             this.CbBRoles.Name = "CbBRoles";
             this.CbBRoles.Size = new System.Drawing.Size(225, 23);
             this.CbBRoles.TabIndex = 7;
@@ -157,7 +163,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(11, 253);
+            this.label10.Location = new System.Drawing.Point(11, 290);
             this.label10.Margin = new System.Windows.Forms.Padding(10, 0, 4, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(31, 15);
@@ -167,17 +173,18 @@
             // CBxVerClaves
             // 
             this.CBxVerClaves.AutoSize = true;
-            this.CBxVerClaves.Location = new System.Drawing.Point(153, 357);
+            this.CBxVerClaves.Location = new System.Drawing.Point(153, 390);
             this.CBxVerClaves.Name = "CBxVerClaves";
             this.CBxVerClaves.Size = new System.Drawing.Size(123, 19);
             this.CBxVerClaves.TabIndex = 10;
             this.CBxVerClaves.Text = "Ver contraseñas";
             this.CBxVerClaves.UseVisualStyleBackColor = true;
+            this.CBxVerClaves.CheckedChanged += new System.EventHandler(this.CBxVerClaves_CheckedChanged);
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(11, 321);
+            this.label9.Location = new System.Drawing.Point(11, 358);
             this.label9.Margin = new System.Windows.Forms.Padding(10, 0, 4, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(125, 15);
@@ -187,7 +194,7 @@
             // TBxRepetirClave
             // 
             this.TBxRepetirClave.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TBxRepetirClave.Location = new System.Drawing.Point(153, 319);
+            this.TBxRepetirClave.Location = new System.Drawing.Point(153, 352);
             this.TBxRepetirClave.Margin = new System.Windows.Forms.Padding(13, 12, 13, 12);
             this.TBxRepetirClave.Name = "TBxRepetirClave";
             this.TBxRepetirClave.Size = new System.Drawing.Size(225, 23);
@@ -197,7 +204,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(11, 287);
+            this.label8.Location = new System.Drawing.Point(11, 324);
             this.label8.Margin = new System.Windows.Forms.Padding(10, 0, 4, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(79, 15);
@@ -207,7 +214,7 @@
             // TBxClave
             // 
             this.TBxClave.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TBxClave.Location = new System.Drawing.Point(153, 285);
+            this.TBxClave.Location = new System.Drawing.Point(153, 318);
             this.TBxClave.Margin = new System.Windows.Forms.Padding(13, 12, 13, 12);
             this.TBxClave.Name = "TBxClave";
             this.TBxClave.Size = new System.Drawing.Size(225, 23);
@@ -217,7 +224,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(11, 219);
+            this.label7.Location = new System.Drawing.Point(11, 256);
             this.label7.Margin = new System.Windows.Forms.Padding(10, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(57, 15);
@@ -227,7 +234,7 @@
             // TBxUsuario
             // 
             this.TBxUsuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TBxUsuario.Location = new System.Drawing.Point(152, 217);
+            this.TBxUsuario.Location = new System.Drawing.Point(152, 250);
             this.TBxUsuario.Margin = new System.Windows.Forms.Padding(13, 12, 13, 12);
             this.TBxUsuario.Name = "TBxUsuario";
             this.TBxUsuario.Size = new System.Drawing.Size(225, 23);
@@ -236,7 +243,7 @@
             // DtpFechaNacimiento
             // 
             this.DtpFechaNacimiento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.DtpFechaNacimiento.Location = new System.Drawing.Point(152, 115);
+            this.DtpFechaNacimiento.Location = new System.Drawing.Point(152, 148);
             this.DtpFechaNacimiento.Name = "DtpFechaNacimiento";
             this.DtpFechaNacimiento.Size = new System.Drawing.Size(225, 23);
             this.DtpFechaNacimiento.TabIndex = 3;
@@ -244,7 +251,7 @@
             // MtbTelefono
             // 
             this.MtbTelefono.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.MtbTelefono.Location = new System.Drawing.Point(152, 183);
+            this.MtbTelefono.Location = new System.Drawing.Point(152, 216);
             this.MtbTelefono.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.MtbTelefono.Mask = "0000 - 0000";
             this.MtbTelefono.Name = "MtbTelefono";
@@ -255,7 +262,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(11, 185);
+            this.label6.Location = new System.Drawing.Point(11, 222);
             this.label6.Margin = new System.Windows.Forms.Padding(10, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(61, 15);
@@ -265,7 +272,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(11, 151);
+            this.label5.Location = new System.Drawing.Point(11, 188);
             this.label5.Margin = new System.Windows.Forms.Padding(10, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(68, 15);
@@ -275,7 +282,7 @@
             // TBxDireccion
             // 
             this.TBxDireccion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TBxDireccion.Location = new System.Drawing.Point(152, 149);
+            this.TBxDireccion.Location = new System.Drawing.Point(152, 182);
             this.TBxDireccion.Margin = new System.Windows.Forms.Padding(13, 12, 13, 12);
             this.TBxDireccion.Name = "TBxDireccion";
             this.TBxDireccion.Size = new System.Drawing.Size(225, 23);
@@ -284,7 +291,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(11, 117);
+            this.label4.Location = new System.Drawing.Point(11, 154);
             this.label4.Margin = new System.Windows.Forms.Padding(10, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(134, 15);
@@ -294,7 +301,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(11, 83);
+            this.label3.Location = new System.Drawing.Point(11, 120);
             this.label3.Margin = new System.Windows.Forms.Padding(10, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(51, 15);
@@ -304,7 +311,7 @@
             // TBxCorreo
             // 
             this.TBxCorreo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TBxCorreo.Location = new System.Drawing.Point(152, 81);
+            this.TBxCorreo.Location = new System.Drawing.Point(152, 114);
             this.TBxCorreo.Margin = new System.Windows.Forms.Padding(13, 12, 13, 12);
             this.TBxCorreo.Name = "TBxCorreo";
             this.TBxCorreo.Size = new System.Drawing.Size(225, 23);
@@ -313,7 +320,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(11, 49);
+            this.label2.Location = new System.Drawing.Point(11, 86);
             this.label2.Margin = new System.Windows.Forms.Padding(10, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(60, 15);
@@ -323,7 +330,7 @@
             // TBxApellido
             // 
             this.TBxApellido.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TBxApellido.Location = new System.Drawing.Point(152, 47);
+            this.TBxApellido.Location = new System.Drawing.Point(152, 80);
             this.TBxApellido.Margin = new System.Windows.Forms.Padding(13, 12, 13, 12);
             this.TBxApellido.Name = "TBxApellido";
             this.TBxApellido.Size = new System.Drawing.Size(225, 23);
@@ -332,7 +339,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(11, 15);
+            this.label1.Location = new System.Drawing.Point(11, 52);
             this.label1.Margin = new System.Windows.Forms.Padding(10, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(57, 15);
@@ -342,7 +349,7 @@
             // TBxNombre
             // 
             this.TBxNombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TBxNombre.Location = new System.Drawing.Point(152, 13);
+            this.TBxNombre.Location = new System.Drawing.Point(152, 46);
             this.TBxNombre.Margin = new System.Windows.Forms.Padding(13, 12, 13, 12);
             this.TBxNombre.Name = "TBxNombre";
             this.TBxNombre.Size = new System.Drawing.Size(225, 23);
@@ -351,24 +358,57 @@
             // BtnAgregarFoto
             // 
             this.BtnAgregarFoto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnAgregarFoto.Location = new System.Drawing.Point(13, 276);
+            this.BtnAgregarFoto.Location = new System.Drawing.Point(13, 233);
             this.BtnAgregarFoto.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.BtnAgregarFoto.Name = "BtnAgregarFoto";
             this.BtnAgregarFoto.Size = new System.Drawing.Size(172, 44);
             this.BtnAgregarFoto.TabIndex = 30;
             this.BtnAgregarFoto.Text = "Agregar foto";
             this.BtnAgregarFoto.UseVisualStyleBackColor = true;
+            this.BtnAgregarFoto.Click += new System.EventHandler(this.BtnAgregarFoto_Click);
             // 
             // BtnEliminarFoto
             // 
             this.BtnEliminarFoto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnEliminarFoto.Location = new System.Drawing.Point(13, 225);
+            this.BtnEliminarFoto.Location = new System.Drawing.Point(13, 440);
             this.BtnEliminarFoto.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.BtnEliminarFoto.Name = "BtnEliminarFoto";
             this.BtnEliminarFoto.Size = new System.Drawing.Size(172, 44);
             this.BtnEliminarFoto.TabIndex = 29;
             this.BtnEliminarFoto.Text = "Eliminar foto";
             this.BtnEliminarFoto.UseVisualStyleBackColor = true;
+            this.BtnEliminarFoto.Click += new System.EventHandler(this.BtnEliminarFoto_Click);
+            // 
+            // BtnTomarFoto
+            // 
+            this.BtnTomarFoto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnTomarFoto.Location = new System.Drawing.Point(13, 283);
+            this.BtnTomarFoto.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.BtnTomarFoto.Name = "BtnTomarFoto";
+            this.BtnTomarFoto.Size = new System.Drawing.Size(172, 44);
+            this.BtnTomarFoto.TabIndex = 32;
+            this.BtnTomarFoto.Text = "Tomar foto";
+            this.BtnTomarFoto.UseVisualStyleBackColor = true;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(11, 18);
+            this.label11.Margin = new System.Windows.Forms.Padding(10, 0, 4, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(22, 15);
+            this.label11.TabIndex = 32;
+            this.label11.Text = "Id:";
+            // 
+            // TBxId
+            // 
+            this.TBxId.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TBxId.Location = new System.Drawing.Point(152, 12);
+            this.TBxId.Margin = new System.Windows.Forms.Padding(13, 12, 13, 12);
+            this.TBxId.Name = "TBxId";
+            this.TBxId.ReadOnly = true;
+            this.TBxId.Size = new System.Drawing.Size(225, 23);
+            this.TBxId.TabIndex = 31;
             // 
             // FrmEditarUsuario
             // 
@@ -376,7 +416,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(601, 499);
+            this.ClientSize = new System.Drawing.Size(601, 546);
+            this.Controls.Add(this.BtnTomarFoto);
             this.Controls.Add(this.PBxFoto);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.BtnAgregarFoto);
@@ -388,6 +429,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "FrmEditarUsuario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Load += new System.EventHandler(this.FrmEditarUsuario_Load);
             ((System.ComponentModel.ISupportInitialize)(this.PBxAvatar)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -428,5 +470,9 @@
         private System.Windows.Forms.TextBox TBxNombre;
         private System.Windows.Forms.Button BtnAgregarFoto;
         private System.Windows.Forms.Button BtnEliminarFoto;
+        private System.Windows.Forms.Button BtnTomarFoto;
+        private System.Windows.Forms.OpenFileDialog OfdImportarFoto;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox TBxId;
     }
 }

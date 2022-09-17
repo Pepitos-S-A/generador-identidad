@@ -18,8 +18,7 @@ namespace Duisv.Formularios
 
         private void BtnEditarPerfil_Click(object sender, EventArgs e)
         {
-            var frmEditarUsuario = new FrmEditarUsuario();
-            frmEditarUsuario.ShowDialog();
+
         }
 
         private void CerrarFormulario()

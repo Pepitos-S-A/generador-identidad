@@ -52,7 +52,6 @@
             this.DtpFechaNacimiento = new System.Windows.Forms.DateTimePicker();
             this.TBxNombre = new System.Windows.Forms.TextBox();
             this.BtnAgregarFoto = new System.Windows.Forms.Button();
-            this.BtnEliminarFoto = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.LblUsuario = new System.Windows.Forms.Label();
             this.PBxAvatar = new System.Windows.Forms.PictureBox();
@@ -233,6 +232,7 @@
             this.CBxVerClaves.TabIndex = 10;
             this.CBxVerClaves.Text = "Ver contraseñas";
             this.CBxVerClaves.UseVisualStyleBackColor = true;
+            this.CBxVerClaves.CheckedChanged += new System.EventHandler(this.CBxVerClaves_CheckedChanged);
             // 
             // label9
             // 
@@ -322,17 +322,6 @@
             this.BtnAgregarFoto.UseVisualStyleBackColor = true;
             this.BtnAgregarFoto.Click += new System.EventHandler(this.BtnAgregarFoto_Click);
             // 
-            // BtnEliminarFoto
-            // 
-            this.BtnEliminarFoto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnEliminarFoto.Location = new System.Drawing.Point(14, 394);
-            this.BtnEliminarFoto.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.BtnEliminarFoto.Name = "BtnEliminarFoto";
-            this.BtnEliminarFoto.Size = new System.Drawing.Size(172, 44);
-            this.BtnEliminarFoto.TabIndex = 11;
-            this.BtnEliminarFoto.Text = "Eliminar foto";
-            this.BtnEliminarFoto.UseVisualStyleBackColor = true;
-            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Orange;
@@ -365,7 +354,9 @@
             // 
             // PBxFoto
             // 
+            this.PBxFoto.ErrorImage = global::Duisv.Properties.Resources.usuario;
             this.PBxFoto.Image = global::Duisv.Properties.Resources.usuario;
+            this.PBxFoto.InitialImage = global::Duisv.Properties.Resources.usuario;
             this.PBxFoto.Location = new System.Drawing.Point(14, 54);
             this.PBxFoto.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.PBxFoto.Name = "PBxFoto";
@@ -384,6 +375,7 @@
             this.BtnTomarFoto.TabIndex = 22;
             this.BtnTomarFoto.Text = "Tomar foto";
             this.BtnTomarFoto.UseVisualStyleBackColor = true;
+            this.BtnTomarFoto.Click += new System.EventHandler(this.BtnTomarFoto_Click);
             // 
             // FrmAgregarUsuario
             // 
@@ -398,7 +390,6 @@
             this.Controls.Add(this.PBxFoto);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.BtnAgregarFoto);
-            this.Controls.Add(this.BtnEliminarFoto);
             this.Font = new System.Drawing.Font("Arial Black", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -431,7 +422,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox TBxNombre;
         private System.Windows.Forms.Button BtnAgregarFoto;
-        private System.Windows.Forms.Button BtnEliminarFoto;
         private System.Windows.Forms.DateTimePicker DtpFechaNacimiento;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label LblUsuario;

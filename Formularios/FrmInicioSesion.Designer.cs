@@ -34,17 +34,18 @@
             this.TBxClave = new System.Windows.Forms.TextBox();
             this.BtnIniciarSesion = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.PBxMinimizar = new System.Windows.Forms.PictureBox();
             this.PBxCerrar = new System.Windows.Forms.PictureBox();
+            this.BtnSalir = new System.Windows.Forms.Button();
+            this.PBxMinimizar = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PBxMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBxCerrar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PBxMinimizar)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::Duisv.Properties.Resources.usuario;
+            this.pictureBox1.Image = global::Duisv.Properties.Resources.licencia;
             this.pictureBox1.Location = new System.Drawing.Point(170, 54);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.pictureBox1.Name = "pictureBox1";
@@ -85,8 +86,9 @@
             // 
             // BtnIniciarSesion
             // 
+            this.BtnIniciarSesion.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.BtnIniciarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnIniciarSesion.Location = new System.Drawing.Point(195, 355);
+            this.BtnIniciarSesion.Location = new System.Drawing.Point(126, 355);
             this.BtnIniciarSesion.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.BtnIniciarSesion.Name = "BtnIniciarSesion";
             this.BtnIniciarSesion.Size = new System.Drawing.Size(129, 38);
@@ -106,18 +108,6 @@
             this.panel1.Size = new System.Drawing.Size(519, 48);
             this.panel1.TabIndex = 8;
             // 
-            // PBxMinimizar
-            // 
-            this.PBxMinimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.PBxMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.PBxMinimizar.Image = global::Duisv.Properties.Resources.minimizar;
-            this.PBxMinimizar.Location = new System.Drawing.Point(455, 14);
-            this.PBxMinimizar.Name = "PBxMinimizar";
-            this.PBxMinimizar.Size = new System.Drawing.Size(23, 23);
-            this.PBxMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.PBxMinimizar.TabIndex = 0;
-            this.PBxMinimizar.TabStop = false;
-            // 
             // PBxCerrar
             // 
             this.PBxCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -129,13 +119,43 @@
             this.PBxCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.PBxCerrar.TabIndex = 0;
             this.PBxCerrar.TabStop = false;
+            this.PBxCerrar.Click += new System.EventHandler(this.PBxCerrar_Click_1);
+            // 
+            // BtnSalir
+            // 
+            this.BtnSalir.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.BtnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnSalir.Location = new System.Drawing.Point(263, 355);
+            this.BtnSalir.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.BtnSalir.Name = "BtnSalir";
+            this.BtnSalir.Size = new System.Drawing.Size(129, 38);
+            this.BtnSalir.TabIndex = 9;
+            this.BtnSalir.Text = "Salir";
+            this.BtnSalir.UseVisualStyleBackColor = true;
+            this.BtnSalir.Click += new System.EventHandler(this.BtnSalir_Click);
+            // 
+            // PBxMinimizar
+            // 
+            this.PBxMinimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.PBxMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PBxMinimizar.Image = global::Duisv.Properties.Resources.minimizar;
+            this.PBxMinimizar.Location = new System.Drawing.Point(455, 14);
+            this.PBxMinimizar.Name = "PBxMinimizar";
+            this.PBxMinimizar.Size = new System.Drawing.Size(23, 23);
+            this.PBxMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.PBxMinimizar.TabIndex = 1;
+            this.PBxMinimizar.TabStop = false;
+            this.PBxMinimizar.Click += new System.EventHandler(this.PBxMinimizar_Click_1);
             // 
             // FrmInicioSesion
             // 
+            this.AcceptButton = this.BtnIniciarSesion;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.CancelButton = this.BtnSalir;
             this.ClientSize = new System.Drawing.Size(519, 405);
+            this.Controls.Add(this.BtnSalir);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.BtnIniciarSesion);
             this.Controls.Add(this.TBxClave);
@@ -150,8 +170,8 @@
             this.Text = "FrmInicioSesion";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.PBxMinimizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBxCerrar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PBxMinimizar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -164,7 +184,8 @@
         private System.Windows.Forms.TextBox TBxClave;
         private System.Windows.Forms.Button BtnIniciarSesion;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.PictureBox PBxMinimizar;
         private System.Windows.Forms.PictureBox PBxCerrar;
+        private System.Windows.Forms.Button BtnSalir;
+        private System.Windows.Forms.PictureBox PBxMinimizar;
     }
 }
