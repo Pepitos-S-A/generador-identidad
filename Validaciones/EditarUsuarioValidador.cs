@@ -5,7 +5,7 @@ namespace Duisv.Validaciones
 {
     internal class EditarUsuarioValidador : AbstractValidator<Usuario>
     {
-        public EditarUsuarioValidador(bool cambiarClave)
+        public EditarUsuarioValidador()
         {
             RuleFor(u => u.Nombre).NotEmpty().WithMessage("El nombre es requerido.");
             RuleFor(u => u.Apellido).NotEmpty().WithMessage("El apellido es requerido.");
@@ -15,11 +15,6 @@ namespace Duisv.Validaciones
             RuleFor(u => u.Telefono).NotEmpty().WithMessage("El numero de telefono es requerido.");
             RuleFor(u => u.NombreUsuario).NotEmpty().WithMessage("El nombre de usuario es requerido.");
             RuleFor(u => u.RolId).NotEqual(0).WithMessage("Seleccione un rol.");
-
-            if (cambiarClave)
-            {
-                Include(new ClaveValidador());
-            }
         }
     }
 }

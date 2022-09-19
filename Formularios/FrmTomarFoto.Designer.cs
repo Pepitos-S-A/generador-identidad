@@ -167,6 +167,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "FrmTomarFoto";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmTomarFoto_FormClosing);
             this.Load += new System.EventHandler(this.FrmTomarFoto_Load);
             this.panel2.ResumeLayout(false);

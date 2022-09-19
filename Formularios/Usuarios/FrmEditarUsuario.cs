@@ -80,19 +80,11 @@ namespace Duisv.Formularios.Usuarios
             }
         }
 
-        private void CBxVerClaves_CheckedChanged(object sender, EventArgs e)
-        {
-            TBxClave.UseSystemPasswordChar = !CBxVerClaves.Checked;
-            TBxRepetirClave.UseSystemPasswordChar = !CBxVerClaves.Checked;
-        }
-
         private bool ValidarDatosUsuario(Usuario usuario)
         {
-            var cambiarClave = !CBxNoCambiarClave.Checked;
-            var validador = new EditarUsuarioValidador(cambiarClave);
+            var validador = new EditarUsuarioValidador();
             var resultado = validador.Validate(usuario);
             var errores = resultado.Errors;
-
 
             if (!resultado.IsValid)
             {
@@ -122,8 +114,6 @@ namespace Duisv.Formularios.Usuarios
                     FechaNacimiento = DtpFechaNacimiento.Value,
                     Telefono = MtbTelefono.Text,
                     NombreUsuario = TBxUsuario.Text,
-                    Clave = TBxClave.Text,
-                    RepetirClave = TBxClave.Text,
                     RolId = Convert.ToInt32(CbBRoles.SelectedValue)
                 };
 
@@ -131,21 +121,13 @@ namespace Duisv.Formularios.Usuarios
                 {
                     if (_usuarioServicio.EditarUsuario(usuario) > 0)
                     {
-                        if (CBxNoCambiarClave.CheckState == CheckState.Unchecked)
+                        if (_cambiarFoto)
                         {
-                            string claveCodificada = Codificador.ObtenerClaveCodificada(string.Concat(usuario.NombreUsuario, usuario.Clave));
-
-                            if (_usuarioServicio.CambiarClaveUsuario(claveCodificada, usuario.UsuarioId) > 0)
-                            {
-                                if (_cambiarFoto)
-                                {
-                                    GuardarFotoUsuario(usuario.NombreUsuario);
-                                }
-                                else if (_eliminarFoto)
-                                {
-                                    EliminarFotoUsuario(usuario.NombreUsuario);
-                                }
-                            }
+                            GuardarFotoUsuario(usuario.NombreUsuario);
+                        }
+                        else if (_eliminarFoto)
+                        {
+                            EliminarFotoUsuario(usuario.NombreUsuario);
                         }
 
                         DialogResult = DialogResult.OK;
@@ -225,9 +207,10 @@ namespace Duisv.Formularios.Usuarios
             }
         }
 
-        private void CBxCambiarClave_CheckedChanged(object sender, EventArgs e)
+        private void BtnCambiarClave_Click(object sender, EventArgs e)
         {
-            PnlClave.Enabled = !CBxNoCambiarClave.Checked;
+            var frmCambiarClave = new FrmCambiarClave(_usuarioId);
+            frmCambiarClave.ShowDialog();
         }
     }
 }
