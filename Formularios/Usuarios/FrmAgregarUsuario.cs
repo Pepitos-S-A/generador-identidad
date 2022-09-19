@@ -4,8 +4,10 @@ using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
 using System.Windows.Forms;
+using Duisv.Herramientas;
 using Duisv.Modelos;
 using Duisv.Servicios;
+using Duisv.Validaciones;
 
 namespace Duisv.Formularios.Usuarios
 {
@@ -13,6 +15,7 @@ namespace Duisv.Formularios.Usuarios
     {
         private readonly UsuarioServicio _usuarioServicio;
         private readonly RolServicio _rolServicio;
+        private bool _guardarFoto;
 
         public FrmAgregarUsuario()
         {
@@ -20,6 +23,27 @@ namespace Duisv.Formularios.Usuarios
 
             _usuarioServicio = new UsuarioServicio();
             _rolServicio = new RolServicio();
+            _guardarFoto = false;
+        }
+
+        private bool ValidarDatosUsuario(Usuario usuario)
+        {
+            var validador = new AgregarUsuarioValidador();
+            var resultado = validador.Validate(usuario);
+            var errores = resultado.Errors;
+
+            if (!resultado.IsValid)
+            {
+                foreach (var error in errores)
+                {
+                    MessageBox.Show(error.ErrorMessage, "Agregar usuario: Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    break;
+                }
+
+                return false;
+            }
+
+            return true;
         }
 
         private void BtnAgregar_Click(object sender, EventArgs e)
@@ -36,13 +60,24 @@ namespace Duisv.Formularios.Usuarios
                     Telefono = MtbTelefono.Text,
                     NombreUsuario = TBxUsuario.Text,
                     Clave = TBxClave.Text,
-                    RolId = Convert.ToInt32(CbBRoles.SelectedValue)
+                    RolId = Convert.ToInt32(CbBRoles.SelectedValue),
+                    RepetirClave = TBxRepetirClave.Text 
                 };
 
-                if (_usuarioServicio.AgregarUsuario(usuario) > 0)
+                if (ValidarDatosUsuario(usuario))
                 {
-                    GuardarFotoUsuario(usuario.NombreUsuario);
-                    DialogResult = DialogResult.OK;
+                    usuario.Clave = Codificador.ObtenerClaveCodificada(string.Concat(usuario.NombreUsuario, usuario.Clave));
+                    usuario.RepetirClave = string.Empty;
+
+                    if (_usuarioServicio.AgregarUsuario(usuario) > 0)
+                    {
+                        if (_guardarFoto)
+                        {
+                            GuardarFotoUsuario(usuario.NombreUsuario);                            
+                        }
+
+                        DialogResult = DialogResult.OK;
+                    }
                 }
             }
             catch (Exception ex)
@@ -88,14 +123,12 @@ namespace Duisv.Formularios.Usuarios
 
         private void ActualizarListaRoles(List<Rol> roles)
         {
-            if (roles != null)
-            {
-                roles.Insert(0, new Rol { Nombre = "-- Seleccionar --", RolId = 0 });
+            roles.Insert(0, new Rol { Nombre = "-- Seleccionar --", RolId = 0 });
 
-                CbBRoles.DataSource = roles;
-                CbBRoles.DisplayMember = "Nombre";
-                CbBRoles.ValueMember = "RolId";
-            }
+            CbBRoles.DataSource = roles;
+            CbBRoles.DisplayMember = "Nombre";
+            CbBRoles.ValueMember = "RolId";
+            CbBRoles.SelectedIndex = 0;
         }
 
         private void BtnAgregarFoto_Click(object sender, EventArgs e)
@@ -109,6 +142,7 @@ namespace Duisv.Formularios.Usuarios
                     PBxFoto.Image.Dispose();
                     PBxFoto.Image = Image.FromFile(OfdImportarFoto.FileName);
                     PBxFoto.ImageLocation = OfdImportarFoto.FileName;
+                    _guardarFoto = true;
                 }
             }
         }

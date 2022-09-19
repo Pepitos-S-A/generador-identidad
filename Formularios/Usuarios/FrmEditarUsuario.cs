@@ -4,8 +4,10 @@ using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
 using System.Windows.Forms;
+using Duisv.Herramientas;
 using Duisv.Modelos;
 using Duisv.Servicios;
+using Duisv.Validaciones;
 
 namespace Duisv.Formularios.Usuarios
 {
@@ -53,7 +55,7 @@ namespace Duisv.Formularios.Usuarios
 
         private void MostrarDatosUsuario(Usuario usuario)
         {
-            LblUsuario.Text = $"Datos del usuario {usuario.NombreUsuario.ToUpper()}";
+            LblUsuario.Text = $"Editar datos del usuario {usuario.NombreUsuario.ToUpper()}";
             TBxId.Text = usuario.UsuarioId.ToString();
             TBxNombre.Text = usuario.Nombre;
             TBxApellido.Text = usuario.Apellido;
@@ -84,6 +86,28 @@ namespace Duisv.Formularios.Usuarios
             TBxRepetirClave.UseSystemPasswordChar = !CBxVerClaves.Checked;
         }
 
+        private bool ValidarDatosUsuario(Usuario usuario)
+        {
+            var cambiarClave = !CBxNoCambiarClave.Checked;
+            var validador = new EditarUsuarioValidador(cambiarClave);
+            var resultado = validador.Validate(usuario);
+            var errores = resultado.Errors;
+
+
+            if (!resultado.IsValid)
+            {
+                foreach (var error in errores)
+                {
+                    MessageBox.Show(error.ErrorMessage, "Editar usuario: Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    break;
+                }
+
+                return false;
+            }
+
+            return true;
+        }
+
         private void BtnGuardar_Click(object sender, EventArgs e)
         {
             try
@@ -99,26 +123,38 @@ namespace Duisv.Formularios.Usuarios
                     Telefono = MtbTelefono.Text,
                     NombreUsuario = TBxUsuario.Text,
                     Clave = TBxClave.Text,
+                    RepetirClave = TBxClave.Text,
                     RolId = Convert.ToInt32(CbBRoles.SelectedValue)
                 };
 
-                if (_usuarioServicio.EditarUsuario(usuario) > 0)
+                if (ValidarDatosUsuario(usuario))
                 {
-                    if (_cambiarFoto)
+                    if (_usuarioServicio.EditarUsuario(usuario) > 0)
                     {
-                        GuardarFotoUsuario(usuario.NombreUsuario);
-                    }
-                    else if (_eliminarFoto)
-                    {
-                        EliminarFotoUsuario(usuario.NombreUsuario);
-                    }
+                        if (CBxNoCambiarClave.CheckState == CheckState.Unchecked)
+                        {
+                            string claveCodificada = Codificador.ObtenerClaveCodificada(string.Concat(usuario.NombreUsuario, usuario.Clave));
 
-                    DialogResult = DialogResult.OK;
+                            if (_usuarioServicio.CambiarClaveUsuario(claveCodificada, usuario.UsuarioId) > 0)
+                            {
+                                if (_cambiarFoto)
+                                {
+                                    GuardarFotoUsuario(usuario.NombreUsuario);
+                                }
+                                else if (_eliminarFoto)
+                                {
+                                    EliminarFotoUsuario(usuario.NombreUsuario);
+                                }
+                            }
+                        }
+
+                        DialogResult = DialogResult.OK;
+                    }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Ocurrio el siguiente error al guadar el usuario: \n{ex.Message}", "Agregar usuario: Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Ocurrio el siguiente error al editar el usuario: \n{ex.Message}", "Agregar usuario: Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -187,6 +223,11 @@ namespace Duisv.Formularios.Usuarios
             {
                 MessageBox.Show($"Ocurrio el siguiente error al agregar la foto del usuario: \n{ex.Message}", "Agregar foto: Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void CBxCambiarClave_CheckedChanged(object sender, EventArgs e)
+        {
+            PnlClave.Enabled = !CBxNoCambiarClave.Checked;
         }
     }
 }

@@ -34,13 +34,17 @@
             this.BtnGuardar = new System.Windows.Forms.Button();
             this.PBxFoto = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.CBxNoCambiarClave = new System.Windows.Forms.CheckBox();
+            this.PnlClave = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
+            this.TBxClave = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.TBxRepetirClave = new System.Windows.Forms.TextBox();
+            this.CBxVerClaves = new System.Windows.Forms.CheckBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.TBxId = new System.Windows.Forms.TextBox();
             this.CbBRoles = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.CBxVerClaves = new System.Windows.Forms.CheckBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.TBxRepetirClave = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.TBxClave = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.TBxUsuario = new System.Windows.Forms.TextBox();
             this.DtpFechaNacimiento = new System.Windows.Forms.DateTimePicker();
@@ -59,12 +63,11 @@
             this.BtnEliminarFoto = new System.Windows.Forms.Button();
             this.BtnTomarFoto = new System.Windows.Forms.Button();
             this.OfdImportarFoto = new System.Windows.Forms.OpenFileDialog();
-            this.label11 = new System.Windows.Forms.Label();
-            this.TBxId = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.PBxAvatar)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PBxFoto)).BeginInit();
             this.panel1.SuspendLayout();
+            this.PnlClave.SuspendLayout();
             this.SuspendLayout();
             // 
             // LblUsuario
@@ -99,7 +102,7 @@
             // BtnGuardar
             // 
             this.BtnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnGuardar.Location = new System.Drawing.Point(415, 490);
+            this.BtnGuardar.Location = new System.Drawing.Point(415, 533);
             this.BtnGuardar.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.BtnGuardar.Name = "BtnGuardar";
             this.BtnGuardar.Size = new System.Drawing.Size(172, 44);
@@ -122,15 +125,12 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.CBxNoCambiarClave);
+            this.panel1.Controls.Add(this.PnlClave);
             this.panel1.Controls.Add(this.label11);
             this.panel1.Controls.Add(this.TBxId);
             this.panel1.Controls.Add(this.CbBRoles);
             this.panel1.Controls.Add(this.label10);
-            this.panel1.Controls.Add(this.CBxVerClaves);
-            this.panel1.Controls.Add(this.label9);
-            this.panel1.Controls.Add(this.TBxRepetirClave);
-            this.panel1.Controls.Add(this.label8);
-            this.panel1.Controls.Add(this.TBxClave);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.TBxUsuario);
             this.panel1.Controls.Add(this.DtpFechaNacimiento);
@@ -148,8 +148,106 @@
             this.panel1.Location = new System.Drawing.Point(194, 57);
             this.panel1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(393, 427);
+            this.panel1.Size = new System.Drawing.Size(393, 470);
             this.panel1.TabIndex = 28;
+            // 
+            // CBxNoCambiarClave
+            // 
+            this.CBxNoCambiarClave.AutoSize = true;
+            this.CBxNoCambiarClave.Checked = true;
+            this.CBxNoCambiarClave.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.CBxNoCambiarClave.Location = new System.Drawing.Point(14, 320);
+            this.CBxNoCambiarClave.Name = "CBxNoCambiarClave";
+            this.CBxNoCambiarClave.Size = new System.Drawing.Size(164, 19);
+            this.CBxNoCambiarClave.TabIndex = 28;
+            this.CBxNoCambiarClave.Text = "No cambiar contraseña";
+            this.CBxNoCambiarClave.UseVisualStyleBackColor = true;
+            this.CBxNoCambiarClave.CheckedChanged += new System.EventHandler(this.CBxCambiarClave_CheckedChanged);
+            // 
+            // PnlClave
+            // 
+            this.PnlClave.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.PnlClave.Controls.Add(this.label9);
+            this.PnlClave.Controls.Add(this.TBxClave);
+            this.PnlClave.Controls.Add(this.label8);
+            this.PnlClave.Controls.Add(this.TBxRepetirClave);
+            this.PnlClave.Controls.Add(this.CBxVerClaves);
+            this.PnlClave.Enabled = false;
+            this.PnlClave.Location = new System.Drawing.Point(14, 345);
+            this.PnlClave.Name = "PnlClave";
+            this.PnlClave.Size = new System.Drawing.Size(363, 109);
+            this.PnlClave.TabIndex = 33;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(10, 48);
+            this.label9.Margin = new System.Windows.Forms.Padding(10, 0, 4, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(125, 15);
+            this.label9.TabIndex = 27;
+            this.label9.Text = "Repetir contraseña:";
+            // 
+            // TBxClave
+            // 
+            this.TBxClave.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TBxClave.Location = new System.Drawing.Point(138, 12);
+            this.TBxClave.Margin = new System.Windows.Forms.Padding(13, 12, 13, 12);
+            this.TBxClave.Name = "TBxClave";
+            this.TBxClave.Size = new System.Drawing.Size(212, 23);
+            this.TBxClave.TabIndex = 8;
+            this.TBxClave.UseSystemPasswordChar = true;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(10, 14);
+            this.label8.Margin = new System.Windows.Forms.Padding(10, 0, 4, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(79, 15);
+            this.label8.TabIndex = 25;
+            this.label8.Text = "Contraseña:";
+            // 
+            // TBxRepetirClave
+            // 
+            this.TBxRepetirClave.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TBxRepetirClave.Location = new System.Drawing.Point(138, 46);
+            this.TBxRepetirClave.Margin = new System.Windows.Forms.Padding(13, 12, 13, 12);
+            this.TBxRepetirClave.Name = "TBxRepetirClave";
+            this.TBxRepetirClave.Size = new System.Drawing.Size(212, 23);
+            this.TBxRepetirClave.TabIndex = 9;
+            this.TBxRepetirClave.UseSystemPasswordChar = true;
+            // 
+            // CBxVerClaves
+            // 
+            this.CBxVerClaves.AutoSize = true;
+            this.CBxVerClaves.Location = new System.Drawing.Point(138, 83);
+            this.CBxVerClaves.Name = "CBxVerClaves";
+            this.CBxVerClaves.Size = new System.Drawing.Size(123, 19);
+            this.CBxVerClaves.TabIndex = 10;
+            this.CBxVerClaves.Text = "Ver contraseñas";
+            this.CBxVerClaves.UseVisualStyleBackColor = true;
+            this.CBxVerClaves.CheckedChanged += new System.EventHandler(this.CBxVerClaves_CheckedChanged);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(11, 18);
+            this.label11.Margin = new System.Windows.Forms.Padding(10, 0, 4, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(22, 15);
+            this.label11.TabIndex = 32;
+            this.label11.Text = "Id:";
+            // 
+            // TBxId
+            // 
+            this.TBxId.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TBxId.Location = new System.Drawing.Point(152, 12);
+            this.TBxId.Margin = new System.Windows.Forms.Padding(13, 12, 13, 12);
+            this.TBxId.Name = "TBxId";
+            this.TBxId.ReadOnly = true;
+            this.TBxId.Size = new System.Drawing.Size(225, 23);
+            this.TBxId.TabIndex = 31;
             // 
             // CbBRoles
             // 
@@ -169,57 +267,6 @@
             this.label10.Size = new System.Drawing.Size(31, 15);
             this.label10.TabIndex = 30;
             this.label10.Text = "Rol:";
-            // 
-            // CBxVerClaves
-            // 
-            this.CBxVerClaves.AutoSize = true;
-            this.CBxVerClaves.Location = new System.Drawing.Point(153, 390);
-            this.CBxVerClaves.Name = "CBxVerClaves";
-            this.CBxVerClaves.Size = new System.Drawing.Size(123, 19);
-            this.CBxVerClaves.TabIndex = 10;
-            this.CBxVerClaves.Text = "Ver contraseñas";
-            this.CBxVerClaves.UseVisualStyleBackColor = true;
-            this.CBxVerClaves.CheckedChanged += new System.EventHandler(this.CBxVerClaves_CheckedChanged);
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(11, 358);
-            this.label9.Margin = new System.Windows.Forms.Padding(10, 0, 4, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(125, 15);
-            this.label9.TabIndex = 27;
-            this.label9.Text = "Repetir contraseña:";
-            // 
-            // TBxRepetirClave
-            // 
-            this.TBxRepetirClave.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TBxRepetirClave.Location = new System.Drawing.Point(153, 352);
-            this.TBxRepetirClave.Margin = new System.Windows.Forms.Padding(13, 12, 13, 12);
-            this.TBxRepetirClave.Name = "TBxRepetirClave";
-            this.TBxRepetirClave.Size = new System.Drawing.Size(225, 23);
-            this.TBxRepetirClave.TabIndex = 9;
-            this.TBxRepetirClave.UseSystemPasswordChar = true;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(11, 324);
-            this.label8.Margin = new System.Windows.Forms.Padding(10, 0, 4, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(79, 15);
-            this.label8.TabIndex = 25;
-            this.label8.Text = "Contraseña:";
-            // 
-            // TBxClave
-            // 
-            this.TBxClave.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TBxClave.Location = new System.Drawing.Point(153, 318);
-            this.TBxClave.Margin = new System.Windows.Forms.Padding(13, 12, 13, 12);
-            this.TBxClave.Name = "TBxClave";
-            this.TBxClave.Size = new System.Drawing.Size(225, 23);
-            this.TBxClave.TabIndex = 8;
-            this.TBxClave.UseSystemPasswordChar = true;
             // 
             // label7
             // 
@@ -390,33 +437,13 @@
             this.BtnTomarFoto.Text = "Tomar foto";
             this.BtnTomarFoto.UseVisualStyleBackColor = true;
             // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(11, 18);
-            this.label11.Margin = new System.Windows.Forms.Padding(10, 0, 4, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(22, 15);
-            this.label11.TabIndex = 32;
-            this.label11.Text = "Id:";
-            // 
-            // TBxId
-            // 
-            this.TBxId.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TBxId.Location = new System.Drawing.Point(152, 12);
-            this.TBxId.Margin = new System.Windows.Forms.Padding(13, 12, 13, 12);
-            this.TBxId.Name = "TBxId";
-            this.TBxId.ReadOnly = true;
-            this.TBxId.Size = new System.Drawing.Size(225, 23);
-            this.TBxId.TabIndex = 31;
-            // 
             // FrmEditarUsuario
             // 
             this.AcceptButton = this.BtnGuardar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(601, 546);
+            this.ClientSize = new System.Drawing.Size(601, 589);
             this.Controls.Add(this.BtnTomarFoto);
             this.Controls.Add(this.PBxFoto);
             this.Controls.Add(this.panel1);
@@ -436,6 +463,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.PBxFoto)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.PnlClave.ResumeLayout(false);
+            this.PnlClave.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -474,5 +503,7 @@
         private System.Windows.Forms.OpenFileDialog OfdImportarFoto;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox TBxId;
+        private System.Windows.Forms.CheckBox CBxNoCambiarClave;
+        private System.Windows.Forms.Panel PnlClave;
     }
 }

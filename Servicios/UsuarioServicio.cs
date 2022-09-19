@@ -40,7 +40,7 @@ namespace Duisv.Servicios
             return 0;
         }
 
-        public int EliminarUsuario(int id)
+        public int EliminarUsuario(int usuarioId)
         {
             using (var conexion = new SqlConnection(cadenaConexion))
             {
@@ -51,7 +51,7 @@ namespace Duisv.Servicios
                     using (var comando = new SqlCommand("EliminarUsuario", conexion))
                     {
                         comando.CommandType = CommandType.StoredProcedure;
-                        comando.Parameters.AddWithValue("@UsuarioId", id);
+                        comando.Parameters.AddWithValue("@UsuarioId", usuarioId);
 
                         return comando.ExecuteNonQuery();
                     }
@@ -80,9 +80,8 @@ namespace Duisv.Servicios
                         comando.Parameters.AddWithValue("@FechaNacimiento", usuario.FechaNacimiento);
                         comando.Parameters.AddWithValue("@Direccion", usuario.Direccion);
                         comando.Parameters.AddWithValue("@Telefono", usuario.Telefono);
-                        comando.Parameters.AddWithValue("@RolId", usuario.RolId);
                         comando.Parameters.AddWithValue("@Usuario", usuario.NombreUsuario);
-                        comando.Parameters.AddWithValue("@Clave", usuario.Clave);
+                        comando.Parameters.AddWithValue("@RolId", usuario.RolId);
 
                         return comando.ExecuteNonQuery();
                     }
@@ -135,7 +134,7 @@ namespace Duisv.Servicios
             return usuarios;
         }
 
-        public Usuario ObtenerUsuarioPorId(int id)
+        public Usuario ObtenerUsuarioPorId(int usuarioId)
         {
             using (var conexion = new SqlConnection(cadenaConexion))
             {
@@ -145,7 +144,7 @@ namespace Duisv.Servicios
 
                     using (var comando = new SqlCommand("ObtenerUsuarioPorId", conexion))
                     {
-                        comando.Parameters.AddWithValue("@UsuarioId", id);
+                        comando.Parameters.AddWithValue("@UsuarioId", usuarioId);
                         comando.CommandType = CommandType.StoredProcedure;
 
                         using (var lector = comando.ExecuteReader())
@@ -175,6 +174,28 @@ namespace Duisv.Servicios
             }
 
             return null;
+        }
+
+        public int CambiarClaveUsuario(string nuevaClave, int? usuarioId)
+        {
+            using (var conexion = new SqlConnection(cadenaConexion))
+            {
+                if (conexion.State != ConnectionState.Open)
+                {
+                    conexion.Open();
+
+                    using (var comando = new SqlCommand("CambiarClaveUsuario", conexion))
+                    {
+                        comando.CommandType = CommandType.StoredProcedure;
+                        comando.Parameters.AddWithValue("@UsuarioId", usuarioId);
+                        comando.Parameters.AddWithValue("@Clave", nuevaClave);
+
+                        return comando.ExecuteNonQuery();
+                    }
+                }
+            }
+
+            return 0;
         }
     }
 }
