@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
 using System.Windows.Forms;
+using AForge.Video.DirectShow;
 using Duisv.Herramientas;
 using Duisv.Modelos;
 using Duisv.Servicios;
@@ -15,6 +16,7 @@ namespace Duisv.Formularios.Usuarios
     {
         private readonly UsuarioServicio _usuarioServicio;
         private readonly RolServicio _rolServicio;
+
         private bool _guardarFoto;
 
         public FrmAgregarUsuario()
@@ -88,20 +90,23 @@ namespace Duisv.Formularios.Usuarios
 
         private void GuardarFotoUsuario(string nombreUsuario)
         {
-            string rutaCarpeta = $@"{Environment.GetFolderPath(Environment.SpecialFolder.MyPictures)}\DUISV\Usuarios\Fotos";
-            string rutaFotoSeleccionada = PBxFoto.ImageLocation;
-            string rutaNuevaFoto = string.Concat(rutaCarpeta, @"\", nombreUsuario, ".png");
+            string rutaCarpeta = $@"{Environment.GetFolderPath(Environment.SpecialFolder.MyPictures)}\DUISV\Usuarios\Fotos\";
+            string nombreFoto = $"{nombreUsuario}.png";
+            string rutaNuevaFoto = string.Concat(rutaCarpeta, nombreFoto);
 
             if (!Directory.Exists(rutaCarpeta))
             {
                 Directory.CreateDirectory(rutaCarpeta);
             }
 
-            using (var bitmap = new Bitmap(Image.FromFile(rutaFotoSeleccionada), 170, 170))
+            if (PBxFoto.Image != null)
             {
-                using (var stream = new FileStream(rutaNuevaFoto, FileMode.Create, FileAccess.Write))
+                using (var bitmap = new Bitmap(PBxFoto.Image, 170, 170))
                 {
-                    bitmap.Save(stream, ImageFormat.Png);
+                    using (var stream = new FileStream(rutaNuevaFoto, FileMode.Create, FileAccess.Write))
+                    {
+                        bitmap.Save(stream, ImageFormat.Png);
+                    }
                 }
             }
         }
@@ -149,7 +154,17 @@ namespace Duisv.Formularios.Usuarios
 
         private void BtnTomarFoto_Click(object sender, EventArgs e)
         {
+            TomarFotoUsuario(ref PBxFoto);
+        }
 
+        private void TomarFotoUsuario(ref PictureBox pictureBox)
+        {
+            var frmTomarFoto = new FrmTomarFoto(ref pictureBox);
+
+            if (frmTomarFoto.ShowDialog() == DialogResult.OK)
+            {
+                _guardarFoto = true;
+            }
         }
 
         private void CBxVerClaves_CheckedChanged(object sender, EventArgs e)
