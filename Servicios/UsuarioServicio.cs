@@ -111,7 +111,7 @@ namespace Duisv.Servicios
                             {
                                 var usuario = new Usuario
                                 {
-                                    UsuarioId = lector["UsuarioId"] as int?,
+                                    UsuarioId = Convert.ToInt32(lector["UsuarioId"]),
                                     Nombre = lector["Nombre"].ToString(),
                                     Apellido = lector["Apellido"].ToString(),
                                     Direccion = lector["Direccion"].ToString(),
@@ -153,7 +153,7 @@ namespace Duisv.Servicios
                             {
                                 var usuario = new Usuario
                                 {
-                                    UsuarioId = lector["UsuarioId"] as int?,
+                                    UsuarioId = Convert.ToInt32(lector["UsuarioId"]),
                                     Nombre = lector["Nombre"].ToString(),
                                     Apellido = lector["Apellido"].ToString(),
                                     Direccion = lector["Direccion"].ToString(),
@@ -196,6 +196,94 @@ namespace Duisv.Servicios
             }
 
             return 0;
+        }
+
+        public int ValidarNombreUsuario(string nombreUsuario)
+        {
+            using (var conexion = new SqlConnection(cadenaConexion))
+            {
+                if (conexion.State != ConnectionState.Open)
+                {
+                    conexion.Open();
+
+                    using (var comando = new SqlCommand("ValidarNombreUsuario", conexion))
+                    {
+                        comando.CommandType = CommandType.StoredProcedure;
+                        comando.Parameters.AddWithValue("@Usuario", nombreUsuario);
+                        comando.Parameters.Add("@Valido", SqlDbType.Int).Direction = ParameterDirection.Output;
+                        comando.ExecuteNonQuery();
+
+                        return Convert.ToInt32(comando.Parameters["@Valido"].Value);
+                    }
+                }
+            }
+
+            return 0;
+        }
+
+        public int ValidarClaveUsuario(string clave)
+        {
+            using (var conexion = new SqlConnection(cadenaConexion))
+            {
+                if (conexion.State != ConnectionState.Open)
+                {
+                    conexion.Open();
+
+                    using (var comando = new SqlCommand("ValidarClaveUsuario", conexion))
+                    {
+                        comando.CommandType = CommandType.StoredProcedure;
+                        comando.Parameters.AddWithValue("@Clave", clave);
+                        comando.Parameters.Add("@Valido", SqlDbType.Int).Direction = ParameterDirection.Output;
+                        comando.ExecuteNonQuery();
+
+                        return Convert.ToInt32(comando.Parameters["@Valido"].Value);
+                    }
+                }
+            }
+
+            return 0;
+        }
+
+        public Usuario ObtenerUsuarioPorNombre(string nombreUsuario)
+        {
+            using (var conexion = new SqlConnection(cadenaConexion))
+            {
+                if (conexion.State != ConnectionState.Open)
+                {
+                    conexion.Open();
+
+                    using (var comando = new SqlCommand("ObtenerUsuarioPorNombre", conexion))
+                    {
+                        comando.Parameters.AddWithValue("@Usuario", nombreUsuario);
+                        comando.CommandType = CommandType.StoredProcedure;
+
+                        using (var lector = comando.ExecuteReader())
+                        {
+                            if (lector.Read())
+                            {
+                                var usuario = new Usuario
+                                {
+                                    UsuarioId = Convert.ToInt32(lector["UsuarioId"]),
+                                    Nombre = lector["Nombre"].ToString(),
+                                    Apellido = lector["Apellido"].ToString(),
+                                    Direccion = lector["Direccion"].ToString(),
+                                    CorreoElectronico = lector["CorreoElectronico"].ToString(),
+                                    FechaNacimiento = lector["FechaNacimiento"] as DateTime?,
+                                    Telefono = lector["Telefono"].ToString(),
+                                    NombreUsuario = lector["Usuario"].ToString(),
+                                    Clave = lector["Clave"].ToString(),
+                                    Rol = lector["Rol"].ToString(),
+                                    RolId = lector["RolId"] as int?,
+                                };
+
+                                return usuario;
+                            }
+                        }
+                    }
+                }
+            }
+
+            return null;
         }
     }
 }

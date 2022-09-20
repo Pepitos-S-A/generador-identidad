@@ -1,43 +1,66 @@
 ﻿using System;
 using System.Windows.Forms;
+using Duisv.Herramientas;
+using Duisv.Modelos;
+using Duisv.Servicios;
 
 namespace Duisv.Formularios
 {
     public partial class FrmInicioSesion : Form
     {
+        private readonly UsuarioServicio _usuarioServicio;
+        private Usuario _usuario;
+
         public FrmInicioSesion()
         {
             InitializeComponent();
+
+            _usuarioServicio = new UsuarioServicio();
         }
 
-        private void BtnIniciarSesion_Click(object sender, EventArgs e)
+        private void IniciarSesion(string nombreUsuario, string clave)
         {
-            DialogResult = DialogResult.OK;
+            if (_usuarioServicio.ValidarNombreUsuario(nombreUsuario) > 0)
+            {
+                var claveCodificada = Codificador.ObtenerClaveCodificada(string.Concat(nombreUsuario, clave));
+
+                if (_usuarioServicio.ValidarClaveUsuario(claveCodificada) > 0)
+                {
+                    var usuario = _usuarioServicio.ObtenerUsuarioPorNombre(nombreUsuario);
+
+                    if (usuario != null)
+                    {
+                        _usuario = usuario;
+                        DialogResult = DialogResult.OK;
+                        Close();
+                    }
+                }
+            }
         }
 
-        private void PBxCerrar_Click(object sender, EventArgs e)
+        public Usuario ObtenerUsuarioLogeado()
         {
-            Close();
-        }
-
-        private void PBxMinimizar_Click(object sender, EventArgs e)
-        {
-            WindowState = FormWindowState.Minimized;
+            return _usuario;
         }
 
         private void BtnSalir_Click(object sender, EventArgs e)
         {
+            DialogResult = DialogResult.Cancel;
             Close();
         }
 
-        private void PBxCerrar_Click_1(object sender, EventArgs e)
+        private void BtnIniciarSesion_Click(object sender, EventArgs e)
         {
-            Close();
-        }
+            var usuario = TBxUsuario.Text;
+            var clave = TBxClave.Text;
 
-        private void PBxMinimizar_Click_1(object sender, EventArgs e)
-        {
-            WindowState = FormWindowState.Minimized;
+            if (!string.IsNullOrEmpty(usuario))
+            {
+                if (!string.IsNullOrEmpty(clave))
+                {
+                    IniciarSesion(usuario, clave);
+                }
+            }
         }
     }
 }

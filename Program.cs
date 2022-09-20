@@ -14,12 +14,27 @@ namespace Duisv
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            
+            var frmIniciarSesion = new FrmInicioSesion();
 
-            var frmInicioSesion = new FrmInicioSesion();
+            Application.Run(frmIniciarSesion);
 
-            if (frmInicioSesion.ShowDialog() == DialogResult.OK)
+            if (frmIniciarSesion.DialogResult == DialogResult.OK)
             {
-                Application.Run(new FrmPrincipal());
+                Application.Exit();
+
+                var frmPrincipal = new FrmPrincipal(frmIniciarSesion.ObtenerUsuarioLogeado());
+
+                Application.Run(frmPrincipal);
+
+                if (frmPrincipal.DialogResult == DialogResult.Retry)
+                {
+                    Application.Restart();
+                }
+            }
+            else
+            {
+                Application.Exit();
             }            
         }
     }

@@ -1,34 +1,54 @@
 ﻿using System;
+using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
 using Duisv.Formularios.Usuarios;
+using Duisv.Modelos;
 
 namespace Duisv.Formularios
 {
     public partial class FrmPrincipal : Form
     {
-        public FrmPrincipal()
+        private Usuario _usuario;
+
+        public FrmPrincipal(Usuario usuario)
         {
             InitializeComponent();
+
+            _usuario = usuario;
         }
 
         private void FrmPrincipal_Load(object sender, EventArgs e)
         {
-            
+            TBxNombre.Text = $"{_usuario.Nombre} {_usuario.Apellido}";
+
+            CargarFotoUsuario(_usuario.NombreUsuario);
+        }
+
+        private void CargarFotoUsuario(string nombreUsuario)
+        {
+            var rutaFoto = $@"{Environment.GetFolderPath(Environment.SpecialFolder.MyPictures)}\DUISV\Usuarios\Fotos\{nombreUsuario}.png";
+
+            if (File.Exists(rutaFoto))
+            {
+                PBxFoto.Image.Dispose();
+                PBxFoto.Image = Image.FromFile(rutaFoto);
+            }
         }
 
         private void BtnEditarPerfil_Click(object sender, EventArgs e)
         {
+            var frmEditarUsuario = new FrmEditarUsuario(_usuario.UsuarioId);
 
-        }
-
-        private void CerrarFormulario()
-        {
-            Close();
+            if (frmEditarUsuario.ShowDialog() == DialogResult.OK)
+            {
+                MessageBox.Show("Los cambios se verán reflejados al iniciar sesión nuevamente.", "Editar usuario: Información ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void BtnSalir_Click(object sender, EventArgs e)
         {
-            CerrarFormulario();
+            Close();
         }
 
         private void BtnUsuarios_Click(object sender, EventArgs e)
@@ -37,14 +57,12 @@ namespace Duisv.Formularios
             frmUsuarios.ShowDialog();
         }
 
-        private void PBxMinimizar_Click_1(object sender, EventArgs e)
+        private void FrmPrincipal_FormClosing(object sender, FormClosingEventArgs e)
         {
-            WindowState = FormWindowState.Minimized;
-        }
-
-        private void PBxCerrar_Click(object sender, EventArgs e)
-        {
-            CerrarFormulario();
+            if (MessageBox.Show("¿Está seguro de querer cerrar la sesión?", "DUISV: Cerrar sesión", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
+            {
+                DialogResult = DialogResult.Retry;
+            }
         }
     }
 }
