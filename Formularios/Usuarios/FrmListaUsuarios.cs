@@ -38,7 +38,8 @@ namespace Duisv.Formularios.Usuarios
 
         private void MostrarListadoUsuarios(List<Usuario> usuarios, int numeroPagina = 1, int cantidadMostrar = 5)
         {
-            _usuarios = usuarios;            
+            _usuarios = usuarios;
+            _numeroPagina = numeroPagina;
 
             DgvUsuarios.Rows.Clear();
 
