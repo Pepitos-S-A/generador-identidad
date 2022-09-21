@@ -1,60 +1,67 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
 using Duisv.Modelos;
 using Duisv.Servicios;
+using PagedList;
 
 namespace Duisv.Formularios.Usuarios
 {
     public partial class FrmListaUsuarios : Form
     {
         private readonly UsuarioServicio _usuarioServicio;
+        private readonly Usuario _usuario;
 
-        public FrmListaUsuarios()
+        private int _numeroPagina;
+        private List<Usuario> _usuarios;
+        private IPagedList<Usuario> _usuariosPaginados;
+
+        public FrmListaUsuarios(Usuario usuario)
         {
             InitializeComponent();
 
             _usuarioServicio = new UsuarioServicio();
+            _usuario = usuario;
+            _numeroPagina = 1;
+        }
+
+        private bool AutorizarUsuario()
+        {
+            return _usuario.Rol.Equals("Administrador");
         }
 
         private void BtnAgregarUsuario_Click(object sender, EventArgs e)
         {
-            var frmAgregarUsuario = new FrmAgregarUsuario();
-
-            if (frmAgregarUsuario.ShowDialog() == DialogResult.OK)
-            {
-                ActualizarListaUsuarios(_usuarioServicio.ObtenerListaUsuarios());
-            }
+            AbrirFormularioAgregarUsuario();
         }
 
-        private void ActualizarListaUsuarios(List<Usuario> usuarios)
+        private void MostrarListadoUsuarios(List<Usuario> usuarios, int numeroPagina = 1, int cantidadMostrar = 5)
         {
+            _usuarios = usuarios;            
+
             DgvUsuarios.Rows.Clear();
 
-            if (usuarios.Count > 0 && usuarios != null)
+            if (_usuarios.Count > 0 && _usuarios != null)
             {
-                foreach (var usuario in usuarios)
+                _usuariosPaginados = _usuarios.ToPagedList(numeroPagina, cantidadMostrar);
+
+                foreach (var usuario in _usuariosPaginados)
                 {
                     DgvUsuarios.Rows.Add(usuario.UsuarioId, usuario.Nombre, usuario.Apellido, usuario.Telefono, usuario.NombreUsuario, usuario.Rol);
                 }
 
                 DgvUsuarios.ClearSelection();
+
+                BtnPaginaAnterior.Enabled = _usuariosPaginados.HasPreviousPage;
+                BtnPaginaSiguiente.Enabled = _usuariosPaginados.HasNextPage;
+                LblPaginacion.Text = $"Página {_numeroPagina} de {_usuariosPaginados.PageCount}";
             }
-        }
-
-        private void PBxMinimizar_Click(object sender, EventArgs e)
-        {
-            WindowState = FormWindowState.Minimized;
-        }
-
-        private void PBxCerrar_Click(object sender, EventArgs e)
-        {
-            Close();
         }
 
         private void FrmUsuarios_Load(object sender, EventArgs e)
         {
-            ActualizarListaUsuarios(_usuarioServicio.ObtenerListaUsuarios());
+            MostrarListadoUsuarios(_usuarioServicio.ObtenerListaUsuarios());
         }
 
         private void DgvUsuarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -88,25 +95,92 @@ namespace Duisv.Formularios.Usuarios
             var frmVerUsuario = new FrmVerUsuario(usuarioId);
             frmVerUsuario.ShowDialog();
         }
+        
+        private void AbrirFormularioAgregarUsuario()
+        {
+            if (AutorizarUsuario())
+            {
+                var frmAgregarUsuario = new FrmAgregarUsuario();
+
+                if (frmAgregarUsuario.ShowDialog() == DialogResult.OK)
+                {
+                    MostrarListadoUsuarios(_usuarioServicio.ObtenerListaUsuarios());
+                }
+            }
+            else
+            {
+                MessageBox.Show("Su usuario no tiene autorización para realizar esta operación.", "Usuarios: Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }            
+        }
 
         private void AbrirFormularioEditarUsuario(int usuarioId)
         {
-            var frmEditarUsuario = new FrmEditarUsuario(usuarioId);
-
-            if (frmEditarUsuario.ShowDialog() == DialogResult.OK)
+            if (AutorizarUsuario())
             {
-                ActualizarListaUsuarios(_usuarioServicio.ObtenerListaUsuarios());
+                var frmEditarUsuario = new FrmEditarUsuario(usuarioId);
+
+                if (frmEditarUsuario.ShowDialog() == DialogResult.OK)
+                {
+                    MostrarListadoUsuarios(_usuarioServicio.ObtenerListaUsuarios());
+                }
             }
+            else
+            {
+                MessageBox.Show("Su usuario no tiene autorización para realizar esta operación.", "Usuarios: Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }            
         }
 
         private void ConfirmarEliminarUsuario(int id, string usuario)
         {
-            if (MessageBox.Show($"¿Está seguro de querer eliminar al usuario {usuario.ToUpper()}?", "Eliminar usuario: confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
+            if (AutorizarUsuario())
             {
-                if (_usuarioServicio.EliminarUsuario(id) > 0)
+                if (MessageBox.Show($"¿Está seguro de querer eliminar al usuario {usuario.ToUpper()}?", "Eliminar usuario: confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
                 {
-                    ActualizarListaUsuarios(_usuarioServicio.ObtenerListaUsuarios());
+                    if (_usuarioServicio.EliminarUsuario(id) > 0)
+                    {
+                        MostrarListadoUsuarios(_usuarioServicio.ObtenerListaUsuarios());
+                    }
                 }
+            }
+            else
+            {
+                MessageBox.Show("Su usuario no tiene autorización para realizar esta operación.", "Usuarios: Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
+        }
+
+        private void BtnPaginaAnterior_Click(object sender, EventArgs e)
+        {
+            if (_usuariosPaginados.HasPreviousPage)
+            {
+                MostrarListadoUsuarios(_usuarios, --_numeroPagina);
+            }
+        }
+
+        private void BtnPaginaSiguiente_Click(object sender, EventArgs e)
+        {
+            if (_usuariosPaginados.HasNextPage)
+            {
+                MostrarListadoUsuarios(_usuarios, ++_numeroPagina);
+            }
+        }
+
+        private void BtnBuscar_Click(object sender, EventArgs e)
+        {
+            var busqueda = TBxBusqueda.Text;
+
+            switch (BtnBuscar.Text)
+            {
+                case "Buscar":
+                    MostrarListadoUsuarios(_usuarioServicio.ObtenerResultadosBusqueda(busqueda));
+                    BtnBuscar.Text = "Borrar";
+                    break;
+                case "Borrar":
+                    MostrarListadoUsuarios(_usuarioServicio.ObtenerListaUsuarios());
+                    TBxBusqueda.Text = string.Empty;
+                    BtnBuscar.Text = "Buscar";
+                    break;
+                default:
+                    break;
             }
         }
     }

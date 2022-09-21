@@ -53,7 +53,7 @@ namespace Duisv.Formularios
 
         private void BtnUsuarios_Click(object sender, EventArgs e)
         {
-            var frmUsuarios = new FrmListaUsuarios();
+            var frmUsuarios = new FrmListaUsuarios(_usuario);
             frmUsuarios.ShowDialog();
         }
 
@@ -62,6 +62,10 @@ namespace Duisv.Formularios
             if (MessageBox.Show("¿Está seguro de querer cerrar la sesión?", "DUISV: Cerrar sesión", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
             {
                 DialogResult = DialogResult.Retry;
+            }
+            else
+            {
+                e.Cancel = true;
             }
         }
     }

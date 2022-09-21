@@ -176,6 +176,50 @@ namespace Duisv.Servicios
             return null;
         }
 
+        public List<Usuario> ObtenerResultadosBusqueda(string busqueda)
+        {
+            var usuarios = new List<Usuario>();
+
+            using (var conexion = new SqlConnection(cadenaConexion))
+            {
+                if (conexion.State != ConnectionState.Open)
+                {
+                    conexion.Open();
+
+                    using (var comando = new SqlCommand("ObtenerResultadosBusqueda", conexion))
+                    {
+                        comando.Parameters.AddWithValue("@Busqueda", busqueda);
+                        comando.CommandType = CommandType.StoredProcedure;
+
+                        using (var lector = comando.ExecuteReader())
+                        {
+                            while (lector.Read())
+                            {
+                                var usuario = new Usuario
+                                {
+                                    UsuarioId = Convert.ToInt32(lector["UsuarioId"]),
+                                    Nombre = lector["Nombre"].ToString(),
+                                    Apellido = lector["Apellido"].ToString(),
+                                    Direccion = lector["Direccion"].ToString(),
+                                    CorreoElectronico = lector["CorreoElectronico"].ToString(),
+                                    FechaNacimiento = lector["FechaNacimiento"] as DateTime?,
+                                    Telefono = lector["Telefono"].ToString(),
+                                    NombreUsuario = lector["Usuario"].ToString(),
+                                    Clave = lector["Clave"].ToString(),
+                                    Rol = lector["Rol"].ToString(),
+                                    RolId = lector["rol"] as int?,
+                                };
+
+                                usuarios.Add(usuario);
+                            }
+                        }
+                    }
+                }
+            }
+
+            return usuarios;
+        }
+
         public int CambiarClaveUsuario(string nuevaClave, int? usuarioId)
         {
             using (var conexion = new SqlConnection(cadenaConexion))
