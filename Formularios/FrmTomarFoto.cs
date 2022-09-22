@@ -55,9 +55,12 @@ namespace Duisv.Formularios
 
         private void FrmTomarFoto_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (_videoCaptureDevice.IsRunning && _videoCaptureDevice != null)
+            if (_videoCaptureDevice != null)
             {
-                _videoCaptureDevice.Stop();
+                if (_videoCaptureDevice.IsRunning)
+                {
+                    _videoCaptureDevice.Stop();
+                }
             }
         }
 

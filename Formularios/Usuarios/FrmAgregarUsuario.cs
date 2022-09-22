@@ -4,7 +4,6 @@ using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
 using System.Windows.Forms;
-using AForge.Video.DirectShow;
 using Duisv.Herramientas;
 using Duisv.Modelos;
 using Duisv.Servicios;
@@ -63,7 +62,7 @@ namespace Duisv.Formularios.Usuarios
                     NombreUsuario = TBxUsuario.Text,
                     Clave = TBxClave.Text,
                     RolId = Convert.ToInt32(CbBRoles.SelectedValue),
-                    RepetirClave = TBxRepetirClave.Text 
+                    RepetirClave = TBxRepetirClave.Text
                 };
 
                 if (ValidarDatosUsuario(usuario))
@@ -75,7 +74,7 @@ namespace Duisv.Formularios.Usuarios
                     {
                         if (_guardarFoto)
                         {
-                            GuardarFotoUsuario(usuario.NombreUsuario);                            
+                            GuardarFotoUsuario(usuario.NombreUsuario);
                         }
 
                         DialogResult = DialogResult.OK;
@@ -109,16 +108,6 @@ namespace Duisv.Formularios.Usuarios
                     }
                 }
             }
-        }
-
-        private void PBxMinimizar_Click_1(object sender, EventArgs e)
-        {
-            WindowState = FormWindowState.Minimized;
-        }
-
-        private void PBxCerrar_Click_1(object sender, EventArgs e)
-        {
-            Close();
         }
 
         private void FrmAgregarUsuario_Load(object sender, EventArgs e)
