@@ -8,6 +8,9 @@ namespace Duisv.Servicios
 {
     internal class UsuarioServicio
     {
+        /*
+         *  Cambiar la cadena de conexion aqui
+         */
         private readonly string cadenaConexion = @"Server=HP-1GR12LA\SQLEXPRESS;Database=DuisvDb;Trusted_Connection=True;";
 
         public int AgregarUsuario(Usuario usuario)

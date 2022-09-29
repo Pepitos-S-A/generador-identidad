@@ -135,12 +135,26 @@ namespace Duisv.Formularios.Usuarios
         {
             if (AutorizarUsuario())
             {
-                if (MessageBox.Show($"¿Está seguro de querer eliminar al usuario {usuario.ToUpper()}?", "Eliminar usuario: confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
+                if (!_usuario.NombreUsuario.Equals(usuario))
                 {
-                    if (_usuarioServicio.EliminarUsuario(id) > 0)
+                    if (!usuario.Equals("root"))
                     {
-                        MostrarListadoUsuarios(_usuarioServicio.ObtenerListaUsuarios());
+                        if (MessageBox.Show($"¿Está seguro de querer eliminar al usuario {usuario.ToUpper()}?", "Eliminar usuario: confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
+                        {
+                            if (_usuarioServicio.EliminarUsuario(id) > 0)
+                            {
+                                MostrarListadoUsuarios(_usuarioServicio.ObtenerListaUsuarios());
+                            }
+                        }
                     }
+                    else
+                    {
+                        MessageBox.Show("No puede eliminar el usuario Root.", "Usuarios: Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("No puede eliminar el usuario actual. Cierre la sesion he inicié sesión con otro usuario.", "Usuarios: Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                 }
             }
             else

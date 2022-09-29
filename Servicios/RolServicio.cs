@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using Duisv.Modelos;
@@ -8,6 +7,9 @@ namespace Duisv.Servicios
 {
     internal class RolServicio
     {
+        /*
+         *  Cambiar la cadena de conexion aqui
+         */
         private readonly string cadenaConexion = @"Server=HP-1GR12LA\SQLEXPRESS;Database=DuisvDb;Trusted_Connection=True;";
 
         public List<Rol> ObtenerListaRoles()

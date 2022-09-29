@@ -20,7 +20,7 @@ namespace Duisv.Formularios
 
         private void FrmPrincipal_Load(object sender, EventArgs e)
         {
-            TBxNombre.Text = $"{_usuario.Nombre} {_usuario.Apellido}";
+            TBxNombre.Text = $"{_usuario.Nombre} {_usuario.Apellido}".ToUpper();
 
             CargarFotoUsuario(_usuario.NombreUsuario);
         }

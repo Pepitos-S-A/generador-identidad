@@ -40,6 +40,8 @@
             this.PBxAvatar = new System.Windows.Forms.PictureBox();
             this.TBxApellido = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
+            this.TBxId = new System.Windows.Forms.TextBox();
             this.TBxUsuario = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.MtbTelefono = new System.Windows.Forms.MaskedTextBox();
@@ -50,8 +52,6 @@
             this.TBxNombre = new System.Windows.Forms.TextBox();
             this.PBxFoto = new System.Windows.Forms.PictureBox();
             this.BtnCerrar = new System.Windows.Forms.Button();
-            this.label9 = new System.Windows.Forms.Label();
-            this.TBxId = new System.Windows.Forms.TextBox();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PBxAvatar)).BeginInit();
             this.panel1.SuspendLayout();
@@ -194,6 +194,26 @@
             this.panel1.Size = new System.Drawing.Size(395, 322);
             this.panel1.TabIndex = 22;
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(10, 14);
+            this.label9.Margin = new System.Windows.Forms.Padding(10, 0, 4, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(22, 15);
+            this.label9.TabIndex = 30;
+            this.label9.Text = "Id:";
+            // 
+            // TBxId
+            // 
+            this.TBxId.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TBxId.Location = new System.Drawing.Point(155, 12);
+            this.TBxId.Margin = new System.Windows.Forms.Padding(13, 12, 13, 12);
+            this.TBxId.Name = "TBxId";
+            this.TBxId.ReadOnly = true;
+            this.TBxId.Size = new System.Drawing.Size(225, 23);
+            this.TBxId.TabIndex = 29;
+            // 
             // TBxUsuario
             // 
             this.TBxUsuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -203,6 +223,7 @@
             this.TBxUsuario.ReadOnly = true;
             this.TBxUsuario.Size = new System.Drawing.Size(225, 23);
             this.TBxUsuario.TabIndex = 28;
+            this.TBxUsuario.Visible = false;
             // 
             // label8
             // 
@@ -213,6 +234,7 @@
             this.label8.Size = new System.Drawing.Size(57, 15);
             this.label8.TabIndex = 27;
             this.label8.Text = "Usuario:";
+            this.label8.Visible = false;
             // 
             // MtbTelefono
             // 
@@ -299,26 +321,6 @@
             this.BtnCerrar.Text = "Cerrar";
             this.BtnCerrar.UseVisualStyleBackColor = true;
             this.BtnCerrar.Click += new System.EventHandler(this.BtnCerrar_Click);
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(10, 14);
-            this.label9.Margin = new System.Windows.Forms.Padding(10, 0, 4, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(22, 15);
-            this.label9.TabIndex = 30;
-            this.label9.Text = "Id:";
-            // 
-            // TBxId
-            // 
-            this.TBxId.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TBxId.Location = new System.Drawing.Point(155, 12);
-            this.TBxId.Margin = new System.Windows.Forms.Padding(13, 12, 13, 12);
-            this.TBxId.Name = "TBxId";
-            this.TBxId.ReadOnly = true;
-            this.TBxId.Size = new System.Drawing.Size(225, 23);
-            this.TBxId.TabIndex = 29;
             // 
             // FrmVerUsuario
             // 
