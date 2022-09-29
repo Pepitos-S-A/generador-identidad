@@ -33,6 +33,7 @@
             this.TBxClave = new System.Windows.Forms.TextBox();
             this.BtnIniciarSesion = new System.Windows.Forms.Button();
             this.BtnSalir = new System.Windows.Forms.Button();
+            this.ChBVerClave = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -70,7 +71,7 @@
             // 
             this.BtnIniciarSesion.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.BtnIniciarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnIniciarSesion.Location = new System.Drawing.Point(27, 275);
+            this.BtnIniciarSesion.Location = new System.Drawing.Point(27, 290);
             this.BtnIniciarSesion.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.BtnIniciarSesion.Name = "BtnIniciarSesion";
             this.BtnIniciarSesion.Size = new System.Drawing.Size(129, 38);
@@ -83,7 +84,7 @@
             // 
             this.BtnSalir.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.BtnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnSalir.Location = new System.Drawing.Point(164, 275);
+            this.BtnSalir.Location = new System.Drawing.Point(164, 290);
             this.BtnSalir.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.BtnSalir.Name = "BtnSalir";
             this.BtnSalir.Size = new System.Drawing.Size(129, 38);
@@ -92,6 +93,17 @@
             this.BtnSalir.UseVisualStyleBackColor = true;
             this.BtnSalir.Click += new System.EventHandler(this.BtnSalir_Click);
             // 
+            // ChBVerClave
+            // 
+            this.ChBVerClave.AutoSize = true;
+            this.ChBVerClave.Location = new System.Drawing.Point(38, 255);
+            this.ChBVerClave.Name = "ChBVerClave";
+            this.ChBVerClave.Size = new System.Drawing.Size(116, 19);
+            this.ChBVerClave.TabIndex = 10;
+            this.ChBVerClave.Text = "Ver contraseña";
+            this.ChBVerClave.UseVisualStyleBackColor = true;
+            this.ChBVerClave.CheckedChanged += new System.EventHandler(this.ChBVerClave_CheckedChanged);
+            // 
             // FrmInicioSesion
             // 
             this.AcceptButton = this.BtnIniciarSesion;
@@ -99,7 +111,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.CancelButton = this.BtnSalir;
-            this.ClientSize = new System.Drawing.Size(321, 324);
+            this.ClientSize = new System.Drawing.Size(321, 340);
+            this.Controls.Add(this.ChBVerClave);
             this.Controls.Add(this.BtnSalir);
             this.Controls.Add(this.BtnIniciarSesion);
             this.Controls.Add(this.TBxClave);
@@ -124,5 +137,6 @@
         private System.Windows.Forms.TextBox TBxClave;
         private System.Windows.Forms.Button BtnIniciarSesion;
         private System.Windows.Forms.Button BtnSalir;
+        private System.Windows.Forms.CheckBox ChBVerClave;
     }
 }

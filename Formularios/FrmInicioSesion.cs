@@ -62,5 +62,10 @@ namespace Duisv.Formularios
                 }
             }
         }
+
+        private void ChBVerClave_CheckedChanged(object sender, EventArgs e)
+        {
+            TBxClave.UseSystemPasswordChar = !ChBVerClave.Checked;
+        }
     }
 }
