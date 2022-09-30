@@ -134,6 +134,7 @@
     <Compile Include="Modelos\Usuario.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Servicios\DocumentoServicio.cs" />
     <Compile Include="Servicios\RolServicio.cs" />
     <Compile Include="Servicios\UsuarioServicio.cs" />
     <Compile Include="Validaciones\AgregarUsuarioValidador.cs" />
