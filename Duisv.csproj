@@ -79,6 +79,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Formularios\Ciudadanos\FrmAgregarCiudadano.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Ciudadanos\FrmAgregarCiudadano.Designer.cs">
+      <DependentUpon>FrmAgregarCiudadano.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Ciudadanos\FrmListaCiudadanos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -147,6 +153,9 @@
     <Compile Include="Validaciones\AgregarUsuarioValidador.cs" />
     <Compile Include="Validaciones\ClaveValidador.cs" />
     <Compile Include="Validaciones\EditarUsuarioValidador.cs" />
+    <EmbeddedResource Include="Formularios\Ciudadanos\FrmAgregarCiudadano.resx">
+      <DependentUpon>FrmAgregarCiudadano.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Ciudadanos\FrmListaCiudadanos.resx">
       <DependentUpon>FrmListaCiudadanos.cs</DependentUpon>
     </EmbeddedResource>

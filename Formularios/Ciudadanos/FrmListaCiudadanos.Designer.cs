@@ -39,7 +39,9 @@
             this.LblUsuario = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.PBxAvatar = new System.Windows.Forms.PictureBox();
-            this.ciudadanoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.Ver = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Editar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.ciudadanoIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombresDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.apellidosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -60,9 +62,7 @@
             this.municipioResidenciaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.departamentoResidenciaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.documentoIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Ver = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Editar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.ciudadanoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.DgvCiudadanos)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PBxAvatar)).BeginInit();
@@ -186,6 +186,7 @@
             this.BtnAgregarCiudadano.TabIndex = 12;
             this.BtnAgregarCiudadano.Text = "Agregar ciudadano";
             this.BtnAgregarCiudadano.UseVisualStyleBackColor = true;
+            this.BtnAgregarCiudadano.Click += new System.EventHandler(this.BtnAgregarCiudadano_Click);
             // 
             // LblUsuario
             // 
@@ -217,9 +218,23 @@
             this.PBxAvatar.TabIndex = 0;
             this.PBxAvatar.TabStop = false;
             // 
-            // ciudadanoBindingSource
+            // Ver
             // 
-            this.ciudadanoBindingSource.DataSource = typeof(Duisv.Modelos.Ciudadano);
+            this.Ver.HeaderText = "";
+            this.Ver.Name = "Ver";
+            this.Ver.ReadOnly = true;
+            // 
+            // Editar
+            // 
+            this.Editar.HeaderText = "";
+            this.Editar.Name = "Editar";
+            this.Editar.ReadOnly = true;
+            // 
+            // Eliminar
+            // 
+            this.Eliminar.HeaderText = "";
+            this.Eliminar.Name = "Eliminar";
+            this.Eliminar.ReadOnly = true;
             // 
             // ciudadanoIdDataGridViewTextBoxColumn
             // 
@@ -378,23 +393,9 @@
             this.documentoIdDataGridViewTextBoxColumn.ReadOnly = true;
             this.documentoIdDataGridViewTextBoxColumn.Visible = false;
             // 
-            // Ver
+            // ciudadanoBindingSource
             // 
-            this.Ver.HeaderText = "";
-            this.Ver.Name = "Ver";
-            this.Ver.ReadOnly = true;
-            // 
-            // Editar
-            // 
-            this.Editar.HeaderText = "";
-            this.Editar.Name = "Editar";
-            this.Editar.ReadOnly = true;
-            // 
-            // Eliminar
-            // 
-            this.Eliminar.HeaderText = "";
-            this.Eliminar.Name = "Eliminar";
-            this.Eliminar.ReadOnly = true;
+            this.ciudadanoBindingSource.DataSource = typeof(Duisv.Modelos.Ciudadano);
             // 
             // FrmListaCiudadanos
             // 
