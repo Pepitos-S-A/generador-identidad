@@ -30,14 +30,15 @@
         {
             this.BtnEditarPerfil = new System.Windows.Forms.Button();
             this.BtnUsuarios = new System.Windows.Forms.Button();
-            this.BtnEliminarUsuario = new System.Windows.Forms.Button();
+            this.BtnCiudadanos = new System.Windows.Forms.Button();
             this.BtnSalir = new System.Windows.Forms.Button();
             this.PnlOpciones = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.TBxNombre = new System.Windows.Forms.TextBox();
             this.PBxFoto = new System.Windows.Forms.PictureBox();
             this.PBxLogotipo = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.TBxNombre = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.BtnDocumentos = new System.Windows.Forms.Button();
             this.PnlOpciones.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PBxFoto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBxLogotipo)).BeginInit();
@@ -72,18 +73,18 @@
             this.BtnUsuarios.UseVisualStyleBackColor = true;
             this.BtnUsuarios.Click += new System.EventHandler(this.BtnUsuarios_Click);
             // 
-            // BtnEliminarUsuario
+            // BtnCiudadanos
             // 
-            this.BtnEliminarUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnEliminarUsuario.Font = new System.Drawing.Font("Arial Black", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnEliminarUsuario.ForeColor = System.Drawing.Color.White;
-            this.BtnEliminarUsuario.Location = new System.Drawing.Point(18, 423);
-            this.BtnEliminarUsuario.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.BtnEliminarUsuario.Name = "BtnEliminarUsuario";
-            this.BtnEliminarUsuario.Size = new System.Drawing.Size(172, 44);
-            this.BtnEliminarUsuario.TabIndex = 0;
-            this.BtnEliminarUsuario.Text = "Ciudadanos";
-            this.BtnEliminarUsuario.UseVisualStyleBackColor = true;
+            this.BtnCiudadanos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnCiudadanos.Font = new System.Drawing.Font("Arial Black", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnCiudadanos.ForeColor = System.Drawing.Color.White;
+            this.BtnCiudadanos.Location = new System.Drawing.Point(18, 423);
+            this.BtnCiudadanos.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.BtnCiudadanos.Name = "BtnCiudadanos";
+            this.BtnCiudadanos.Size = new System.Drawing.Size(172, 44);
+            this.BtnCiudadanos.TabIndex = 0;
+            this.BtnCiudadanos.Text = "Ciudadanos";
+            this.BtnCiudadanos.UseVisualStyleBackColor = true;
             // 
             // BtnSalir
             // 
@@ -109,7 +110,8 @@
             this.PnlOpciones.Controls.Add(this.BtnSalir);
             this.PnlOpciones.Controls.Add(this.PBxFoto);
             this.PnlOpciones.Controls.Add(this.PBxLogotipo);
-            this.PnlOpciones.Controls.Add(this.BtnEliminarUsuario);
+            this.PnlOpciones.Controls.Add(this.BtnDocumentos);
+            this.PnlOpciones.Controls.Add(this.BtnCiudadanos);
             this.PnlOpciones.Controls.Add(this.BtnUsuarios);
             this.PnlOpciones.Controls.Add(this.BtnEditarPerfil);
             this.PnlOpciones.Dock = System.Windows.Forms.DockStyle.Left;
@@ -119,6 +121,28 @@
             this.PnlOpciones.Name = "PnlOpciones";
             this.PnlOpciones.Size = new System.Drawing.Size(209, 804);
             this.PnlOpciones.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(62, 228);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(83, 15);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Bienvenido/a";
+            // 
+            // TBxNombre
+            // 
+            this.TBxNombre.BackColor = System.Drawing.Color.RoyalBlue;
+            this.TBxNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TBxNombre.ForeColor = System.Drawing.Color.White;
+            this.TBxNombre.Location = new System.Drawing.Point(17, 255);
+            this.TBxNombre.Name = "TBxNombre";
+            this.TBxNombre.ReadOnly = true;
+            this.TBxNombre.Size = new System.Drawing.Size(172, 16);
+            this.TBxNombre.TabIndex = 1;
+            this.TBxNombre.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // PBxFoto
             // 
@@ -154,27 +178,18 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // TBxNombre
+            // BtnDocumentos
             // 
-            this.TBxNombre.BackColor = System.Drawing.Color.RoyalBlue;
-            this.TBxNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.TBxNombre.ForeColor = System.Drawing.Color.White;
-            this.TBxNombre.Location = new System.Drawing.Point(17, 255);
-            this.TBxNombre.Name = "TBxNombre";
-            this.TBxNombre.ReadOnly = true;
-            this.TBxNombre.Size = new System.Drawing.Size(172, 16);
-            this.TBxNombre.TabIndex = 1;
-            this.TBxNombre.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(62, 228);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(83, 15);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Bienvenido/a";
+            this.BtnDocumentos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnDocumentos.Font = new System.Drawing.Font("Arial Black", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnDocumentos.ForeColor = System.Drawing.Color.White;
+            this.BtnDocumentos.Location = new System.Drawing.Point(18, 473);
+            this.BtnDocumentos.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.BtnDocumentos.Name = "BtnDocumentos";
+            this.BtnDocumentos.Size = new System.Drawing.Size(172, 44);
+            this.BtnDocumentos.TabIndex = 0;
+            this.BtnDocumentos.Text = "Documentos";
+            this.BtnDocumentos.UseVisualStyleBackColor = true;
             // 
             // FrmPrincipal
             // 
@@ -205,7 +220,7 @@
 
         private System.Windows.Forms.Button BtnEditarPerfil;
         private System.Windows.Forms.Button BtnUsuarios;
-        private System.Windows.Forms.Button BtnEliminarUsuario;
+        private System.Windows.Forms.Button BtnCiudadanos;
         private System.Windows.Forms.Button BtnSalir;
         private System.Windows.Forms.Panel PnlOpciones;
         private System.Windows.Forms.PictureBox PBxLogotipo;
@@ -213,5 +228,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox TBxNombre;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button BtnDocumentos;
     }
 }
