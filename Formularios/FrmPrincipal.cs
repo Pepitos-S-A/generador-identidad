@@ -2,6 +2,7 @@
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
+using Duisv.Formularios.Ciudadanos;
 using Duisv.Formularios.Usuarios;
 using Duisv.Modelos;
 
@@ -67,6 +68,12 @@ namespace Duisv.Formularios
             {
                 e.Cancel = true;
             }
+        }
+
+        private void BtnCiudadanos_Click(object sender, EventArgs e)
+        {
+            var frmListaCiudadanos = new FrmListaCiudadanos();
+            frmListaCiudadanos.ShowDialog();
         }
     }
 }

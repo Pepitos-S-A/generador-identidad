@@ -85,6 +85,7 @@
             this.BtnCiudadanos.TabIndex = 0;
             this.BtnCiudadanos.Text = "Ciudadanos";
             this.BtnCiudadanos.UseVisualStyleBackColor = true;
+            this.BtnCiudadanos.Click += new System.EventHandler(this.BtnCiudadanos_Click);
             // 
             // BtnSalir
             // 

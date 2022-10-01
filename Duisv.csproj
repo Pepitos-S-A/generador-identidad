@@ -79,6 +79,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Formularios\Ciudadanos\FrmListaCiudadanos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Ciudadanos\FrmListaCiudadanos.Designer.cs">
+      <DependentUpon>FrmListaCiudadanos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\FrmTomarFoto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -141,6 +147,9 @@
     <Compile Include="Validaciones\AgregarUsuarioValidador.cs" />
     <Compile Include="Validaciones\ClaveValidador.cs" />
     <Compile Include="Validaciones\EditarUsuarioValidador.cs" />
+    <EmbeddedResource Include="Formularios\Ciudadanos\FrmListaCiudadanos.resx">
+      <DependentUpon>FrmListaCiudadanos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmTomarFoto.resx">
       <DependentUpon>FrmTomarFoto.cs</DependentUpon>
     </EmbeddedResource>
@@ -176,6 +185,7 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\Duisv.Modelos.Ciudadano.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -214,7 +224,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Database\" />
-    <Folder Include="Formularios\Ciudadanos\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

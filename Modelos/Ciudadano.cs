@@ -2,7 +2,7 @@
 
 namespace Duisv.Modelos
 {
-    internal class Ciudadano
+    public class Ciudadano
     {
         public int CiudadanoId { get; set; }
         public string Nombres { get; set; } = string.Empty;
