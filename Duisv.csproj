@@ -143,13 +143,15 @@
     <Compile Include="Modelos\Ciudadano.cs" />
     <Compile Include="Modelos\Departamento.cs" />
     <Compile Include="Modelos\Documento.cs" />
+    <Compile Include="Modelos\Municipio.cs" />
     <Compile Include="Modelos\Rol.cs" />
     <Compile Include="Modelos\Usuario.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Servicios\CiudadanoServicio.cs" />
-    <Compile Include="Servicios\DepartamentosServicio.cs" />
+    <Compile Include="Servicios\DepartamentoServicio.cs" />
     <Compile Include="Servicios\DocumentoServicio.cs" />
+    <Compile Include="Servicios\MunicipioServicio.cs" />
     <Compile Include="Servicios\RolServicio.cs" />
     <Compile Include="Servicios\UsuarioServicio.cs" />
     <Compile Include="Validaciones\AgregarUsuarioValidador.cs" />

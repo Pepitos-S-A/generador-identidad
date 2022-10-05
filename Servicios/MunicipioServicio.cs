@@ -1,23 +1,26 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Data.SqlClient;
+using System.Data;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using Duisv.Modelos;
 
 namespace Duisv.Servicios
 {
-    internal class DepartamentosServicio
+    internal class MunicipioServicio
     {
         private readonly string _cadenaConexion;
 
-        public DepartamentosServicio()
+        public MunicipioServicio()
         {
             _cadenaConexion = Properties.Settings.Default.SqlServerCadenaConexion;
         }
 
-        public List<Departamento> ObtenerListaDepartamentos()
+        public List<Municipio> ObtenerListaMunicipiosPorDepartamentoId(int departamentoId)
         {
-            var departamentos = new List<Departamento>();
+            var municipios = new List<Municipio>();
 
             using (var conexion = new SqlConnection(_cadenaConexion))
             {
@@ -25,28 +28,30 @@ namespace Duisv.Servicios
                 {
                     conexion.Open();
 
-                    using (var comando = new SqlCommand("ObtenerListaDepartamentos", conexion))
+                    using (var comando = new SqlCommand("ObtenerListaMunicipiosPorDepartamentoId", conexion))
                     {
                         comando.CommandType = CommandType.StoredProcedure;
+                        comando.Parameters.AddWithValue("@DepartamentoId", departamentoId);
 
                         using (var lector = comando.ExecuteReader())
                         {
                             while (lector.Read())
                             {
-                                var departamento = new Departamento
+                                var municipio = new Municipio
                                 {
-                                    DepartamentoId = Convert.ToInt32(lector["DepartamentoId"].ToString()),
-                                    Nombre = lector["Nombre"].ToString()
+                                    MunicipioId = Convert.ToInt32(lector["MunicipioId"].ToString()),
+                                    Nombre = lector["Nombre"].ToString(),
+                                    DepartamentoId = Convert.ToInt32(lector["DepartamentoId"].ToString())
                                 };
 
-                                departamentos.Add(departamento);
+                                municipios.Add(municipio);
                             }
                         }
                     }
                 }
             }
 
-            return departamentos;
+            return municipios;
         }
     }
 }
