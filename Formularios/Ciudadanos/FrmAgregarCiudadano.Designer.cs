@@ -56,6 +56,7 @@
             this.BtnAgregar = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.apellidosTextBox = new System.Windows.Forms.TextBox();
+            this.ciudadanoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ciudadanoPorComboBox = new System.Windows.Forms.ComboBox();
             this.conocidoPorTextBox = new System.Windows.Forms.TextBox();
             this.departamentoNacimientoComboBox = new System.Windows.Forms.ComboBox();
@@ -85,7 +86,6 @@
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.ciudadanoBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
-            this.ciudadanoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             apellidosLabel = new System.Windows.Forms.Label();
             ciudadanoPorLabel = new System.Windows.Forms.Label();
             conocidoPorLabel = new System.Windows.Forms.Label();
@@ -107,9 +107,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.PBxAvatar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBxFoto)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ciudadanoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ciudadanoBindingNavigator)).BeginInit();
             this.ciudadanoBindingNavigator.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ciudadanoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // apellidosLabel
@@ -341,6 +341,7 @@
             this.BtnAgregar.TabIndex = 26;
             this.BtnAgregar.Text = "Agregar";
             this.BtnAgregar.UseVisualStyleBackColor = true;
+            this.BtnAgregar.Click += new System.EventHandler(this.BtnAgregar_Click);
             // 
             // panel1
             // 
@@ -392,6 +393,10 @@
             this.apellidosTextBox.Name = "apellidosTextBox";
             this.apellidosTextBox.Size = new System.Drawing.Size(200, 23);
             this.apellidosTextBox.TabIndex = 1;
+            // 
+            // ciudadanoBindingSource
+            // 
+            this.ciudadanoBindingSource.DataSource = typeof(Duisv.Modelos.Ciudadano);
             // 
             // ciudadanoPorComboBox
             // 
@@ -674,10 +679,6 @@
             this.ciudadanoBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
             this.ciudadanoBindingNavigatorSaveItem.Text = "Guardar datos";
             // 
-            // ciudadanoBindingSource
-            // 
-            this.ciudadanoBindingSource.DataSource = typeof(Duisv.Modelos.Ciudadano);
-            // 
             // FrmAgregarCiudadano
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -703,10 +704,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.PBxFoto)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ciudadanoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ciudadanoBindingNavigator)).EndInit();
             this.ciudadanoBindingNavigator.ResumeLayout(false);
             this.ciudadanoBindingNavigator.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ciudadanoBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

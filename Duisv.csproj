@@ -154,6 +154,7 @@
     <Compile Include="Servicios\MunicipioServicio.cs" />
     <Compile Include="Servicios\RolServicio.cs" />
     <Compile Include="Servicios\UsuarioServicio.cs" />
+    <Compile Include="Validaciones\AgregarCiudadanoValidador.cs" />
     <Compile Include="Validaciones\AgregarUsuarioValidador.cs" />
     <Compile Include="Validaciones\ClaveValidador.cs" />
     <Compile Include="Validaciones\EditarUsuarioValidador.cs" />
