@@ -164,5 +164,20 @@ namespace Duisv.Formularios.Ciudadanos
                 }
             }
         }
+
+        private void BtnTomarFoto_Click(object sender, EventArgs e)
+        {
+            TomarFoto(ref PBxFoto);
+        }
+
+        private void TomarFoto(ref PictureBox pictureBox)
+        {
+            var frmTomarFoto = new FrmTomarFoto(ref pictureBox);
+
+            if (frmTomarFoto.ShowDialog() == DialogResult.OK)
+            {
+                _guardarFoto = true;
+            }
+        }
     }
 }

@@ -309,6 +309,7 @@
             this.BtnTomarFoto.TabIndex = 25;
             this.BtnTomarFoto.Text = "Tomar foto";
             this.BtnTomarFoto.UseVisualStyleBackColor = true;
+            this.BtnTomarFoto.Click += new System.EventHandler(this.BtnTomarFoto_Click);
             // 
             // PBxFoto
             // 
