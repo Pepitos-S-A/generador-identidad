@@ -85,6 +85,12 @@
     <Compile Include="Formularios\Ciudadanos\FrmAgregarCiudadano.Designer.cs">
       <DependentUpon>FrmAgregarCiudadano.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Ciudadanos\FrmElegirPartidaNacimiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Ciudadanos\FrmElegirPartidaNacimiento.Designer.cs">
+      <DependentUpon>FrmElegirPartidaNacimiento.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Ciudadanos\FrmListaCiudadanos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -160,6 +166,9 @@
     <Compile Include="Validaciones\EditarUsuarioValidador.cs" />
     <EmbeddedResource Include="Formularios\Ciudadanos\FrmAgregarCiudadano.resx">
       <DependentUpon>FrmAgregarCiudadano.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Ciudadanos\FrmElegirPartidaNacimiento.resx">
+      <DependentUpon>FrmElegirPartidaNacimiento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Ciudadanos\FrmListaCiudadanos.resx">
       <DependentUpon>FrmListaCiudadanos.cs</DependentUpon>
@@ -238,6 +247,25 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Database\" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AcroPDFLib">
+      <Guid>{05BFD3F1-6319-4F30-B752-C7A22889BCC4}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="AxAcroPDFLib">
+      <Guid>{05BFD3F1-6319-4F30-B752-C7A22889BCC4}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
