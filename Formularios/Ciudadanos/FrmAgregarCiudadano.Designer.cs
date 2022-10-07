@@ -56,6 +56,7 @@
             this.BtnAgregar = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.apellidosTextBox = new System.Windows.Forms.TextBox();
+            this.ciudadanoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ciudadanoPorComboBox = new System.Windows.Forms.ComboBox();
             this.conocidoPorTextBox = new System.Windows.Forms.TextBox();
             this.departamentoNacimientoComboBox = new System.Windows.Forms.ComboBox();
@@ -87,7 +88,7 @@
             this.ciudadanoBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.BtnPartidaNacimiento = new System.Windows.Forms.Button();
             this.BtnFirma = new System.Windows.Forms.Button();
-            this.ciudadanoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.OfdImportarFoto = new System.Windows.Forms.OpenFileDialog();
             apellidosLabel = new System.Windows.Forms.Label();
             ciudadanoPorLabel = new System.Windows.Forms.Label();
             conocidoPorLabel = new System.Windows.Forms.Label();
@@ -109,9 +110,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.PBxAvatar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBxFoto)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ciudadanoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ciudadanoBindingNavigator)).BeginInit();
             this.ciudadanoBindingNavigator.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ciudadanoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // apellidosLabel
@@ -332,6 +333,7 @@
             this.BtnAgregarFoto.TabIndex = 23;
             this.BtnAgregarFoto.Text = "Agregar foto";
             this.BtnAgregarFoto.UseVisualStyleBackColor = true;
+            this.BtnAgregarFoto.Click += new System.EventHandler(this.BtnAgregarFoto_Click);
             // 
             // BtnAgregar
             // 
@@ -396,6 +398,10 @@
             this.apellidosTextBox.Size = new System.Drawing.Size(200, 23);
             this.apellidosTextBox.TabIndex = 1;
             // 
+            // ciudadanoBindingSource
+            // 
+            this.ciudadanoBindingSource.DataSource = typeof(Duisv.Modelos.Ciudadano);
+            // 
             // ciudadanoPorComboBox
             // 
             this.ciudadanoPorComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ciudadanoBindingSource, "CiudadanoPor", true));
@@ -428,7 +434,7 @@
             this.departamentoNacimientoComboBox.Name = "departamentoNacimientoComboBox";
             this.departamentoNacimientoComboBox.Size = new System.Drawing.Size(200, 23);
             this.departamentoNacimientoComboBox.TabIndex = 9;
-            this.departamentoNacimientoComboBox.SelectedIndexChanged += new System.EventHandler(this.departamentoNacimientoComboBox_SelectedIndexChanged);
+            this.departamentoNacimientoComboBox.SelectedIndexChanged += new System.EventHandler(this.DepartamentoNacimientoComboBox_SelectedIndexChanged);
             // 
             // departamentoResidenciaComboBox
             // 
@@ -439,7 +445,7 @@
             this.departamentoResidenciaComboBox.Name = "departamentoResidenciaComboBox";
             this.departamentoResidenciaComboBox.Size = new System.Drawing.Size(200, 23);
             this.departamentoResidenciaComboBox.TabIndex = 11;
-            this.departamentoResidenciaComboBox.SelectedIndexChanged += new System.EventHandler(this.departamentoResidenciaComboBox_SelectedIndexChanged);
+            this.departamentoResidenciaComboBox.SelectedIndexChanged += new System.EventHandler(this.DepartamentoResidenciaComboBox_SelectedIndexChanged);
             // 
             // estadoFamiliarComboBox
             // 
@@ -606,7 +612,7 @@
             this.ciudadanoBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.ciudadanoBindingNavigator.Name = "ciudadanoBindingNavigator";
             this.ciudadanoBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.ciudadanoBindingNavigator.Size = new System.Drawing.Size(896, 25);
+            this.ciudadanoBindingNavigator.Size = new System.Drawing.Size(1005, 25);
             this.ciudadanoBindingNavigator.TabIndex = 28;
             this.ciudadanoBindingNavigator.Text = "bindingNavigator1";
             this.ciudadanoBindingNavigator.Visible = false;
@@ -730,10 +736,6 @@
             this.BtnFirma.UseVisualStyleBackColor = true;
             this.BtnFirma.Click += new System.EventHandler(this.BtnAgregar_Click);
             // 
-            // ciudadanoBindingSource
-            // 
-            this.ciudadanoBindingSource.DataSource = typeof(Duisv.Modelos.Ciudadano);
-            // 
             // FrmAgregarCiudadano
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -761,10 +763,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.PBxFoto)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ciudadanoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ciudadanoBindingNavigator)).EndInit();
             this.ciudadanoBindingNavigator.ResumeLayout(false);
             this.ciudadanoBindingNavigator.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ciudadanoBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -813,5 +815,6 @@
         private System.Windows.Forms.ComboBox tipoSangreComboBox;
         private System.Windows.Forms.Button BtnPartidaNacimiento;
         private System.Windows.Forms.Button BtnFirma;
+        private System.Windows.Forms.OpenFileDialog OfdImportarFoto;
     }
 }

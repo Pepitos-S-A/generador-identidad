@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.Drawing.Imaging;
+using System.IO;
 using System.Windows.Forms;
 using Duisv.Modelos;
 using Duisv.Servicios;
@@ -12,6 +15,7 @@ namespace Duisv.Formularios.Ciudadanos
         private readonly DepartamentoServicio _departamentoServicio;
         private readonly MunicipioServicio _municipioServicio;
         private readonly CiudadanoServicio _ciudadanoServicio;
+        private bool _guardarFoto;
 
         public FrmAgregarCiudadano()
         {
@@ -20,6 +24,7 @@ namespace Duisv.Formularios.Ciudadanos
             _departamentoServicio = new DepartamentoServicio();
             _municipioServicio = new MunicipioServicio();
             _ciudadanoServicio = new CiudadanoServicio();
+            _guardarFoto = false;
         }
 
         private void MostrarListaDespartamentos(List<Departamento> departamentos, ref ComboBox comboBox)
@@ -48,7 +53,7 @@ namespace Duisv.Formularios.Ciudadanos
             profesionComboBox.SelectedIndex = 0;
         }
 
-        private void departamentoNacimientoComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        private void DepartamentoNacimientoComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             var departamentoId = Convert.ToInt32(((ComboBox)sender).SelectedValue);
 
@@ -68,7 +73,7 @@ namespace Duisv.Formularios.Ciudadanos
             comboBox.DataSource = municipios;
         }
 
-        private void departamentoResidenciaComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        private void DepartamentoResidenciaComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             var departamentoId = Convert.ToInt32(((ComboBox)sender).SelectedValue);
 
@@ -110,7 +115,51 @@ namespace Duisv.Formularios.Ciudadanos
                 {
                     if (_ciudadanoServicio.AgregarCiudadano(ciudadano) > 0)
                     {
+                        if (_guardarFoto)
+                        {
+                            GuardarFoto(string.Concat(ciudadano.Nombres, ciudadano.Apellidos));
+                        }
+
                         DialogResult = DialogResult.OK;
+                    }
+                }
+            }
+        }
+
+        private void BtnAgregarFoto_Click(object sender, EventArgs e)
+        {
+            OfdImportarFoto.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures);
+
+            if (OfdImportarFoto.ShowDialog() == DialogResult.OK)
+            {
+                if (File.Exists(OfdImportarFoto.FileName))
+                {
+                    PBxFoto.Image.Dispose();
+                    PBxFoto.Image = Image.FromFile(OfdImportarFoto.FileName);
+                    PBxFoto.ImageLocation = OfdImportarFoto.FileName;
+                    _guardarFoto = true;
+                }
+            }
+        }
+
+        private void GuardarFoto(string nombre)
+        {
+            string rutaCarpeta = $@"{Environment.GetFolderPath(Environment.SpecialFolder.MyPictures)}\DUISV\Ciudadanos\Fotos\";
+            string nombreFoto = $"{nombre}.png";
+            string rutaNuevaFoto = string.Concat(rutaCarpeta, nombreFoto);
+
+            if (!Directory.Exists(rutaCarpeta))
+            {
+                Directory.CreateDirectory(rutaCarpeta);
+            }
+
+            if (PBxFoto.Image != null)
+            {
+                using (var bitmap = new Bitmap(PBxFoto.Image, 170, 170))
+                {
+                    using (var stream = new FileStream(rutaNuevaFoto, FileMode.Create, FileAccess.Write))
+                    {
+                        bitmap.Save(stream, ImageFormat.Png);
                     }
                 }
             }
