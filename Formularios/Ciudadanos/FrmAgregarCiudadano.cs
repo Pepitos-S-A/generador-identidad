@@ -25,7 +25,7 @@ namespace Duisv.Formularios.Ciudadanos
         private void MostrarListaDespartamentos(List<Departamento> departamentos, ref ComboBox comboBox)
         {
 
-            comboBox.BindingContext = new BindingContext();            
+            comboBox.BindingContext = new BindingContext();
             comboBox.DisplayMember = "Nombre";
             comboBox.ValueMember = "DepartamentoId";
             comboBox.DataSource = departamentos;
@@ -40,6 +40,12 @@ namespace Duisv.Formularios.Ciudadanos
 
             MostrarListaDespartamentos(departamentos, ref departamentoResidenciaComboBox);
             MostrarListaDespartamentos(departamentos, ref departamentoNacimientoComboBox);
+
+            ciudadanoPorComboBox.SelectedIndex = 0;
+            generoComboBox.SelectedIndex = 0;
+            estadoFamiliarComboBox.SelectedIndex = 0;
+            tipoSangreComboBox.SelectedIndex = 0;
+            profesionComboBox.SelectedIndex = 0;
         }
 
         private void departamentoNacimientoComboBox_SelectedIndexChanged(object sender, EventArgs e)
