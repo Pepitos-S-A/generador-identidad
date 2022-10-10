@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
+using System.Text;
 using System.Windows.Forms;
 using Duisv.Modelos;
 using Duisv.Servicios;
@@ -15,7 +16,7 @@ namespace Duisv.Formularios.Ciudadanos
         private readonly DepartamentoServicio _departamentoServicio;
         private readonly MunicipioServicio _municipioServicio;
         private readonly CiudadanoServicio _ciudadanoServicio;
-        private bool _guardarFoto;
+        private readonly DocumentoServicio _documentoServicio;
 
         public FrmAgregarCiudadano()
         {
@@ -24,7 +25,7 @@ namespace Duisv.Formularios.Ciudadanos
             _departamentoServicio = new DepartamentoServicio();
             _municipioServicio = new MunicipioServicio();
             _ciudadanoServicio = new CiudadanoServicio();
-            _guardarFoto = false;
+            _documentoServicio = new DocumentoServicio();
         }
 
         private void MostrarListaDespartamentos(List<Departamento> departamentos, ref ComboBox comboBox)
@@ -103,26 +104,111 @@ namespace Duisv.Formularios.Ciudadanos
             return valido;
         }
 
+        private bool ValidarAdjuntos()
+        {
+            var validos = true;
+            var mensaje = string.Empty;
+
+            if (string.IsNullOrEmpty(PBxFoto.ImageLocation))
+            {
+                validos = false;
+                mensaje = "La foto del ciudadano es requerida.";
+            }
+            else if (string.IsNullOrEmpty(PBxFirma.ImageLocation))
+            {
+                validos = false;
+                mensaje = "La firma del ciudadano es requerida.";
+            }
+            else if (string.IsNullOrEmpty(TBxRutaDocumento.Text))
+            {
+                validos = false;
+                mensaje = "La partida de nacimiento del ciudadano es requerida.";
+            }
+
+            if (validos == false)
+            {
+                MessageBox.Show(mensaje, "Agregar ciudadano: error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
+            return validos;
+        }
+
         private void BtnAgregar_Click(object sender, EventArgs e)
         {
             ciudadanoBindingSource.EndEdit();
 
-            var ciudadano = ciudadanoBindingSource.Current as Ciudadano;
+            var ciudadano = ciudadanoBindingSource.Current as Ciudadano;           
 
             if (ciudadano != null)
             {
-                if (ValidarDatosCiudadano(ciudadano))
+                ciudadano.TipoSangre = ciudadano.TipoSangre == "-- Seleccionar --" ? string.Empty : ciudadano.TipoSangre;
+
+                if (ValidarDatosCiudadano(ciudadano) && ValidarAdjuntos())
                 {
-                    if (_ciudadanoServicio.AgregarCiudadano(ciudadano) > 0)
+                    var documento = new Documento
                     {
-                        if (_guardarFoto)
+                        FechaExpedicion = DateTime.Today,
+                        MunicipioExpedicion = "Santa Ana",
+                        DepartamentoExpedicion = "Santa Ana",
+                        FechaExpiracion = DateTime.Today.AddYears(8),
+                        Numero = GenerarNumeroDui(),
+                        TipoTramite = "RP-1",
+                        CodigoZona = "102020000T",
+                        NumeroFolio = ""
+
+                    };
+
+                    if ((documento.DocumentoId = _documentoServicio.AgregarDocumento(documento)) > 0)
+                    {
+                        ciudadano.DocumentoId = documento.DocumentoId;
+
+                        if (_ciudadanoServicio.AgregarCiudadano(ciudadano) > 0)
                         {
                             GuardarFoto(string.Concat(ciudadano.Nombres, ciudadano.Apellidos));
-                        }
+                            GuardarFirma(string.Concat(ciudadano.Nombres, ciudadano.Apellidos));
+                            GuardarPartidaNacimiento(string.Concat(ciudadano.Nombres, ciudadano.Apellidos));
 
-                        DialogResult = DialogResult.OK;
+                            DialogResult = DialogResult.OK;
+                        }
                     }
                 }
+            }
+        }
+
+        private string GenerarNumeroDui()
+        {
+            var numero = new StringBuilder(9);
+            var aleatorio = new Random();
+
+            for (int i = 0; i < 9; i++)
+            {
+                numero.Append(aleatorio.Next(0, 9));
+            }
+
+            return numero.ToString();
+        }
+
+        private void GuardarPartidaNacimiento(string nombre)
+        {
+            try
+            {
+                var directorio = $@"{Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)}\DUISV\Ciudadanos\Documentos\";
+                var archivo = string.Concat(nombre, ".pdf");
+                var ruta = string.Concat(directorio, archivo);
+
+                if (!Directory.Exists(directorio))
+                {
+                    Directory.CreateDirectory(directorio);
+                }
+
+                if (File.Exists(TBxRutaDocumento.Text))
+                {
+                    File.Copy(TBxRutaDocumento.Text, ruta);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Agregar ciudadano: error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -137,14 +223,13 @@ namespace Duisv.Formularios.Ciudadanos
                     PBxFoto.Image.Dispose();
                     PBxFoto.Image = Image.FromFile(OfdImportarFoto.FileName);
                     PBxFoto.ImageLocation = OfdImportarFoto.FileName;
-                    _guardarFoto = true;
                 }
             }
         }
 
         private void GuardarFoto(string nombre)
         {
-            string rutaCarpeta = $@"{Environment.GetFolderPath(Environment.SpecialFolder.MyPictures)}\DUISV\Ciudadanos\Fotos\";
+            var rutaCarpeta = $@"{Environment.GetFolderPath(Environment.SpecialFolder.MyPictures)}\DUISV\Ciudadanos\Fotos\";
             string nombreFoto = $"{nombre}.png";
             string rutaNuevaFoto = string.Concat(rutaCarpeta, nombreFoto);
 
@@ -165,6 +250,29 @@ namespace Duisv.Formularios.Ciudadanos
             }
         }
 
+        private void GuardarFirma(string nombre)
+        {
+            var directorio = $@"{Environment.GetFolderPath(Environment.SpecialFolder.MyPictures)}\DUISV\Ciudadanos\Firmas\";
+            string archivo = $"{nombre}.png";
+            string ruta = string.Concat(directorio, archivo);
+
+            if (!Directory.Exists(directorio))
+            {
+                Directory.CreateDirectory(directorio);
+            }
+
+            if (PBxFirma.Image != null)
+            {
+                using (var bitmap = new Bitmap(PBxFirma.Image, 170, 170))
+                {
+                    using (var stream = new FileStream(ruta, FileMode.Create, FileAccess.Write))
+                    {
+                        bitmap.Save(stream, ImageFormat.Png);
+                    }
+                }
+            }
+        }
+
         private void BtnTomarFoto_Click(object sender, EventArgs e)
         {
             TomarFoto(ref PBxFoto);
@@ -173,10 +281,36 @@ namespace Duisv.Formularios.Ciudadanos
         private void TomarFoto(ref PictureBox pictureBox)
         {
             var frmTomarFoto = new FrmTomarFoto(ref pictureBox);
+            frmTomarFoto.ShowDialog();
+        }
 
-            if (frmTomarFoto.ShowDialog() == DialogResult.OK)
+        private void BtnPartidaNacimiento_Click(object sender, EventArgs e)
+        {
+            var frmElegirPartidaNacimiento = new FrmElegirPartidaNacimiento();
+
+            if (frmElegirPartidaNacimiento.ShowDialog() == DialogResult.OK)
             {
-                _guardarFoto = true;
+                TBxRutaDocumento.Text = frmElegirPartidaNacimiento.RutaDocumento;
+            }
+        }
+
+        private void BtnQuitarDocumento_Click(object sender, EventArgs e)
+        {
+            TBxRutaDocumento.Text = string.Empty;
+        }
+
+        private void BtnFirma_Click(object sender, EventArgs e)
+        {
+            OfdImportarFirma.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures);
+
+            if (OfdImportarFirma.ShowDialog() == DialogResult.OK)
+            {
+                if (File.Exists(OfdImportarFirma.FileName))
+                {
+                    PBxFirma.Image.Dispose();
+                    PBxFirma.Image = Image.FromFile(OfdImportarFirma.FileName);
+                    PBxFirma.ImageLocation = OfdImportarFirma.FileName;
+                }
             }
         }
     }

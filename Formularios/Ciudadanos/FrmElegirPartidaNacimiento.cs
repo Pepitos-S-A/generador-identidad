@@ -24,9 +24,9 @@ namespace Duisv.Formularios.Ciudadanos
 
         private void BtnGuardarDocumento_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(axAcroPDF.src))
+            if (!string.IsNullOrEmpty(OfdSeleccionarDocumento.FileName))
             {
-                RutaDocumento = axAcroPDF.src;
+                RutaDocumento = OfdSeleccionarDocumento.FileName;
                 DialogResult = DialogResult.OK;
             }
         }

@@ -51,7 +51,6 @@
             this.LblUsuario = new System.Windows.Forms.Label();
             this.PBxAvatar = new System.Windows.Forms.PictureBox();
             this.BtnTomarFoto = new System.Windows.Forms.Button();
-            this.PBxFoto = new System.Windows.Forms.PictureBox();
             this.BtnAgregarFoto = new System.Windows.Forms.Button();
             this.BtnAgregar = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -89,6 +88,11 @@
             this.BtnPartidaNacimiento = new System.Windows.Forms.Button();
             this.BtnFirma = new System.Windows.Forms.Button();
             this.OfdImportarFoto = new System.Windows.Forms.OpenFileDialog();
+            this.label1 = new System.Windows.Forms.Label();
+            this.TBxRutaDocumento = new System.Windows.Forms.TextBox();
+            this.OfdImportarFirma = new System.Windows.Forms.OpenFileDialog();
+            this.PBxFirma = new System.Windows.Forms.PictureBox();
+            this.PBxFoto = new System.Windows.Forms.PictureBox();
             apellidosLabel = new System.Windows.Forms.Label();
             ciudadanoPorLabel = new System.Windows.Forms.Label();
             conocidoPorLabel = new System.Windows.Forms.Label();
@@ -108,11 +112,12 @@
             tipoSangreLabel = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PBxAvatar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PBxFoto)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ciudadanoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ciudadanoBindingNavigator)).BeginInit();
             this.ciudadanoBindingNavigator.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PBxFirma)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PBxFoto)).BeginInit();
             this.SuspendLayout();
             // 
             // apellidosLabel
@@ -311,19 +316,6 @@
             this.BtnTomarFoto.UseVisualStyleBackColor = true;
             this.BtnTomarFoto.Click += new System.EventHandler(this.BtnTomarFoto_Click);
             // 
-            // PBxFoto
-            // 
-            this.PBxFoto.ErrorImage = global::Duisv.Properties.Resources.usuario;
-            this.PBxFoto.Image = global::Duisv.Properties.Resources.usuario;
-            this.PBxFoto.InitialImage = global::Duisv.Properties.Resources.usuario;
-            this.PBxFoto.Location = new System.Drawing.Point(13, 54);
-            this.PBxFoto.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.PBxFoto.Name = "PBxFoto";
-            this.PBxFoto.Size = new System.Drawing.Size(170, 170);
-            this.PBxFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.PBxFoto.TabIndex = 24;
-            this.PBxFoto.TabStop = false;
-            // 
             // BtnAgregarFoto
             // 
             this.BtnAgregarFoto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -339,7 +331,7 @@
             // BtnAgregar
             // 
             this.BtnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnAgregar.Location = new System.Drawing.Point(822, 380);
+            this.BtnAgregar.Location = new System.Drawing.Point(822, 479);
             this.BtnAgregar.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.BtnAgregar.Name = "BtnAgregar";
             this.BtnAgregar.Size = new System.Drawing.Size(172, 44);
@@ -716,33 +708,86 @@
             // BtnPartidaNacimiento
             // 
             this.BtnPartidaNacimiento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnPartidaNacimiento.Location = new System.Drawing.Point(190, 380);
+            this.BtnPartidaNacimiento.Location = new System.Drawing.Point(13, 480);
             this.BtnPartidaNacimiento.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.BtnPartidaNacimiento.Name = "BtnPartidaNacimiento";
             this.BtnPartidaNacimiento.Size = new System.Drawing.Size(172, 44);
             this.BtnPartidaNacimiento.TabIndex = 26;
             this.BtnPartidaNacimiento.Text = "Partida de nacimiento";
             this.BtnPartidaNacimiento.UseVisualStyleBackColor = true;
-            this.BtnPartidaNacimiento.Click += new System.EventHandler(this.BtnAgregar_Click);
+            this.BtnPartidaNacimiento.Click += new System.EventHandler(this.BtnPartidaNacimiento_Click);
             // 
             // BtnFirma
             // 
             this.BtnFirma.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnFirma.Location = new System.Drawing.Point(372, 380);
+            this.BtnFirma.Location = new System.Drawing.Point(13, 330);
             this.BtnFirma.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.BtnFirma.Name = "BtnFirma";
             this.BtnFirma.Size = new System.Drawing.Size(172, 44);
             this.BtnFirma.TabIndex = 26;
             this.BtnFirma.Text = "Firma";
             this.BtnFirma.UseVisualStyleBackColor = true;
-            this.BtnFirma.Click += new System.EventHandler(this.BtnAgregar_Click);
+            this.BtnFirma.Click += new System.EventHandler(this.BtnFirma_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(190, 482);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(130, 15);
+            this.label1.TabIndex = 29;
+            this.label1.Text = "Ruta del documento:";
+            // 
+            // TBxRutaDocumento
+            // 
+            this.TBxRutaDocumento.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TBxRutaDocumento.Location = new System.Drawing.Point(193, 501);
+            this.TBxRutaDocumento.Name = "TBxRutaDocumento";
+            this.TBxRutaDocumento.ReadOnly = true;
+            this.TBxRutaDocumento.Size = new System.Drawing.Size(387, 23);
+            this.TBxRutaDocumento.TabIndex = 40;
+            // 
+            // OfdImportarFirma
+            // 
+            this.OfdImportarFirma.Filter = "Firma|*.png";
+            // 
+            // PBxFirma
+            // 
+            this.PBxFirma.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.PBxFirma.ErrorImage = global::Duisv.Properties.Resources.persa;
+            this.PBxFirma.Image = global::Duisv.Properties.Resources.persa;
+            this.PBxFirma.InitialImage = global::Duisv.Properties.Resources.persa;
+            this.PBxFirma.Location = new System.Drawing.Point(13, 380);
+            this.PBxFirma.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.PBxFirma.Name = "PBxFirma";
+            this.PBxFirma.Size = new System.Drawing.Size(172, 94);
+            this.PBxFirma.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.PBxFirma.TabIndex = 41;
+            this.PBxFirma.TabStop = false;
+            // 
+            // PBxFoto
+            // 
+            this.PBxFoto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.PBxFoto.ErrorImage = global::Duisv.Properties.Resources.usuario;
+            this.PBxFoto.Image = global::Duisv.Properties.Resources.usuario;
+            this.PBxFoto.InitialImage = global::Duisv.Properties.Resources.usuario;
+            this.PBxFoto.Location = new System.Drawing.Point(13, 54);
+            this.PBxFoto.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.PBxFoto.Name = "PBxFoto";
+            this.PBxFoto.Size = new System.Drawing.Size(170, 170);
+            this.PBxFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.PBxFoto.TabIndex = 24;
+            this.PBxFoto.TabStop = false;
             // 
             // FrmAgregarCiudadano
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1005, 431);
+            this.ClientSize = new System.Drawing.Size(1005, 535);
+            this.Controls.Add(this.PBxFirma);
+            this.Controls.Add(this.TBxRutaDocumento);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.ciudadanoBindingNavigator);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.BtnFirma);
@@ -761,13 +806,14 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PBxAvatar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PBxFoto)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ciudadanoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ciudadanoBindingNavigator)).EndInit();
             this.ciudadanoBindingNavigator.ResumeLayout(false);
             this.ciudadanoBindingNavigator.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PBxFirma)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PBxFoto)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -817,5 +863,9 @@
         private System.Windows.Forms.Button BtnPartidaNacimiento;
         private System.Windows.Forms.Button BtnFirma;
         private System.Windows.Forms.OpenFileDialog OfdImportarFoto;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox TBxRutaDocumento;
+        private System.Windows.Forms.PictureBox PBxFirma;
+        private System.Windows.Forms.OpenFileDialog OfdImportarFirma;
     }
 }
