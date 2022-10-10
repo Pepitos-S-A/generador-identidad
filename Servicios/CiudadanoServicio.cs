@@ -148,7 +148,60 @@ namespace Duisv.Servicios
                                     ConocidoPor = lector["ConocidoPor"].ToString(),
                                     Genero = lector["Genero"].ToString(),
                                     CiudadanoPor = lector["CiudadanoPor"].ToString(),
-                                    FechaNacimiento = DateTime.Parse(lector["CiudadanoPor"].ToString()),
+                                    FechaNacimiento = DateTime.Parse(lector["FechaNacimiento"].ToString()),
+                                    Residencia = lector["Residencia"].ToString(),
+                                    EstadoFamiliar = lector["EstadoFamiliar"].ToString(),
+                                    Profesion = lector["Profesion"].ToString(),
+                                    TipoSangre = lector["TipoSangre"].ToString(),
+                                    NombreMadre = lector["NombreMadre"].ToString(),
+                                    NombrePadre = lector["NombrePadre"].ToString(),
+                                    NombreConyugue = lector["NombreConyugue"].ToString(),
+                                    MunicipioNacimiento = lector["MunicipioNacimiento"].ToString(),
+                                    DepartamentoNacimiento = lector["DepartamentoNacimiento"].ToString(),
+                                    DepartamentoResidencia = lector["DepartamentoResidencia"].ToString(),
+                                    MunicipioResidencia = lector["MunicipoResidencia"].ToString(),
+                                    DocumentoId = lector["MunicipoResidencia"] as int?,
+                                    NumeroDocumento = lector["NumeroDui"].ToString()
+                                };
+
+                                ciudadanos.Add(ciudadano);
+                            }
+                        }
+                    }
+                }
+            }
+
+            return ciudadanos;
+        }
+
+        public List<Ciudadano> ObtenerResultadoBusqueda(string busqueda)
+        {
+            var ciudadanos = new List<Ciudadano>();
+
+            using (var conexion = new SqlConnection(cadenaConexion))
+            {
+                if (conexion.State != ConnectionState.Open)
+                {
+                    conexion.Open();
+
+                    using (var comando = new SqlCommand("ObtenerResultadoBusquedaCiudadanos", conexion))
+                    {
+                        comando.CommandType = CommandType.StoredProcedure;
+                        comando.Parameters.AddWithValue("@Busqueda", busqueda);
+
+                        using (var lector = comando.ExecuteReader())
+                        {
+                            while (lector.Read())
+                            {
+                                var ciudadano = new Ciudadano
+                                {
+                                    CiudadanoId = int.Parse(lector["CiudadanoId"].ToString()),
+                                    Nombres = lector["Nombres"].ToString(),
+                                    Apellidos = lector["Apellidos"].ToString(),
+                                    ConocidoPor = lector["ConocidoPor"].ToString(),
+                                    Genero = lector["Genero"].ToString(),
+                                    CiudadanoPor = lector["CiudadanoPor"].ToString(),
+                                    FechaNacimiento = DateTime.Parse(lector["FechaNacimiento"].ToString()),
                                     Residencia = lector["Residencia"].ToString(),
                                     EstadoFamiliar = lector["EstadoFamiliar"].ToString(),
                                     Profesion = lector["Profesion"].ToString(),

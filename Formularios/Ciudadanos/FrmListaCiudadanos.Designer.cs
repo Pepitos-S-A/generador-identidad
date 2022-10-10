@@ -35,13 +35,6 @@
             this.TBxBusqueda = new System.Windows.Forms.TextBox();
             this.LblPaginacion = new System.Windows.Forms.Label();
             this.DgvCiudadanos = new System.Windows.Forms.DataGridView();
-            this.BtnAgregarCiudadano = new System.Windows.Forms.Button();
-            this.LblUsuario = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.PBxAvatar = new System.Windows.Forms.PictureBox();
-            this.Ver = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Editar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.ciudadanoIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombresDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.apellidosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -62,11 +55,18 @@
             this.municipioResidenciaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.departamentoResidenciaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.documentoIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ver = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Editar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.ciudadanoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.BtnAgregarCiudadano = new System.Windows.Forms.Button();
+            this.LblUsuario = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.PBxAvatar = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.DgvCiudadanos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ciudadanoBindingSource)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PBxAvatar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ciudadanoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // BtnPaginaSiguiente
@@ -80,6 +80,7 @@
             this.BtnPaginaSiguiente.TabIndex = 18;
             this.BtnPaginaSiguiente.Text = "Siguiente página";
             this.BtnPaginaSiguiente.UseVisualStyleBackColor = true;
+            this.BtnPaginaSiguiente.Click += new System.EventHandler(this.BtnPaginaSiguiente_Click);
             // 
             // BtnPaginaAnterior
             // 
@@ -92,6 +93,7 @@
             this.BtnPaginaAnterior.TabIndex = 16;
             this.BtnPaginaAnterior.Text = "Página anterior";
             this.BtnPaginaAnterior.UseVisualStyleBackColor = true;
+            this.BtnPaginaAnterior.Click += new System.EventHandler(this.BtnPaginaAnterior_Click);
             // 
             // BtnBuscar
             // 
@@ -104,6 +106,7 @@
             this.BtnBuscar.TabIndex = 15;
             this.BtnBuscar.Text = "Buscar";
             this.BtnBuscar.UseVisualStyleBackColor = true;
+            this.BtnBuscar.Click += new System.EventHandler(this.BtnBuscar_Click);
             // 
             // TBxBusqueda
             // 
@@ -174,67 +177,7 @@
             this.DgvCiudadanos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DgvCiudadanos.Size = new System.Drawing.Size(891, 397);
             this.DgvCiudadanos.TabIndex = 13;
-            // 
-            // BtnAgregarCiudadano
-            // 
-            this.BtnAgregarCiudadano.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnAgregarCiudadano.Font = new System.Drawing.Font("Arial Black", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnAgregarCiudadano.ForeColor = System.Drawing.Color.Black;
-            this.BtnAgregarCiudadano.Location = new System.Drawing.Point(12, 60);
-            this.BtnAgregarCiudadano.Name = "BtnAgregarCiudadano";
-            this.BtnAgregarCiudadano.Size = new System.Drawing.Size(129, 38);
-            this.BtnAgregarCiudadano.TabIndex = 12;
-            this.BtnAgregarCiudadano.Text = "Agregar ciudadano";
-            this.BtnAgregarCiudadano.UseVisualStyleBackColor = true;
-            this.BtnAgregarCiudadano.Click += new System.EventHandler(this.BtnAgregarCiudadano_Click);
-            // 
-            // LblUsuario
-            // 
-            this.LblUsuario.AutoSize = true;
-            this.LblUsuario.Location = new System.Drawing.Point(41, 17);
-            this.LblUsuario.Name = "LblUsuario";
-            this.LblUsuario.Size = new System.Drawing.Size(126, 15);
-            this.LblUsuario.TabIndex = 1;
-            this.LblUsuario.Text = "Lista de ciudadanos";
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.Salmon;
-            this.panel1.Controls.Add(this.LblUsuario);
-            this.panel1.Controls.Add(this.PBxAvatar);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(915, 48);
-            this.panel1.TabIndex = 11;
-            // 
-            // PBxAvatar
-            // 
-            this.PBxAvatar.Image = global::Duisv.Properties.Resources.licencia;
-            this.PBxAvatar.Location = new System.Drawing.Point(12, 12);
-            this.PBxAvatar.Name = "PBxAvatar";
-            this.PBxAvatar.Size = new System.Drawing.Size(23, 23);
-            this.PBxAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.PBxAvatar.TabIndex = 0;
-            this.PBxAvatar.TabStop = false;
-            // 
-            // Ver
-            // 
-            this.Ver.HeaderText = "";
-            this.Ver.Name = "Ver";
-            this.Ver.ReadOnly = true;
-            // 
-            // Editar
-            // 
-            this.Editar.HeaderText = "";
-            this.Editar.Name = "Editar";
-            this.Editar.ReadOnly = true;
-            // 
-            // Eliminar
-            // 
-            this.Eliminar.HeaderText = "";
-            this.Eliminar.Name = "Eliminar";
-            this.Eliminar.ReadOnly = true;
+            this.DgvCiudadanos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvCiudadanos_CellContentClick);
             // 
             // ciudadanoIdDataGridViewTextBoxColumn
             // 
@@ -393,9 +336,79 @@
             this.documentoIdDataGridViewTextBoxColumn.ReadOnly = true;
             this.documentoIdDataGridViewTextBoxColumn.Visible = false;
             // 
+            // Ver
+            // 
+            this.Ver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Ver.HeaderText = "";
+            this.Ver.Name = "Ver";
+            this.Ver.ReadOnly = true;
+            this.Ver.Text = "Ver";
+            this.Ver.UseColumnTextForButtonValue = true;
+            // 
+            // Editar
+            // 
+            this.Editar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Editar.HeaderText = "";
+            this.Editar.Name = "Editar";
+            this.Editar.ReadOnly = true;
+            this.Editar.Text = "Editar";
+            this.Editar.UseColumnTextForButtonValue = true;
+            // 
+            // Eliminar
+            // 
+            this.Eliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Eliminar.HeaderText = "";
+            this.Eliminar.Name = "Eliminar";
+            this.Eliminar.ReadOnly = true;
+            this.Eliminar.Text = "Eliminar";
+            this.Eliminar.UseColumnTextForButtonValue = true;
+            // 
             // ciudadanoBindingSource
             // 
             this.ciudadanoBindingSource.DataSource = typeof(Duisv.Modelos.Ciudadano);
+            // 
+            // BtnAgregarCiudadano
+            // 
+            this.BtnAgregarCiudadano.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnAgregarCiudadano.Font = new System.Drawing.Font("Arial Black", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnAgregarCiudadano.ForeColor = System.Drawing.Color.Black;
+            this.BtnAgregarCiudadano.Location = new System.Drawing.Point(12, 60);
+            this.BtnAgregarCiudadano.Name = "BtnAgregarCiudadano";
+            this.BtnAgregarCiudadano.Size = new System.Drawing.Size(129, 38);
+            this.BtnAgregarCiudadano.TabIndex = 12;
+            this.BtnAgregarCiudadano.Text = "Agregar ciudadano";
+            this.BtnAgregarCiudadano.UseVisualStyleBackColor = true;
+            this.BtnAgregarCiudadano.Click += new System.EventHandler(this.BtnAgregarCiudadano_Click);
+            // 
+            // LblUsuario
+            // 
+            this.LblUsuario.AutoSize = true;
+            this.LblUsuario.Location = new System.Drawing.Point(41, 17);
+            this.LblUsuario.Name = "LblUsuario";
+            this.LblUsuario.Size = new System.Drawing.Size(126, 15);
+            this.LblUsuario.TabIndex = 1;
+            this.LblUsuario.Text = "Lista de ciudadanos";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Salmon;
+            this.panel1.Controls.Add(this.LblUsuario);
+            this.panel1.Controls.Add(this.PBxAvatar);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(915, 48);
+            this.panel1.TabIndex = 11;
+            // 
+            // PBxAvatar
+            // 
+            this.PBxAvatar.Image = global::Duisv.Properties.Resources.licencia;
+            this.PBxAvatar.Location = new System.Drawing.Point(12, 12);
+            this.PBxAvatar.Name = "PBxAvatar";
+            this.PBxAvatar.Size = new System.Drawing.Size(23, 23);
+            this.PBxAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.PBxAvatar.TabIndex = 0;
+            this.PBxAvatar.TabStop = false;
             // 
             // FrmListaCiudadanos
             // 
@@ -416,11 +429,12 @@
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "FrmListaCiudadanos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Load += new System.EventHandler(this.FrmListaCiudadanos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DgvCiudadanos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ciudadanoBindingSource)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PBxAvatar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ciudadanoBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -438,6 +452,7 @@
         private System.Windows.Forms.Label LblUsuario;
         private System.Windows.Forms.PictureBox PBxAvatar;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.BindingSource ciudadanoBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn ciudadanoIdDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombresDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn apellidosDataGridViewTextBoxColumn;
@@ -461,6 +476,5 @@
         private System.Windows.Forms.DataGridViewButtonColumn Ver;
         private System.Windows.Forms.DataGridViewButtonColumn Editar;
         private System.Windows.Forms.DataGridViewButtonColumn Eliminar;
-        private System.Windows.Forms.BindingSource ciudadanoBindingSource;
     }
 }

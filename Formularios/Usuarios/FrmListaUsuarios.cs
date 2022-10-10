@@ -80,7 +80,7 @@ namespace Duisv.Formularios.Usuarios
                         AbrirFormularioVerUsuario(usuarioId);
                         break;
                     case 7:
-                        AbrirFormularioEditarUsuario(usuarioId );
+                        AbrirFormularioEditarUsuario(usuarioId);
                         break;
                     case 8:
                         ConfirmarEliminarUsuario(usuarioId, nombreUsuario);
@@ -93,10 +93,12 @@ namespace Duisv.Formularios.Usuarios
 
         private void AbrirFormularioVerUsuario(int usuarioId)
         {
-            var frmVerUsuario = new FrmVerUsuario(usuarioId);
-            frmVerUsuario.ShowDialog();
+            if (!_usuario.NombreUsuario.Equals("root"))
+            {
+
+            }
         }
-        
+
         private void AbrirFormularioAgregarUsuario()
         {
             if (AutorizarUsuario())
@@ -111,7 +113,7 @@ namespace Duisv.Formularios.Usuarios
             else
             {
                 MessageBox.Show("Su usuario no tiene autorización para realizar esta operación.", "Usuarios: Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-            }            
+            }
         }
 
         private void AbrirFormularioEditarUsuario(int usuarioId)
@@ -128,7 +130,7 @@ namespace Duisv.Formularios.Usuarios
             else
             {
                 MessageBox.Show("Su usuario no tiene autorización para realizar esta operación.", "Usuarios: Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-            }            
+            }
         }
 
         private void ConfirmarEliminarUsuario(int id, string usuario)

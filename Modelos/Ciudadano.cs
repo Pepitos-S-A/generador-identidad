@@ -10,7 +10,7 @@ namespace Duisv.Modelos
         public string ConocidoPor { get; set; } = string.Empty;
         public string Genero { get; set; } = string.Empty;
         public string CiudadanoPor { get; set; } = string.Empty;
-        public DateTime FechaNacimiento { get; set; }
+        public DateTime? FechaNacimiento { get; set; }
         public string Residencia { get; set; } = string.Empty;
         public string EstadoFamiliar { get; set; } = string.Empty;
         public string Profesion { get; set; } = string.Empty;
