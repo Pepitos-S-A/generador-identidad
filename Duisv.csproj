@@ -85,6 +85,12 @@
     <Compile Include="Formularios\Ciudadanos\FrmAgregarCiudadano.Designer.cs">
       <DependentUpon>FrmAgregarCiudadano.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Ciudadanos\FrmEditarCiudadano.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Ciudadanos\FrmEditarCiudadano.Designer.cs">
+      <DependentUpon>FrmEditarCiudadano.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Ciudadanos\FrmElegirPartidaNacimiento.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -166,6 +172,9 @@
     <Compile Include="Validaciones\EditarUsuarioValidador.cs" />
     <EmbeddedResource Include="Formularios\Ciudadanos\FrmAgregarCiudadano.resx">
       <DependentUpon>FrmAgregarCiudadano.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Ciudadanos\FrmEditarCiudadano.resx">
+      <DependentUpon>FrmEditarCiudadano.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Ciudadanos\FrmElegirPartidaNacimiento.resx">
       <DependentUpon>FrmElegirPartidaNacimiento.cs</DependentUpon>
