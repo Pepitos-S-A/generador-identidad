@@ -4,11 +4,27 @@ namespace Duisv.Modelos
 {
     public class Ciudadano
     {
+        private string genero = string.Empty;
+
         public int CiudadanoId { get; set; }
         public string Nombres { get; set; } = string.Empty;
         public string Apellidos { get; set; } = string.Empty;
         public string ConocidoPor { get; set; } = string.Empty;
-        public string Genero { get; set; } = string.Empty;
+        public string Genero 
+        {
+            get { return genero; }
+            set
+            {
+                if (value.Equals("M"))
+                {
+                    genero = "Masculino";
+                }
+                else
+                {
+                    genero = "Femenino";
+                }
+            }
+        }
         public string CiudadanoPor { get; set; } = string.Empty;
         public DateTime? FechaNacimiento { get; set; }
         public string Residencia { get; set; } = string.Empty;
