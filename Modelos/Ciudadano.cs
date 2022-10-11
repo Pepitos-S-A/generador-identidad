@@ -5,12 +5,13 @@ namespace Duisv.Modelos
     public class Ciudadano
     {
         private string genero = string.Empty;
+        private string tipoSangre = string.Empty;
 
         public int CiudadanoId { get; set; }
         public string Nombres { get; set; } = string.Empty;
         public string Apellidos { get; set; } = string.Empty;
         public string ConocidoPor { get; set; } = string.Empty;
-        public string Genero 
+        public string Genero
         {
             get { return genero; }
             set
@@ -30,7 +31,31 @@ namespace Duisv.Modelos
         public string Residencia { get; set; } = string.Empty;
         public string EstadoFamiliar { get; set; } = string.Empty;
         public string Profesion { get; set; } = string.Empty;
-        public string TipoSangre { get; set; } = string.Empty;
+        public string TipoSangre 
+        { 
+            get
+            {
+                if (string.IsNullOrEmpty(tipoSangre))
+                {
+                    return "-- Seleccionar --";
+                }
+                else
+                {
+                    return tipoSangre;
+                }
+            }
+            set
+            {
+                if (value.Equals("-- Seleccionar --"))
+                {
+                    tipoSangre = string.Empty;
+                }
+                else
+                {
+                    tipoSangre = value;
+                }
+            }
+        }
         public string NombreMadre { get; set; } = string.Empty;
         public string NombrePadre { get; set; } = string.Empty;
         public string NombreConyugue { get; set; } = string.Empty;

@@ -141,8 +141,6 @@ namespace Duisv.Formularios.Ciudadanos
 
             if (ciudadano != null)
             {
-                ciudadano.TipoSangre = ciudadano.TipoSangre == "-- Seleccionar --" ? string.Empty : ciudadano.TipoSangre;
-
                 if (ValidarDatosCiudadano(ciudadano) && ValidarAdjuntos())
                 {
                     var documento = new Documento
