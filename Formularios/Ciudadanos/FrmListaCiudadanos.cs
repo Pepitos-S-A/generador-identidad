@@ -100,7 +100,12 @@ namespace Duisv.Formularios.Ciudadanos
 
         private void AbrirFormularioEditar(int ciudadanoId)
         {
-            throw new NotImplementedException();
+            var frmEditarCiudadano = new FrmEditarCiudadano(ciudadanoId);
+
+            if (frmEditarCiudadano.ShowDialog() == DialogResult.OK)
+            {
+                MostrarListado(_ciudadanoServicio.ObtenerListaCiudadanos());
+            }
         }
 
         private void AbrirFormularioVer(int ciudadanoId)
