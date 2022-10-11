@@ -254,7 +254,7 @@ namespace Duisv.Servicios
                                     ConocidoPor = lector["ConocidoPor"].ToString(),
                                     Genero = lector["Genero"].ToString(),
                                     CiudadanoPor = lector["CiudadanoPor"].ToString(),
-                                    FechaNacimiento = DateTime.Parse(lector["CiudadanoPor"].ToString()),
+                                    FechaNacimiento = DateTime.Parse(lector["FechaNacimiento"].ToString()),
                                     Residencia = lector["Residencia"].ToString(),
                                     EstadoFamiliar = lector["EstadoFamiliar"].ToString(),
                                     Profesion = lector["Profesion"].ToString(),
