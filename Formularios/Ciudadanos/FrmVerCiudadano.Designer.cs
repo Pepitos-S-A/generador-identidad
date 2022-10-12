@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmVerCiudadano));
             System.Windows.Forms.Label apellidosLabel;
             System.Windows.Forms.Label conocidoPorLabel;
             System.Windows.Forms.Label nombreConyugueLabel;
@@ -49,6 +48,7 @@
             System.Windows.Forms.Label tipoSangreLabel;
             System.Windows.Forms.Label profesionLabel;
             System.Windows.Forms.Label numeroDocumentoLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmVerCiudadano));
             this.PBxFirma = new System.Windows.Forms.PictureBox();
             this.ciudadanoBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
@@ -65,6 +65,18 @@
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.ciudadanoBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.numeroDocumentoMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
+            this.profesionTextBox = new System.Windows.Forms.TextBox();
+            this.tipoSangreTextBox = new System.Windows.Forms.TextBox();
+            this.estadoFamiliarTextBox = new System.Windows.Forms.TextBox();
+            this.municipioResidenciaTextBox = new System.Windows.Forms.TextBox();
+            this.departamentoResidenciaTextBox = new System.Windows.Forms.TextBox();
+            this.municipioNacimientoTextBox = new System.Windows.Forms.TextBox();
+            this.departamentoNacimientoTextBox = new System.Windows.Forms.TextBox();
+            this.fechaNacimientoTextBox = new System.Windows.Forms.TextBox();
+            this.ciudadanoPorTextBox = new System.Windows.Forms.TextBox();
+            this.generoTextBox = new System.Windows.Forms.TextBox();
+            this.ciudadanoIdTextBox = new System.Windows.Forms.TextBox();
             this.apellidosTextBox = new System.Windows.Forms.TextBox();
             this.conocidoPorTextBox = new System.Windows.Forms.TextBox();
             this.nombreConyugueTextBox = new System.Windows.Forms.TextBox();
@@ -80,18 +92,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.LblTituloVentana = new System.Windows.Forms.Label();
             this.PBxAvatar = new System.Windows.Forms.PictureBox();
-            this.ciudadanoIdTextBox = new System.Windows.Forms.TextBox();
-            this.generoTextBox = new System.Windows.Forms.TextBox();
-            this.ciudadanoPorTextBox = new System.Windows.Forms.TextBox();
-            this.fechaNacimientoTextBox = new System.Windows.Forms.TextBox();
-            this.departamentoNacimientoTextBox = new System.Windows.Forms.TextBox();
-            this.municipioNacimientoTextBox = new System.Windows.Forms.TextBox();
-            this.departamentoResidenciaTextBox = new System.Windows.Forms.TextBox();
-            this.municipioResidenciaTextBox = new System.Windows.Forms.TextBox();
-            this.estadoFamiliarTextBox = new System.Windows.Forms.TextBox();
-            this.tipoSangreTextBox = new System.Windows.Forms.TextBox();
-            this.profesionTextBox = new System.Windows.Forms.TextBox();
-            this.numeroDocumentoMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.BtnVerDui = new System.Windows.Forms.Button();
             apellidosLabel = new System.Windows.Forms.Label();
             conocidoPorLabel = new System.Windows.Forms.Label();
@@ -121,6 +121,178 @@
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PBxAvatar)).BeginInit();
             this.SuspendLayout();
+            // 
+            // apellidosLabel
+            // 
+            apellidosLabel.AutoSize = true;
+            apellidosLabel.Location = new System.Drawing.Point(3, 85);
+            apellidosLabel.Name = "apellidosLabel";
+            apellidosLabel.Size = new System.Drawing.Size(67, 15);
+            apellidosLabel.TabIndex = 0;
+            apellidosLabel.Text = "Apellidos:";
+            // 
+            // conocidoPorLabel
+            // 
+            conocidoPorLabel.AutoSize = true;
+            conocidoPorLabel.Location = new System.Drawing.Point(3, 123);
+            conocidoPorLabel.Name = "conocidoPorLabel";
+            conocidoPorLabel.Size = new System.Drawing.Size(90, 15);
+            conocidoPorLabel.TabIndex = 6;
+            conocidoPorLabel.Text = "Conocido Por:";
+            // 
+            // nombreConyugueLabel
+            // 
+            nombreConyugueLabel.AutoSize = true;
+            nombreConyugueLabel.Location = new System.Drawing.Point(405, 181);
+            nombreConyugueLabel.Name = "nombreConyugueLabel";
+            nombreConyugueLabel.Size = new System.Drawing.Size(119, 15);
+            nombreConyugueLabel.TabIndex = 24;
+            nombreConyugueLabel.Text = "Nombre Conyugue:";
+            // 
+            // nombreMadreLabel
+            // 
+            nombreMadreLabel.AutoSize = true;
+            nombreMadreLabel.Location = new System.Drawing.Point(405, 95);
+            nombreMadreLabel.Name = "nombreMadreLabel";
+            nombreMadreLabel.Size = new System.Drawing.Size(97, 15);
+            nombreMadreLabel.TabIndex = 26;
+            nombreMadreLabel.Text = "Nombre Madre:";
+            // 
+            // nombrePadreLabel
+            // 
+            nombrePadreLabel.AutoSize = true;
+            nombrePadreLabel.Location = new System.Drawing.Point(405, 138);
+            nombrePadreLabel.Name = "nombrePadreLabel";
+            nombrePadreLabel.Size = new System.Drawing.Size(95, 15);
+            nombrePadreLabel.TabIndex = 28;
+            nombrePadreLabel.Text = "Nombre Padre:";
+            // 
+            // nombresLabel
+            // 
+            nombresLabel.AutoSize = true;
+            nombresLabel.Location = new System.Drawing.Point(3, 47);
+            nombresLabel.Margin = new System.Windows.Forms.Padding(5, 0, 3, 0);
+            nombresLabel.Name = "nombresLabel";
+            nombresLabel.Size = new System.Drawing.Size(64, 15);
+            nombresLabel.TabIndex = 30;
+            nombresLabel.Text = "Nombres:";
+            // 
+            // residenciaLabel
+            // 
+            residenciaLabel.AutoSize = true;
+            residenciaLabel.Location = new System.Drawing.Point(3, 351);
+            residenciaLabel.Name = "residenciaLabel";
+            residenciaLabel.Size = new System.Drawing.Size(77, 15);
+            residenciaLabel.TabIndex = 36;
+            residenciaLabel.Text = "Residencia:";
+            // 
+            // ciudadanoIdLabel
+            // 
+            ciudadanoIdLabel.AutoSize = true;
+            ciudadanoIdLabel.Location = new System.Drawing.Point(3, 9);
+            ciudadanoIdLabel.Name = "ciudadanoIdLabel";
+            ciudadanoIdLabel.Size = new System.Drawing.Size(88, 15);
+            ciudadanoIdLabel.TabIndex = 39;
+            ciudadanoIdLabel.Text = "Ciudadano Id:";
+            // 
+            // generoLabel
+            // 
+            generoLabel.AutoSize = true;
+            generoLabel.Location = new System.Drawing.Point(3, 161);
+            generoLabel.Name = "generoLabel";
+            generoLabel.Size = new System.Drawing.Size(53, 15);
+            generoLabel.TabIndex = 41;
+            generoLabel.Text = "Genero:";
+            // 
+            // ciudadanoPorLabel
+            // 
+            ciudadanoPorLabel.AutoSize = true;
+            ciudadanoPorLabel.Location = new System.Drawing.Point(3, 199);
+            ciudadanoPorLabel.Name = "ciudadanoPorLabel";
+            ciudadanoPorLabel.Size = new System.Drawing.Size(97, 15);
+            ciudadanoPorLabel.TabIndex = 42;
+            ciudadanoPorLabel.Text = "Ciudadano Por:";
+            // 
+            // fechaNacimientoLabel
+            // 
+            fechaNacimientoLabel.AutoSize = true;
+            fechaNacimientoLabel.Location = new System.Drawing.Point(3, 237);
+            fechaNacimientoLabel.Name = "fechaNacimientoLabel";
+            fechaNacimientoLabel.Size = new System.Drawing.Size(118, 15);
+            fechaNacimientoLabel.TabIndex = 43;
+            fechaNacimientoLabel.Text = "Fecha Nacimiento:";
+            // 
+            // departamentoNacimientoLabel1
+            // 
+            departamentoNacimientoLabel1.AutoSize = true;
+            departamentoNacimientoLabel1.Location = new System.Drawing.Point(3, 275);
+            departamentoNacimientoLabel1.Name = "departamentoNacimientoLabel1";
+            departamentoNacimientoLabel1.Size = new System.Drawing.Size(168, 15);
+            departamentoNacimientoLabel1.TabIndex = 44;
+            departamentoNacimientoLabel1.Text = "Departamento Nacimiento:";
+            // 
+            // municipioNacimientoLabel
+            // 
+            municipioNacimientoLabel.AutoSize = true;
+            municipioNacimientoLabel.Location = new System.Drawing.Point(3, 313);
+            municipioNacimientoLabel.Name = "municipioNacimientoLabel";
+            municipioNacimientoLabel.Size = new System.Drawing.Size(140, 15);
+            municipioNacimientoLabel.TabIndex = 45;
+            municipioNacimientoLabel.Text = "Municipio Nacimiento:";
+            // 
+            // departamentoResidenciaLabel
+            // 
+            departamentoResidenciaLabel.AutoSize = true;
+            departamentoResidenciaLabel.Location = new System.Drawing.Point(405, 9);
+            departamentoResidenciaLabel.Name = "departamentoResidenciaLabel";
+            departamentoResidenciaLabel.Size = new System.Drawing.Size(166, 15);
+            departamentoResidenciaLabel.TabIndex = 46;
+            departamentoResidenciaLabel.Text = "Departamento Residencia:";
+            // 
+            // municipioResidenciaLabel
+            // 
+            municipioResidenciaLabel.AutoSize = true;
+            municipioResidenciaLabel.Location = new System.Drawing.Point(405, 52);
+            municipioResidenciaLabel.Name = "municipioResidenciaLabel";
+            municipioResidenciaLabel.Size = new System.Drawing.Size(138, 15);
+            municipioResidenciaLabel.TabIndex = 47;
+            municipioResidenciaLabel.Text = "Municipio Residencia:";
+            // 
+            // estadoFamiliarLabel
+            // 
+            estadoFamiliarLabel.AutoSize = true;
+            estadoFamiliarLabel.Location = new System.Drawing.Point(405, 224);
+            estadoFamiliarLabel.Name = "estadoFamiliarLabel";
+            estadoFamiliarLabel.Size = new System.Drawing.Size(105, 15);
+            estadoFamiliarLabel.TabIndex = 48;
+            estadoFamiliarLabel.Text = "Estado Familiar:";
+            // 
+            // tipoSangreLabel
+            // 
+            tipoSangreLabel.AutoSize = true;
+            tipoSangreLabel.Location = new System.Drawing.Point(405, 267);
+            tipoSangreLabel.Name = "tipoSangreLabel";
+            tipoSangreLabel.Size = new System.Drawing.Size(82, 15);
+            tipoSangreLabel.TabIndex = 49;
+            tipoSangreLabel.Text = "Tipo Sangre:";
+            // 
+            // profesionLabel
+            // 
+            profesionLabel.AutoSize = true;
+            profesionLabel.Location = new System.Drawing.Point(405, 310);
+            profesionLabel.Name = "profesionLabel";
+            profesionLabel.Size = new System.Drawing.Size(67, 15);
+            profesionLabel.TabIndex = 50;
+            profesionLabel.Text = "Profesion:";
+            // 
+            // numeroDocumentoLabel
+            // 
+            numeroDocumentoLabel.AutoSize = true;
+            numeroDocumentoLabel.Location = new System.Drawing.Point(405, 351);
+            numeroDocumentoLabel.Name = "numeroDocumentoLabel";
+            numeroDocumentoLabel.Size = new System.Drawing.Size(83, 15);
+            numeroDocumentoLabel.TabIndex = 51;
+            numeroDocumentoLabel.Text = "Numero DUI:";
             // 
             // PBxFirma
             // 
@@ -312,14 +484,126 @@
             this.panel1.Size = new System.Drawing.Size(797, 394);
             this.panel1.TabIndex = 49;
             // 
-            // apellidosLabel
+            // numeroDocumentoMaskedTextBox
             // 
-            apellidosLabel.AutoSize = true;
-            apellidosLabel.Location = new System.Drawing.Point(3, 85);
-            apellidosLabel.Name = "apellidosLabel";
-            apellidosLabel.Size = new System.Drawing.Size(67, 15);
-            apellidosLabel.TabIndex = 0;
-            apellidosLabel.Text = "Apellidos:";
+            this.numeroDocumentoMaskedTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.numeroDocumentoMaskedTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ciudadanoBindingSource, "NumeroDocumento", true));
+            this.numeroDocumentoMaskedTextBox.Location = new System.Drawing.Point(577, 348);
+            this.numeroDocumentoMaskedTextBox.Mask = "00000000-0";
+            this.numeroDocumentoMaskedTextBox.Name = "numeroDocumentoMaskedTextBox";
+            this.numeroDocumentoMaskedTextBox.ReadOnly = true;
+            this.numeroDocumentoMaskedTextBox.Size = new System.Drawing.Size(198, 23);
+            this.numeroDocumentoMaskedTextBox.TabIndex = 52;
+            // 
+            // profesionTextBox
+            // 
+            this.profesionTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.profesionTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ciudadanoBindingSource, "Profesion", true));
+            this.profesionTextBox.Location = new System.Drawing.Point(577, 308);
+            this.profesionTextBox.Name = "profesionTextBox";
+            this.profesionTextBox.ReadOnly = true;
+            this.profesionTextBox.Size = new System.Drawing.Size(198, 23);
+            this.profesionTextBox.TabIndex = 51;
+            // 
+            // tipoSangreTextBox
+            // 
+            this.tipoSangreTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tipoSangreTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ciudadanoBindingSource, "TipoSangre", true));
+            this.tipoSangreTextBox.Location = new System.Drawing.Point(577, 265);
+            this.tipoSangreTextBox.Name = "tipoSangreTextBox";
+            this.tipoSangreTextBox.ReadOnly = true;
+            this.tipoSangreTextBox.Size = new System.Drawing.Size(198, 23);
+            this.tipoSangreTextBox.TabIndex = 50;
+            // 
+            // estadoFamiliarTextBox
+            // 
+            this.estadoFamiliarTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.estadoFamiliarTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ciudadanoBindingSource, "EstadoFamiliar", true));
+            this.estadoFamiliarTextBox.Location = new System.Drawing.Point(577, 222);
+            this.estadoFamiliarTextBox.Name = "estadoFamiliarTextBox";
+            this.estadoFamiliarTextBox.ReadOnly = true;
+            this.estadoFamiliarTextBox.Size = new System.Drawing.Size(198, 23);
+            this.estadoFamiliarTextBox.TabIndex = 49;
+            // 
+            // municipioResidenciaTextBox
+            // 
+            this.municipioResidenciaTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.municipioResidenciaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ciudadanoBindingSource, "MunicipioResidencia", true));
+            this.municipioResidenciaTextBox.Location = new System.Drawing.Point(577, 50);
+            this.municipioResidenciaTextBox.Name = "municipioResidenciaTextBox";
+            this.municipioResidenciaTextBox.ReadOnly = true;
+            this.municipioResidenciaTextBox.Size = new System.Drawing.Size(198, 23);
+            this.municipioResidenciaTextBox.TabIndex = 48;
+            // 
+            // departamentoResidenciaTextBox
+            // 
+            this.departamentoResidenciaTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.departamentoResidenciaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ciudadanoBindingSource, "DepartamentoResidencia", true));
+            this.departamentoResidenciaTextBox.Location = new System.Drawing.Point(577, 7);
+            this.departamentoResidenciaTextBox.Name = "departamentoResidenciaTextBox";
+            this.departamentoResidenciaTextBox.ReadOnly = true;
+            this.departamentoResidenciaTextBox.Size = new System.Drawing.Size(198, 23);
+            this.departamentoResidenciaTextBox.TabIndex = 47;
+            // 
+            // municipioNacimientoTextBox
+            // 
+            this.municipioNacimientoTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.municipioNacimientoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ciudadanoBindingSource, "MunicipioNacimiento", true));
+            this.municipioNacimientoTextBox.Location = new System.Drawing.Point(177, 311);
+            this.municipioNacimientoTextBox.Name = "municipioNacimientoTextBox";
+            this.municipioNacimientoTextBox.ReadOnly = true;
+            this.municipioNacimientoTextBox.Size = new System.Drawing.Size(198, 23);
+            this.municipioNacimientoTextBox.TabIndex = 46;
+            // 
+            // departamentoNacimientoTextBox
+            // 
+            this.departamentoNacimientoTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.departamentoNacimientoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ciudadanoBindingSource, "DepartamentoNacimiento", true));
+            this.departamentoNacimientoTextBox.Location = new System.Drawing.Point(177, 273);
+            this.departamentoNacimientoTextBox.Name = "departamentoNacimientoTextBox";
+            this.departamentoNacimientoTextBox.ReadOnly = true;
+            this.departamentoNacimientoTextBox.Size = new System.Drawing.Size(198, 23);
+            this.departamentoNacimientoTextBox.TabIndex = 45;
+            // 
+            // fechaNacimientoTextBox
+            // 
+            this.fechaNacimientoTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.fechaNacimientoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ciudadanoBindingSource, "FechaNacimiento", true));
+            this.fechaNacimientoTextBox.Location = new System.Drawing.Point(177, 235);
+            this.fechaNacimientoTextBox.Name = "fechaNacimientoTextBox";
+            this.fechaNacimientoTextBox.ReadOnly = true;
+            this.fechaNacimientoTextBox.Size = new System.Drawing.Size(198, 23);
+            this.fechaNacimientoTextBox.TabIndex = 44;
+            // 
+            // ciudadanoPorTextBox
+            // 
+            this.ciudadanoPorTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ciudadanoPorTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ciudadanoBindingSource, "CiudadanoPor", true));
+            this.ciudadanoPorTextBox.Location = new System.Drawing.Point(177, 197);
+            this.ciudadanoPorTextBox.Name = "ciudadanoPorTextBox";
+            this.ciudadanoPorTextBox.ReadOnly = true;
+            this.ciudadanoPorTextBox.Size = new System.Drawing.Size(198, 23);
+            this.ciudadanoPorTextBox.TabIndex = 43;
+            // 
+            // generoTextBox
+            // 
+            this.generoTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.generoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ciudadanoBindingSource, "Genero", true));
+            this.generoTextBox.Location = new System.Drawing.Point(177, 159);
+            this.generoTextBox.Name = "generoTextBox";
+            this.generoTextBox.ReadOnly = true;
+            this.generoTextBox.Size = new System.Drawing.Size(198, 23);
+            this.generoTextBox.TabIndex = 42;
+            // 
+            // ciudadanoIdTextBox
+            // 
+            this.ciudadanoIdTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ciudadanoIdTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ciudadanoBindingSource, "CiudadanoId", true));
+            this.ciudadanoIdTextBox.Location = new System.Drawing.Point(177, 7);
+            this.ciudadanoIdTextBox.Name = "ciudadanoIdTextBox";
+            this.ciudadanoIdTextBox.ReadOnly = true;
+            this.ciudadanoIdTextBox.Size = new System.Drawing.Size(198, 23);
+            this.ciudadanoIdTextBox.TabIndex = 40;
             // 
             // apellidosTextBox
             // 
@@ -331,15 +615,6 @@
             this.apellidosTextBox.Size = new System.Drawing.Size(198, 23);
             this.apellidosTextBox.TabIndex = 1;
             // 
-            // conocidoPorLabel
-            // 
-            conocidoPorLabel.AutoSize = true;
-            conocidoPorLabel.Location = new System.Drawing.Point(3, 123);
-            conocidoPorLabel.Name = "conocidoPorLabel";
-            conocidoPorLabel.Size = new System.Drawing.Size(90, 15);
-            conocidoPorLabel.TabIndex = 6;
-            conocidoPorLabel.Text = "Conocido Por:";
-            // 
             // conocidoPorTextBox
             // 
             this.conocidoPorTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -349,15 +624,6 @@
             this.conocidoPorTextBox.ReadOnly = true;
             this.conocidoPorTextBox.Size = new System.Drawing.Size(198, 23);
             this.conocidoPorTextBox.TabIndex = 7;
-            // 
-            // nombreConyugueLabel
-            // 
-            nombreConyugueLabel.AutoSize = true;
-            nombreConyugueLabel.Location = new System.Drawing.Point(405, 181);
-            nombreConyugueLabel.Name = "nombreConyugueLabel";
-            nombreConyugueLabel.Size = new System.Drawing.Size(119, 15);
-            nombreConyugueLabel.TabIndex = 24;
-            nombreConyugueLabel.Text = "Nombre Conyugue:";
             // 
             // nombreConyugueTextBox
             // 
@@ -369,15 +635,6 @@
             this.nombreConyugueTextBox.Size = new System.Drawing.Size(198, 23);
             this.nombreConyugueTextBox.TabIndex = 25;
             // 
-            // nombreMadreLabel
-            // 
-            nombreMadreLabel.AutoSize = true;
-            nombreMadreLabel.Location = new System.Drawing.Point(405, 95);
-            nombreMadreLabel.Name = "nombreMadreLabel";
-            nombreMadreLabel.Size = new System.Drawing.Size(97, 15);
-            nombreMadreLabel.TabIndex = 26;
-            nombreMadreLabel.Text = "Nombre Madre:";
-            // 
             // nombreMadreTextBox
             // 
             this.nombreMadreTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -387,15 +644,6 @@
             this.nombreMadreTextBox.ReadOnly = true;
             this.nombreMadreTextBox.Size = new System.Drawing.Size(198, 23);
             this.nombreMadreTextBox.TabIndex = 27;
-            // 
-            // nombrePadreLabel
-            // 
-            nombrePadreLabel.AutoSize = true;
-            nombrePadreLabel.Location = new System.Drawing.Point(405, 138);
-            nombrePadreLabel.Name = "nombrePadreLabel";
-            nombrePadreLabel.Size = new System.Drawing.Size(95, 15);
-            nombrePadreLabel.TabIndex = 28;
-            nombrePadreLabel.Text = "Nombre Padre:";
             // 
             // nombrePadreTextBox
             // 
@@ -407,16 +655,6 @@
             this.nombrePadreTextBox.Size = new System.Drawing.Size(198, 23);
             this.nombrePadreTextBox.TabIndex = 29;
             // 
-            // nombresLabel
-            // 
-            nombresLabel.AutoSize = true;
-            nombresLabel.Location = new System.Drawing.Point(3, 47);
-            nombresLabel.Margin = new System.Windows.Forms.Padding(5, 0, 3, 0);
-            nombresLabel.Name = "nombresLabel";
-            nombresLabel.Size = new System.Drawing.Size(64, 15);
-            nombresLabel.TabIndex = 30;
-            nombresLabel.Text = "Nombres:";
-            // 
             // nombresTextBox
             // 
             this.nombresTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -426,15 +664,6 @@
             this.nombresTextBox.ReadOnly = true;
             this.nombresTextBox.Size = new System.Drawing.Size(198, 23);
             this.nombresTextBox.TabIndex = 31;
-            // 
-            // residenciaLabel
-            // 
-            residenciaLabel.AutoSize = true;
-            residenciaLabel.Location = new System.Drawing.Point(3, 351);
-            residenciaLabel.Name = "residenciaLabel";
-            residenciaLabel.Size = new System.Drawing.Size(77, 15);
-            residenciaLabel.TabIndex = 36;
-            residenciaLabel.Text = "Residencia:";
             // 
             // residenciaTextBox
             // 
@@ -515,235 +744,6 @@
             this.PBxAvatar.TabIndex = 0;
             this.PBxAvatar.TabStop = false;
             // 
-            // ciudadanoIdLabel
-            // 
-            ciudadanoIdLabel.AutoSize = true;
-            ciudadanoIdLabel.Location = new System.Drawing.Point(3, 9);
-            ciudadanoIdLabel.Name = "ciudadanoIdLabel";
-            ciudadanoIdLabel.Size = new System.Drawing.Size(88, 15);
-            ciudadanoIdLabel.TabIndex = 39;
-            ciudadanoIdLabel.Text = "Ciudadano Id:";
-            // 
-            // ciudadanoIdTextBox
-            // 
-            this.ciudadanoIdTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ciudadanoIdTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ciudadanoBindingSource, "CiudadanoId", true));
-            this.ciudadanoIdTextBox.Location = new System.Drawing.Point(177, 7);
-            this.ciudadanoIdTextBox.Name = "ciudadanoIdTextBox";
-            this.ciudadanoIdTextBox.ReadOnly = true;
-            this.ciudadanoIdTextBox.Size = new System.Drawing.Size(198, 23);
-            this.ciudadanoIdTextBox.TabIndex = 40;
-            // 
-            // generoLabel
-            // 
-            generoLabel.AutoSize = true;
-            generoLabel.Location = new System.Drawing.Point(3, 161);
-            generoLabel.Name = "generoLabel";
-            generoLabel.Size = new System.Drawing.Size(53, 15);
-            generoLabel.TabIndex = 41;
-            generoLabel.Text = "Genero:";
-            // 
-            // generoTextBox
-            // 
-            this.generoTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.generoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ciudadanoBindingSource, "Genero", true));
-            this.generoTextBox.Location = new System.Drawing.Point(177, 159);
-            this.generoTextBox.Name = "generoTextBox";
-            this.generoTextBox.ReadOnly = true;
-            this.generoTextBox.Size = new System.Drawing.Size(198, 23);
-            this.generoTextBox.TabIndex = 42;
-            // 
-            // ciudadanoPorLabel
-            // 
-            ciudadanoPorLabel.AutoSize = true;
-            ciudadanoPorLabel.Location = new System.Drawing.Point(3, 199);
-            ciudadanoPorLabel.Name = "ciudadanoPorLabel";
-            ciudadanoPorLabel.Size = new System.Drawing.Size(97, 15);
-            ciudadanoPorLabel.TabIndex = 42;
-            ciudadanoPorLabel.Text = "Ciudadano Por:";
-            // 
-            // ciudadanoPorTextBox
-            // 
-            this.ciudadanoPorTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ciudadanoPorTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ciudadanoBindingSource, "CiudadanoPor", true));
-            this.ciudadanoPorTextBox.Location = new System.Drawing.Point(177, 197);
-            this.ciudadanoPorTextBox.Name = "ciudadanoPorTextBox";
-            this.ciudadanoPorTextBox.ReadOnly = true;
-            this.ciudadanoPorTextBox.Size = new System.Drawing.Size(198, 23);
-            this.ciudadanoPorTextBox.TabIndex = 43;
-            // 
-            // fechaNacimientoLabel
-            // 
-            fechaNacimientoLabel.AutoSize = true;
-            fechaNacimientoLabel.Location = new System.Drawing.Point(3, 237);
-            fechaNacimientoLabel.Name = "fechaNacimientoLabel";
-            fechaNacimientoLabel.Size = new System.Drawing.Size(118, 15);
-            fechaNacimientoLabel.TabIndex = 43;
-            fechaNacimientoLabel.Text = "Fecha Nacimiento:";
-            // 
-            // fechaNacimientoTextBox
-            // 
-            this.fechaNacimientoTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.fechaNacimientoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ciudadanoBindingSource, "FechaNacimiento", true));
-            this.fechaNacimientoTextBox.Location = new System.Drawing.Point(177, 235);
-            this.fechaNacimientoTextBox.Name = "fechaNacimientoTextBox";
-            this.fechaNacimientoTextBox.ReadOnly = true;
-            this.fechaNacimientoTextBox.Size = new System.Drawing.Size(198, 23);
-            this.fechaNacimientoTextBox.TabIndex = 44;
-            // 
-            // departamentoNacimientoLabel1
-            // 
-            departamentoNacimientoLabel1.AutoSize = true;
-            departamentoNacimientoLabel1.Location = new System.Drawing.Point(3, 275);
-            departamentoNacimientoLabel1.Name = "departamentoNacimientoLabel1";
-            departamentoNacimientoLabel1.Size = new System.Drawing.Size(168, 15);
-            departamentoNacimientoLabel1.TabIndex = 44;
-            departamentoNacimientoLabel1.Text = "Departamento Nacimiento:";
-            // 
-            // departamentoNacimientoTextBox
-            // 
-            this.departamentoNacimientoTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.departamentoNacimientoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ciudadanoBindingSource, "DepartamentoNacimiento", true));
-            this.departamentoNacimientoTextBox.Location = new System.Drawing.Point(177, 273);
-            this.departamentoNacimientoTextBox.Name = "departamentoNacimientoTextBox";
-            this.departamentoNacimientoTextBox.ReadOnly = true;
-            this.departamentoNacimientoTextBox.Size = new System.Drawing.Size(198, 23);
-            this.departamentoNacimientoTextBox.TabIndex = 45;
-            // 
-            // municipioNacimientoLabel
-            // 
-            municipioNacimientoLabel.AutoSize = true;
-            municipioNacimientoLabel.Location = new System.Drawing.Point(3, 313);
-            municipioNacimientoLabel.Name = "municipioNacimientoLabel";
-            municipioNacimientoLabel.Size = new System.Drawing.Size(140, 15);
-            municipioNacimientoLabel.TabIndex = 45;
-            municipioNacimientoLabel.Text = "Municipio Nacimiento:";
-            // 
-            // municipioNacimientoTextBox
-            // 
-            this.municipioNacimientoTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.municipioNacimientoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ciudadanoBindingSource, "MunicipioNacimiento", true));
-            this.municipioNacimientoTextBox.Location = new System.Drawing.Point(177, 311);
-            this.municipioNacimientoTextBox.Name = "municipioNacimientoTextBox";
-            this.municipioNacimientoTextBox.ReadOnly = true;
-            this.municipioNacimientoTextBox.Size = new System.Drawing.Size(198, 23);
-            this.municipioNacimientoTextBox.TabIndex = 46;
-            // 
-            // departamentoResidenciaLabel
-            // 
-            departamentoResidenciaLabel.AutoSize = true;
-            departamentoResidenciaLabel.Location = new System.Drawing.Point(405, 9);
-            departamentoResidenciaLabel.Name = "departamentoResidenciaLabel";
-            departamentoResidenciaLabel.Size = new System.Drawing.Size(166, 15);
-            departamentoResidenciaLabel.TabIndex = 46;
-            departamentoResidenciaLabel.Text = "Departamento Residencia:";
-            // 
-            // departamentoResidenciaTextBox
-            // 
-            this.departamentoResidenciaTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.departamentoResidenciaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ciudadanoBindingSource, "DepartamentoResidencia", true));
-            this.departamentoResidenciaTextBox.Location = new System.Drawing.Point(577, 7);
-            this.departamentoResidenciaTextBox.Name = "departamentoResidenciaTextBox";
-            this.departamentoResidenciaTextBox.ReadOnly = true;
-            this.departamentoResidenciaTextBox.Size = new System.Drawing.Size(198, 23);
-            this.departamentoResidenciaTextBox.TabIndex = 47;
-            // 
-            // municipioResidenciaLabel
-            // 
-            municipioResidenciaLabel.AutoSize = true;
-            municipioResidenciaLabel.Location = new System.Drawing.Point(405, 52);
-            municipioResidenciaLabel.Name = "municipioResidenciaLabel";
-            municipioResidenciaLabel.Size = new System.Drawing.Size(138, 15);
-            municipioResidenciaLabel.TabIndex = 47;
-            municipioResidenciaLabel.Text = "Municipio Residencia:";
-            // 
-            // municipioResidenciaTextBox
-            // 
-            this.municipioResidenciaTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.municipioResidenciaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ciudadanoBindingSource, "MunicipioResidencia", true));
-            this.municipioResidenciaTextBox.Location = new System.Drawing.Point(577, 50);
-            this.municipioResidenciaTextBox.Name = "municipioResidenciaTextBox";
-            this.municipioResidenciaTextBox.ReadOnly = true;
-            this.municipioResidenciaTextBox.Size = new System.Drawing.Size(198, 23);
-            this.municipioResidenciaTextBox.TabIndex = 48;
-            // 
-            // estadoFamiliarLabel
-            // 
-            estadoFamiliarLabel.AutoSize = true;
-            estadoFamiliarLabel.Location = new System.Drawing.Point(405, 224);
-            estadoFamiliarLabel.Name = "estadoFamiliarLabel";
-            estadoFamiliarLabel.Size = new System.Drawing.Size(105, 15);
-            estadoFamiliarLabel.TabIndex = 48;
-            estadoFamiliarLabel.Text = "Estado Familiar:";
-            // 
-            // estadoFamiliarTextBox
-            // 
-            this.estadoFamiliarTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.estadoFamiliarTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ciudadanoBindingSource, "EstadoFamiliar", true));
-            this.estadoFamiliarTextBox.Location = new System.Drawing.Point(577, 222);
-            this.estadoFamiliarTextBox.Name = "estadoFamiliarTextBox";
-            this.estadoFamiliarTextBox.ReadOnly = true;
-            this.estadoFamiliarTextBox.Size = new System.Drawing.Size(198, 23);
-            this.estadoFamiliarTextBox.TabIndex = 49;
-            // 
-            // tipoSangreLabel
-            // 
-            tipoSangreLabel.AutoSize = true;
-            tipoSangreLabel.Location = new System.Drawing.Point(405, 267);
-            tipoSangreLabel.Name = "tipoSangreLabel";
-            tipoSangreLabel.Size = new System.Drawing.Size(82, 15);
-            tipoSangreLabel.TabIndex = 49;
-            tipoSangreLabel.Text = "Tipo Sangre:";
-            // 
-            // tipoSangreTextBox
-            // 
-            this.tipoSangreTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tipoSangreTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ciudadanoBindingSource, "TipoSangre", true));
-            this.tipoSangreTextBox.Location = new System.Drawing.Point(577, 265);
-            this.tipoSangreTextBox.Name = "tipoSangreTextBox";
-            this.tipoSangreTextBox.ReadOnly = true;
-            this.tipoSangreTextBox.Size = new System.Drawing.Size(198, 23);
-            this.tipoSangreTextBox.TabIndex = 50;
-            // 
-            // profesionLabel
-            // 
-            profesionLabel.AutoSize = true;
-            profesionLabel.Location = new System.Drawing.Point(405, 310);
-            profesionLabel.Name = "profesionLabel";
-            profesionLabel.Size = new System.Drawing.Size(67, 15);
-            profesionLabel.TabIndex = 50;
-            profesionLabel.Text = "Profesion:";
-            // 
-            // profesionTextBox
-            // 
-            this.profesionTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.profesionTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ciudadanoBindingSource, "Profesion", true));
-            this.profesionTextBox.Location = new System.Drawing.Point(577, 308);
-            this.profesionTextBox.Name = "profesionTextBox";
-            this.profesionTextBox.ReadOnly = true;
-            this.profesionTextBox.Size = new System.Drawing.Size(198, 23);
-            this.profesionTextBox.TabIndex = 51;
-            // 
-            // numeroDocumentoLabel
-            // 
-            numeroDocumentoLabel.AutoSize = true;
-            numeroDocumentoLabel.Location = new System.Drawing.Point(405, 351);
-            numeroDocumentoLabel.Name = "numeroDocumentoLabel";
-            numeroDocumentoLabel.Size = new System.Drawing.Size(83, 15);
-            numeroDocumentoLabel.TabIndex = 51;
-            numeroDocumentoLabel.Text = "Numero DUI:";
-            // 
-            // numeroDocumentoMaskedTextBox
-            // 
-            this.numeroDocumentoMaskedTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.numeroDocumentoMaskedTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ciudadanoBindingSource, "NumeroDocumento", true));
-            this.numeroDocumentoMaskedTextBox.Location = new System.Drawing.Point(577, 348);
-            this.numeroDocumentoMaskedTextBox.Mask = "00000000-0";
-            this.numeroDocumentoMaskedTextBox.Name = "numeroDocumentoMaskedTextBox";
-            this.numeroDocumentoMaskedTextBox.ReadOnly = true;
-            this.numeroDocumentoMaskedTextBox.Size = new System.Drawing.Size(198, 23);
-            this.numeroDocumentoMaskedTextBox.TabIndex = 52;
-            // 
             // BtnVerDui
             // 
             this.BtnVerDui.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -773,6 +773,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "FrmVerCiudadano";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             ((System.ComponentModel.ISupportInitialize)(this.PBxFirma)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ciudadanoBindingNavigator)).EndInit();
             this.ciudadanoBindingNavigator.ResumeLayout(false);

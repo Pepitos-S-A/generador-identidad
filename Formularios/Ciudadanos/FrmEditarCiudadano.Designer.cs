@@ -50,6 +50,7 @@
             this.PBxFirma = new System.Windows.Forms.PictureBox();
             this.ciudadanoBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.ciudadanoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
@@ -92,7 +93,6 @@
             this.PBxAvatar = new System.Windows.Forms.PictureBox();
             this.BtnAgregarFoto = new System.Windows.Forms.Button();
             this.BtnTomarFoto = new System.Windows.Forms.Button();
-            this.ciudadanoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             apellidosLabel = new System.Windows.Forms.Label();
             ciudadanoPorLabel = new System.Windows.Forms.Label();
             conocidoPorLabel = new System.Windows.Forms.Label();
@@ -113,11 +113,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.PBxFirma)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ciudadanoBindingNavigator)).BeginInit();
             this.ciudadanoBindingNavigator.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ciudadanoBindingSource)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PBxFoto)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PBxAvatar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ciudadanoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // apellidosLabel
@@ -327,6 +327,10 @@
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorAddNewItem.Text = "Agregar nuevo";
+            // 
+            // ciudadanoBindingSource
+            // 
+            this.ciudadanoBindingSource.DataSource = typeof(Duisv.Modelos.Ciudadano);
             // 
             // bindingNavigatorCountItem
             // 
@@ -774,10 +778,6 @@
             this.BtnTomarFoto.UseVisualStyleBackColor = true;
             this.BtnTomarFoto.Click += new System.EventHandler(this.BtnTomarFoto_Click);
             // 
-            // ciudadanoBindingSource
-            // 
-            this.ciudadanoBindingSource.DataSource = typeof(Duisv.Modelos.Ciudadano);
-            // 
             // FrmEditarCiudadano
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -800,18 +800,19 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "FrmEditarCiudadano";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.FrmEditarCiudadano_Load);
             ((System.ComponentModel.ISupportInitialize)(this.PBxFirma)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ciudadanoBindingNavigator)).EndInit();
             this.ciudadanoBindingNavigator.ResumeLayout(false);
             this.ciudadanoBindingNavigator.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ciudadanoBindingSource)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PBxFoto)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PBxAvatar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ciudadanoBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
