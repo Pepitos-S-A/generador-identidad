@@ -103,6 +103,12 @@
     <Compile Include="Formularios\Ciudadanos\FrmListaCiudadanos.Designer.cs">
       <DependentUpon>FrmListaCiudadanos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Ciudadanos\FrmVerCiudadano.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Ciudadanos\FrmVerCiudadano.Designer.cs">
+      <DependentUpon>FrmVerCiudadano.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\FrmTomarFoto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -181,6 +187,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Ciudadanos\FrmListaCiudadanos.resx">
       <DependentUpon>FrmListaCiudadanos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Ciudadanos\FrmVerCiudadano.resx">
+      <DependentUpon>FrmVerCiudadano.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmTomarFoto.resx">
       <DependentUpon>FrmTomarFoto.cs</DependentUpon>
