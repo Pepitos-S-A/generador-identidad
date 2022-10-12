@@ -153,18 +153,18 @@ namespace Duisv.Formularios.Ciudadanos
                         TipoTramite = "RP-1",
                         CodigoZona = "102020000T",
                         NumeroFolio = ""
-
                     };
 
                     if ((documento.DocumentoId = _documentoServicio.AgregarDocumento(documento)) > 0)
                     {
                         ciudadano.DocumentoId = documento.DocumentoId;
+                        ciudadano.NumeroDocumento = documento.Numero;
 
                         if (_ciudadanoServicio.AgregarCiudadano(ciudadano) > 0)
                         {
-                            GuardarFoto(string.Concat(ciudadano.Nombres, ciudadano.Apellidos));
-                            GuardarFirma(string.Concat(ciudadano.Nombres, ciudadano.Apellidos));
-                            GuardarPartidaNacimiento(string.Concat(ciudadano.Nombres, ciudadano.Apellidos));
+                            GuardarFoto(ciudadano.NumeroDocumento);
+                            GuardarFirma(ciudadano.NumeroDocumento);
+                            GuardarPartidaNacimiento(ciudadano.NumeroDocumento);
 
                             DialogResult = DialogResult.OK;
                         }
@@ -201,7 +201,7 @@ namespace Duisv.Formularios.Ciudadanos
 
                 if (File.Exists(TBxRutaDocumento.Text))
                 {
-                    File.Copy(TBxRutaDocumento.Text, ruta);
+                    File.Copy(TBxRutaDocumento.Text, ruta, true);
                 }
             }
             catch (Exception ex)
@@ -261,7 +261,7 @@ namespace Duisv.Formularios.Ciudadanos
 
             if (PBxFirma.Image != null)
             {
-                using (var bitmap = new Bitmap(PBxFirma.Image, 170, 170))
+                using (var bitmap = new Bitmap(PBxFirma.Image, 172, 94))
                 {
                     using (var stream = new FileStream(ruta, FileMode.Create, FileAccess.Write))
                     {

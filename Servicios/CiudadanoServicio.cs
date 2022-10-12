@@ -88,7 +88,6 @@ namespace Duisv.Servicios
                         comando.Parameters.AddWithValue("@DepartamentoNacimiento", ciudadano.DepartamentoNacimiento);
                         comando.Parameters.AddWithValue("@MunicipoResidencia", ciudadano.MunicipioResidencia);
                         comando.Parameters.AddWithValue("@DepartamentoResidencia", ciudadano.DepartamentoResidencia);
-                        comando.Parameters.AddWithValue("@DocumentoId", ciudadano.DocumentoId);
 
                         resultado = comando.ExecuteNonQuery();
                     }

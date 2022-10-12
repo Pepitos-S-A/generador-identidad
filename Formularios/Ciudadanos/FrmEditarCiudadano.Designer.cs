@@ -50,7 +50,6 @@
             this.PBxFirma = new System.Windows.Forms.PictureBox();
             this.ciudadanoBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.ciudadanoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
@@ -93,6 +92,7 @@
             this.PBxAvatar = new System.Windows.Forms.PictureBox();
             this.BtnAgregarFoto = new System.Windows.Forms.Button();
             this.BtnTomarFoto = new System.Windows.Forms.Button();
+            this.ciudadanoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             apellidosLabel = new System.Windows.Forms.Label();
             ciudadanoPorLabel = new System.Windows.Forms.Label();
             conocidoPorLabel = new System.Windows.Forms.Label();
@@ -113,11 +113,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.PBxFirma)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ciudadanoBindingNavigator)).BeginInit();
             this.ciudadanoBindingNavigator.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ciudadanoBindingSource)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PBxFoto)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PBxAvatar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ciudadanoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // apellidosLabel
@@ -327,10 +327,6 @@
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorAddNewItem.Text = "Agregar nuevo";
-            // 
-            // ciudadanoBindingSource
-            // 
-            this.ciudadanoBindingSource.DataSource = typeof(Duisv.Modelos.Ciudadano);
             // 
             // bindingNavigatorCountItem
             // 
@@ -663,6 +659,7 @@
             this.BtnFirma.TabIndex = 46;
             this.BtnFirma.Text = "Firma";
             this.BtnFirma.UseVisualStyleBackColor = true;
+            this.BtnFirma.Click += new System.EventHandler(this.BtnFirma_Click);
             // 
             // BtnPartidaNacimiento
             // 
@@ -674,6 +671,7 @@
             this.BtnPartidaNacimiento.TabIndex = 47;
             this.BtnPartidaNacimiento.Text = "Partida de nacimiento";
             this.BtnPartidaNacimiento.UseVisualStyleBackColor = true;
+            this.BtnPartidaNacimiento.Click += new System.EventHandler(this.BtnPartidaNacimiento_Click);
             // 
             // TBxRutaDocumento
             // 
@@ -719,8 +717,9 @@
             this.BtnGuardar.Name = "BtnGuardar";
             this.BtnGuardar.Size = new System.Drawing.Size(172, 44);
             this.BtnGuardar.TabIndex = 48;
-            this.BtnGuardar.Text = "Agregar";
+            this.BtnGuardar.Text = "Guardar cambios";
             this.BtnGuardar.UseVisualStyleBackColor = true;
+            this.BtnGuardar.Click += new System.EventHandler(this.BtnGuardar_Click);
             // 
             // panel2
             // 
@@ -761,6 +760,7 @@
             this.BtnAgregarFoto.TabIndex = 43;
             this.BtnAgregarFoto.Text = "Agregar foto";
             this.BtnAgregarFoto.UseVisualStyleBackColor = true;
+            this.BtnAgregarFoto.Click += new System.EventHandler(this.BtnAgregarFoto_Click);
             // 
             // BtnTomarFoto
             // 
@@ -772,6 +772,11 @@
             this.BtnTomarFoto.TabIndex = 45;
             this.BtnTomarFoto.Text = "Tomar foto";
             this.BtnTomarFoto.UseVisualStyleBackColor = true;
+            this.BtnTomarFoto.Click += new System.EventHandler(this.BtnTomarFoto_Click);
+            // 
+            // ciudadanoBindingSource
+            // 
+            this.ciudadanoBindingSource.DataSource = typeof(Duisv.Modelos.Ciudadano);
             // 
             // FrmEditarCiudadano
             // 
@@ -800,13 +805,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.ciudadanoBindingNavigator)).EndInit();
             this.ciudadanoBindingNavigator.ResumeLayout(false);
             this.ciudadanoBindingNavigator.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ciudadanoBindingSource)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PBxFoto)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PBxAvatar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ciudadanoBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
