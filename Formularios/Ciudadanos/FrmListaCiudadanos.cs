@@ -110,7 +110,8 @@ namespace Duisv.Formularios.Ciudadanos
 
         private void AbrirFormularioVer(int ciudadanoId)
         {
-            throw new NotImplementedException();
+            var frmVerCiudadano = new FrmVerCiudadano(ciudadanoId);
+            frmVerCiudadano.ShowDialog();
         }
 
         private void BtnPaginaAnterior_Click(object sender, EventArgs e)
