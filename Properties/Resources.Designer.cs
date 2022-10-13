@@ -93,10 +93,40 @@ namespace Duisv.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap escudo {
+            get {
+                object obj = ResourceManager.GetObject("escudo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap escudo_negativo {
+            get {
+                object obj = ResourceManager.GetObject("escudo_negativo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap licencia {
             get {
                 object obj = ResourceManager.GetObject("licencia", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Icon similar a (Icono).
+        /// </summary>
+        internal static System.Drawing.Icon licencia1 {
+            get {
+                object obj = ResourceManager.GetObject("licencia1", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
             }
         }
         

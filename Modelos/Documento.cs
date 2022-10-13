@@ -2,7 +2,7 @@
 
 namespace Duisv.Modelos
 {
-    internal class Documento
+    public class Documento
     {
         public int DocumentoId { get; set; }
         public DateTime FechaExpedicion { get; set; }

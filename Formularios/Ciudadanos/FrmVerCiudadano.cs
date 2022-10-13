@@ -11,6 +11,8 @@ namespace Duisv.Formularios.Ciudadanos
     {
 
         private readonly CiudadanoServicio _ciudadanoServicio;
+        private readonly DocumentoServicio _documentoServicio;
+
         private readonly int _ciudadanoId;
 
         public FrmVerCiudadano(int ciudadanoId)
@@ -18,10 +20,12 @@ namespace Duisv.Formularios.Ciudadanos
             InitializeComponent();
 
             _ciudadanoServicio = new CiudadanoServicio();
+            _documentoServicio = new DocumentoServicio();
+
             _ciudadanoId = ciudadanoId;
         }
 
-        private void FrmVerCiudadano_Load(object sender, System.EventArgs e)
+        private void FrmVerCiudadano_Load(object sender, EventArgs e)
         {
             MostrarDatos();
         }
@@ -32,7 +36,13 @@ namespace Duisv.Formularios.Ciudadanos
 
             if (ciudadano != null)
             {
-                ciudadanoBindingSource.DataSource = ciudadano;
+                var documento = _documentoServicio.ObtenerDocumentoPorId((int)ciudadano.DocumentoId);
+
+                if (documento != null)
+                {
+                    ciudadanoBindingSource.DataSource = ciudadano;
+                    DocumentoBindingSource.DataSource = documento;
+                }
             }
 
             var nombres = ((Ciudadano)ciudadanoBindingSource.Current).Nombres;
@@ -100,6 +110,20 @@ namespace Duisv.Formularios.Ciudadanos
             {
                 MessageBox.Show("El archivo correspondiente a la partida de nacimiento no existe.", "Ver ciudadano: error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void BtnVerDui_Click(object sender, EventArgs e)
+        {
+            var ciudadano = (Ciudadano)ciudadanoBindingSource.Current;
+            var documento = (Documento)DocumentoBindingSource.Current;
+
+            var frmMostrarDui = new FrmMostrarDui(ciudadano, documento);
+            frmMostrarDui.ShowDialog();
+        }
+
+        private void BtnCerrar_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

@@ -152,7 +152,7 @@ namespace Duisv.Formularios.Ciudadanos
                         Numero = GenerarNumeroDui(),
                         TipoTramite = "RP-1",
                         CodigoZona = "102020000T",
-                        NumeroFolio = ""
+                        NumeroFolio = "M04587545"
                     };
 
                     if ((documento.DocumentoId = _documentoServicio.AgregarDocumento(documento)) > 0)
@@ -166,7 +166,12 @@ namespace Duisv.Formularios.Ciudadanos
                             GuardarFirma(ciudadano.NumeroDocumento);
                             GuardarPartidaNacimiento(ciudadano.NumeroDocumento);
 
-                            DialogResult = DialogResult.OK;
+                            var frmMostrarDui = new FrmMostrarDui(ciudadano, documento);
+
+                            if (frmMostrarDui.ShowDialog() == DialogResult.OK)
+                            {
+                                DialogResult = DialogResult.OK;
+                            }
                         }
                     }
                 }

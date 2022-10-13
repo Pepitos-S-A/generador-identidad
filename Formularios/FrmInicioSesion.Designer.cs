@@ -28,25 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmInicioSesion));
             this.TBxUsuario = new System.Windows.Forms.TextBox();
             this.TBxClave = new System.Windows.Forms.TextBox();
             this.BtnIniciarSesion = new System.Windows.Forms.Button();
             this.BtnSalir = new System.Windows.Forms.Button();
             this.ChBVerClave = new System.Windows.Forms.CheckBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Duisv.Properties.Resources.licencia;
-            this.pictureBox1.Location = new System.Drawing.Point(71, 2);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(179, 175);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
             // 
             // TBxUsuario
             // 
@@ -104,6 +94,17 @@
             this.ChBVerClave.UseVisualStyleBackColor = true;
             this.ChBVerClave.CheckedChanged += new System.EventHandler(this.ChBVerClave_CheckedChanged);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Duisv.Properties.Resources.escudo_negativo;
+            this.pictureBox1.Location = new System.Drawing.Point(71, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(179, 175);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
+            // 
             // FrmInicioSesion
             // 
             this.AcceptButton = this.BtnIniciarSesion;
@@ -120,6 +121,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Font = new System.Drawing.Font("Arial Black", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.MaximizeBox = false;
             this.Name = "FrmInicioSesion";

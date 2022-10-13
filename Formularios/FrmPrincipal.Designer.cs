@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPrincipal));
             this.BtnEditarPerfil = new System.Windows.Forms.Button();
             this.BtnUsuarios = new System.Windows.Forms.Button();
             this.BtnCiudadanos = new System.Windows.Forms.Button();
@@ -35,14 +36,13 @@
             this.PnlOpciones = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.TBxNombre = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.PBxFoto = new System.Windows.Forms.PictureBox();
             this.PBxLogotipo = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.BtnDocumentos = new System.Windows.Forms.Button();
             this.PnlOpciones.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBxFoto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBxLogotipo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // BtnEditarPerfil
@@ -111,7 +111,6 @@
             this.PnlOpciones.Controls.Add(this.BtnSalir);
             this.PnlOpciones.Controls.Add(this.PBxFoto);
             this.PnlOpciones.Controls.Add(this.PBxLogotipo);
-            this.PnlOpciones.Controls.Add(this.BtnDocumentos);
             this.PnlOpciones.Controls.Add(this.BtnCiudadanos);
             this.PnlOpciones.Controls.Add(this.BtnUsuarios);
             this.PnlOpciones.Controls.Add(this.BtnEditarPerfil);
@@ -145,6 +144,18 @@
             this.TBxNombre.TabIndex = 1;
             this.TBxNombre.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Image = global::Duisv.Properties.Resources.duisv_fondo;
+            this.pictureBox1.Location = new System.Drawing.Point(209, 0);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(1092, 804);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
             // PBxFoto
             // 
             this.PBxFoto.Image = global::Duisv.Properties.Resources.usuario;
@@ -158,7 +169,7 @@
             // 
             // PBxLogotipo
             // 
-            this.PBxLogotipo.Image = global::Duisv.Properties.Resources.licencia;
+            this.PBxLogotipo.Image = ((System.Drawing.Image)(resources.GetObject("PBxLogotipo.Image")));
             this.PBxLogotipo.Location = new System.Drawing.Point(18, 13);
             this.PBxLogotipo.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.PBxLogotipo.Name = "PBxLogotipo";
@@ -166,31 +177,6 @@
             this.PBxLogotipo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.PBxLogotipo.TabIndex = 0;
             this.PBxLogotipo.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Image = global::Duisv.Properties.Resources.duisv_fondo;
-            this.pictureBox1.Location = new System.Drawing.Point(209, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1092, 804);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
-            // BtnDocumentos
-            // 
-            this.BtnDocumentos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnDocumentos.Font = new System.Drawing.Font("Arial Black", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnDocumentos.ForeColor = System.Drawing.Color.White;
-            this.BtnDocumentos.Location = new System.Drawing.Point(18, 473);
-            this.BtnDocumentos.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.BtnDocumentos.Name = "BtnDocumentos";
-            this.BtnDocumentos.Size = new System.Drawing.Size(172, 44);
-            this.BtnDocumentos.TabIndex = 0;
-            this.BtnDocumentos.Text = "Documentos";
-            this.BtnDocumentos.UseVisualStyleBackColor = true;
             // 
             // FrmPrincipal
             // 
@@ -201,6 +187,7 @@
             this.Controls.Add(this.PnlOpciones);
             this.Font = new System.Drawing.Font("Arial Black", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "FrmPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -210,9 +197,9 @@
             this.Load += new System.EventHandler(this.FrmPrincipal_Load);
             this.PnlOpciones.ResumeLayout(false);
             this.PnlOpciones.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBxFoto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBxLogotipo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -229,6 +216,5 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox TBxNombre;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button BtnDocumentos;
     }
 }

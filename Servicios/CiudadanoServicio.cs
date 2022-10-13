@@ -265,7 +265,7 @@ namespace Duisv.Servicios
                                     DepartamentoNacimiento = lector["DepartamentoNacimiento"].ToString(),
                                     DepartamentoResidencia = lector["DepartamentoResidencia"].ToString(),
                                     MunicipioResidencia = lector["MunicipoResidencia"].ToString(),
-                                    DocumentoId = lector["MunicipoResidencia"] as int?,
+                                    DocumentoId = lector["DocumentoId"] as int?,
                                     NumeroDocumento = lector["NumeroDui"].ToString()
                                 };
                             }

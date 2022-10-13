@@ -93,6 +93,7 @@
             this.PBxAvatar = new System.Windows.Forms.PictureBox();
             this.BtnVerDui = new System.Windows.Forms.Button();
             this.ciudadanoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.DocumentoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             apellidosLabel = new System.Windows.Forms.Label();
             conocidoPorLabel = new System.Windows.Forms.Label();
             nombreConyugueLabel = new System.Windows.Forms.Label();
@@ -120,6 +121,7 @@
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PBxAvatar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ciudadanoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DocumentoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // apellidosLabel
@@ -711,6 +713,7 @@
             this.BtnCerrar.TabIndex = 48;
             this.BtnCerrar.Text = "Cerrar";
             this.BtnCerrar.UseVisualStyleBackColor = true;
+            this.BtnCerrar.Click += new System.EventHandler(this.BtnCerrar_Click);
             // 
             // panel2
             // 
@@ -751,10 +754,15 @@
             this.BtnVerDui.TabIndex = 54;
             this.BtnVerDui.Text = "Ver DUI";
             this.BtnVerDui.UseVisualStyleBackColor = true;
+            this.BtnVerDui.Click += new System.EventHandler(this.BtnVerDui_Click);
             // 
             // ciudadanoBindingSource
             // 
             this.ciudadanoBindingSource.DataSource = typeof(Duisv.Modelos.Ciudadano);
+            // 
+            // DocumentoBindingSource
+            // 
+            this.DocumentoBindingSource.DataSource = typeof(Duisv.Modelos.Documento);
             // 
             // FrmVerCiudadano
             // 
@@ -787,6 +795,7 @@
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PBxAvatar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ciudadanoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DocumentoBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -838,5 +847,6 @@
         private System.Windows.Forms.Label LblTituloVentana;
         private System.Windows.Forms.PictureBox PBxAvatar;
         private System.Windows.Forms.Button BtnVerDui;
+        private System.Windows.Forms.BindingSource DocumentoBindingSource;
     }
 }
