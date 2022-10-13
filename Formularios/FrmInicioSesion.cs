@@ -35,6 +35,14 @@ namespace Duisv.Formularios
                         Close();
                     }
                 }
+                else
+                {
+                    MessageBox.Show("La clave del usuario no es correcta.", "Iniciar sesión: error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("El nombre de usuario ingresado no es correcto.", "Iniciar sesión: error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -60,6 +68,14 @@ namespace Duisv.Formularios
                 {
                     IniciarSesion(usuario, clave);
                 }
+                else
+                {
+                    MessageBox.Show("La contraseña del usuario es requerida.", "Iniciar sesión: error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("El nombre de usuario es requerido.", "Iniciar sesión: error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
