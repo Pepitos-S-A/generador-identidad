@@ -146,14 +146,13 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button BtnGuardarDocumento;
-        private System.Windows.Forms.Button BtnImportarDocumento;
-        private AxAcroPDFLib.AxAcroPDF axAcroPDF;
         private System.Windows.Forms.OpenFileDialog OfdSeleccionarDocumento;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label LblUsuario;
         private System.Windows.Forms.PictureBox PBxAvatar;
+        public System.Windows.Forms.Button BtnGuardarDocumento;
+        public System.Windows.Forms.Button BtnImportarDocumento;
+        public AxAcroPDFLib.AxAcroPDF axAcroPDF;
+        public System.Windows.Forms.Label LblUsuario;
     }
 }
