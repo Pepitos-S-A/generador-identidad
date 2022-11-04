@@ -43,7 +43,7 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.Orange;
+            this.panel2.BackColor = System.Drawing.Color.Lime;
             this.panel2.Controls.Add(this.LblUsuario);
             this.panel2.Controls.Add(this.PBxAvatar);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
