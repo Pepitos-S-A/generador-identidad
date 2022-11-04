@@ -85,6 +85,7 @@ namespace Duisv.Formularios
                 if (PBxCaptura.Image != null)
                 {
                     _pictureBox.Image = PBxCaptura.Image;
+                    _pictureBox.ImageLocation = "From Camera";
                     DialogResult = DialogResult.OK;
                 }
             }
