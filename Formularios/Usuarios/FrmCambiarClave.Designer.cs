@@ -59,8 +59,9 @@
             this.LblUsuario.Location = new System.Drawing.Point(56, 20);
             this.LblUsuario.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LblUsuario.Name = "LblUsuario";
-            this.LblUsuario.Size = new System.Drawing.Size(0, 15);
+            this.LblUsuario.Size = new System.Drawing.Size(127, 15);
             this.LblUsuario.TabIndex = 1;
+            this.LblUsuario.Text = "Cambiar contraseña";
             // 
             // PBxAvatar
             // 
@@ -153,6 +154,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "FrmCambiarClave";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.FrmCambiarClave_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
