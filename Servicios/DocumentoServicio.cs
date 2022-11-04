@@ -8,14 +8,16 @@ namespace Duisv.Servicios
 {
     internal class DocumentoServicio
     {
-        /*
-         *  Cambiar la cadena de conexion aqui
-         */
-        private readonly string cadenaConexion = @"Server=HP-1GR12LA\SQLEXPRESS;Database=DuisvDb;Trusted_Connection=True;";
+        private readonly string _cadenaConexion;
+
+        public DocumentoServicio()
+        {
+            _cadenaConexion = Properties.Settings.Default.SqlServerCadenaConexion;
+        }
 
         public int AgregarDocumento(Documento documento)
         {
-            using (var conexion = new SqlConnection(cadenaConexion))
+            using (var conexion = new SqlConnection(_cadenaConexion))
             {
                 if (conexion.State != ConnectionState.Open)
                 {
@@ -47,7 +49,7 @@ namespace Duisv.Servicios
 
         public int EditarDocumento(Documento documento)
         {
-            using (var conexion = new SqlConnection(cadenaConexion))
+            using (var conexion = new SqlConnection(_cadenaConexion))
             {
                 if (conexion.State != ConnectionState.Open)
                 {
@@ -78,7 +80,7 @@ namespace Duisv.Servicios
 
         public int EliminarDocumento(int id)
         {
-            using (var conexion = new SqlConnection(cadenaConexion))
+            using (var conexion = new SqlConnection(_cadenaConexion))
             {
                 if (conexion.State != ConnectionState.Open)
                 {
@@ -103,7 +105,7 @@ namespace Duisv.Servicios
         {
             var documentos = new List<Documento>();
 
-            using (var conexion = new SqlConnection(cadenaConexion))
+            using (var conexion = new SqlConnection(_cadenaConexion))
             {
                 if (conexion.State != ConnectionState.Open)
                 {
@@ -144,7 +146,7 @@ namespace Duisv.Servicios
         {
             Documento documento = null;
 
-            using (var conexion = new SqlConnection(cadenaConexion))
+            using (var conexion = new SqlConnection(_cadenaConexion))
             {
                 if (conexion.State != ConnectionState.Open)
                 {
