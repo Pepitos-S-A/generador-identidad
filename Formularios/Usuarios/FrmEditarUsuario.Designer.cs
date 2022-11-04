@@ -30,8 +30,10 @@
         {
             this.LblUsuario = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.PBxAvatar = new System.Windows.Forms.PictureBox();
             this.BtnGuardar = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.BtnCambiarClave = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.TBxId = new System.Windows.Forms.TextBox();
             this.CbBRoles = new System.Windows.Forms.ComboBox();
@@ -55,12 +57,10 @@
             this.BtnTomarFoto = new System.Windows.Forms.Button();
             this.OfdImportarFoto = new System.Windows.Forms.OpenFileDialog();
             this.PBxFoto = new System.Windows.Forms.PictureBox();
-            this.PBxAvatar = new System.Windows.Forms.PictureBox();
-            this.BtnCambiarClave = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PBxAvatar)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PBxFoto)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PBxAvatar)).BeginInit();
             this.SuspendLayout();
             // 
             // LblUsuario
@@ -81,6 +81,16 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(601, 48);
             this.panel2.TabIndex = 27;
+            // 
+            // PBxAvatar
+            // 
+            this.PBxAvatar.Image = global::Duisv.Properties.Resources.licencia;
+            this.PBxAvatar.Location = new System.Drawing.Point(13, 12);
+            this.PBxAvatar.Name = "PBxAvatar";
+            this.PBxAvatar.Size = new System.Drawing.Size(23, 23);
+            this.PBxAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.PBxAvatar.TabIndex = 0;
+            this.PBxAvatar.TabStop = false;
             // 
             // BtnGuardar
             // 
@@ -121,6 +131,18 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(393, 373);
             this.panel1.TabIndex = 28;
+            // 
+            // BtnCambiarClave
+            // 
+            this.BtnCambiarClave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnCambiarClave.Location = new System.Drawing.Point(205, 313);
+            this.BtnCambiarClave.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.BtnCambiarClave.Name = "BtnCambiarClave";
+            this.BtnCambiarClave.Size = new System.Drawing.Size(172, 44);
+            this.BtnCambiarClave.TabIndex = 33;
+            this.BtnCambiarClave.Text = "Cambiar clave";
+            this.BtnCambiarClave.UseVisualStyleBackColor = true;
+            this.BtnCambiarClave.Click += new System.EventHandler(this.BtnCambiarClave_Click);
             // 
             // label11
             // 
@@ -329,6 +351,7 @@
             this.BtnTomarFoto.TabIndex = 32;
             this.BtnTomarFoto.Text = "Tomar foto";
             this.BtnTomarFoto.UseVisualStyleBackColor = true;
+            this.BtnTomarFoto.Click += new System.EventHandler(this.BtnTomarFoto_Click);
             // 
             // PBxFoto
             // 
@@ -340,28 +363,6 @@
             this.PBxFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.PBxFoto.TabIndex = 31;
             this.PBxFoto.TabStop = false;
-            // 
-            // PBxAvatar
-            // 
-            this.PBxAvatar.Image = global::Duisv.Properties.Resources.licencia;
-            this.PBxAvatar.Location = new System.Drawing.Point(13, 12);
-            this.PBxAvatar.Name = "PBxAvatar";
-            this.PBxAvatar.Size = new System.Drawing.Size(23, 23);
-            this.PBxAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.PBxAvatar.TabIndex = 0;
-            this.PBxAvatar.TabStop = false;
-            // 
-            // BtnCambiarClave
-            // 
-            this.BtnCambiarClave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnCambiarClave.Location = new System.Drawing.Point(205, 313);
-            this.BtnCambiarClave.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.BtnCambiarClave.Name = "BtnCambiarClave";
-            this.BtnCambiarClave.Size = new System.Drawing.Size(172, 44);
-            this.BtnCambiarClave.TabIndex = 33;
-            this.BtnCambiarClave.Text = "Cambiar clave";
-            this.BtnCambiarClave.UseVisualStyleBackColor = true;
-            this.BtnCambiarClave.Click += new System.EventHandler(this.BtnCambiarClave_Click);
             // 
             // FrmEditarUsuario
             // 
@@ -385,10 +386,10 @@
             this.Load += new System.EventHandler(this.FrmEditarUsuario_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PBxAvatar)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PBxFoto)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PBxAvatar)).EndInit();
             this.ResumeLayout(false);
 
         }

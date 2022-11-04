@@ -1,13 +1,12 @@
-﻿using System;
+﻿using Duisv.Modelos;
+using Duisv.Servicios;
+using Duisv.Validaciones;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
 using System.Windows.Forms;
-using Duisv.Herramientas;
-using Duisv.Modelos;
-using Duisv.Servicios;
-using Duisv.Validaciones;
 
 namespace Duisv.Formularios.Usuarios
 {
@@ -136,7 +135,7 @@ namespace Duisv.Formularios.Usuarios
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Ocurrio el siguiente error al editar el usuario: \n{ex.Message}", "Agregar usuario: Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Ocurrio el siguiente error al editar el usuario: \n{ex.Message}", "Editar usuario: Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -153,7 +152,6 @@ namespace Duisv.Formularios.Usuarios
         private void GuardarFotoUsuario(string nombreUsuario)
         {
             string rutaCarpeta = $@"{Environment.GetFolderPath(Environment.SpecialFolder.MyPictures)}\DUISV\Usuarios\Fotos";
-            string rutaFotoSeleccionada = PBxFoto.ImageLocation;
             string rutaNuevaFoto = string.Concat(rutaCarpeta, @"\", nombreUsuario, ".png");
 
             if (!Directory.Exists(rutaCarpeta))
@@ -161,7 +159,7 @@ namespace Duisv.Formularios.Usuarios
                 Directory.CreateDirectory(rutaCarpeta);
             }
 
-            using (var bitmap = new Bitmap(Image.FromFile(rutaFotoSeleccionada), 170, 170))
+            using (var bitmap = new Bitmap(PBxFoto.Image, 170, 170))
             {
                 using (var stream = new FileStream(rutaNuevaFoto, FileMode.Create, FileAccess.Write))
                 {
@@ -211,6 +209,21 @@ namespace Duisv.Formularios.Usuarios
         {
             var frmCambiarClave = new FrmCambiarClave(_usuarioId);
             frmCambiarClave.ShowDialog();
+        }
+
+        private void BtnTomarFoto_Click(object sender, EventArgs e)
+        {
+            TomarFotoUsuario(ref PBxFoto);
+        }
+
+        private void TomarFotoUsuario(ref PictureBox pictureBox)
+        {
+            var frmTomarFoto = new FrmTomarFoto(ref pictureBox);
+
+            if (frmTomarFoto.ShowDialog() == DialogResult.OK)
+            {
+                _cambiarFoto = true;
+            }
         }
     }
 }
