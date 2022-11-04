@@ -7,16 +7,18 @@ namespace Duisv.Servicios
 {
     internal class RolServicio
     {
-        /*
-         *  Cambiar la cadena de conexion aqui
-         */
-        private readonly string cadenaConexion = @"Server=HP-1GR12LA\SQLEXPRESS;Database=DuisvDb;Trusted_Connection=True;";
+        private readonly string _cadenaConexion;
+
+        public RolServicio()
+        {
+            _cadenaConexion = Properties.Settings.Default.SqlServerCadenaConexion;
+        }
 
         public List<Rol> ObtenerListaRoles()
         {
             var roles = new List<Rol>();
 
-            using (var conexion = new SqlConnection(cadenaConexion))
+            using (var conexion = new SqlConnection(_cadenaConexion))
             {
                 if (conexion.State != ConnectionState.Open)
                 {
