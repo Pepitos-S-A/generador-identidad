@@ -1,10 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Windows.Forms;
-using Duisv.Modelos;
+﻿using Duisv.Modelos;
 using Duisv.Servicios;
 using PagedList;
+using System;
+using System.Collections.Generic;
+using System.Windows.Forms;
 
 namespace Duisv.Formularios.Usuarios
 {
@@ -93,9 +92,14 @@ namespace Duisv.Formularios.Usuarios
 
         private void AbrirFormularioVerUsuario(int usuarioId)
         {
-            if (!_usuario.NombreUsuario.Equals("root"))
+            if (AutorizarUsuario())
             {
-
+                var frmVerUsuario = new FrmVerUsuario(usuarioId);
+                frmVerUsuario.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Su usuario no tiene autorización para realizar esta operación.", "Usuarios: Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
         }
 
