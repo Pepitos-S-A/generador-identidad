@@ -8,14 +8,17 @@ namespace Duisv.Servicios
 {
     internal class UsuarioServicio
     {
-        /*
-         *  Cambiar la cadena de conexion aqui
-         */
-        private readonly string cadenaConexion = @"Server=HP-1GR12LA\SQLEXPRESS;Database=DuisvDb;Trusted_Connection=True;";
+
+        private readonly string _cadenaConexion;
+
+        public UsuarioServicio()
+        {
+            _cadenaConexion = Properties.Settings.Default.SqlServerCadenaConexion;
+        }
 
         public int AgregarUsuario(Usuario usuario)
         {
-            using (var conexion = new SqlConnection(cadenaConexion))
+            using (var conexion = new SqlConnection(_cadenaConexion))
             {
                 if (conexion.State != ConnectionState.Open)
                 {
@@ -45,7 +48,7 @@ namespace Duisv.Servicios
 
         public int EliminarUsuario(int usuarioId)
         {
-            using (var conexion = new SqlConnection(cadenaConexion))
+            using (var conexion = new SqlConnection(_cadenaConexion))
             {
                 if (conexion.State != ConnectionState.Open)
                 {
@@ -66,7 +69,7 @@ namespace Duisv.Servicios
 
         public int EditarUsuario(Usuario usuario)
         {
-            using (var conexion = new SqlConnection(cadenaConexion))
+            using (var conexion = new SqlConnection(_cadenaConexion))
             {
                 if (conexion.State != ConnectionState.Open)
                 {
@@ -98,7 +101,7 @@ namespace Duisv.Servicios
         {
             var usuarios = new List<Usuario>();
 
-            using (var conexion = new SqlConnection(cadenaConexion))
+            using (var conexion = new SqlConnection(_cadenaConexion))
             {
                 if (conexion.State != ConnectionState.Open)
                 {
@@ -139,7 +142,7 @@ namespace Duisv.Servicios
 
         public Usuario ObtenerUsuarioPorId(int usuarioId)
         {
-            using (var conexion = new SqlConnection(cadenaConexion))
+            using (var conexion = new SqlConnection(_cadenaConexion))
             {
                 if (conexion.State != ConnectionState.Open)
                 {
@@ -183,7 +186,7 @@ namespace Duisv.Servicios
         {
             var usuarios = new List<Usuario>();
 
-            using (var conexion = new SqlConnection(cadenaConexion))
+            using (var conexion = new SqlConnection(_cadenaConexion))
             {
                 if (conexion.State != ConnectionState.Open)
                 {
@@ -225,7 +228,7 @@ namespace Duisv.Servicios
 
         public int CambiarClaveUsuario(string nuevaClave, int? usuarioId)
         {
-            using (var conexion = new SqlConnection(cadenaConexion))
+            using (var conexion = new SqlConnection(_cadenaConexion))
             {
                 if (conexion.State != ConnectionState.Open)
                 {
@@ -247,7 +250,7 @@ namespace Duisv.Servicios
 
         public int ValidarNombreUsuario(string nombreUsuario)
         {
-            using (var conexion = new SqlConnection(cadenaConexion))
+            using (var conexion = new SqlConnection(_cadenaConexion))
             {
                 if (conexion.State != ConnectionState.Open)
                 {
@@ -270,7 +273,7 @@ namespace Duisv.Servicios
 
         public int ValidarClaveUsuario(string clave)
         {
-            using (var conexion = new SqlConnection(cadenaConexion))
+            using (var conexion = new SqlConnection(_cadenaConexion))
             {
                 if (conexion.State != ConnectionState.Open)
                 {
@@ -293,7 +296,7 @@ namespace Duisv.Servicios
 
         public Usuario ObtenerUsuarioPorNombre(string nombreUsuario)
         {
-            using (var conexion = new SqlConnection(cadenaConexion))
+            using (var conexion = new SqlConnection(_cadenaConexion))
             {
                 if (conexion.State != ConnectionState.Open)
                 {
