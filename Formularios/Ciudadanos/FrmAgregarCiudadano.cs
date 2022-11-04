@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Windows.Forms;
 using Duisv.Modelos;
@@ -18,6 +19,8 @@ namespace Duisv.Formularios.Ciudadanos
         private readonly CiudadanoServicio _ciudadanoServicio;
         private readonly DocumentoServicio _documentoServicio;
 
+        private bool _guardarFoto;
+
         public FrmAgregarCiudadano()
         {
             InitializeComponent();
@@ -26,6 +29,7 @@ namespace Duisv.Formularios.Ciudadanos
             _municipioServicio = new MunicipioServicio();
             _ciudadanoServicio = new CiudadanoServicio();
             _documentoServicio = new DocumentoServicio();
+            _guardarFoto = false;
         }
 
         private void MostrarListaDespartamentos(List<Departamento> departamentos, ref ComboBox comboBox)
@@ -109,7 +113,7 @@ namespace Duisv.Formularios.Ciudadanos
             var validos = true;
             var mensaje = string.Empty;
 
-            if (string.IsNullOrEmpty(PBxFoto.ImageLocation))
+            if (_guardarFoto == false)
             {
                 validos = false;
                 mensaje = "La foto del ciudadano es requerida.";
@@ -285,6 +289,7 @@ namespace Duisv.Formularios.Ciudadanos
         {
             var frmTomarFoto = new FrmTomarFoto(ref pictureBox);
             frmTomarFoto.ShowDialog();
+            _guardarFoto = true;
         }
 
         private void BtnPartidaNacimiento_Click(object sender, EventArgs e)
