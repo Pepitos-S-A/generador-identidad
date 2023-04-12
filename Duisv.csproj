@@ -188,6 +188,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Database\MongoDBProvider.cs" />
     <Compile Include="Formularios\Ciudadanos\FrmAgregarCiudadano.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -382,9 +383,7 @@
   <ItemGroup>
     <None Include="Resources\duisv-fondo-02.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Database\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <COMReference Include="AcroPDFLib">
       <Guid>{05BFD3F1-6319-4F30-B752-C7A22889BCC4}</Guid>
