@@ -9,5 +9,12 @@
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
       <Value Profile="(Default)">Server=HP-AN025LA\SQLEXPRESS;Database=DuisvDb;Trusted_Connection=True;</Value>
     </Setting>
+    <Setting Name="MongoDBConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
+  &lt;ConnectionString&gt;mongodb://localhost:27017&lt;/ConnectionString&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">mongodb://localhost:27017</Value>
+    </Setting>
   </Settings>
 </SettingsFile>
