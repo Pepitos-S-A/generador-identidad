@@ -27,7 +27,7 @@ namespace Duisv.Servicios
             {
                 _collection.InsertOne(ciudadano);
 
-                return 1;
+                return (int)_collection.Find(x => x.Nombres == ciudadano.Nombres).CountDocuments();
             }
             catch (Exception)
             {
