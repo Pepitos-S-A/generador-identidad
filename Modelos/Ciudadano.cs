@@ -10,7 +10,7 @@ namespace Duisv.Modelos
         private string tipoSangre = string.Empty;
 
         [BsonId]
-        public int CiudadanoId { get; set; }
+        public string CiudadanoId { get; set; }
 
         [BsonElement("nombres")]
         public string Nombres { get; set; } = string.Empty;

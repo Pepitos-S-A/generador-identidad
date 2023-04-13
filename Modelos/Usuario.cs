@@ -7,7 +7,7 @@ namespace Duisv.Modelos
     public class Usuario
     {
         [BsonId]
-        public int UsuarioId { get; set; }
+        public string UsuarioId { get; set; }
 
         [BsonElement("nombre")]
         public string Nombre { get; set; } = string.Empty;
@@ -41,7 +41,6 @@ namespace Duisv.Modelos
         public string Rol { get; set; } = string.Empty;
 
         [BsonElement("rol_id")]
-        [BsonRepresentation(BsonType.Int32)]
-        public int? RolId { get; set; }
+        public string RolId { get; set; } = string.Empty;
     }
 }

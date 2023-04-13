@@ -5,7 +5,7 @@ namespace Duisv.Modelos
     internal class Municipio
     {
         [BsonId]
-        public int MunicipioId { get; set; } = 0;
+        public string MunicipioId { get; set; } = 0;
 
         [BsonElement("nombre")]
         public string Nombre { get; set; } = string.Empty;

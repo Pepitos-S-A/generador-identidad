@@ -7,7 +7,7 @@ namespace Duisv.Modelos
     public class Documento
     {
         [BsonId]
-        public int DocumentoId { get; set; }
+        public string DocumentoId { get; set; }
 
         [BsonElement("fecha_expiracion")]
         [BsonRepresentation(BsonType.DateTime)]
