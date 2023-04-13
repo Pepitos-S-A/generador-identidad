@@ -23,6 +23,7 @@ namespace Duisv.Servicios
             return _departamentos.Find(x => true).ToList();
         }
 
+        #region Métodos con ADO.NET y SQL Server (comentados)
         //public List<Departamento> ObtenerListaDepartamentos()
         //{
         //    var departamentos = new List<Departamento>();
@@ -56,5 +57,6 @@ namespace Duisv.Servicios
 
         //    return departamentos;
         //}
+        #endregion
     }
 }
