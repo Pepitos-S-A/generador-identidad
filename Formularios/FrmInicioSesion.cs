@@ -9,6 +9,8 @@ namespace Duisv.Formularios
     public partial class FrmInicioSesion : Form
     {
         private readonly UsuarioServicio _usuarioServicio;
+        private readonly RolServicio _rolServicio;
+
         private Usuario _usuario;
 
         public FrmInicioSesion()
@@ -16,6 +18,35 @@ namespace Duisv.Formularios
             InitializeComponent();
 
             _usuarioServicio = new UsuarioServicio();
+            _rolServicio = new RolServicio();
+
+            CrearUsuarioRoot();
+        }
+
+        private void CrearUsuarioRoot()
+        {
+            if (_usuarioServicio.ObtenerUsuarioPorNombre("root") == null)
+            {
+                var usuario = new Usuario
+                {
+                    Nombre = "root",
+                    Apellido = string.Empty,
+                    CorreoElectronico = "root@duisv.com",
+                    Direccion = string.Empty,
+                    FechaNacimiento = DateTime.UtcNow,
+                    NombreUsuario = "root",
+                    Rol = "Administrador",
+                    RolId = "64388ddaa1a747673f637198",
+                    Telefono = string.Empty,
+                    Clave = string.Empty,
+                    RepetirClave = string.Empty
+                };
+
+                if (_usuarioServicio.AgregarUsuario(usuario) <= 0)
+                {
+                    MessageBox.Show("No fue posible crear el usuario ROOT", "Iniciar Sesión: error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
 
         private void IniciarSesion(string nombreUsuario, string clave)
