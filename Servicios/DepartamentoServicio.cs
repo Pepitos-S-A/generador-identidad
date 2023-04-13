@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.SqlClient;
-using Duisv.Database;
+﻿using Duisv.Database;
 using Duisv.Modelos;
 using MongoDB.Driver;
+using System.Collections.Generic;
 
 namespace Duisv.Servicios
 {
