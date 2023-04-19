@@ -48,7 +48,7 @@ namespace Duisv.Servicios
             }
         }
 
-        public int EliminarCiudadano(int ciudadanoId)
+        public int EliminarCiudadano(string ciudadanoId)
         {
             try
             {
@@ -79,7 +79,7 @@ namespace Duisv.Servicios
                 .ToList();
         }
 
-        public Ciudadano ObtenerCiudadanoPorId(int ciudadanoId)
+        public Ciudadano ObtenerCiudadanoPorId(string ciudadanoId)
         {
             return _collection.Find(x => x.CiudadanoId == ciudadanoId).FirstOrDefault();
         }

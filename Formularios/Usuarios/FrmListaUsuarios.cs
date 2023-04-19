@@ -27,7 +27,7 @@ namespace Duisv.Formularios.Usuarios
 
         private bool AutorizarUsuario()
         {
-            return _usuario.Rol.Equals("Administrador");
+            return _usuario.RolId.Equals("64388ddaa1a747673f637198");
         }
 
         private void BtnAgregarUsuario_Click(object sender, EventArgs e)
@@ -48,7 +48,10 @@ namespace Duisv.Formularios.Usuarios
 
                 foreach (var usuario in _usuariosPaginados)
                 {
-                    DgvUsuarios.Rows.Add(usuario.UsuarioId, usuario.Nombre, usuario.Apellido, usuario.Telefono, usuario.NombreUsuario, usuario.Rol);
+                    if (usuario.NombreUsuario != "root")
+                    {
+                        DgvUsuarios.Rows.Add(usuario.UsuarioId, usuario.Nombre, usuario.Apellido, usuario.Telefono, usuario.NombreUsuario, usuario.Rol);
+                    }
                 }
 
                 DgvUsuarios.ClearSelection();
@@ -70,7 +73,7 @@ namespace Duisv.Formularios.Usuarios
 
             if (dataGridViewUsuarios.Columns[e.ColumnIndex] is DataGridViewButtonColumn && e.RowIndex >= 0)
             {
-                var usuarioId = (int)dataGridViewUsuarios.Rows[e.RowIndex].Cells["UsuarioId"].Value;
+                var usuarioId = dataGridViewUsuarios.Rows[e.RowIndex].Cells["UsuarioId"].Value.ToString();
                 var nombreUsuario = dataGridViewUsuarios.Rows[e.RowIndex].Cells["Usuario"].Value.ToString();
 
                 switch (e.ColumnIndex)
@@ -90,7 +93,7 @@ namespace Duisv.Formularios.Usuarios
             }
         }
 
-        private void AbrirFormularioVerUsuario(int usuarioId)
+        private void AbrirFormularioVerUsuario(string usuarioId)
         {
             if (AutorizarUsuario())
             {
@@ -120,7 +123,7 @@ namespace Duisv.Formularios.Usuarios
             }
         }
 
-        private void AbrirFormularioEditarUsuario(int usuarioId)
+        private void AbrirFormularioEditarUsuario(string usuarioId)
         {
             if (AutorizarUsuario())
             {
@@ -137,7 +140,7 @@ namespace Duisv.Formularios.Usuarios
             }
         }
 
-        private void ConfirmarEliminarUsuario(int id, string usuario)
+        private void ConfirmarEliminarUsuario(string id, string usuario)
         {
             if (AutorizarUsuario())
             {

@@ -34,7 +34,6 @@ namespace Duisv.Formularios.Ciudadanos
 
         private void MostrarListaDespartamentos(List<Departamento> departamentos, ref ComboBox comboBox)
         {
-
             comboBox.BindingContext = new BindingContext();
             comboBox.DisplayMember = "Nombre";
             comboBox.ValueMember = "DepartamentoId";
@@ -46,7 +45,7 @@ namespace Duisv.Formularios.Ciudadanos
             ciudadanoBindingSource.DataSource = new Ciudadano();
 
             var departamentos = _departamentoServicio.ObtenerListaDepartamentos();
-            departamentos.Insert(0, new Departamento { DepartamentoId = 0, Nombre = "-- Seleccionar --" });
+            departamentos.Insert(0, new Departamento { DepartamentoId = string.Empty, Nombre = "-- Seleccionar --" });
 
             MostrarListaDespartamentos(departamentos, ref departamentoResidenciaComboBox);
             MostrarListaDespartamentos(departamentos, ref departamentoNacimientoComboBox);
@@ -60,15 +59,15 @@ namespace Duisv.Formularios.Ciudadanos
 
         private void DepartamentoNacimientoComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var departamentoId = Convert.ToInt32(((ComboBox)sender).SelectedValue);
+            var departamentoId = ((ComboBox)sender).SelectedValue.ToString();
 
-            if (departamentoId != 0)
+            if (departamentoId != string.Empty)
             {
                 MostrarListaMunicipios(ref municipioNacimientoComboBox, departamentoId);
             }
         }
 
-        private void MostrarListaMunicipios(ref ComboBox comboBox, int departamentoId)
+        private void MostrarListaMunicipios(ref ComboBox comboBox, string departamentoId)
         {
             var municipios = _municipioServicio.ObtenerListaMunicipiosPorDepartamentoId(departamentoId);
 
@@ -80,9 +79,9 @@ namespace Duisv.Formularios.Ciudadanos
 
         private void DepartamentoResidenciaComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var departamentoId = Convert.ToInt32(((ComboBox)sender).SelectedValue);
+            var departamentoId = ((ComboBox)sender).SelectedValue.ToString();
 
-            if (departamentoId != 0)
+            if (departamentoId != string.Empty)
             {
                 MostrarListaMunicipios(ref municipioResidenciaComboBox, departamentoId);
             }
@@ -141,7 +140,7 @@ namespace Duisv.Formularios.Ciudadanos
         {
             ciudadanoBindingSource.EndEdit();
 
-            var ciudadano = ciudadanoBindingSource.Current as Ciudadano;           
+            var ciudadano = ciudadanoBindingSource.Current as Ciudadano;
 
             if (ciudadano != null)
             {
@@ -159,7 +158,7 @@ namespace Duisv.Formularios.Ciudadanos
                         NumeroFolio = "M04587545"
                     };
 
-                    if ((documento.DocumentoId = _documentoServicio.AgregarDocumento(documento)) > 0)
+                    if ((documento.DocumentoId = _documentoServicio.AgregarDocumento(documento)) != string.Empty)
                     {
                         ciudadano.DocumentoId = documento.DocumentoId;
                         ciudadano.NumeroDocumento = documento.Numero;

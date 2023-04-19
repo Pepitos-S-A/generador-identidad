@@ -1,16 +1,18 @@
-﻿using MongoDB.Bson.Serialization.Attributes;
+﻿using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
 
 namespace Duisv.Modelos
 {
     internal class Municipio
     {
         [BsonId]
-        public string MunicipioId { get; set; } = 0;
+        [BsonRepresentation(BsonType.ObjectId)]
+        public string MunicipioId { get; set; }
 
         [BsonElement("nombre")]
         public string Nombre { get; set; } = string.Empty;
 
         [BsonElement("departamento_id")]
-        public int? DepartamentoId { get; set; }
+        public string DepartamentoId { get; set; }
     }
 }

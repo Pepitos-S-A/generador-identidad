@@ -18,7 +18,7 @@ namespace Duisv.Servicios
             _municipios = _provider.GetCollection<Municipio>("municipios");
         }
 
-        public List<Municipio> ObtenerListaMunicipiosPorDepartamentoId(int departamentoId)
+        public List<Municipio> ObtenerListaMunicipiosPorDepartamentoId(string departamentoId)
         {
             return _municipios.Find(x => true).ToList();
         }

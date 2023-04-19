@@ -14,7 +14,7 @@ namespace Duisv.Validaciones
             RuleFor(u => u.Direccion).NotEmpty().WithMessage("La dirección es requerida.");
             RuleFor(u => u.Telefono).NotEmpty().WithMessage("El numero de telefono es requerido.");
             RuleFor(u => u.NombreUsuario).NotEmpty().WithMessage("El nombre de usuario es requerido.");
-            RuleFor(u => u.RolId).NotEqual(0).WithMessage("Seleccione un rol.");
+            RuleFor(u => u.RolId).NotEqual(string.Empty).WithMessage("Seleccione un rol.");
         }
     }
 }

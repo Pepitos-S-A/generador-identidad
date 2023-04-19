@@ -20,7 +20,25 @@ namespace Duisv.Formularios
             _usuarioServicio = new UsuarioServicio();
             _rolServicio = new RolServicio();
 
+            CrearRolAdministrador();
             CrearUsuarioRoot();
+        }
+
+        private void CrearRolAdministrador()
+        {
+            if (_rolServicio.ObtenerRolPorNombre("Administrador") == null)
+            {
+                var rol = new Rol
+                {
+                    Nombre = "Administrador",
+                    RolId = "64388ddaa1a747673f637198"
+                };
+
+                if (_rolServicio.AgregarRol(rol) == false)
+                {
+                    MessageBox.Show("No fue posible crear el rol ADMINISTRADOR", "Iniciar Sesión: error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
 
         private void CrearUsuarioRoot()
@@ -38,9 +56,13 @@ namespace Duisv.Formularios
                     Rol = "Administrador",
                     RolId = "64388ddaa1a747673f637198",
                     Telefono = string.Empty,
-                    Clave = string.Empty,
-                    RepetirClave = string.Empty
+                    Clave = "clave123",
+                    RepetirClave = "clave123"
                 };
+
+                var claveCodificada = Codificador.ObtenerClaveCodificada(string.Concat(usuario.NombreUsuario, usuario.Clave));
+
+                usuario.Clave = claveCodificada;
 
                 if (_usuarioServicio.AgregarUsuario(usuario) <= 0)
                 {

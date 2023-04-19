@@ -61,7 +61,7 @@ namespace Duisv.Formularios.Usuarios
                     Telefono = MtbTelefono.Text,
                     NombreUsuario = TBxUsuario.Text,
                     Clave = TBxClave.Text,
-                    RolId = Convert.ToInt32(CbBRoles.SelectedValue),
+                    RolId = CbBRoles.SelectedValue.ToString(),
                     RepetirClave = TBxRepetirClave.Text
                 };
 
@@ -117,7 +117,7 @@ namespace Duisv.Formularios.Usuarios
 
         private void ActualizarListaRoles(List<Rol> roles)
         {
-            roles.Insert(0, new Rol { Nombre = "-- Seleccionar --", RolId = 0 });
+            roles.Insert(0, new Rol { Nombre = "-- Seleccionar --", RolId = string.Empty });
 
             CbBRoles.DataSource = roles;
             CbBRoles.DisplayMember = "Nombre";

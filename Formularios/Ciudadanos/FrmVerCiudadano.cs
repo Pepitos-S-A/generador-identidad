@@ -13,9 +13,9 @@ namespace Duisv.Formularios.Ciudadanos
         private readonly CiudadanoServicio _ciudadanoServicio;
         private readonly DocumentoServicio _documentoServicio;
 
-        private readonly int _ciudadanoId;
+        private readonly string _ciudadanoId;
 
-        public FrmVerCiudadano(int ciudadanoId)
+        public FrmVerCiudadano(string ciudadanoId)
         {
             InitializeComponent();
 
@@ -36,7 +36,7 @@ namespace Duisv.Formularios.Ciudadanos
 
             if (ciudadano != null)
             {
-                var documento = _documentoServicio.ObtenerDocumentoPorId((int)ciudadano.DocumentoId);
+                var documento = _documentoServicio.ObtenerDocumentoPorId(ciudadano.DocumentoId);
 
                 if (documento != null)
                 {

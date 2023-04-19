@@ -12,13 +12,13 @@ namespace Duisv.Formularios.Usuarios
 {
     public partial class FrmEditarUsuario : Form
     {
-        private readonly int _usuarioId;
+        private readonly string _usuarioId;
         private readonly UsuarioServicio _usuarioServicio;
         private readonly RolServicio _rolServicio;
         private bool _eliminarFoto;
         private bool _cambiarFoto;
 
-        public FrmEditarUsuario(int usuarioId)
+        public FrmEditarUsuario(string usuarioId)
         {
             InitializeComponent();
 
@@ -44,7 +44,7 @@ namespace Duisv.Formularios.Usuarios
         {
             if (roles != null)
             {
-                roles.Insert(0, new Rol { Nombre = "-- Seleccionar --", RolId = 0 });
+                roles.Insert(0, new Rol { Nombre = "-- Seleccionar --", RolId = string.Empty });
 
                 CbBRoles.DataSource = roles;
                 CbBRoles.DisplayMember = "Nombre";
@@ -62,7 +62,7 @@ namespace Duisv.Formularios.Usuarios
             DtpFechaNacimiento.Value = usuario.FechaNacimiento.Value;
             TBxDireccion.Text = usuario.Direccion;
             MtbTelefono.Text = usuario.Telefono;
-            CbBRoles.SelectedValue = usuario.RolId ?? 0;
+            CbBRoles.SelectedValue = usuario.RolId;
             TBxUsuario.Text = usuario.NombreUsuario;
 
             CargarFotoUsuario(usuario.NombreUsuario);
@@ -105,7 +105,7 @@ namespace Duisv.Formularios.Usuarios
             {
                 var usuario = new Usuario()
                 {
-                    UsuarioId = Convert.ToInt32(TBxId.Text),
+                    UsuarioId = TBxId.Text,
                     Nombre = TBxNombre.Text,
                     Apellido = TBxApellido.Text,
                     Direccion = TBxDireccion.Text,
@@ -113,7 +113,7 @@ namespace Duisv.Formularios.Usuarios
                     FechaNacimiento = DtpFechaNacimiento.Value,
                     Telefono = MtbTelefono.Text,
                     NombreUsuario = TBxUsuario.Text,
-                    RolId = Convert.ToInt32(CbBRoles.SelectedValue)
+                    RolId = CbBRoles.SelectedValue.ToString()
                 };
 
                 if (ValidarDatosUsuario(usuario))

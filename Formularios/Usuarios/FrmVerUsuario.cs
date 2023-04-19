@@ -10,9 +10,9 @@ namespace Duisv.Formularios.Usuarios
     public partial class FrmVerUsuario : Form
     {
         private readonly UsuarioServicio _usuarioServicio;
-        private readonly int _usuarioId;
+        private readonly string _usuarioId;
 
-        public FrmVerUsuario(int usuarioId)
+        public FrmVerUsuario(string usuarioId)
         {
             InitializeComponent();
 

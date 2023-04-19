@@ -9,11 +9,11 @@ namespace Duisv.Formularios.Usuarios
 {
     public partial class FrmCambiarClave : Form
     {
-        private readonly int _usuarioId;
+        private readonly string _usuarioId;
         private readonly UsuarioServicio _usuarioServicio;
         private Usuario _usuario;
 
-        public FrmCambiarClave(int usuarioId)
+        public FrmCambiarClave(string usuarioId)
         {
             InitializeComponent();
 

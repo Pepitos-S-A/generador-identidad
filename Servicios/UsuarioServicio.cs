@@ -34,7 +34,7 @@ namespace Duisv.Servicios
             }
         }
 
-        public int EliminarUsuario(int usuarioId)
+        public int EliminarUsuario(string usuarioId)
         {
             try
             {
@@ -52,7 +52,12 @@ namespace Duisv.Servicios
         {
             try
             {
+                var busqueda = ObtenerUsuarioPorId(usuario.UsuarioId);
+
+                usuario.Clave = busqueda.Clave;
+
                 var resultado = _usuarios.ReplaceOne(x => x.UsuarioId == usuario.UsuarioId, usuario);
+
                 return (int)resultado.ModifiedCount;
             }
             catch (Exception)
@@ -66,7 +71,7 @@ namespace Duisv.Servicios
             return _usuarios.Find(x => true).ToList();
         }
 
-        public Usuario ObtenerUsuarioPorId(int usuarioId)
+        public Usuario ObtenerUsuarioPorId(string usuarioId)
         {
             return _usuarios.Find(x => x.UsuarioId == usuarioId).FirstOrDefault();
         }
@@ -76,11 +81,11 @@ namespace Duisv.Servicios
             return _usuarios.AsQueryable().Where(x => x.Nombre.Contains(busqueda) || x.Apellido.Contains(busqueda) || x.NombreUsuario.Contains(busqueda)).ToList();
         }
 
-        public int CambiarClaveUsuario(string nuevaClave, int? usuarioId)
+        public int CambiarClaveUsuario(string nuevaClave, string usuarioId)
         {
             try
             {
-                var usuario = ObtenerUsuarioPorId(usuarioId.Value);
+                var usuario = ObtenerUsuarioPorId(usuarioId);
                 var resultado = 0;
 
                 if (usuario != null)

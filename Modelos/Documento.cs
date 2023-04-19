@@ -7,9 +7,10 @@ namespace Duisv.Modelos
     public class Documento
     {
         [BsonId]
+        [BsonRepresentation(BsonType.ObjectId)]
         public string DocumentoId { get; set; }
 
-        [BsonElement("fecha_expiracion")]
+        [BsonElement("fecha_expedicion")]
         [BsonRepresentation(BsonType.DateTime)]
         public DateTime FechaExpedicion { get; set; }
 

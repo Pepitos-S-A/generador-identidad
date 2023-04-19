@@ -15,13 +15,13 @@ namespace Duisv.Formularios.Ciudadanos
         private readonly CiudadanoServicio _ciudadanoServicio;
         private readonly DepartamentoServicio _departamentoServicio;
         private readonly MunicipioServicio _municipioServicio;
-        private readonly int _ciudadanoId;
+        private readonly string _ciudadanoId;
 
         private bool _cambiarFoto;
         private bool _cambiarFirma;
         private bool _cambiarPartidaNacimiento;
 
-        public FrmEditarCiudadano(int ciudadanoId)
+        public FrmEditarCiudadano(string ciudadanoId)
         {
             InitializeComponent();
 
@@ -60,7 +60,7 @@ namespace Duisv.Formularios.Ciudadanos
             LblTituloVentana.Text = $"Editar datos del ciudadano {nombres.ToUpper()} {apellidos.ToUpper()}";
         }
 
-        private void MostrarListaMunicipios(ref ComboBox comboBox, int departamentoId)
+        private void MostrarListaMunicipios(ref ComboBox comboBox, string departamentoId)
         {
             var municipios = _municipioServicio.ObtenerListaMunicipiosPorDepartamentoId(departamentoId);
 
@@ -86,9 +86,9 @@ namespace Duisv.Formularios.Ciudadanos
 
         private void DepartamentoNacimientoComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var departamentoId = Convert.ToInt32(((ComboBox)sender).SelectedValue);
+            var departamentoId = ((ComboBox)sender).SelectedValue.ToString();
 
-            if (departamentoId != 0)
+            if (departamentoId != string.Empty)
             {
                 MostrarListaMunicipios(ref municipioNacimientoComboBox, departamentoId);
             }
@@ -96,9 +96,9 @@ namespace Duisv.Formularios.Ciudadanos
 
         private void DepartamentoResidenciaComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var departamentoId = Convert.ToInt32(((ComboBox)sender).SelectedValue);
+            var departamentoId = ((ComboBox)sender).SelectedValue.ToString();
 
-            if (departamentoId != 0)
+            if (departamentoId != string.Empty)
             {
                 MostrarListaMunicipios(ref municipioResidenciaComboBox, departamentoId);
             }

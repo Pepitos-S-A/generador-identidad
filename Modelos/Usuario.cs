@@ -7,6 +7,7 @@ namespace Duisv.Modelos
     public class Usuario
     {
         [BsonId]
+        [BsonRepresentation(BsonType.ObjectId)]
         public string UsuarioId { get; set; }
 
         [BsonElement("nombre")]
@@ -28,7 +29,7 @@ namespace Duisv.Modelos
         [BsonElement("telefono")]
         public string Telefono { get; set; } = string.Empty;
 
-        [BsonElement("numero_usuario")]
+        [BsonElement("nombre_usuario")]
         public string NombreUsuario { get; set; } = string.Empty;
 
         [BsonElement("clave")]

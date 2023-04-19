@@ -19,16 +19,16 @@ namespace Duisv.Servicios
             _documentos = _provider.GetCollection<Documento>("documentos");
         }
 
-        public int AgregarDocumento(Documento documento)
+        public string AgregarDocumento(Documento documento)
         {
             try
             {
                 _documentos.InsertOne(documento);
-                return (int)_documentos.Find(x => x.Numero == documento.Numero).CountDocuments();
+                return _documentos.Find(x => x.Numero == documento.Numero).FirstOrDefault().DocumentoId;
             }
             catch (Exception)
             {
-                return 0;
+                return string.Empty;
             }
         }
 
@@ -45,7 +45,7 @@ namespace Duisv.Servicios
             }
         }
 
-        public int EliminarDocumento(int id)
+        public int EliminarDocumento(string id)
         {
             try
             {
@@ -63,7 +63,7 @@ namespace Duisv.Servicios
             return _documentos.Find(x => true).ToList();
         }
 
-        public Documento ObtenerDocumentoPorId(int id)
+        public Documento ObtenerDocumentoPorId(string id)
         {
             return _documentos.Find(x => x.DocumentoId == id).FirstOrDefault();
         }

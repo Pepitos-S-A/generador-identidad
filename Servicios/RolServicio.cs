@@ -1,6 +1,7 @@
 ﻿using Duisv.Database;
 using Duisv.Modelos;
 using MongoDB.Driver;
+using MongoDB.Driver.Linq;
 using System.Collections.Generic;
 
 namespace Duisv.Servicios
@@ -21,6 +22,20 @@ namespace Duisv.Servicios
         public List<Rol> ObtenerListaRoles()
         {
             return _roles.Find(x => true).ToList();
+        }
+
+        public Rol ObtenerRolPorNombre(string nombre)
+        {
+            return _roles
+                .AsQueryable()
+                .Where(x => x.Nombre.Equals(nombre))
+                .FirstOrDefault();
+        }
+
+        public bool AgregarRol(Rol rol)
+        {
+            _roles.InsertOne(rol);
+            return ObtenerRolPorNombre(rol.Nombre) != null;
         }
 
         #region Métodos con ADO.NET y SQL Server

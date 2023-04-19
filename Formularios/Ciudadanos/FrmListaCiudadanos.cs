@@ -68,7 +68,7 @@ namespace Duisv.Formularios.Ciudadanos
 
             if (dataGridView.Columns[e.ColumnIndex] is DataGridViewButtonColumn && e.RowIndex >= 0)
             {
-                var ciudadanoId = (int)dataGridView.Rows[e.RowIndex].Cells["ciudadanoIdDataGridViewTextBoxColumn"].Value;
+                var ciudadanoId = dataGridView.Rows[e.RowIndex].Cells["ciudadanoIdDataGridViewTextBoxColumn"].Value.ToString();
 
                 switch (e.ColumnIndex)
                 {
@@ -87,7 +87,7 @@ namespace Duisv.Formularios.Ciudadanos
             }
         }
 
-        private void ConfirmarEliminar(int ciudadanoId)
+        private void ConfirmarEliminar(string ciudadanoId)
         {
             if (MessageBox.Show($"¿Está seguro de querer eliminar al ciudadano?", "Eliminar ciudadano: confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
             {
@@ -98,7 +98,7 @@ namespace Duisv.Formularios.Ciudadanos
             }
         }
 
-        private void AbrirFormularioEditar(int ciudadanoId)
+        private void AbrirFormularioEditar(string ciudadanoId)
         {
             var frmEditarCiudadano = new FrmEditarCiudadano(ciudadanoId);
 
@@ -108,7 +108,7 @@ namespace Duisv.Formularios.Ciudadanos
             }
         }
 
-        private void AbrirFormularioVer(int ciudadanoId)
+        private void AbrirFormularioVer(string ciudadanoId)
         {
             var frmVerCiudadano = new FrmVerCiudadano(ciudadanoId);
             frmVerCiudadano.ShowDialog();

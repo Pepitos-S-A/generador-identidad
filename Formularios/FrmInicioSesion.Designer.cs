@@ -46,6 +46,7 @@
             this.TBxUsuario.Name = "TBxUsuario";
             this.TBxUsuario.Size = new System.Drawing.Size(245, 23);
             this.TBxUsuario.TabIndex = 5;
+            this.TBxUsuario.Text = "root";
             // 
             // TBxClave
             // 
@@ -55,6 +56,7 @@
             this.TBxClave.Name = "TBxClave";
             this.TBxClave.Size = new System.Drawing.Size(245, 23);
             this.TBxClave.TabIndex = 6;
+            this.TBxClave.Text = "clave123";
             this.TBxClave.UseSystemPasswordChar = true;
             // 
             // BtnIniciarSesion
