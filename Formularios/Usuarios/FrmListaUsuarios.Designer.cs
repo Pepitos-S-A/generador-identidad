@@ -33,11 +33,6 @@
             this.PBxAvatar = new System.Windows.Forms.PictureBox();
             this.BtnAgregarUsuario = new System.Windows.Forms.Button();
             this.DgvUsuarios = new System.Windows.Forms.DataGridView();
-            this.TBxBusqueda = new System.Windows.Forms.TextBox();
-            this.BtnBuscar = new System.Windows.Forms.Button();
-            this.BtnPaginaAnterior = new System.Windows.Forms.Button();
-            this.LblPaginacion = new System.Windows.Forms.Label();
-            this.BtnPaginaSiguiente = new System.Windows.Forms.Button();
             this.UsuarioId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,6 +42,11 @@
             this.Ver = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Editar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.TBxBusqueda = new System.Windows.Forms.TextBox();
+            this.BtnBuscar = new System.Windows.Forms.Button();
+            this.BtnPaginaAnterior = new System.Windows.Forms.Button();
+            this.LblPaginacion = new System.Windows.Forms.Label();
+            this.BtnPaginaSiguiente = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PBxAvatar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DgvUsuarios)).BeginInit();
@@ -74,7 +74,7 @@
             // 
             // PBxAvatar
             // 
-            this.PBxAvatar.Image = global::Duisv.Properties.Resources.licencia;
+            this.PBxAvatar.Image = global::Duisv.Properties.Resources.FRONT_copy2;
             this.PBxAvatar.Location = new System.Drawing.Point(12, 12);
             this.PBxAvatar.Name = "PBxAvatar";
             this.PBxAvatar.Size = new System.Drawing.Size(23, 23);
@@ -130,64 +130,6 @@
             this.DgvUsuarios.Size = new System.Drawing.Size(891, 397);
             this.DgvUsuarios.TabIndex = 5;
             this.DgvUsuarios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvUsuarios_CellContentClick);
-            // 
-            // TBxBusqueda
-            // 
-            this.TBxBusqueda.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TBxBusqueda.Location = new System.Drawing.Point(510, 64);
-            this.TBxBusqueda.Name = "TBxBusqueda";
-            this.TBxBusqueda.Size = new System.Drawing.Size(258, 23);
-            this.TBxBusqueda.TabIndex = 6;
-            // 
-            // BtnBuscar
-            // 
-            this.BtnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnBuscar.Font = new System.Drawing.Font("Arial Black", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnBuscar.ForeColor = System.Drawing.Color.Black;
-            this.BtnBuscar.Location = new System.Drawing.Point(774, 55);
-            this.BtnBuscar.Name = "BtnBuscar";
-            this.BtnBuscar.Size = new System.Drawing.Size(129, 38);
-            this.BtnBuscar.TabIndex = 7;
-            this.BtnBuscar.Text = "Buscar";
-            this.BtnBuscar.UseVisualStyleBackColor = true;
-            this.BtnBuscar.Click += new System.EventHandler(this.BtnBuscar_Click);
-            // 
-            // BtnPaginaAnterior
-            // 
-            this.BtnPaginaAnterior.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnPaginaAnterior.Font = new System.Drawing.Font("Arial Black", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnPaginaAnterior.ForeColor = System.Drawing.Color.Black;
-            this.BtnPaginaAnterior.Location = new System.Drawing.Point(12, 501);
-            this.BtnPaginaAnterior.Name = "BtnPaginaAnterior";
-            this.BtnPaginaAnterior.Size = new System.Drawing.Size(129, 38);
-            this.BtnPaginaAnterior.TabIndex = 8;
-            this.BtnPaginaAnterior.Text = "Página anterior";
-            this.BtnPaginaAnterior.UseVisualStyleBackColor = true;
-            this.BtnPaginaAnterior.Click += new System.EventHandler(this.BtnPaginaAnterior_Click);
-            // 
-            // LblPaginacion
-            // 
-            this.LblPaginacion.AutoSize = true;
-            this.LblPaginacion.Location = new System.Drawing.Point(282, 513);
-            this.LblPaginacion.Name = "LblPaginacion";
-            this.LblPaginacion.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.LblPaginacion.Size = new System.Drawing.Size(43, 15);
-            this.LblPaginacion.TabIndex = 9;
-            this.LblPaginacion.Text = "label1";
-            this.LblPaginacion.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // BtnPaginaSiguiente
-            // 
-            this.BtnPaginaSiguiente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnPaginaSiguiente.Font = new System.Drawing.Font("Arial Black", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnPaginaSiguiente.ForeColor = System.Drawing.Color.Black;
-            this.BtnPaginaSiguiente.Location = new System.Drawing.Point(147, 501);
-            this.BtnPaginaSiguiente.Name = "BtnPaginaSiguiente";
-            this.BtnPaginaSiguiente.Size = new System.Drawing.Size(129, 38);
-            this.BtnPaginaSiguiente.TabIndex = 10;
-            this.BtnPaginaSiguiente.Text = "Siguiente página";
-            this.BtnPaginaSiguiente.UseVisualStyleBackColor = true;
-            this.BtnPaginaSiguiente.Click += new System.EventHandler(this.BtnPaginaSiguiente_Click);
             // 
             // UsuarioId
             // 
@@ -263,6 +205,64 @@
             this.Eliminar.Text = "Eliminar";
             this.Eliminar.UseColumnTextForButtonValue = true;
             this.Eliminar.Width = 75;
+            // 
+            // TBxBusqueda
+            // 
+            this.TBxBusqueda.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TBxBusqueda.Location = new System.Drawing.Point(510, 64);
+            this.TBxBusqueda.Name = "TBxBusqueda";
+            this.TBxBusqueda.Size = new System.Drawing.Size(258, 23);
+            this.TBxBusqueda.TabIndex = 6;
+            // 
+            // BtnBuscar
+            // 
+            this.BtnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnBuscar.Font = new System.Drawing.Font("Arial Black", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnBuscar.ForeColor = System.Drawing.Color.Black;
+            this.BtnBuscar.Location = new System.Drawing.Point(774, 55);
+            this.BtnBuscar.Name = "BtnBuscar";
+            this.BtnBuscar.Size = new System.Drawing.Size(129, 38);
+            this.BtnBuscar.TabIndex = 7;
+            this.BtnBuscar.Text = "Buscar";
+            this.BtnBuscar.UseVisualStyleBackColor = true;
+            this.BtnBuscar.Click += new System.EventHandler(this.BtnBuscar_Click);
+            // 
+            // BtnPaginaAnterior
+            // 
+            this.BtnPaginaAnterior.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnPaginaAnterior.Font = new System.Drawing.Font("Arial Black", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnPaginaAnterior.ForeColor = System.Drawing.Color.Black;
+            this.BtnPaginaAnterior.Location = new System.Drawing.Point(12, 501);
+            this.BtnPaginaAnterior.Name = "BtnPaginaAnterior";
+            this.BtnPaginaAnterior.Size = new System.Drawing.Size(129, 38);
+            this.BtnPaginaAnterior.TabIndex = 8;
+            this.BtnPaginaAnterior.Text = "Página anterior";
+            this.BtnPaginaAnterior.UseVisualStyleBackColor = true;
+            this.BtnPaginaAnterior.Click += new System.EventHandler(this.BtnPaginaAnterior_Click);
+            // 
+            // LblPaginacion
+            // 
+            this.LblPaginacion.AutoSize = true;
+            this.LblPaginacion.Location = new System.Drawing.Point(282, 513);
+            this.LblPaginacion.Name = "LblPaginacion";
+            this.LblPaginacion.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.LblPaginacion.Size = new System.Drawing.Size(43, 15);
+            this.LblPaginacion.TabIndex = 9;
+            this.LblPaginacion.Text = "label1";
+            this.LblPaginacion.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // BtnPaginaSiguiente
+            // 
+            this.BtnPaginaSiguiente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnPaginaSiguiente.Font = new System.Drawing.Font("Arial Black", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnPaginaSiguiente.ForeColor = System.Drawing.Color.Black;
+            this.BtnPaginaSiguiente.Location = new System.Drawing.Point(147, 501);
+            this.BtnPaginaSiguiente.Name = "BtnPaginaSiguiente";
+            this.BtnPaginaSiguiente.Size = new System.Drawing.Size(129, 38);
+            this.BtnPaginaSiguiente.TabIndex = 10;
+            this.BtnPaginaSiguiente.Text = "Siguiente página";
+            this.BtnPaginaSiguiente.UseVisualStyleBackColor = true;
+            this.BtnPaginaSiguiente.Click += new System.EventHandler(this.BtnPaginaSiguiente_Click);
             // 
             // FrmListaUsuarios
             // 

@@ -43,20 +43,20 @@ namespace Duisv.Formularios
 
         private void CrearUsuarioRoot()
         {
-            if (_usuarioServicio.ObtenerUsuarioPorNombre("root") == null)
+            if (_usuarioServicio.ObtenerUsuarioPorNombre("admin") == null)
             {
                 var usuario = new Usuario
                 {
-                    Nombre = "root",
+                    Nombre = "Administrador",
                     Apellido = string.Empty,
                     CorreoElectronico = "root@duisv.com",
                     Direccion = string.Empty,
                     FechaNacimiento = DateTime.UtcNow,
-                    NombreUsuario = "root",
+                    NombreUsuario = "admin",
                     Rol = "Administrador",
                     RolId = "64388ddaa1a747673f637198",
                     Telefono = string.Empty,
-                    Clave = "clave123",
+                    Clave = "admin123",
                     RepetirClave = "clave123"
                 };
 

@@ -28,7 +28,7 @@ namespace Duisv.Formularios
 
         private void CargarFotoUsuario(string nombreUsuario)
         {
-            var rutaFoto = $@"{Environment.GetFolderPath(Environment.SpecialFolder.MyPictures)}\DUISV\Usuarios\Fotos\{nombreUsuario}.png";
+            var rutaFoto = $@"{Environment.GetFolderPath(Environment.SpecialFolder.MyPictures)}\PepitosSA\Usuarios\Fotos\{nombreUsuario}.png";
 
             if (File.Exists(rutaFoto))
             {
@@ -60,7 +60,7 @@ namespace Duisv.Formularios
 
         private void FrmPrincipal_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (MessageBox.Show("¿Está seguro de querer cerrar la sesión?", "DUISV: Cerrar sesión", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
+            if (MessageBox.Show("¿Está seguro de querer cerrar la sesión?", "Pepitos S. A.: Cerrar sesión", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
             {
                 DialogResult = DialogResult.Retry;
             }

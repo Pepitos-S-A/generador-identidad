@@ -48,7 +48,7 @@ namespace Duisv.Formularios.Usuarios
 
                 foreach (var usuario in _usuariosPaginados)
                 {
-                    if (usuario.NombreUsuario != "root")
+                    if (usuario.NombreUsuario != "admin")
                     {
                         DgvUsuarios.Rows.Add(usuario.UsuarioId, usuario.Nombre, usuario.Apellido, usuario.Telefono, usuario.NombreUsuario, usuario.Rol);
                     }

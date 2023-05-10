@@ -53,13 +53,13 @@
             this.LblUsuario.AutoSize = true;
             this.LblUsuario.Location = new System.Drawing.Point(42, 17);
             this.LblUsuario.Name = "LblUsuario";
-            this.LblUsuario.Size = new System.Drawing.Size(189, 15);
+            this.LblUsuario.Size = new System.Drawing.Size(155, 15);
             this.LblUsuario.TabIndex = 1;
-            this.LblUsuario.Text = "Documento Unico de Identidad";
+            this.LblUsuario.Text = "Documento  de Identidad";
             // 
             // PBxAvatar
             // 
-            this.PBxAvatar.Image = global::Duisv.Properties.Resources.licencia;
+            this.PBxAvatar.Image = global::Duisv.Properties.Resources.FRONT_copy2;
             this.PBxAvatar.Location = new System.Drawing.Point(13, 12);
             this.PBxAvatar.Name = "PBxAvatar";
             this.PBxAvatar.Size = new System.Drawing.Size(23, 23);

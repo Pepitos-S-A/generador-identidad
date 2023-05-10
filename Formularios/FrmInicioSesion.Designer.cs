@@ -46,7 +46,7 @@
             this.TBxUsuario.Name = "TBxUsuario";
             this.TBxUsuario.Size = new System.Drawing.Size(245, 23);
             this.TBxUsuario.TabIndex = 5;
-            this.TBxUsuario.Text = "root";
+            this.TBxUsuario.Text = "admin";
             // 
             // TBxClave
             // 
@@ -56,7 +56,7 @@
             this.TBxClave.Name = "TBxClave";
             this.TBxClave.Size = new System.Drawing.Size(245, 23);
             this.TBxClave.TabIndex = 6;
-            this.TBxClave.Text = "clave123";
+            this.TBxClave.Text = "admin123";
             this.TBxClave.UseSystemPasswordChar = true;
             // 
             // BtnIniciarSesion
@@ -98,12 +98,12 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::Duisv.Properties.Resources.escudo_negativo;
-            this.pictureBox1.Location = new System.Drawing.Point(71, 2);
+            this.pictureBox1.Image = global::Duisv.Properties.Resources.FRONT_copy;
+            this.pictureBox1.Location = new System.Drawing.Point(37, 41);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(179, 175);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.Size = new System.Drawing.Size(246, 115);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             // 
@@ -128,7 +128,7 @@
             this.MaximizeBox = false;
             this.Name = "FrmInicioSesion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Iniciar sesión";
+            this.Text = "Pepitios S. A. - Iniciar sesión";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

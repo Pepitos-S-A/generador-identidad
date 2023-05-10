@@ -11,7 +11,7 @@ namespace Duisv.Database
             _client = new MongoClient(Properties.Settings.Default.MongoDBConnectionString);
         }
 
-        public IMongoCollection<T> GetCollection<T>(string collectionName, string databaseName = "duisv")
+        public IMongoCollection<T> GetCollection<T>(string collectionName, string databaseName = "pepitosdb")
         {
             return GetDatabase(databaseName).GetCollection<T>(collectionName);
         }

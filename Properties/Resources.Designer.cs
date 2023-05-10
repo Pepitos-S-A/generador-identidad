@@ -113,6 +113,26 @@ namespace Duisv.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap FRONT_copy {
+            get {
+                object obj = ResourceManager.GetObject("FRONT_copy", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap FRONT_copy2 {
+            get {
+                object obj = ResourceManager.GetObject("FRONT-copy2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap licencia {
             get {
                 object obj = ResourceManager.GetObject("licencia", resourceCulture);

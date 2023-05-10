@@ -52,6 +52,7 @@
             this.PBxFirma = new System.Windows.Forms.PictureBox();
             this.ciudadanoBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.ciudadanoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
@@ -92,7 +93,6 @@
             this.LblTituloVentana = new System.Windows.Forms.Label();
             this.PBxAvatar = new System.Windows.Forms.PictureBox();
             this.BtnVerDui = new System.Windows.Forms.Button();
-            this.ciudadanoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.DocumentoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             apellidosLabel = new System.Windows.Forms.Label();
             conocidoPorLabel = new System.Windows.Forms.Label();
@@ -116,11 +116,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.PBxFirma)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ciudadanoBindingNavigator)).BeginInit();
             this.ciudadanoBindingNavigator.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ciudadanoBindingSource)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PBxFoto)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PBxAvatar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ciudadanoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DocumentoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -141,6 +141,7 @@
             conocidoPorLabel.Size = new System.Drawing.Size(90, 15);
             conocidoPorLabel.TabIndex = 6;
             conocidoPorLabel.Text = "Conocido Por:";
+            conocidoPorLabel.Visible = false;
             // 
             // nombreConyugueLabel
             // 
@@ -150,6 +151,7 @@
             nombreConyugueLabel.Size = new System.Drawing.Size(119, 15);
             nombreConyugueLabel.TabIndex = 24;
             nombreConyugueLabel.Text = "Nombre Conyugue:";
+            nombreConyugueLabel.Visible = false;
             // 
             // nombreMadreLabel
             // 
@@ -159,6 +161,7 @@
             nombreMadreLabel.Size = new System.Drawing.Size(97, 15);
             nombreMadreLabel.TabIndex = 26;
             nombreMadreLabel.Text = "Nombre Madre:";
+            nombreMadreLabel.Visible = false;
             // 
             // nombrePadreLabel
             // 
@@ -168,6 +171,7 @@
             nombrePadreLabel.Size = new System.Drawing.Size(95, 15);
             nombrePadreLabel.TabIndex = 28;
             nombrePadreLabel.Text = "Nombre Padre:";
+            nombrePadreLabel.Visible = false;
             // 
             // nombresLabel
             // 
@@ -193,9 +197,9 @@
             ciudadanoIdLabel.AutoSize = true;
             ciudadanoIdLabel.Location = new System.Drawing.Point(3, 9);
             ciudadanoIdLabel.Name = "ciudadanoIdLabel";
-            ciudadanoIdLabel.Size = new System.Drawing.Size(88, 15);
+            ciudadanoIdLabel.Size = new System.Drawing.Size(84, 15);
             ciudadanoIdLabel.TabIndex = 39;
-            ciudadanoIdLabel.Text = "Ciudadano Id:";
+            ciudadanoIdLabel.Text = "Empleado Id:";
             // 
             // generoLabel
             // 
@@ -295,6 +299,7 @@
             numeroDocumentoLabel.Size = new System.Drawing.Size(83, 15);
             numeroDocumentoLabel.TabIndex = 51;
             numeroDocumentoLabel.Text = "Numero DUI:";
+            numeroDocumentoLabel.Visible = false;
             // 
             // PBxFirma
             // 
@@ -349,6 +354,10 @@
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorAddNewItem.Text = "Agregar nuevo";
+            // 
+            // ciudadanoBindingSource
+            // 
+            this.ciudadanoBindingSource.DataSource = typeof(Duisv.Modelos.Ciudadano);
             // 
             // bindingNavigatorCountItem
             // 
@@ -492,6 +501,7 @@
             this.numeroDocumentoMaskedTextBox.ReadOnly = true;
             this.numeroDocumentoMaskedTextBox.Size = new System.Drawing.Size(198, 23);
             this.numeroDocumentoMaskedTextBox.TabIndex = 52;
+            this.numeroDocumentoMaskedTextBox.Visible = false;
             // 
             // profesionTextBox
             // 
@@ -622,6 +632,7 @@
             this.conocidoPorTextBox.ReadOnly = true;
             this.conocidoPorTextBox.Size = new System.Drawing.Size(198, 23);
             this.conocidoPorTextBox.TabIndex = 7;
+            this.conocidoPorTextBox.Visible = false;
             // 
             // nombreConyugueTextBox
             // 
@@ -632,6 +643,7 @@
             this.nombreConyugueTextBox.ReadOnly = true;
             this.nombreConyugueTextBox.Size = new System.Drawing.Size(198, 23);
             this.nombreConyugueTextBox.TabIndex = 25;
+            this.nombreConyugueTextBox.Visible = false;
             // 
             // nombreMadreTextBox
             // 
@@ -642,6 +654,7 @@
             this.nombreMadreTextBox.ReadOnly = true;
             this.nombreMadreTextBox.Size = new System.Drawing.Size(198, 23);
             this.nombreMadreTextBox.TabIndex = 27;
+            this.nombreMadreTextBox.Visible = false;
             // 
             // nombrePadreTextBox
             // 
@@ -652,6 +665,7 @@
             this.nombrePadreTextBox.ReadOnly = true;
             this.nombrePadreTextBox.Size = new System.Drawing.Size(198, 23);
             this.nombrePadreTextBox.TabIndex = 29;
+            this.nombrePadreTextBox.Visible = false;
             // 
             // nombresTextBox
             // 
@@ -736,7 +750,7 @@
             // 
             // PBxAvatar
             // 
-            this.PBxAvatar.Image = global::Duisv.Properties.Resources.licencia;
+            this.PBxAvatar.Image = global::Duisv.Properties.Resources.FRONT_copy2;
             this.PBxAvatar.Location = new System.Drawing.Point(13, 12);
             this.PBxAvatar.Name = "PBxAvatar";
             this.PBxAvatar.Size = new System.Drawing.Size(23, 23);
@@ -754,11 +768,8 @@
             this.BtnVerDui.TabIndex = 54;
             this.BtnVerDui.Text = "Ver DUI";
             this.BtnVerDui.UseVisualStyleBackColor = true;
+            this.BtnVerDui.Visible = false;
             this.BtnVerDui.Click += new System.EventHandler(this.BtnVerDui_Click);
-            // 
-            // ciudadanoBindingSource
-            // 
-            this.ciudadanoBindingSource.DataSource = typeof(Duisv.Modelos.Ciudadano);
             // 
             // DocumentoBindingSource
             // 
@@ -788,13 +799,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.ciudadanoBindingNavigator)).EndInit();
             this.ciudadanoBindingNavigator.ResumeLayout(false);
             this.ciudadanoBindingNavigator.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ciudadanoBindingSource)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PBxFoto)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PBxAvatar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ciudadanoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DocumentoBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

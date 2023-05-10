@@ -376,7 +376,7 @@
             this.BtnAgregarCiudadano.Name = "BtnAgregarCiudadano";
             this.BtnAgregarCiudadano.Size = new System.Drawing.Size(129, 38);
             this.BtnAgregarCiudadano.TabIndex = 12;
-            this.BtnAgregarCiudadano.Text = "Agregar ciudadano";
+            this.BtnAgregarCiudadano.Text = "Agregar empleado";
             this.BtnAgregarCiudadano.UseVisualStyleBackColor = true;
             this.BtnAgregarCiudadano.Click += new System.EventHandler(this.BtnAgregarCiudadano_Click);
             // 
@@ -385,9 +385,9 @@
             this.LblUsuario.AutoSize = true;
             this.LblUsuario.Location = new System.Drawing.Point(41, 17);
             this.LblUsuario.Name = "LblUsuario";
-            this.LblUsuario.Size = new System.Drawing.Size(126, 15);
+            this.LblUsuario.Size = new System.Drawing.Size(123, 15);
             this.LblUsuario.TabIndex = 1;
-            this.LblUsuario.Text = "Lista de ciudadanos";
+            this.LblUsuario.Text = "Lista de empleados";
             // 
             // panel1
             // 
@@ -402,7 +402,7 @@
             // 
             // PBxAvatar
             // 
-            this.PBxAvatar.Image = global::Duisv.Properties.Resources.licencia;
+            this.PBxAvatar.Image = global::Duisv.Properties.Resources.FRONT_copy2;
             this.PBxAvatar.Location = new System.Drawing.Point(12, 12);
             this.PBxAvatar.Name = "PBxAvatar";
             this.PBxAvatar.Size = new System.Drawing.Size(23, 23);

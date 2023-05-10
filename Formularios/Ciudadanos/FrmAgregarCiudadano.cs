@@ -169,12 +169,12 @@ namespace Duisv.Formularios.Ciudadanos
                             GuardarFirma(ciudadano.NumeroDocumento);
                             GuardarPartidaNacimiento(ciudadano.NumeroDocumento);
 
-                            var frmMostrarDui = new FrmMostrarDui(ciudadano, documento);
+                            //var frmMostrarDui = new FrmMostrarDui(ciudadano, documento);
 
-                            if (frmMostrarDui.ShowDialog() == DialogResult.OK)
-                            {
-                                DialogResult = DialogResult.OK;
-                            }
+                            //if (frmMostrarDui.ShowDialog() == DialogResult.OK)
+                            //{
+                            //    DialogResult = DialogResult.OK;
+                            //}
                         }
                     }
                 }
@@ -198,7 +198,7 @@ namespace Duisv.Formularios.Ciudadanos
         {
             try
             {
-                var directorio = $@"{Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)}\DUISV\Ciudadanos\Documentos\";
+                var directorio = $@"{Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)}\PepitosSA\Ciudadanos\Documentos\";
                 var archivo = string.Concat(nombre, ".pdf");
                 var ruta = string.Concat(directorio, archivo);
 
@@ -235,7 +235,7 @@ namespace Duisv.Formularios.Ciudadanos
 
         private void GuardarFoto(string nombre)
         {
-            var rutaCarpeta = $@"{Environment.GetFolderPath(Environment.SpecialFolder.MyPictures)}\DUISV\Ciudadanos\Fotos\";
+            var rutaCarpeta = $@"{Environment.GetFolderPath(Environment.SpecialFolder.MyPictures)}\PepitosSA\Ciudadanos\Fotos\";
             string nombreFoto = $"{nombre}.png";
             string rutaNuevaFoto = string.Concat(rutaCarpeta, nombreFoto);
 
@@ -258,7 +258,7 @@ namespace Duisv.Formularios.Ciudadanos
 
         private void GuardarFirma(string nombre)
         {
-            var directorio = $@"{Environment.GetFolderPath(Environment.SpecialFolder.MyPictures)}\DUISV\Ciudadanos\Firmas\";
+            var directorio = $@"{Environment.GetFolderPath(Environment.SpecialFolder.MyPictures)}\PepitosSA\Ciudadanos\Firmas\";
             string archivo = $"{nombre}.png";
             string ruta = string.Concat(directorio, archivo);
 

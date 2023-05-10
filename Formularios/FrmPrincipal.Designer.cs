@@ -36,13 +36,13 @@
             this.PnlOpciones = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.TBxNombre = new System.Windows.Forms.TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.PBxFoto = new System.Windows.Forms.PictureBox();
             this.PBxLogotipo = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.PnlOpciones.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBxFoto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBxLogotipo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // BtnEditarPerfil
@@ -83,7 +83,7 @@
             this.BtnCiudadanos.Name = "BtnCiudadanos";
             this.BtnCiudadanos.Size = new System.Drawing.Size(172, 44);
             this.BtnCiudadanos.TabIndex = 0;
-            this.BtnCiudadanos.Text = "Ciudadanos";
+            this.BtnCiudadanos.Text = "Empleados";
             this.BtnCiudadanos.UseVisualStyleBackColor = true;
             this.BtnCiudadanos.Click += new System.EventHandler(this.BtnCiudadanos_Click);
             // 
@@ -144,18 +144,6 @@
             this.TBxNombre.TabIndex = 1;
             this.TBxNombre.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Image = global::Duisv.Properties.Resources.duisv_fondo;
-            this.pictureBox1.Location = new System.Drawing.Point(209, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1092, 804);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // PBxFoto
             // 
             this.PBxFoto.Image = global::Duisv.Properties.Resources.usuario;
@@ -169,7 +157,7 @@
             // 
             // PBxLogotipo
             // 
-            this.PBxLogotipo.Image = ((System.Drawing.Image)(resources.GetObject("PBxLogotipo.Image")));
+            this.PBxLogotipo.Image = global::Duisv.Properties.Resources.FRONT_copy;
             this.PBxLogotipo.Location = new System.Drawing.Point(18, 13);
             this.PBxLogotipo.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.PBxLogotipo.Name = "PBxLogotipo";
@@ -177,6 +165,17 @@
             this.PBxLogotipo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.PBxLogotipo.TabIndex = 0;
             this.PBxLogotipo.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Location = new System.Drawing.Point(209, 0);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(1092, 804);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // FrmPrincipal
             // 
@@ -191,15 +190,15 @@
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "FrmPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "DUISV";
+            this.Text = "Pepitos S. A. - Inicio";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmPrincipal_FormClosing);
             this.Load += new System.EventHandler(this.FrmPrincipal_Load);
             this.PnlOpciones.ResumeLayout(false);
             this.PnlOpciones.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBxFoto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBxLogotipo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

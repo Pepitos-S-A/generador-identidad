@@ -65,7 +65,7 @@
             // 
             // PBxAvatar
             // 
-            this.PBxAvatar.Image = global::Duisv.Properties.Resources.licencia;
+            this.PBxAvatar.Image = global::Duisv.Properties.Resources.FRONT_copy2;
             this.PBxAvatar.Location = new System.Drawing.Point(17, 14);
             this.PBxAvatar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.PBxAvatar.Name = "PBxAvatar";

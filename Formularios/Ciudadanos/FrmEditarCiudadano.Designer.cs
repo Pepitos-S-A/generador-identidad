@@ -137,6 +137,7 @@
             ciudadanoPorLabel.Size = new System.Drawing.Size(108, 15);
             ciudadanoPorLabel.TabIndex = 4;
             ciudadanoPorLabel.Text = "Salvadoreño Por:";
+            ciudadanoPorLabel.Visible = false;
             // 
             // conocidoPorLabel
             // 
@@ -218,6 +219,7 @@
             nombreConyugueLabel.Size = new System.Drawing.Size(119, 15);
             nombreConyugueLabel.TabIndex = 24;
             nombreConyugueLabel.Text = "Nombre Conyugue:";
+            nombreConyugueLabel.Visible = false;
             // 
             // nombreMadreLabel
             // 
@@ -227,6 +229,7 @@
             nombreMadreLabel.Size = new System.Drawing.Size(97, 15);
             nombreMadreLabel.TabIndex = 26;
             nombreMadreLabel.Text = "Nombre Madre:";
+            nombreMadreLabel.Visible = false;
             // 
             // nombrePadreLabel
             // 
@@ -236,6 +239,7 @@
             nombrePadreLabel.Size = new System.Drawing.Size(95, 15);
             nombrePadreLabel.TabIndex = 28;
             nombrePadreLabel.Text = "Nombre Padre:";
+            nombrePadreLabel.Visible = false;
             // 
             // nombresLabel
             // 
@@ -482,6 +486,7 @@
             this.ciudadanoPorComboBox.Name = "ciudadanoPorComboBox";
             this.ciudadanoPorComboBox.Size = new System.Drawing.Size(200, 23);
             this.ciudadanoPorComboBox.TabIndex = 5;
+            this.ciudadanoPorComboBox.Visible = false;
             // 
             // conocidoPorTextBox
             // 
@@ -580,6 +585,7 @@
             this.nombreConyugueTextBox.Name = "nombreConyugueTextBox";
             this.nombreConyugueTextBox.Size = new System.Drawing.Size(200, 23);
             this.nombreConyugueTextBox.TabIndex = 25;
+            this.nombreConyugueTextBox.Visible = false;
             // 
             // nombreMadreTextBox
             // 
@@ -589,6 +595,7 @@
             this.nombreMadreTextBox.Name = "nombreMadreTextBox";
             this.nombreMadreTextBox.Size = new System.Drawing.Size(200, 23);
             this.nombreMadreTextBox.TabIndex = 27;
+            this.nombreMadreTextBox.Visible = false;
             // 
             // nombrePadreTextBox
             // 
@@ -598,6 +605,7 @@
             this.nombrePadreTextBox.Name = "nombrePadreTextBox";
             this.nombrePadreTextBox.Size = new System.Drawing.Size(200, 23);
             this.nombrePadreTextBox.TabIndex = 29;
+            this.nombrePadreTextBox.Visible = false;
             // 
             // nombresTextBox
             // 
@@ -746,7 +754,7 @@
             // 
             // PBxAvatar
             // 
-            this.PBxAvatar.Image = global::Duisv.Properties.Resources.licencia;
+            this.PBxAvatar.Image = global::Duisv.Properties.Resources.FRONT_copy2;
             this.PBxAvatar.Location = new System.Drawing.Point(13, 12);
             this.PBxAvatar.Name = "PBxAvatar";
             this.PBxAvatar.Size = new System.Drawing.Size(23, 23);

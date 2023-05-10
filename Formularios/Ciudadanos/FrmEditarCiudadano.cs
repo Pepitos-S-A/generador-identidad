@@ -57,7 +57,7 @@ namespace Duisv.Formularios.Ciudadanos
             CargarPartidaNacimiento(numeroDui);
 
 
-            LblTituloVentana.Text = $"Editar datos del ciudadano {nombres.ToUpper()} {apellidos.ToUpper()}";
+            LblTituloVentana.Text = $"Editar datos del empleado {nombres.ToUpper()} {apellidos.ToUpper()}";
         }
 
         private void MostrarListaMunicipios(ref ComboBox comboBox, string departamentoId)
@@ -106,7 +106,7 @@ namespace Duisv.Formularios.Ciudadanos
 
         private void CargarPartidaNacimiento(string numeroDui)
         {
-            var archivo = $@"{Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)}\DUISV\Ciudadanos\Documentos\{numeroDui}.pdf";
+            var archivo = $@"{Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)}\PepitosSA\Ciudadanos\Documentos\{numeroDui}.pdf";
 
             if (File.Exists(archivo))
             {
@@ -118,7 +118,7 @@ namespace Duisv.Formularios.Ciudadanos
         {
             try
             {
-                var rutaFoto = $@"{Environment.GetFolderPath(Environment.SpecialFolder.MyPictures)}\DUISV\Ciudadanos\Fotos\{numeroDui}.png";
+                var rutaFoto = $@"{Environment.GetFolderPath(Environment.SpecialFolder.MyPictures)}\PepitosSA\Ciudadanos\Fotos\{numeroDui}.png";
 
                 if (File.Exists(rutaFoto))
                 {
@@ -136,7 +136,7 @@ namespace Duisv.Formularios.Ciudadanos
         {
             try
             {
-                var rutaFoto = $@"{Environment.GetFolderPath(Environment.SpecialFolder.MyPictures)}\DUISV\Ciudadanos\Firmas\{numeroDui}.png";
+                var rutaFoto = $@"{Environment.GetFolderPath(Environment.SpecialFolder.MyPictures)}\PepitosSA\Ciudadanos\Firmas\{numeroDui}.png";
 
                 if (File.Exists(rutaFoto))
                 {
@@ -243,7 +243,7 @@ namespace Duisv.Formularios.Ciudadanos
         {
             try
             {
-                var directorio = $@"{Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)}\DUISV\Ciudadanos\Documentos\";
+                var directorio = $@"{Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)}\PepitosSA\Ciudadanos\Documentos\";
                 var archivo = string.Concat(nombre, ".pdf");
                 var ruta = string.Concat(directorio, archivo);
 
@@ -265,7 +265,7 @@ namespace Duisv.Formularios.Ciudadanos
 
         private void GuardarFoto(string nombre)
         {
-            var rutaCarpeta = $@"{Environment.GetFolderPath(Environment.SpecialFolder.MyPictures)}\DUISV\Ciudadanos\Fotos\";
+            var rutaCarpeta = $@"{Environment.GetFolderPath(Environment.SpecialFolder.MyPictures)}\PepitosSA\Ciudadanos\Fotos\";
             string nombreFoto = $"{nombre}.png";
             string rutaNuevaFoto = string.Concat(rutaCarpeta, nombreFoto);
 
@@ -288,7 +288,7 @@ namespace Duisv.Formularios.Ciudadanos
 
         private void GuardarFirma(string nombre)
         {
-            var directorio = $@"{Environment.GetFolderPath(Environment.SpecialFolder.MyPictures)}\DUISV\Ciudadanos\Firmas\";
+            var directorio = $@"{Environment.GetFolderPath(Environment.SpecialFolder.MyPictures)}\PepitosSA\Ciudadanos\Firmas\";
             string archivo = $"{nombre}.png";
             string ruta = string.Concat(directorio, archivo);
 

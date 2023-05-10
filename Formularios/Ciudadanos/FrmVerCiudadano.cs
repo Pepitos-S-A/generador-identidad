@@ -52,14 +52,14 @@ namespace Duisv.Formularios.Ciudadanos
             CargarFoto(numeroDui);
             CargarFirma(numeroDui);
 
-            LblTituloVentana.Text = $"Ver datos del ciudadano {nombres.ToUpper()} {apellidos.ToUpper()}";
+            LblTituloVentana.Text = $"Ver datos del empleado {nombres.ToUpper()} {apellidos.ToUpper()}";
         }
 
         private void CargarFirma(string numeroDui)
         {
             try
             {
-                var rutaFoto = $@"{Environment.GetFolderPath(Environment.SpecialFolder.MyPictures)}\DUISV\Ciudadanos\Firmas\{numeroDui}.png";
+                var rutaFoto = $@"{Environment.GetFolderPath(Environment.SpecialFolder.MyPictures)}\PepitosSA\Ciudadanos\Firmas\{numeroDui}.png";
 
                 if (File.Exists(rutaFoto))
                 {
@@ -77,7 +77,7 @@ namespace Duisv.Formularios.Ciudadanos
         {
             try
             {
-                var rutaFoto = $@"{Environment.GetFolderPath(Environment.SpecialFolder.MyPictures)}\DUISV\Ciudadanos\Fotos\{numeroDui}.png";
+                var rutaFoto = $@"{Environment.GetFolderPath(Environment.SpecialFolder.MyPictures)}\PepitosSA\Ciudadanos\Fotos\{numeroDui}.png";
 
                 if (File.Exists(rutaFoto))
                 {
@@ -95,7 +95,7 @@ namespace Duisv.Formularios.Ciudadanos
         {
             var numeroDui = ((Ciudadano)ciudadanoBindingSource.Current).NumeroDocumento;
             var frmElegirPartidaNacimiento = new FrmElegirPartidaNacimiento();
-            var archivo = $@"{Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)}\DUISV\Ciudadanos\Documentos\{numeroDui}.pdf";
+            var archivo = $@"{Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)}\PepitosSA\Ciudadanos\Documentos\{numeroDui}.pdf";
 
             frmElegirPartidaNacimiento.BtnImportarDocumento.Enabled = false;
             frmElegirPartidaNacimiento.BtnGuardarDocumento.Text = "Cerrar";
