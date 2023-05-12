@@ -7,20 +7,20 @@ using PagedList;
 
 namespace Duisv.Formularios.Ciudadanos
 {
-    public partial class FrmListaCiudadanos : Form
+    public partial class FrmListaEmpleados : Form
     {
-        private List<Ciudadano> _ciudadanos;
+        private List<Empleado> _ciudadanos;
         private int _numeroPagina;
-        private IPagedList<Ciudadano> _ciudadanosPaginados;
+        private IPagedList<Empleado> _ciudadanosPaginados;
 
-        private readonly CiudadanoServicio _ciudadanoServicio;
+        private readonly EmpleadoServicio _ciudadanoServicio;
 
-        public FrmListaCiudadanos()
+        public FrmListaEmpleados()
         {
             InitializeComponent();
 
             _numeroPagina = 1;
-            _ciudadanoServicio = new CiudadanoServicio();
+            _ciudadanoServicio = new EmpleadoServicio();
 
         }
 
@@ -31,20 +31,20 @@ namespace Duisv.Formularios.Ciudadanos
 
         private void AbrirFormularioAgregarCiudadno()
         {
-            var frmAgregarCiudadano = new FrmAgregarCiudadano();
+            var frmAgregarCiudadano = new FrmAgregarEmpleado();
 
             if (frmAgregarCiudadano.ShowDialog() == DialogResult.OK)
             {
-                MostrarListado(_ciudadanoServicio.ObtenerListaCiudadanos());
+                MostrarListado(_ciudadanoServicio.ObtenerListaEmpleados());
             }
         }
 
         private void FrmListaCiudadanos_Load(object sender, EventArgs e)
         {
-            MostrarListado(_ciudadanoServicio.ObtenerListaCiudadanos());
+            MostrarListado(_ciudadanoServicio.ObtenerListaEmpleados());
         }
 
-        private void MostrarListado(List<Ciudadano> ciudadanos, int numeroPagina = 1, int cantidadMostrar = 5)
+        private void MostrarListado(List<Empleado> ciudadanos, int numeroPagina = 1, int cantidadMostrar = 5)
         {
             _ciudadanos = ciudadanos;
             _numeroPagina = numeroPagina;
@@ -91,26 +91,26 @@ namespace Duisv.Formularios.Ciudadanos
         {
             if (MessageBox.Show($"¿Está seguro de querer eliminar al ciudadano?", "Eliminar ciudadano: confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
             {
-                if (_ciudadanoServicio.EliminarCiudadano(ciudadanoId) > 0)
+                if (_ciudadanoServicio.EliminarEmpleado(ciudadanoId) > 0)
                 {
-                    MostrarListado(_ciudadanoServicio.ObtenerListaCiudadanos());
+                    MostrarListado(_ciudadanoServicio.ObtenerListaEmpleados());
                 }
             }
         }
 
         private void AbrirFormularioEditar(string ciudadanoId)
         {
-            var frmEditarCiudadano = new FrmEditarCiudadano(ciudadanoId);
+            var frmEditarCiudadano = new FrmEditarEmpleado(ciudadanoId);
 
             if (frmEditarCiudadano.ShowDialog() == DialogResult.OK)
             {
-                MostrarListado(_ciudadanoServicio.ObtenerListaCiudadanos());
+                MostrarListado(_ciudadanoServicio.ObtenerListaEmpleados());
             }
         }
 
         private void AbrirFormularioVer(string ciudadanoId)
         {
-            var frmVerCiudadano = new FrmVerCiudadano(ciudadanoId);
+            var frmVerCiudadano = new FrmVerEmpleado(ciudadanoId);
             frmVerCiudadano.ShowDialog();
         }
 
@@ -141,7 +141,7 @@ namespace Duisv.Formularios.Ciudadanos
                     BtnBuscar.Text = "Borrar";
                     break;
                 case "Borrar":
-                    MostrarListado(_ciudadanoServicio.ObtenerListaCiudadanos());
+                    MostrarListado(_ciudadanoServicio.ObtenerListaEmpleados());
                     TBxBusqueda.Text = string.Empty;
                     BtnBuscar.Text = "Buscar";
                     break;

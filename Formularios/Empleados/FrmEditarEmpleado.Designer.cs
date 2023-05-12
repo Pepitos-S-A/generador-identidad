@@ -1,6 +1,6 @@
 ﻿namespace Duisv.Formularios.Ciudadanos
 {
-    partial class FrmAgregarCiudadano
+    partial class FrmEditarEmpleado
     {
         /// <summary>
         /// Required designer variable.
@@ -46,16 +46,24 @@
             System.Windows.Forms.Label profesionLabel;
             System.Windows.Forms.Label residenciaLabel;
             System.Windows.Forms.Label tipoSangreLabel;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAgregarCiudadano));
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.LblUsuario = new System.Windows.Forms.Label();
-            this.PBxAvatar = new System.Windows.Forms.PictureBox();
-            this.BtnTomarFoto = new System.Windows.Forms.Button();
-            this.BtnAgregarFoto = new System.Windows.Forms.Button();
-            this.BtnAgregar = new System.Windows.Forms.Button();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmEditarEmpleado));
+            this.PBxFirma = new System.Windows.Forms.PictureBox();
+            this.ciudadanoBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.ciudadanoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
+            this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.ciudadanoBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.apellidosTextBox = new System.Windows.Forms.TextBox();
-            this.ciudadanoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ciudadanoPorComboBox = new System.Windows.Forms.ComboBox();
             this.conocidoPorTextBox = new System.Windows.Forms.TextBox();
             this.departamentoNacimientoComboBox = new System.Windows.Forms.ComboBox();
@@ -72,27 +80,19 @@
             this.profesionComboBox = new System.Windows.Forms.ComboBox();
             this.residenciaTextBox = new System.Windows.Forms.TextBox();
             this.tipoSangreComboBox = new System.Windows.Forms.ComboBox();
-            this.ciudadanoBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.ciudadanoBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
-            this.BtnPartidaNacimiento = new System.Windows.Forms.Button();
             this.BtnFirma = new System.Windows.Forms.Button();
+            this.BtnPartidaNacimiento = new System.Windows.Forms.Button();
             this.OfdImportarFoto = new System.Windows.Forms.OpenFileDialog();
-            this.label1 = new System.Windows.Forms.Label();
             this.TBxRutaDocumento = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.OfdImportarFirma = new System.Windows.Forms.OpenFileDialog();
-            this.PBxFirma = new System.Windows.Forms.PictureBox();
             this.PBxFoto = new System.Windows.Forms.PictureBox();
+            this.BtnGuardar = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.LblTituloVentana = new System.Windows.Forms.Label();
+            this.PBxAvatar = new System.Windows.Forms.PictureBox();
+            this.BtnAgregarFoto = new System.Windows.Forms.Button();
+            this.BtnTomarFoto = new System.Windows.Forms.Button();
             apellidosLabel = new System.Windows.Forms.Label();
             ciudadanoPorLabel = new System.Windows.Forms.Label();
             conocidoPorLabel = new System.Windows.Forms.Label();
@@ -110,14 +110,14 @@
             profesionLabel = new System.Windows.Forms.Label();
             residenciaLabel = new System.Windows.Forms.Label();
             tipoSangreLabel = new System.Windows.Forms.Label();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PBxAvatar)).BeginInit();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ciudadanoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PBxFirma)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ciudadanoBindingNavigator)).BeginInit();
             this.ciudadanoBindingNavigator.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PBxFirma)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ciudadanoBindingSource)).BeginInit();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PBxFoto)).BeginInit();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PBxAvatar)).BeginInit();
             this.SuspendLayout();
             // 
             // apellidosLabel
@@ -280,71 +280,149 @@
             tipoSangreLabel.Text = "Tipo Sangre:";
             tipoSangreLabel.Visible = false;
             // 
-            // panel2
+            // PBxFirma
             // 
-            this.panel2.BackColor = System.Drawing.Color.Orange;
-            this.panel2.Controls.Add(this.LblUsuario);
-            this.panel2.Controls.Add(this.PBxAvatar);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1005, 48);
-            this.panel2.TabIndex = 22;
+            this.PBxFirma.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.PBxFirma.ErrorImage = global::Duisv.Properties.Resources.persa;
+            this.PBxFirma.Image = global::Duisv.Properties.Resources.persa;
+            this.PBxFirma.InitialImage = global::Duisv.Properties.Resources.persa;
+            this.PBxFirma.Location = new System.Drawing.Point(13, 385);
+            this.PBxFirma.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.PBxFirma.Name = "PBxFirma";
+            this.PBxFirma.Size = new System.Drawing.Size(172, 94);
+            this.PBxFirma.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.PBxFirma.TabIndex = 53;
+            this.PBxFirma.TabStop = false;
             // 
-            // LblUsuario
+            // ciudadanoBindingNavigator
             // 
-            this.LblUsuario.AutoSize = true;
-            this.LblUsuario.Location = new System.Drawing.Point(42, 17);
-            this.LblUsuario.Name = "LblUsuario";
-            this.LblUsuario.Size = new System.Drawing.Size(115, 15);
-            this.LblUsuario.TabIndex = 1;
-            this.LblUsuario.Text = "Agregar empleado";
+            this.ciudadanoBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
+            this.ciudadanoBindingNavigator.BindingSource = this.ciudadanoBindingSource;
+            this.ciudadanoBindingNavigator.CountItem = this.bindingNavigatorCountItem;
+            this.ciudadanoBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
+            this.ciudadanoBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.bindingNavigatorMoveFirstItem,
+            this.bindingNavigatorMovePreviousItem,
+            this.bindingNavigatorSeparator,
+            this.bindingNavigatorPositionItem,
+            this.bindingNavigatorCountItem,
+            this.bindingNavigatorSeparator1,
+            this.bindingNavigatorMoveNextItem,
+            this.bindingNavigatorMoveLastItem,
+            this.bindingNavigatorSeparator2,
+            this.bindingNavigatorAddNewItem,
+            this.bindingNavigatorDeleteItem,
+            this.ciudadanoBindingNavigatorSaveItem});
+            this.ciudadanoBindingNavigator.Location = new System.Drawing.Point(0, 48);
+            this.ciudadanoBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
+            this.ciudadanoBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
+            this.ciudadanoBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
+            this.ciudadanoBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
+            this.ciudadanoBindingNavigator.Name = "ciudadanoBindingNavigator";
+            this.ciudadanoBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
+            this.ciudadanoBindingNavigator.Size = new System.Drawing.Size(1005, 25);
+            this.ciudadanoBindingNavigator.TabIndex = 50;
+            this.ciudadanoBindingNavigator.Text = "bindingNavigator1";
+            this.ciudadanoBindingNavigator.Visible = false;
             // 
-            // PBxAvatar
+            // bindingNavigatorAddNewItem
             // 
-            this.PBxAvatar.Image = global::Duisv.Properties.Resources.FRONT_copy2;
-            this.PBxAvatar.Location = new System.Drawing.Point(13, 12);
-            this.PBxAvatar.Name = "PBxAvatar";
-            this.PBxAvatar.Size = new System.Drawing.Size(23, 23);
-            this.PBxAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.PBxAvatar.TabIndex = 0;
-            this.PBxAvatar.TabStop = false;
+            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
+            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
+            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorAddNewItem.Text = "Agregar nuevo";
             // 
-            // BtnTomarFoto
+            // ciudadanoBindingSource
             // 
-            this.BtnTomarFoto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnTomarFoto.Location = new System.Drawing.Point(13, 280);
-            this.BtnTomarFoto.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.BtnTomarFoto.Name = "BtnTomarFoto";
-            this.BtnTomarFoto.Size = new System.Drawing.Size(172, 44);
-            this.BtnTomarFoto.TabIndex = 25;
-            this.BtnTomarFoto.Text = "Tomar foto";
-            this.BtnTomarFoto.UseVisualStyleBackColor = true;
-            this.BtnTomarFoto.Click += new System.EventHandler(this.BtnTomarFoto_Click);
+            this.ciudadanoBindingSource.DataSource = typeof(Duisv.Modelos.Empleado);
             // 
-            // BtnAgregarFoto
+            // bindingNavigatorCountItem
             // 
-            this.BtnAgregarFoto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnAgregarFoto.Location = new System.Drawing.Point(13, 230);
-            this.BtnAgregarFoto.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.BtnAgregarFoto.Name = "BtnAgregarFoto";
-            this.BtnAgregarFoto.Size = new System.Drawing.Size(172, 44);
-            this.BtnAgregarFoto.TabIndex = 23;
-            this.BtnAgregarFoto.Text = "Agregar foto";
-            this.BtnAgregarFoto.UseVisualStyleBackColor = true;
-            this.BtnAgregarFoto.Click += new System.EventHandler(this.BtnAgregarFoto_Click);
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(37, 22);
+            this.bindingNavigatorCountItem.Text = "de {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Número total de elementos";
             // 
-            // BtnAgregar
+            // bindingNavigatorDeleteItem
             // 
-            this.BtnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnAgregar.Location = new System.Drawing.Point(822, 479);
-            this.BtnAgregar.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.BtnAgregar.Name = "BtnAgregar";
-            this.BtnAgregar.Size = new System.Drawing.Size(172, 44);
-            this.BtnAgregar.TabIndex = 26;
-            this.BtnAgregar.Text = "Agregar";
-            this.BtnAgregar.UseVisualStyleBackColor = true;
-            this.BtnAgregar.Click += new System.EventHandler(this.BtnAgregar_Click);
+            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorDeleteItem.Text = "Eliminar";
+            // 
+            // bindingNavigatorMoveFirstItem
+            // 
+            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
+            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
+            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveFirstItem.Text = "Mover primero";
+            // 
+            // bindingNavigatorMovePreviousItem
+            // 
+            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
+            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
+            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMovePreviousItem.Text = "Mover anterior";
+            // 
+            // bindingNavigatorSeparator
+            // 
+            this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 25);
+            // 
+            // bindingNavigatorPositionItem
+            // 
+            this.bindingNavigatorPositionItem.AccessibleName = "Posición";
+            this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
+            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
+            this.bindingNavigatorPositionItem.Text = "0";
+            this.bindingNavigatorPositionItem.ToolTipText = "Posición actual";
+            // 
+            // bindingNavigatorSeparator1
+            // 
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
+            // 
+            // bindingNavigatorMoveNextItem
+            // 
+            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
+            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
+            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveNextItem.Text = "Mover siguiente";
+            // 
+            // bindingNavigatorMoveLastItem
+            // 
+            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
+            this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
+            this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveLastItem.Text = "Mover último";
+            // 
+            // bindingNavigatorSeparator2
+            // 
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
+            // 
+            // ciudadanoBindingNavigatorSaveItem
+            // 
+            this.ciudadanoBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.ciudadanoBindingNavigatorSaveItem.Enabled = false;
+            this.ciudadanoBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("ciudadanoBindingNavigatorSaveItem.Image")));
+            this.ciudadanoBindingNavigatorSaveItem.Name = "ciudadanoBindingNavigatorSaveItem";
+            this.ciudadanoBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
+            this.ciudadanoBindingNavigatorSaveItem.Text = "Guardar datos";
             // 
             // panel1
             // 
@@ -383,10 +461,10 @@
             this.panel1.Controls.Add(this.residenciaTextBox);
             this.panel1.Controls.Add(tipoSangreLabel);
             this.panel1.Controls.Add(this.tipoSangreComboBox);
-            this.panel1.Location = new System.Drawing.Point(190, 54);
+            this.panel1.Location = new System.Drawing.Point(190, 59);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(804, 320);
-            this.panel1.TabIndex = 27;
+            this.panel1.TabIndex = 49;
             // 
             // apellidosTextBox
             // 
@@ -396,10 +474,6 @@
             this.apellidosTextBox.Name = "apellidosTextBox";
             this.apellidosTextBox.Size = new System.Drawing.Size(200, 23);
             this.apellidosTextBox.TabIndex = 1;
-            // 
-            // ciudadanoBindingSource
-            // 
-            this.ciudadanoBindingSource.DataSource = typeof(Duisv.Modelos.Ciudadano);
             // 
             // ciudadanoPorComboBox
             // 
@@ -592,191 +666,51 @@
             this.tipoSangreComboBox.TabIndex = 39;
             this.tipoSangreComboBox.Visible = false;
             // 
-            // ciudadanoBindingNavigator
-            // 
-            this.ciudadanoBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
-            this.ciudadanoBindingNavigator.BindingSource = this.ciudadanoBindingSource;
-            this.ciudadanoBindingNavigator.CountItem = this.bindingNavigatorCountItem;
-            this.ciudadanoBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
-            this.ciudadanoBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.bindingNavigatorMoveFirstItem,
-            this.bindingNavigatorMovePreviousItem,
-            this.bindingNavigatorSeparator,
-            this.bindingNavigatorPositionItem,
-            this.bindingNavigatorCountItem,
-            this.bindingNavigatorSeparator1,
-            this.bindingNavigatorMoveNextItem,
-            this.bindingNavigatorMoveLastItem,
-            this.bindingNavigatorSeparator2,
-            this.bindingNavigatorAddNewItem,
-            this.bindingNavigatorDeleteItem,
-            this.ciudadanoBindingNavigatorSaveItem});
-            this.ciudadanoBindingNavigator.Location = new System.Drawing.Point(0, 48);
-            this.ciudadanoBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
-            this.ciudadanoBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
-            this.ciudadanoBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
-            this.ciudadanoBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
-            this.ciudadanoBindingNavigator.Name = "ciudadanoBindingNavigator";
-            this.ciudadanoBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.ciudadanoBindingNavigator.Size = new System.Drawing.Size(1005, 25);
-            this.ciudadanoBindingNavigator.TabIndex = 28;
-            this.ciudadanoBindingNavigator.Text = "bindingNavigator1";
-            this.ciudadanoBindingNavigator.Visible = false;
-            // 
-            // bindingNavigatorAddNewItem
-            // 
-            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorAddNewItem.Text = "Agregar nuevo";
-            // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(37, 22);
-            this.bindingNavigatorCountItem.Text = "de {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Número total de elementos";
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorDeleteItem.Text = "Eliminar";
-            // 
-            // bindingNavigatorMoveFirstItem
-            // 
-            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
-            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
-            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveFirstItem.Text = "Mover primero";
-            // 
-            // bindingNavigatorMovePreviousItem
-            // 
-            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
-            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
-            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMovePreviousItem.Text = "Mover anterior";
-            // 
-            // bindingNavigatorSeparator
-            // 
-            this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 25);
-            // 
-            // bindingNavigatorPositionItem
-            // 
-            this.bindingNavigatorPositionItem.AccessibleName = "Posición";
-            this.bindingNavigatorPositionItem.AutoSize = false;
-            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
-            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
-            this.bindingNavigatorPositionItem.Text = "0";
-            this.bindingNavigatorPositionItem.ToolTipText = "Posición actual";
-            // 
-            // bindingNavigatorSeparator1
-            // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
-            // 
-            // bindingNavigatorMoveNextItem
-            // 
-            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
-            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
-            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveNextItem.Text = "Mover siguiente";
-            // 
-            // bindingNavigatorMoveLastItem
-            // 
-            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
-            this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
-            this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveLastItem.Text = "Mover último";
-            // 
-            // bindingNavigatorSeparator2
-            // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
-            // 
-            // ciudadanoBindingNavigatorSaveItem
-            // 
-            this.ciudadanoBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.ciudadanoBindingNavigatorSaveItem.Enabled = false;
-            this.ciudadanoBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("ciudadanoBindingNavigatorSaveItem.Image")));
-            this.ciudadanoBindingNavigatorSaveItem.Name = "ciudadanoBindingNavigatorSaveItem";
-            this.ciudadanoBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
-            this.ciudadanoBindingNavigatorSaveItem.Text = "Guardar datos";
-            // 
-            // BtnPartidaNacimiento
-            // 
-            this.BtnPartidaNacimiento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnPartidaNacimiento.Location = new System.Drawing.Point(13, 480);
-            this.BtnPartidaNacimiento.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.BtnPartidaNacimiento.Name = "BtnPartidaNacimiento";
-            this.BtnPartidaNacimiento.Size = new System.Drawing.Size(172, 44);
-            this.BtnPartidaNacimiento.TabIndex = 26;
-            this.BtnPartidaNacimiento.Text = "Partida de nacimiento";
-            this.BtnPartidaNacimiento.UseVisualStyleBackColor = true;
-            this.BtnPartidaNacimiento.Click += new System.EventHandler(this.BtnPartidaNacimiento_Click);
-            // 
             // BtnFirma
             // 
             this.BtnFirma.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnFirma.Location = new System.Drawing.Point(13, 330);
+            this.BtnFirma.Location = new System.Drawing.Point(13, 335);
             this.BtnFirma.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.BtnFirma.Name = "BtnFirma";
             this.BtnFirma.Size = new System.Drawing.Size(172, 44);
-            this.BtnFirma.TabIndex = 26;
+            this.BtnFirma.TabIndex = 46;
             this.BtnFirma.Text = "Firma";
             this.BtnFirma.UseVisualStyleBackColor = true;
             this.BtnFirma.Click += new System.EventHandler(this.BtnFirma_Click);
             // 
-            // label1
+            // BtnPartidaNacimiento
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(190, 482);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(130, 15);
-            this.label1.TabIndex = 29;
-            this.label1.Text = "Ruta del documento:";
+            this.BtnPartidaNacimiento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnPartidaNacimiento.Location = new System.Drawing.Point(13, 485);
+            this.BtnPartidaNacimiento.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.BtnPartidaNacimiento.Name = "BtnPartidaNacimiento";
+            this.BtnPartidaNacimiento.Size = new System.Drawing.Size(172, 44);
+            this.BtnPartidaNacimiento.TabIndex = 47;
+            this.BtnPartidaNacimiento.Text = "Partida de nacimiento";
+            this.BtnPartidaNacimiento.UseVisualStyleBackColor = true;
+            this.BtnPartidaNacimiento.Click += new System.EventHandler(this.BtnPartidaNacimiento_Click);
             // 
             // TBxRutaDocumento
             // 
             this.TBxRutaDocumento.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TBxRutaDocumento.Location = new System.Drawing.Point(193, 501);
+            this.TBxRutaDocumento.Location = new System.Drawing.Point(193, 506);
             this.TBxRutaDocumento.Name = "TBxRutaDocumento";
             this.TBxRutaDocumento.ReadOnly = true;
             this.TBxRutaDocumento.Size = new System.Drawing.Size(387, 23);
-            this.TBxRutaDocumento.TabIndex = 40;
+            this.TBxRutaDocumento.TabIndex = 52;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(190, 487);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(130, 15);
+            this.label1.TabIndex = 51;
+            this.label1.Text = "Ruta del documento:";
             // 
             // OfdImportarFirma
             // 
             this.OfdImportarFirma.Filter = "Firma|*.png";
-            // 
-            // PBxFirma
-            // 
-            this.PBxFirma.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.PBxFirma.ErrorImage = global::Duisv.Properties.Resources.persa;
-            this.PBxFirma.Image = global::Duisv.Properties.Resources.persa;
-            this.PBxFirma.InitialImage = global::Duisv.Properties.Resources.persa;
-            this.PBxFirma.Location = new System.Drawing.Point(13, 380);
-            this.PBxFirma.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.PBxFirma.Name = "PBxFirma";
-            this.PBxFirma.Size = new System.Drawing.Size(172, 94);
-            this.PBxFirma.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.PBxFirma.TabIndex = 41;
-            this.PBxFirma.TabStop = false;
             // 
             // PBxFoto
             // 
@@ -784,49 +718,114 @@
             this.PBxFoto.ErrorImage = global::Duisv.Properties.Resources.usuario;
             this.PBxFoto.Image = global::Duisv.Properties.Resources.usuario;
             this.PBxFoto.InitialImage = global::Duisv.Properties.Resources.usuario;
-            this.PBxFoto.Location = new System.Drawing.Point(13, 54);
+            this.PBxFoto.Location = new System.Drawing.Point(13, 59);
             this.PBxFoto.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.PBxFoto.Name = "PBxFoto";
             this.PBxFoto.Size = new System.Drawing.Size(170, 170);
             this.PBxFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.PBxFoto.TabIndex = 24;
+            this.PBxFoto.TabIndex = 44;
             this.PBxFoto.TabStop = false;
             // 
-            // FrmAgregarCiudadano
+            // BtnGuardar
+            // 
+            this.BtnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnGuardar.Location = new System.Drawing.Point(822, 484);
+            this.BtnGuardar.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.BtnGuardar.Name = "BtnGuardar";
+            this.BtnGuardar.Size = new System.Drawing.Size(172, 44);
+            this.BtnGuardar.TabIndex = 48;
+            this.BtnGuardar.Text = "Guardar cambios";
+            this.BtnGuardar.UseVisualStyleBackColor = true;
+            this.BtnGuardar.Click += new System.EventHandler(this.BtnGuardar_Click);
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Orange;
+            this.panel2.Controls.Add(this.LblTituloVentana);
+            this.panel2.Controls.Add(this.PBxAvatar);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1005, 48);
+            this.panel2.TabIndex = 42;
+            // 
+            // LblTituloVentana
+            // 
+            this.LblTituloVentana.AutoSize = true;
+            this.LblTituloVentana.Location = new System.Drawing.Point(42, 17);
+            this.LblTituloVentana.Name = "LblTituloVentana";
+            this.LblTituloVentana.Size = new System.Drawing.Size(0, 15);
+            this.LblTituloVentana.TabIndex = 1;
+            // 
+            // PBxAvatar
+            // 
+            this.PBxAvatar.Image = global::Duisv.Properties.Resources.FRONT_copy2;
+            this.PBxAvatar.Location = new System.Drawing.Point(13, 12);
+            this.PBxAvatar.Name = "PBxAvatar";
+            this.PBxAvatar.Size = new System.Drawing.Size(23, 23);
+            this.PBxAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.PBxAvatar.TabIndex = 0;
+            this.PBxAvatar.TabStop = false;
+            // 
+            // BtnAgregarFoto
+            // 
+            this.BtnAgregarFoto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnAgregarFoto.Location = new System.Drawing.Point(13, 235);
+            this.BtnAgregarFoto.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.BtnAgregarFoto.Name = "BtnAgregarFoto";
+            this.BtnAgregarFoto.Size = new System.Drawing.Size(172, 44);
+            this.BtnAgregarFoto.TabIndex = 43;
+            this.BtnAgregarFoto.Text = "Agregar foto";
+            this.BtnAgregarFoto.UseVisualStyleBackColor = true;
+            this.BtnAgregarFoto.Click += new System.EventHandler(this.BtnAgregarFoto_Click);
+            // 
+            // BtnTomarFoto
+            // 
+            this.BtnTomarFoto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnTomarFoto.Location = new System.Drawing.Point(13, 285);
+            this.BtnTomarFoto.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.BtnTomarFoto.Name = "BtnTomarFoto";
+            this.BtnTomarFoto.Size = new System.Drawing.Size(172, 44);
+            this.BtnTomarFoto.TabIndex = 45;
+            this.BtnTomarFoto.Text = "Tomar foto";
+            this.BtnTomarFoto.UseVisualStyleBackColor = true;
+            this.BtnTomarFoto.Click += new System.EventHandler(this.BtnTomarFoto_Click);
+            // 
+            // FrmEditarCiudadano
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1005, 535);
             this.Controls.Add(this.PBxFirma);
-            this.Controls.Add(this.TBxRutaDocumento);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.ciudadanoBindingNavigator);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.BtnFirma);
             this.Controls.Add(this.BtnPartidaNacimiento);
-            this.Controls.Add(this.BtnAgregar);
-            this.Controls.Add(this.BtnTomarFoto);
+            this.Controls.Add(this.TBxRutaDocumento);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.PBxFoto);
-            this.Controls.Add(this.BtnAgregarFoto);
+            this.Controls.Add(this.BtnGuardar);
             this.Controls.Add(this.panel2);
+            this.Controls.Add(this.BtnAgregarFoto);
+            this.Controls.Add(this.BtnTomarFoto);
             this.Font = new System.Drawing.Font("Arial Black", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.Name = "FrmAgregarCiudadano";
+            this.Name = "FrmEditarCiudadano";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Load += new System.EventHandler(this.FrmAgregarCiudadano_Load);
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PBxAvatar)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ciudadanoBindingSource)).EndInit();
+            this.Load += new System.EventHandler(this.FrmEditarCiudadano_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.PBxFirma)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ciudadanoBindingNavigator)).EndInit();
             this.ciudadanoBindingNavigator.ResumeLayout(false);
             this.ciudadanoBindingNavigator.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PBxFirma)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ciudadanoBindingSource)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PBxFoto)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PBxAvatar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -834,17 +833,10 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label LblUsuario;
-        private System.Windows.Forms.PictureBox PBxAvatar;
-        private System.Windows.Forms.Button BtnTomarFoto;
-        private System.Windows.Forms.PictureBox PBxFoto;
-        private System.Windows.Forms.Button BtnAgregarFoto;
-        private System.Windows.Forms.Button BtnAgregar;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.BindingSource ciudadanoBindingSource;
+        private System.Windows.Forms.PictureBox PBxFirma;
         private System.Windows.Forms.BindingNavigator ciudadanoBindingNavigator;
         private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
+        private System.Windows.Forms.BindingSource ciudadanoBindingSource;
         private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
@@ -856,6 +848,7 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.ToolStripButton ciudadanoBindingNavigatorSaveItem;
+        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox apellidosTextBox;
         private System.Windows.Forms.ComboBox ciudadanoPorComboBox;
         private System.Windows.Forms.TextBox conocidoPorTextBox;
@@ -873,12 +866,18 @@
         private System.Windows.Forms.ComboBox profesionComboBox;
         private System.Windows.Forms.TextBox residenciaTextBox;
         private System.Windows.Forms.ComboBox tipoSangreComboBox;
-        private System.Windows.Forms.Button BtnPartidaNacimiento;
         private System.Windows.Forms.Button BtnFirma;
+        private System.Windows.Forms.Button BtnPartidaNacimiento;
         private System.Windows.Forms.OpenFileDialog OfdImportarFoto;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox TBxRutaDocumento;
-        private System.Windows.Forms.PictureBox PBxFirma;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.OpenFileDialog OfdImportarFirma;
+        private System.Windows.Forms.PictureBox PBxFoto;
+        private System.Windows.Forms.Button BtnGuardar;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label LblTituloVentana;
+        private System.Windows.Forms.PictureBox PBxAvatar;
+        private System.Windows.Forms.Button BtnAgregarFoto;
+        private System.Windows.Forms.Button BtnTomarFoto;
     }
 }

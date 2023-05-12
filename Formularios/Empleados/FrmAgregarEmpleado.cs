@@ -12,24 +12,26 @@ using Duisv.Validaciones;
 
 namespace Duisv.Formularios.Ciudadanos
 {
-    public partial class FrmAgregarCiudadano : Form
+    public partial class FrmAgregarEmpleado : Form
     {
         private readonly DepartamentoServicio _departamentoServicio;
         private readonly MunicipioServicio _municipioServicio;
-        private readonly CiudadanoServicio _ciudadanoServicio;
+        private readonly EmpleadoServicio _ciudadanoServicio;
         private readonly DocumentoServicio _documentoServicio;
 
         private bool _guardarFoto;
 
-        public FrmAgregarCiudadano()
+        public FrmAgregarEmpleado()
         {
             InitializeComponent();
 
             _departamentoServicio = new DepartamentoServicio();
             _municipioServicio = new MunicipioServicio();
-            _ciudadanoServicio = new CiudadanoServicio();
+            _ciudadanoServicio = new EmpleadoServicio();
             _documentoServicio = new DocumentoServicio();
             _guardarFoto = false;
+
+            
         }
 
         private void MostrarListaDespartamentos(List<Departamento> departamentos, ref ComboBox comboBox)
@@ -42,7 +44,7 @@ namespace Duisv.Formularios.Ciudadanos
 
         private void FrmAgregarCiudadano_Load(object sender, EventArgs e)
         {
-            ciudadanoBindingSource.DataSource = new Ciudadano();
+            ciudadanoBindingSource.DataSource = new Empleado();
 
             var departamentos = _departamentoServicio.ObtenerListaDepartamentos();
             departamentos.Insert(0, new Departamento { DepartamentoId = string.Empty, Nombre = "-- Seleccionar --" });
@@ -52,6 +54,7 @@ namespace Duisv.Formularios.Ciudadanos
 
             ciudadanoPorComboBox.SelectedIndex = 0;
             generoComboBox.SelectedIndex = 0;
+            generoComboBox.BindingContext = new BindingContext();
             estadoFamiliarComboBox.SelectedIndex = 0;
             tipoSangreComboBox.SelectedIndex = 0;
             profesionComboBox.SelectedIndex = 0;
@@ -87,7 +90,7 @@ namespace Duisv.Formularios.Ciudadanos
             }
         }
 
-        private bool ValidarDatosCiudadano(Ciudadano ciudadano)
+        private bool ValidarDatosCiudadano(Empleado ciudadano)
         {
             var valido = true;
             var validador = new AgregarCiudadanoValidador();
@@ -140,7 +143,7 @@ namespace Duisv.Formularios.Ciudadanos
         {
             ciudadanoBindingSource.EndEdit();
 
-            var ciudadano = ciudadanoBindingSource.Current as Ciudadano;
+            var ciudadano = ciudadanoBindingSource.Current as Empleado;
 
             if (ciudadano != null)
             {
@@ -163,7 +166,7 @@ namespace Duisv.Formularios.Ciudadanos
                         ciudadano.DocumentoId = documento.DocumentoId;
                         ciudadano.NumeroDocumento = documento.Numero;
 
-                        if (_ciudadanoServicio.AgregarCiudadano(ciudadano) > 0)
+                        if (_ciudadanoServicio.AgregarEmpleado(ciudadano) > 0)
                         {
                             GuardarFoto(ciudadano.NumeroDocumento);
                             GuardarFirma(ciudadano.NumeroDocumento);

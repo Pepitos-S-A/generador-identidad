@@ -1,6 +1,6 @@
 ﻿namespace Duisv.Formularios.Ciudadanos
 {
-    partial class FrmListaCiudadanos
+    partial class FrmListaEmpleados
     {
         /// <summary>
         /// Required designer variable.
@@ -179,7 +179,7 @@
             // 
             // ciudadanoBindingSource
             // 
-            this.ciudadanoBindingSource.DataSource = typeof(Duisv.Modelos.Ciudadano);
+            this.ciudadanoBindingSource.DataSource = typeof(Duisv.Modelos.Empleado);
             // 
             // BtnAgregarCiudadano
             // 

@@ -10,9 +10,9 @@ using Duisv.Validaciones;
 
 namespace Duisv.Formularios.Ciudadanos
 {
-    public partial class FrmEditarCiudadano : Form
+    public partial class FrmEditarEmpleado : Form
     {
-        private readonly CiudadanoServicio _ciudadanoServicio;
+        private readonly EmpleadoServicio _ciudadanoServicio;
         private readonly DepartamentoServicio _departamentoServicio;
         private readonly MunicipioServicio _municipioServicio;
         private readonly string _ciudadanoId;
@@ -21,11 +21,11 @@ namespace Duisv.Formularios.Ciudadanos
         private bool _cambiarFirma;
         private bool _cambiarPartidaNacimiento;
 
-        public FrmEditarCiudadano(string ciudadanoId)
+        public FrmEditarEmpleado(string ciudadanoId)
         {
             InitializeComponent();
 
-            _ciudadanoServicio = new CiudadanoServicio();
+            _ciudadanoServicio = new EmpleadoServicio();
             _departamentoServicio = new DepartamentoServicio();
             _municipioServicio = new MunicipioServicio();
             _ciudadanoId = ciudadanoId;
@@ -41,16 +41,16 @@ namespace Duisv.Formularios.Ciudadanos
             MostrarListaDespartamentos(departamentos, ref departamentoNacimientoComboBox);
             MostrarListaDespartamentos(departamentos, ref departamentoResidenciaComboBox);
 
-            var ciudadano = _ciudadanoServicio.ObtenerCiudadanoPorId(_ciudadanoId);
+            var ciudadano = _ciudadanoServicio.ObtenerEmpleadoPorId(_ciudadanoId);
 
             if (ciudadano != null)
             {
                 ciudadanoBindingSource.DataSource = ciudadano;
             }
 
-            var nombres = ((Ciudadano)ciudadanoBindingSource.Current).Nombres;
-            var apellidos = ((Ciudadano)ciudadanoBindingSource.Current).Apellidos;
-            var numeroDui = ((Ciudadano)ciudadanoBindingSource.Current).NumeroDocumento;
+            var nombres = ((Empleado)ciudadanoBindingSource.Current).Nombres;
+            var apellidos = ((Empleado)ciudadanoBindingSource.Current).Apellidos;
+            var numeroDui = ((Empleado)ciudadanoBindingSource.Current).NumeroDocumento;
 
             CargarFoto(numeroDui);
             CargarFirma(numeroDui);
@@ -212,13 +212,13 @@ namespace Duisv.Formularios.Ciudadanos
         {
             ciudadanoBindingSource.EndEdit();
 
-            var ciudadano = ciudadanoBindingSource.Current as Ciudadano;
+            var ciudadano = ciudadanoBindingSource.Current as Empleado;
 
             if (ciudadano != null)
             {
                 if (ValidarDatosCiudadano(ciudadano))
                 {
-                    if (_ciudadanoServicio.EditarCiudadano(ciudadano) > 0)
+                    if (_ciudadanoServicio.EditarEmpleado(ciudadano) > 0)
                     {
                         if (_cambiarFirma)
                         {
@@ -309,7 +309,7 @@ namespace Duisv.Formularios.Ciudadanos
             }
         }
 
-        private bool ValidarDatosCiudadano(Ciudadano ciudadano)
+        private bool ValidarDatosCiudadano(Empleado ciudadano)
         {
             var valido = true;
             var validador = new AgregarCiudadanoValidador();

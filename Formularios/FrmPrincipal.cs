@@ -72,7 +72,7 @@ namespace Duisv.Formularios
 
         private void BtnCiudadanos_Click(object sender, EventArgs e)
         {
-            var frmListaCiudadanos = new FrmListaCiudadanos();
+            var frmListaCiudadanos = new FrmListaEmpleados();
             frmListaCiudadanos.ShowDialog();
         }
     }

@@ -1,6 +1,6 @@
 ﻿namespace Duisv.Formularios.Ciudadanos
 {
-    partial class FrmEditarCiudadano
+    partial class FrmAgregarEmpleado
     {
         /// <summary>
         /// Required designer variable.
@@ -46,24 +46,16 @@
             System.Windows.Forms.Label profesionLabel;
             System.Windows.Forms.Label residenciaLabel;
             System.Windows.Forms.Label tipoSangreLabel;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmEditarCiudadano));
-            this.PBxFirma = new System.Windows.Forms.PictureBox();
-            this.ciudadanoBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.ciudadanoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.ciudadanoBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAgregarEmpleado));
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.LblUsuario = new System.Windows.Forms.Label();
+            this.PBxAvatar = new System.Windows.Forms.PictureBox();
+            this.BtnTomarFoto = new System.Windows.Forms.Button();
+            this.BtnAgregarFoto = new System.Windows.Forms.Button();
+            this.BtnAgregar = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.apellidosTextBox = new System.Windows.Forms.TextBox();
+            this.ciudadanoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ciudadanoPorComboBox = new System.Windows.Forms.ComboBox();
             this.conocidoPorTextBox = new System.Windows.Forms.TextBox();
             this.departamentoNacimientoComboBox = new System.Windows.Forms.ComboBox();
@@ -80,19 +72,27 @@
             this.profesionComboBox = new System.Windows.Forms.ComboBox();
             this.residenciaTextBox = new System.Windows.Forms.TextBox();
             this.tipoSangreComboBox = new System.Windows.Forms.ComboBox();
-            this.BtnFirma = new System.Windows.Forms.Button();
+            this.ciudadanoBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
+            this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.ciudadanoBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.BtnPartidaNacimiento = new System.Windows.Forms.Button();
+            this.BtnFirma = new System.Windows.Forms.Button();
             this.OfdImportarFoto = new System.Windows.Forms.OpenFileDialog();
-            this.TBxRutaDocumento = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.TBxRutaDocumento = new System.Windows.Forms.TextBox();
             this.OfdImportarFirma = new System.Windows.Forms.OpenFileDialog();
+            this.PBxFirma = new System.Windows.Forms.PictureBox();
             this.PBxFoto = new System.Windows.Forms.PictureBox();
-            this.BtnGuardar = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.LblTituloVentana = new System.Windows.Forms.Label();
-            this.PBxAvatar = new System.Windows.Forms.PictureBox();
-            this.BtnAgregarFoto = new System.Windows.Forms.Button();
-            this.BtnTomarFoto = new System.Windows.Forms.Button();
             apellidosLabel = new System.Windows.Forms.Label();
             ciudadanoPorLabel = new System.Windows.Forms.Label();
             conocidoPorLabel = new System.Windows.Forms.Label();
@@ -110,14 +110,14 @@
             profesionLabel = new System.Windows.Forms.Label();
             residenciaLabel = new System.Windows.Forms.Label();
             tipoSangreLabel = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.PBxFirma)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ciudadanoBindingNavigator)).BeginInit();
-            this.ciudadanoBindingNavigator.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ciudadanoBindingSource)).BeginInit();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PBxFoto)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PBxAvatar)).BeginInit();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ciudadanoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ciudadanoBindingNavigator)).BeginInit();
+            this.ciudadanoBindingNavigator.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PBxFirma)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PBxFoto)).BeginInit();
             this.SuspendLayout();
             // 
             // apellidosLabel
@@ -280,19 +280,317 @@
             tipoSangreLabel.Text = "Tipo Sangre:";
             tipoSangreLabel.Visible = false;
             // 
-            // PBxFirma
+            // panel2
             // 
-            this.PBxFirma.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.PBxFirma.ErrorImage = global::Duisv.Properties.Resources.persa;
-            this.PBxFirma.Image = global::Duisv.Properties.Resources.persa;
-            this.PBxFirma.InitialImage = global::Duisv.Properties.Resources.persa;
-            this.PBxFirma.Location = new System.Drawing.Point(13, 385);
-            this.PBxFirma.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.PBxFirma.Name = "PBxFirma";
-            this.PBxFirma.Size = new System.Drawing.Size(172, 94);
-            this.PBxFirma.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.PBxFirma.TabIndex = 53;
-            this.PBxFirma.TabStop = false;
+            this.panel2.BackColor = System.Drawing.Color.Orange;
+            this.panel2.Controls.Add(this.LblUsuario);
+            this.panel2.Controls.Add(this.PBxAvatar);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1005, 48);
+            this.panel2.TabIndex = 22;
+            // 
+            // LblUsuario
+            // 
+            this.LblUsuario.AutoSize = true;
+            this.LblUsuario.Location = new System.Drawing.Point(42, 17);
+            this.LblUsuario.Name = "LblUsuario";
+            this.LblUsuario.Size = new System.Drawing.Size(115, 15);
+            this.LblUsuario.TabIndex = 1;
+            this.LblUsuario.Text = "Agregar empleado";
+            // 
+            // PBxAvatar
+            // 
+            this.PBxAvatar.Image = global::Duisv.Properties.Resources.FRONT_copy2;
+            this.PBxAvatar.Location = new System.Drawing.Point(13, 12);
+            this.PBxAvatar.Name = "PBxAvatar";
+            this.PBxAvatar.Size = new System.Drawing.Size(23, 23);
+            this.PBxAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.PBxAvatar.TabIndex = 0;
+            this.PBxAvatar.TabStop = false;
+            // 
+            // BtnTomarFoto
+            // 
+            this.BtnTomarFoto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnTomarFoto.Location = new System.Drawing.Point(13, 280);
+            this.BtnTomarFoto.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.BtnTomarFoto.Name = "BtnTomarFoto";
+            this.BtnTomarFoto.Size = new System.Drawing.Size(172, 44);
+            this.BtnTomarFoto.TabIndex = 18;
+            this.BtnTomarFoto.Text = "Tomar foto";
+            this.BtnTomarFoto.UseVisualStyleBackColor = true;
+            this.BtnTomarFoto.Click += new System.EventHandler(this.BtnTomarFoto_Click);
+            // 
+            // BtnAgregarFoto
+            // 
+            this.BtnAgregarFoto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnAgregarFoto.Location = new System.Drawing.Point(13, 230);
+            this.BtnAgregarFoto.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.BtnAgregarFoto.Name = "BtnAgregarFoto";
+            this.BtnAgregarFoto.Size = new System.Drawing.Size(172, 44);
+            this.BtnAgregarFoto.TabIndex = 17;
+            this.BtnAgregarFoto.Text = "Agregar foto";
+            this.BtnAgregarFoto.UseVisualStyleBackColor = true;
+            this.BtnAgregarFoto.Click += new System.EventHandler(this.BtnAgregarFoto_Click);
+            // 
+            // BtnAgregar
+            // 
+            this.BtnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnAgregar.Location = new System.Drawing.Point(822, 479);
+            this.BtnAgregar.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.BtnAgregar.Name = "BtnAgregar";
+            this.BtnAgregar.Size = new System.Drawing.Size(172, 44);
+            this.BtnAgregar.TabIndex = 21;
+            this.BtnAgregar.Text = "Agregar";
+            this.BtnAgregar.UseVisualStyleBackColor = true;
+            this.BtnAgregar.Click += new System.EventHandler(this.BtnAgregar_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(apellidosLabel);
+            this.panel1.Controls.Add(this.apellidosTextBox);
+            this.panel1.Controls.Add(ciudadanoPorLabel);
+            this.panel1.Controls.Add(this.ciudadanoPorComboBox);
+            this.panel1.Controls.Add(conocidoPorLabel);
+            this.panel1.Controls.Add(this.conocidoPorTextBox);
+            this.panel1.Controls.Add(departamentoNacimientoLabel);
+            this.panel1.Controls.Add(this.departamentoNacimientoComboBox);
+            this.panel1.Controls.Add(departamentoResidenciaLabel);
+            this.panel1.Controls.Add(this.departamentoResidenciaComboBox);
+            this.panel1.Controls.Add(estadoFamiliarLabel);
+            this.panel1.Controls.Add(this.estadoFamiliarComboBox);
+            this.panel1.Controls.Add(fechaNacimientoLabel);
+            this.panel1.Controls.Add(this.fechaNacimientoDateTimePicker);
+            this.panel1.Controls.Add(generoLabel);
+            this.panel1.Controls.Add(this.generoComboBox);
+            this.panel1.Controls.Add(municipioNacimientoLabel);
+            this.panel1.Controls.Add(this.municipioNacimientoComboBox);
+            this.panel1.Controls.Add(municipioResidenciaLabel);
+            this.panel1.Controls.Add(this.municipioResidenciaComboBox);
+            this.panel1.Controls.Add(nombreConyugueLabel);
+            this.panel1.Controls.Add(this.nombreConyugueTextBox);
+            this.panel1.Controls.Add(nombreMadreLabel);
+            this.panel1.Controls.Add(this.nombreMadreTextBox);
+            this.panel1.Controls.Add(nombrePadreLabel);
+            this.panel1.Controls.Add(this.nombrePadreTextBox);
+            this.panel1.Controls.Add(nombresLabel);
+            this.panel1.Controls.Add(this.nombresTextBox);
+            this.panel1.Controls.Add(profesionLabel);
+            this.panel1.Controls.Add(this.profesionComboBox);
+            this.panel1.Controls.Add(residenciaLabel);
+            this.panel1.Controls.Add(this.residenciaTextBox);
+            this.panel1.Controls.Add(tipoSangreLabel);
+            this.panel1.Controls.Add(this.tipoSangreComboBox);
+            this.panel1.Location = new System.Drawing.Point(190, 54);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(804, 320);
+            this.panel1.TabIndex = 27;
+            // 
+            // apellidosTextBox
+            // 
+            this.apellidosTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.apellidosTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ciudadanoBindingSource, "Apellidos", true));
+            this.apellidosTextBox.Location = new System.Drawing.Point(189, 40);
+            this.apellidosTextBox.Name = "apellidosTextBox";
+            this.apellidosTextBox.Size = new System.Drawing.Size(200, 23);
+            this.apellidosTextBox.TabIndex = 1;
+            // 
+            // ciudadanoBindingSource
+            // 
+            this.ciudadanoBindingSource.DataSource = typeof(Duisv.Modelos.Empleado);
+            // 
+            // ciudadanoPorComboBox
+            // 
+            this.ciudadanoPorComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ciudadanoBindingSource, "CiudadanoPor", true));
+            this.ciudadanoPorComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ciudadanoPorComboBox.FormattingEnabled = true;
+            this.ciudadanoPorComboBox.Items.AddRange(new object[] {
+            "-- Seleccionar --",
+            "Nacimiento",
+            "Nacionalizado(a)"});
+            this.ciudadanoPorComboBox.Location = new System.Drawing.Point(189, 145);
+            this.ciudadanoPorComboBox.Name = "ciudadanoPorComboBox";
+            this.ciudadanoPorComboBox.Size = new System.Drawing.Size(200, 23);
+            this.ciudadanoPorComboBox.TabIndex = 4;
+            this.ciudadanoPorComboBox.Visible = false;
+            // 
+            // conocidoPorTextBox
+            // 
+            this.conocidoPorTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.conocidoPorTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ciudadanoBindingSource, "ConocidoPor", true));
+            this.conocidoPorTextBox.Location = new System.Drawing.Point(189, 75);
+            this.conocidoPorTextBox.Name = "conocidoPorTextBox";
+            this.conocidoPorTextBox.Size = new System.Drawing.Size(200, 23);
+            this.conocidoPorTextBox.TabIndex = 2;
+            this.conocidoPorTextBox.Visible = false;
+            // 
+            // departamentoNacimientoComboBox
+            // 
+            this.departamentoNacimientoComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ciudadanoBindingSource, "DepartamentoNacimiento", true));
+            this.departamentoNacimientoComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.departamentoNacimientoComboBox.FormattingEnabled = true;
+            this.departamentoNacimientoComboBox.Location = new System.Drawing.Point(189, 215);
+            this.departamentoNacimientoComboBox.Name = "departamentoNacimientoComboBox";
+            this.departamentoNacimientoComboBox.Size = new System.Drawing.Size(200, 23);
+            this.departamentoNacimientoComboBox.TabIndex = 6;
+            this.departamentoNacimientoComboBox.SelectedIndexChanged += new System.EventHandler(this.DepartamentoNacimientoComboBox_SelectedIndexChanged);
+            // 
+            // departamentoResidenciaComboBox
+            // 
+            this.departamentoResidenciaComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ciudadanoBindingSource, "DepartamentoResidencia", true));
+            this.departamentoResidenciaComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.departamentoResidenciaComboBox.FormattingEnabled = true;
+            this.departamentoResidenciaComboBox.Location = new System.Drawing.Point(590, 5);
+            this.departamentoResidenciaComboBox.Name = "departamentoResidenciaComboBox";
+            this.departamentoResidenciaComboBox.Size = new System.Drawing.Size(200, 23);
+            this.departamentoResidenciaComboBox.TabIndex = 9;
+            this.departamentoResidenciaComboBox.SelectedIndexChanged += new System.EventHandler(this.DepartamentoResidenciaComboBox_SelectedIndexChanged);
+            // 
+            // estadoFamiliarComboBox
+            // 
+            this.estadoFamiliarComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ciudadanoBindingSource, "EstadoFamiliar", true));
+            this.estadoFamiliarComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.estadoFamiliarComboBox.FormattingEnabled = true;
+            this.estadoFamiliarComboBox.Items.AddRange(new object[] {
+            "-- Seleccionar --",
+            "Casado(a)",
+            "Viudo(a)",
+            "Soltero(a)"});
+            this.estadoFamiliarComboBox.Location = new System.Drawing.Point(590, 205);
+            this.estadoFamiliarComboBox.Name = "estadoFamiliarComboBox";
+            this.estadoFamiliarComboBox.Size = new System.Drawing.Size(200, 23);
+            this.estadoFamiliarComboBox.TabIndex = 14;
+            // 
+            // fechaNacimientoDateTimePicker
+            // 
+            this.fechaNacimientoDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.ciudadanoBindingSource, "FechaNacimiento", true));
+            this.fechaNacimientoDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.fechaNacimientoDateTimePicker.Location = new System.Drawing.Point(189, 180);
+            this.fechaNacimientoDateTimePicker.Name = "fechaNacimientoDateTimePicker";
+            this.fechaNacimientoDateTimePicker.Size = new System.Drawing.Size(200, 23);
+            this.fechaNacimientoDateTimePicker.TabIndex = 5;
+            // 
+            // generoComboBox
+            // 
+            this.generoComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ciudadanoBindingSource, "Genero", true));
+            this.generoComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.generoComboBox.FormattingEnabled = true;
+            this.generoComboBox.Items.AddRange(new object[] {
+            "-- Seleccionar --",
+            "Femenino",
+            "Masculino"});
+            this.generoComboBox.Location = new System.Drawing.Point(189, 110);
+            this.generoComboBox.Name = "generoComboBox";
+            this.generoComboBox.Size = new System.Drawing.Size(200, 23);
+            this.generoComboBox.TabIndex = 3;
+            // 
+            // municipioNacimientoComboBox
+            // 
+            this.municipioNacimientoComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ciudadanoBindingSource, "MunicipioNacimiento", true));
+            this.municipioNacimientoComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.municipioNacimientoComboBox.FormattingEnabled = true;
+            this.municipioNacimientoComboBox.Location = new System.Drawing.Point(189, 250);
+            this.municipioNacimientoComboBox.Name = "municipioNacimientoComboBox";
+            this.municipioNacimientoComboBox.Size = new System.Drawing.Size(200, 23);
+            this.municipioNacimientoComboBox.TabIndex = 7;
+            // 
+            // municipioResidenciaComboBox
+            // 
+            this.municipioResidenciaComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ciudadanoBindingSource, "MunicipioResidencia", true));
+            this.municipioResidenciaComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.municipioResidenciaComboBox.FormattingEnabled = true;
+            this.municipioResidenciaComboBox.Location = new System.Drawing.Point(590, 45);
+            this.municipioResidenciaComboBox.Name = "municipioResidenciaComboBox";
+            this.municipioResidenciaComboBox.Size = new System.Drawing.Size(200, 23);
+            this.municipioResidenciaComboBox.TabIndex = 10;
+            // 
+            // nombreConyugueTextBox
+            // 
+            this.nombreConyugueTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.nombreConyugueTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ciudadanoBindingSource, "NombreConyugue", true));
+            this.nombreConyugueTextBox.Location = new System.Drawing.Point(590, 165);
+            this.nombreConyugueTextBox.Name = "nombreConyugueTextBox";
+            this.nombreConyugueTextBox.Size = new System.Drawing.Size(200, 23);
+            this.nombreConyugueTextBox.TabIndex = 13;
+            this.nombreConyugueTextBox.Visible = false;
+            // 
+            // nombreMadreTextBox
+            // 
+            this.nombreMadreTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.nombreMadreTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ciudadanoBindingSource, "NombreMadre", true));
+            this.nombreMadreTextBox.Location = new System.Drawing.Point(590, 85);
+            this.nombreMadreTextBox.Name = "nombreMadreTextBox";
+            this.nombreMadreTextBox.Size = new System.Drawing.Size(200, 23);
+            this.nombreMadreTextBox.TabIndex = 11;
+            this.nombreMadreTextBox.Visible = false;
+            // 
+            // nombrePadreTextBox
+            // 
+            this.nombrePadreTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.nombrePadreTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ciudadanoBindingSource, "NombrePadre", true));
+            this.nombrePadreTextBox.Location = new System.Drawing.Point(590, 125);
+            this.nombrePadreTextBox.Name = "nombrePadreTextBox";
+            this.nombrePadreTextBox.Size = new System.Drawing.Size(200, 23);
+            this.nombrePadreTextBox.TabIndex = 12;
+            this.nombrePadreTextBox.Visible = false;
+            // 
+            // nombresTextBox
+            // 
+            this.nombresTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.nombresTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ciudadanoBindingSource, "Nombres", true));
+            this.nombresTextBox.Location = new System.Drawing.Point(189, 5);
+            this.nombresTextBox.Name = "nombresTextBox";
+            this.nombresTextBox.Size = new System.Drawing.Size(200, 23);
+            this.nombresTextBox.TabIndex = 0;
+            // 
+            // profesionComboBox
+            // 
+            this.profesionComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ciudadanoBindingSource, "Profesion", true));
+            this.profesionComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.profesionComboBox.FormattingEnabled = true;
+            this.profesionComboBox.Items.AddRange(new object[] {
+            "-- Seleccionar --",
+            "Contabilidad",
+            "IT",
+            "Gerencia",
+            "Recursos humanos",
+            "Seguridad"});
+            this.profesionComboBox.Location = new System.Drawing.Point(590, 286);
+            this.profesionComboBox.Name = "profesionComboBox";
+            this.profesionComboBox.Size = new System.Drawing.Size(200, 23);
+            this.profesionComboBox.TabIndex = 16;
+            // 
+            // residenciaTextBox
+            // 
+            this.residenciaTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.residenciaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ciudadanoBindingSource, "Residencia", true));
+            this.residenciaTextBox.Location = new System.Drawing.Point(189, 286);
+            this.residenciaTextBox.Name = "residenciaTextBox";
+            this.residenciaTextBox.Size = new System.Drawing.Size(200, 23);
+            this.residenciaTextBox.TabIndex = 8;
+            // 
+            // tipoSangreComboBox
+            // 
+            this.tipoSangreComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ciudadanoBindingSource, "TipoSangre", true));
+            this.tipoSangreComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.tipoSangreComboBox.FormattingEnabled = true;
+            this.tipoSangreComboBox.Items.AddRange(new object[] {
+            "-- Seleccionar --",
+            "A+",
+            "A-",
+            "B+",
+            "B-",
+            "AB+",
+            "AB-",
+            "O+",
+            "O-"});
+            this.tipoSangreComboBox.Location = new System.Drawing.Point(590, 245);
+            this.tipoSangreComboBox.Name = "tipoSangreComboBox";
+            this.tipoSangreComboBox.Size = new System.Drawing.Size(200, 23);
+            this.tipoSangreComboBox.TabIndex = 15;
+            this.tipoSangreComboBox.Visible = false;
             // 
             // ciudadanoBindingNavigator
             // 
@@ -321,7 +619,7 @@
             this.ciudadanoBindingNavigator.Name = "ciudadanoBindingNavigator";
             this.ciudadanoBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
             this.ciudadanoBindingNavigator.Size = new System.Drawing.Size(1005, 25);
-            this.ciudadanoBindingNavigator.TabIndex = 50;
+            this.ciudadanoBindingNavigator.TabIndex = 28;
             this.ciudadanoBindingNavigator.Text = "bindingNavigator1";
             this.ciudadanoBindingNavigator.Visible = false;
             // 
@@ -333,10 +631,6 @@
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorAddNewItem.Text = "Agregar nuevo";
-            // 
-            // ciudadanoBindingSource
-            // 
-            this.ciudadanoBindingSource.DataSource = typeof(Duisv.Modelos.Ciudadano);
             // 
             // bindingNavigatorCountItem
             // 
@@ -424,293 +718,65 @@
             this.ciudadanoBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
             this.ciudadanoBindingNavigatorSaveItem.Text = "Guardar datos";
             // 
-            // panel1
-            // 
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(apellidosLabel);
-            this.panel1.Controls.Add(this.apellidosTextBox);
-            this.panel1.Controls.Add(ciudadanoPorLabel);
-            this.panel1.Controls.Add(this.ciudadanoPorComboBox);
-            this.panel1.Controls.Add(conocidoPorLabel);
-            this.panel1.Controls.Add(this.conocidoPorTextBox);
-            this.panel1.Controls.Add(departamentoNacimientoLabel);
-            this.panel1.Controls.Add(this.departamentoNacimientoComboBox);
-            this.panel1.Controls.Add(departamentoResidenciaLabel);
-            this.panel1.Controls.Add(this.departamentoResidenciaComboBox);
-            this.panel1.Controls.Add(estadoFamiliarLabel);
-            this.panel1.Controls.Add(this.estadoFamiliarComboBox);
-            this.panel1.Controls.Add(fechaNacimientoLabel);
-            this.panel1.Controls.Add(this.fechaNacimientoDateTimePicker);
-            this.panel1.Controls.Add(generoLabel);
-            this.panel1.Controls.Add(this.generoComboBox);
-            this.panel1.Controls.Add(municipioNacimientoLabel);
-            this.panel1.Controls.Add(this.municipioNacimientoComboBox);
-            this.panel1.Controls.Add(municipioResidenciaLabel);
-            this.panel1.Controls.Add(this.municipioResidenciaComboBox);
-            this.panel1.Controls.Add(nombreConyugueLabel);
-            this.panel1.Controls.Add(this.nombreConyugueTextBox);
-            this.panel1.Controls.Add(nombreMadreLabel);
-            this.panel1.Controls.Add(this.nombreMadreTextBox);
-            this.panel1.Controls.Add(nombrePadreLabel);
-            this.panel1.Controls.Add(this.nombrePadreTextBox);
-            this.panel1.Controls.Add(nombresLabel);
-            this.panel1.Controls.Add(this.nombresTextBox);
-            this.panel1.Controls.Add(profesionLabel);
-            this.panel1.Controls.Add(this.profesionComboBox);
-            this.panel1.Controls.Add(residenciaLabel);
-            this.panel1.Controls.Add(this.residenciaTextBox);
-            this.panel1.Controls.Add(tipoSangreLabel);
-            this.panel1.Controls.Add(this.tipoSangreComboBox);
-            this.panel1.Location = new System.Drawing.Point(190, 59);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(804, 320);
-            this.panel1.TabIndex = 49;
-            // 
-            // apellidosTextBox
-            // 
-            this.apellidosTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.apellidosTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ciudadanoBindingSource, "Apellidos", true));
-            this.apellidosTextBox.Location = new System.Drawing.Point(189, 40);
-            this.apellidosTextBox.Name = "apellidosTextBox";
-            this.apellidosTextBox.Size = new System.Drawing.Size(200, 23);
-            this.apellidosTextBox.TabIndex = 1;
-            // 
-            // ciudadanoPorComboBox
-            // 
-            this.ciudadanoPorComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ciudadanoBindingSource, "CiudadanoPor", true));
-            this.ciudadanoPorComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.ciudadanoPorComboBox.FormattingEnabled = true;
-            this.ciudadanoPorComboBox.Items.AddRange(new object[] {
-            "-- Seleccionar --",
-            "Nacimiento",
-            "Nacionalizado(a)"});
-            this.ciudadanoPorComboBox.Location = new System.Drawing.Point(189, 145);
-            this.ciudadanoPorComboBox.Name = "ciudadanoPorComboBox";
-            this.ciudadanoPorComboBox.Size = new System.Drawing.Size(200, 23);
-            this.ciudadanoPorComboBox.TabIndex = 5;
-            this.ciudadanoPorComboBox.Visible = false;
-            // 
-            // conocidoPorTextBox
-            // 
-            this.conocidoPorTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.conocidoPorTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ciudadanoBindingSource, "ConocidoPor", true));
-            this.conocidoPorTextBox.Location = new System.Drawing.Point(189, 75);
-            this.conocidoPorTextBox.Name = "conocidoPorTextBox";
-            this.conocidoPorTextBox.Size = new System.Drawing.Size(200, 23);
-            this.conocidoPorTextBox.TabIndex = 7;
-            this.conocidoPorTextBox.Visible = false;
-            // 
-            // departamentoNacimientoComboBox
-            // 
-            this.departamentoNacimientoComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ciudadanoBindingSource, "DepartamentoNacimiento", true));
-            this.departamentoNacimientoComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.departamentoNacimientoComboBox.FormattingEnabled = true;
-            this.departamentoNacimientoComboBox.Location = new System.Drawing.Point(189, 215);
-            this.departamentoNacimientoComboBox.Name = "departamentoNacimientoComboBox";
-            this.departamentoNacimientoComboBox.Size = new System.Drawing.Size(200, 23);
-            this.departamentoNacimientoComboBox.TabIndex = 9;
-            this.departamentoNacimientoComboBox.SelectedIndexChanged += new System.EventHandler(this.DepartamentoNacimientoComboBox_SelectedIndexChanged);
-            // 
-            // departamentoResidenciaComboBox
-            // 
-            this.departamentoResidenciaComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ciudadanoBindingSource, "DepartamentoResidencia", true));
-            this.departamentoResidenciaComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.departamentoResidenciaComboBox.FormattingEnabled = true;
-            this.departamentoResidenciaComboBox.Location = new System.Drawing.Point(590, 5);
-            this.departamentoResidenciaComboBox.Name = "departamentoResidenciaComboBox";
-            this.departamentoResidenciaComboBox.Size = new System.Drawing.Size(200, 23);
-            this.departamentoResidenciaComboBox.TabIndex = 11;
-            this.departamentoResidenciaComboBox.SelectedIndexChanged += new System.EventHandler(this.DepartamentoResidenciaComboBox_SelectedIndexChanged);
-            // 
-            // estadoFamiliarComboBox
-            // 
-            this.estadoFamiliarComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ciudadanoBindingSource, "EstadoFamiliar", true));
-            this.estadoFamiliarComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.estadoFamiliarComboBox.FormattingEnabled = true;
-            this.estadoFamiliarComboBox.Items.AddRange(new object[] {
-            "-- Seleccionar --",
-            "Casado(a)",
-            "Viudo(a)",
-            "Soltero(a)"});
-            this.estadoFamiliarComboBox.Location = new System.Drawing.Point(590, 205);
-            this.estadoFamiliarComboBox.Name = "estadoFamiliarComboBox";
-            this.estadoFamiliarComboBox.Size = new System.Drawing.Size(200, 23);
-            this.estadoFamiliarComboBox.TabIndex = 15;
-            // 
-            // fechaNacimientoDateTimePicker
-            // 
-            this.fechaNacimientoDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.ciudadanoBindingSource, "FechaNacimiento", true));
-            this.fechaNacimientoDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.fechaNacimientoDateTimePicker.Location = new System.Drawing.Point(189, 180);
-            this.fechaNacimientoDateTimePicker.Name = "fechaNacimientoDateTimePicker";
-            this.fechaNacimientoDateTimePicker.Size = new System.Drawing.Size(200, 23);
-            this.fechaNacimientoDateTimePicker.TabIndex = 17;
-            // 
-            // generoComboBox
-            // 
-            this.generoComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ciudadanoBindingSource, "Genero", true));
-            this.generoComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.generoComboBox.FormattingEnabled = true;
-            this.generoComboBox.Items.AddRange(new object[] {
-            "-- Seleccionar --",
-            "Femenino",
-            "Masculino"});
-            this.generoComboBox.Location = new System.Drawing.Point(189, 110);
-            this.generoComboBox.Name = "generoComboBox";
-            this.generoComboBox.Size = new System.Drawing.Size(200, 23);
-            this.generoComboBox.TabIndex = 19;
-            // 
-            // municipioNacimientoComboBox
-            // 
-            this.municipioNacimientoComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ciudadanoBindingSource, "MunicipioNacimiento", true));
-            this.municipioNacimientoComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.municipioNacimientoComboBox.FormattingEnabled = true;
-            this.municipioNacimientoComboBox.Location = new System.Drawing.Point(189, 250);
-            this.municipioNacimientoComboBox.Name = "municipioNacimientoComboBox";
-            this.municipioNacimientoComboBox.Size = new System.Drawing.Size(200, 23);
-            this.municipioNacimientoComboBox.TabIndex = 21;
-            // 
-            // municipioResidenciaComboBox
-            // 
-            this.municipioResidenciaComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ciudadanoBindingSource, "MunicipioResidencia", true));
-            this.municipioResidenciaComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.municipioResidenciaComboBox.FormattingEnabled = true;
-            this.municipioResidenciaComboBox.Location = new System.Drawing.Point(590, 45);
-            this.municipioResidenciaComboBox.Name = "municipioResidenciaComboBox";
-            this.municipioResidenciaComboBox.Size = new System.Drawing.Size(200, 23);
-            this.municipioResidenciaComboBox.TabIndex = 23;
-            // 
-            // nombreConyugueTextBox
-            // 
-            this.nombreConyugueTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.nombreConyugueTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ciudadanoBindingSource, "NombreConyugue", true));
-            this.nombreConyugueTextBox.Location = new System.Drawing.Point(590, 165);
-            this.nombreConyugueTextBox.Name = "nombreConyugueTextBox";
-            this.nombreConyugueTextBox.Size = new System.Drawing.Size(200, 23);
-            this.nombreConyugueTextBox.TabIndex = 25;
-            this.nombreConyugueTextBox.Visible = false;
-            // 
-            // nombreMadreTextBox
-            // 
-            this.nombreMadreTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.nombreMadreTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ciudadanoBindingSource, "NombreMadre", true));
-            this.nombreMadreTextBox.Location = new System.Drawing.Point(590, 85);
-            this.nombreMadreTextBox.Name = "nombreMadreTextBox";
-            this.nombreMadreTextBox.Size = new System.Drawing.Size(200, 23);
-            this.nombreMadreTextBox.TabIndex = 27;
-            this.nombreMadreTextBox.Visible = false;
-            // 
-            // nombrePadreTextBox
-            // 
-            this.nombrePadreTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.nombrePadreTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ciudadanoBindingSource, "NombrePadre", true));
-            this.nombrePadreTextBox.Location = new System.Drawing.Point(590, 125);
-            this.nombrePadreTextBox.Name = "nombrePadreTextBox";
-            this.nombrePadreTextBox.Size = new System.Drawing.Size(200, 23);
-            this.nombrePadreTextBox.TabIndex = 29;
-            this.nombrePadreTextBox.Visible = false;
-            // 
-            // nombresTextBox
-            // 
-            this.nombresTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.nombresTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ciudadanoBindingSource, "Nombres", true));
-            this.nombresTextBox.Location = new System.Drawing.Point(189, 5);
-            this.nombresTextBox.Name = "nombresTextBox";
-            this.nombresTextBox.Size = new System.Drawing.Size(200, 23);
-            this.nombresTextBox.TabIndex = 31;
-            // 
-            // profesionComboBox
-            // 
-            this.profesionComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ciudadanoBindingSource, "Profesion", true));
-            this.profesionComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.profesionComboBox.FormattingEnabled = true;
-            this.profesionComboBox.Items.AddRange(new object[] {
-            "-- Seleccionar --",
-            "Contabilidad",
-            "IT",
-            "Gerencia",
-            "Recursos humanos",
-            "Seguridad"});
-            this.profesionComboBox.Location = new System.Drawing.Point(590, 286);
-            this.profesionComboBox.Name = "profesionComboBox";
-            this.profesionComboBox.Size = new System.Drawing.Size(200, 23);
-            this.profesionComboBox.TabIndex = 35;
-            // 
-            // residenciaTextBox
-            // 
-            this.residenciaTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.residenciaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ciudadanoBindingSource, "Residencia", true));
-            this.residenciaTextBox.Location = new System.Drawing.Point(189, 286);
-            this.residenciaTextBox.Name = "residenciaTextBox";
-            this.residenciaTextBox.Size = new System.Drawing.Size(200, 23);
-            this.residenciaTextBox.TabIndex = 37;
-            // 
-            // tipoSangreComboBox
-            // 
-            this.tipoSangreComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ciudadanoBindingSource, "TipoSangre", true));
-            this.tipoSangreComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.tipoSangreComboBox.FormattingEnabled = true;
-            this.tipoSangreComboBox.Items.AddRange(new object[] {
-            "-- Seleccionar --",
-            "A+",
-            "A-",
-            "B+",
-            "B-",
-            "AB+",
-            "AB-",
-            "O+",
-            "O-"});
-            this.tipoSangreComboBox.Location = new System.Drawing.Point(590, 245);
-            this.tipoSangreComboBox.Name = "tipoSangreComboBox";
-            this.tipoSangreComboBox.Size = new System.Drawing.Size(200, 23);
-            this.tipoSangreComboBox.TabIndex = 39;
-            this.tipoSangreComboBox.Visible = false;
-            // 
-            // BtnFirma
-            // 
-            this.BtnFirma.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnFirma.Location = new System.Drawing.Point(13, 335);
-            this.BtnFirma.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.BtnFirma.Name = "BtnFirma";
-            this.BtnFirma.Size = new System.Drawing.Size(172, 44);
-            this.BtnFirma.TabIndex = 46;
-            this.BtnFirma.Text = "Firma";
-            this.BtnFirma.UseVisualStyleBackColor = true;
-            this.BtnFirma.Click += new System.EventHandler(this.BtnFirma_Click);
-            // 
             // BtnPartidaNacimiento
             // 
             this.BtnPartidaNacimiento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnPartidaNacimiento.Location = new System.Drawing.Point(13, 485);
+            this.BtnPartidaNacimiento.Location = new System.Drawing.Point(13, 480);
             this.BtnPartidaNacimiento.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.BtnPartidaNacimiento.Name = "BtnPartidaNacimiento";
             this.BtnPartidaNacimiento.Size = new System.Drawing.Size(172, 44);
-            this.BtnPartidaNacimiento.TabIndex = 47;
+            this.BtnPartidaNacimiento.TabIndex = 20;
             this.BtnPartidaNacimiento.Text = "Partida de nacimiento";
             this.BtnPartidaNacimiento.UseVisualStyleBackColor = true;
             this.BtnPartidaNacimiento.Click += new System.EventHandler(this.BtnPartidaNacimiento_Click);
             // 
-            // TBxRutaDocumento
+            // BtnFirma
             // 
-            this.TBxRutaDocumento.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TBxRutaDocumento.Location = new System.Drawing.Point(193, 506);
-            this.TBxRutaDocumento.Name = "TBxRutaDocumento";
-            this.TBxRutaDocumento.ReadOnly = true;
-            this.TBxRutaDocumento.Size = new System.Drawing.Size(387, 23);
-            this.TBxRutaDocumento.TabIndex = 52;
+            this.BtnFirma.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnFirma.Location = new System.Drawing.Point(13, 330);
+            this.BtnFirma.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.BtnFirma.Name = "BtnFirma";
+            this.BtnFirma.Size = new System.Drawing.Size(172, 44);
+            this.BtnFirma.TabIndex = 19;
+            this.BtnFirma.Text = "Firma";
+            this.BtnFirma.UseVisualStyleBackColor = true;
+            this.BtnFirma.Click += new System.EventHandler(this.BtnFirma_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(190, 487);
+            this.label1.Location = new System.Drawing.Point(190, 482);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(130, 15);
-            this.label1.TabIndex = 51;
+            this.label1.TabIndex = 29;
             this.label1.Text = "Ruta del documento:";
+            // 
+            // TBxRutaDocumento
+            // 
+            this.TBxRutaDocumento.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TBxRutaDocumento.Location = new System.Drawing.Point(193, 501);
+            this.TBxRutaDocumento.Name = "TBxRutaDocumento";
+            this.TBxRutaDocumento.ReadOnly = true;
+            this.TBxRutaDocumento.Size = new System.Drawing.Size(387, 23);
+            this.TBxRutaDocumento.TabIndex = 40;
             // 
             // OfdImportarFirma
             // 
             this.OfdImportarFirma.Filter = "Firma|*.png";
+            // 
+            // PBxFirma
+            // 
+            this.PBxFirma.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.PBxFirma.ErrorImage = global::Duisv.Properties.Resources.persa;
+            this.PBxFirma.Image = global::Duisv.Properties.Resources.persa;
+            this.PBxFirma.InitialImage = global::Duisv.Properties.Resources.persa;
+            this.PBxFirma.Location = new System.Drawing.Point(13, 380);
+            this.PBxFirma.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.PBxFirma.Name = "PBxFirma";
+            this.PBxFirma.Size = new System.Drawing.Size(172, 94);
+            this.PBxFirma.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.PBxFirma.TabIndex = 41;
+            this.PBxFirma.TabStop = false;
             // 
             // PBxFoto
             // 
@@ -718,114 +784,49 @@
             this.PBxFoto.ErrorImage = global::Duisv.Properties.Resources.usuario;
             this.PBxFoto.Image = global::Duisv.Properties.Resources.usuario;
             this.PBxFoto.InitialImage = global::Duisv.Properties.Resources.usuario;
-            this.PBxFoto.Location = new System.Drawing.Point(13, 59);
+            this.PBxFoto.Location = new System.Drawing.Point(13, 54);
             this.PBxFoto.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.PBxFoto.Name = "PBxFoto";
             this.PBxFoto.Size = new System.Drawing.Size(170, 170);
             this.PBxFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.PBxFoto.TabIndex = 44;
+            this.PBxFoto.TabIndex = 24;
             this.PBxFoto.TabStop = false;
             // 
-            // BtnGuardar
-            // 
-            this.BtnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnGuardar.Location = new System.Drawing.Point(822, 484);
-            this.BtnGuardar.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.BtnGuardar.Name = "BtnGuardar";
-            this.BtnGuardar.Size = new System.Drawing.Size(172, 44);
-            this.BtnGuardar.TabIndex = 48;
-            this.BtnGuardar.Text = "Guardar cambios";
-            this.BtnGuardar.UseVisualStyleBackColor = true;
-            this.BtnGuardar.Click += new System.EventHandler(this.BtnGuardar_Click);
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.Orange;
-            this.panel2.Controls.Add(this.LblTituloVentana);
-            this.panel2.Controls.Add(this.PBxAvatar);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1005, 48);
-            this.panel2.TabIndex = 42;
-            // 
-            // LblTituloVentana
-            // 
-            this.LblTituloVentana.AutoSize = true;
-            this.LblTituloVentana.Location = new System.Drawing.Point(42, 17);
-            this.LblTituloVentana.Name = "LblTituloVentana";
-            this.LblTituloVentana.Size = new System.Drawing.Size(0, 15);
-            this.LblTituloVentana.TabIndex = 1;
-            // 
-            // PBxAvatar
-            // 
-            this.PBxAvatar.Image = global::Duisv.Properties.Resources.FRONT_copy2;
-            this.PBxAvatar.Location = new System.Drawing.Point(13, 12);
-            this.PBxAvatar.Name = "PBxAvatar";
-            this.PBxAvatar.Size = new System.Drawing.Size(23, 23);
-            this.PBxAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.PBxAvatar.TabIndex = 0;
-            this.PBxAvatar.TabStop = false;
-            // 
-            // BtnAgregarFoto
-            // 
-            this.BtnAgregarFoto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnAgregarFoto.Location = new System.Drawing.Point(13, 235);
-            this.BtnAgregarFoto.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.BtnAgregarFoto.Name = "BtnAgregarFoto";
-            this.BtnAgregarFoto.Size = new System.Drawing.Size(172, 44);
-            this.BtnAgregarFoto.TabIndex = 43;
-            this.BtnAgregarFoto.Text = "Agregar foto";
-            this.BtnAgregarFoto.UseVisualStyleBackColor = true;
-            this.BtnAgregarFoto.Click += new System.EventHandler(this.BtnAgregarFoto_Click);
-            // 
-            // BtnTomarFoto
-            // 
-            this.BtnTomarFoto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnTomarFoto.Location = new System.Drawing.Point(13, 285);
-            this.BtnTomarFoto.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.BtnTomarFoto.Name = "BtnTomarFoto";
-            this.BtnTomarFoto.Size = new System.Drawing.Size(172, 44);
-            this.BtnTomarFoto.TabIndex = 45;
-            this.BtnTomarFoto.Text = "Tomar foto";
-            this.BtnTomarFoto.UseVisualStyleBackColor = true;
-            this.BtnTomarFoto.Click += new System.EventHandler(this.BtnTomarFoto_Click);
-            // 
-            // FrmEditarCiudadano
+            // FrmAgregarEmpleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1005, 535);
             this.Controls.Add(this.PBxFirma);
+            this.Controls.Add(this.TBxRutaDocumento);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.ciudadanoBindingNavigator);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.BtnFirma);
             this.Controls.Add(this.BtnPartidaNacimiento);
-            this.Controls.Add(this.TBxRutaDocumento);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.PBxFoto);
-            this.Controls.Add(this.BtnGuardar);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.BtnAgregarFoto);
+            this.Controls.Add(this.BtnAgregar);
             this.Controls.Add(this.BtnTomarFoto);
+            this.Controls.Add(this.PBxFoto);
+            this.Controls.Add(this.BtnAgregarFoto);
+            this.Controls.Add(this.panel2);
             this.Font = new System.Drawing.Font("Arial Black", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.Name = "FrmEditarCiudadano";
+            this.Name = "FrmAgregarEmpleado";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Load += new System.EventHandler(this.FrmEditarCiudadano_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.PBxFirma)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ciudadanoBindingNavigator)).EndInit();
-            this.ciudadanoBindingNavigator.ResumeLayout(false);
-            this.ciudadanoBindingNavigator.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ciudadanoBindingSource)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PBxFoto)).EndInit();
+            this.Load += new System.EventHandler(this.FrmAgregarCiudadano_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PBxAvatar)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ciudadanoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ciudadanoBindingNavigator)).EndInit();
+            this.ciudadanoBindingNavigator.ResumeLayout(false);
+            this.ciudadanoBindingNavigator.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PBxFirma)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PBxFoto)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -833,10 +834,17 @@
 
         #endregion
 
-        private System.Windows.Forms.PictureBox PBxFirma;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label LblUsuario;
+        private System.Windows.Forms.PictureBox PBxAvatar;
+        private System.Windows.Forms.Button BtnTomarFoto;
+        private System.Windows.Forms.PictureBox PBxFoto;
+        private System.Windows.Forms.Button BtnAgregarFoto;
+        private System.Windows.Forms.Button BtnAgregar;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.BindingSource ciudadanoBindingSource;
         private System.Windows.Forms.BindingNavigator ciudadanoBindingNavigator;
         private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
-        private System.Windows.Forms.BindingSource ciudadanoBindingSource;
         private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
@@ -848,7 +856,6 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.ToolStripButton ciudadanoBindingNavigatorSaveItem;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox apellidosTextBox;
         private System.Windows.Forms.ComboBox ciudadanoPorComboBox;
         private System.Windows.Forms.TextBox conocidoPorTextBox;
@@ -866,18 +873,12 @@
         private System.Windows.Forms.ComboBox profesionComboBox;
         private System.Windows.Forms.TextBox residenciaTextBox;
         private System.Windows.Forms.ComboBox tipoSangreComboBox;
-        private System.Windows.Forms.Button BtnFirma;
         private System.Windows.Forms.Button BtnPartidaNacimiento;
+        private System.Windows.Forms.Button BtnFirma;
         private System.Windows.Forms.OpenFileDialog OfdImportarFoto;
-        private System.Windows.Forms.TextBox TBxRutaDocumento;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox TBxRutaDocumento;
+        private System.Windows.Forms.PictureBox PBxFirma;
         private System.Windows.Forms.OpenFileDialog OfdImportarFirma;
-        private System.Windows.Forms.PictureBox PBxFoto;
-        private System.Windows.Forms.Button BtnGuardar;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label LblTituloVentana;
-        private System.Windows.Forms.PictureBox PBxAvatar;
-        private System.Windows.Forms.Button BtnAgregarFoto;
-        private System.Windows.Forms.Button BtnTomarFoto;
     }
 }

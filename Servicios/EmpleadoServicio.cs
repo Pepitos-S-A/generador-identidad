@@ -8,20 +8,20 @@ using System.Data;
 
 namespace Duisv.Servicios
 {
-    internal class CiudadanoServicio
+    internal class EmpleadoServicio
     {
         //private readonly string cadenaConexion;
         private readonly MongoDBProvider _provider;
-        private readonly IMongoCollection<Ciudadano> _collection;
+        private readonly IMongoCollection<Empleado> _collection;
 
-        public CiudadanoServicio()
+        public EmpleadoServicio()
         {
             //cadenaConexion = Properties.Settings.Default.SqlServerCadenaConexion;
             _provider = new MongoDBProvider();
-            _collection = _provider.GetCollection<Ciudadano>("ciudadanos");
+            _collection = _provider.GetCollection<Empleado>("empleados");
         }
 
-        public int AgregarCiudadano(Ciudadano ciudadano)
+        public int AgregarEmpleado(Empleado ciudadano)
         {
             try
             {
@@ -35,7 +35,7 @@ namespace Duisv.Servicios
             }
         }
 
-        public int EditarCiudadano(Ciudadano ciudadano)
+        public int EditarEmpleado(Empleado ciudadano)
         {
             try
             {
@@ -48,7 +48,7 @@ namespace Duisv.Servicios
             }
         }
 
-        public int EliminarCiudadano(string ciudadanoId)
+        public int EliminarEmpleado(string ciudadanoId)
         {
             try
             {
@@ -61,12 +61,12 @@ namespace Duisv.Servicios
             }
         }
 
-        public List<Ciudadano> ObtenerListaCiudadanos()
+        public List<Empleado> ObtenerListaEmpleados()
         {
             return _collection.Find(x => true).ToList();
         }
 
-        public List<Ciudadano> ObtenerResultadoBusqueda(string busqueda)
+        public List<Empleado> ObtenerResultadoBusqueda(string busqueda)
         {
             return _collection
                 .AsQueryable()
@@ -79,9 +79,9 @@ namespace Duisv.Servicios
                 .ToList();
         }
 
-        public Ciudadano ObtenerCiudadanoPorId(string ciudadanoId)
+        public Empleado ObtenerEmpleadoPorId(string empleadoId)
         {
-            return _collection.Find(x => x.CiudadanoId == ciudadanoId).FirstOrDefault();
+            return _collection.Find(x => x.CiudadanoId == empleadoId).FirstOrDefault();
         }
 
         #region Métodos con ADO.NET y SQL Server (comentados)

@@ -208,41 +208,41 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Database\MongoDBProvider.cs" />
-    <Compile Include="Formularios\Ciudadanos\FrmAgregarCiudadano.cs">
+    <Compile Include="Formularios\Empleados\FrmAgregarEmpleado.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\Ciudadanos\FrmAgregarCiudadano.Designer.cs">
-      <DependentUpon>FrmAgregarCiudadano.cs</DependentUpon>
+    <Compile Include="Formularios\Empleados\FrmAgregarEmpleado.Designer.cs">
+      <DependentUpon>FrmAgregarEmpleado.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Ciudadanos\FrmEditarCiudadano.cs">
+    <Compile Include="Formularios\Empleados\FrmEditarEmpleado.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\Ciudadanos\FrmEditarCiudadano.Designer.cs">
-      <DependentUpon>FrmEditarCiudadano.cs</DependentUpon>
+    <Compile Include="Formularios\Empleados\FrmEditarEmpleado.Designer.cs">
+      <DependentUpon>FrmEditarEmpleado.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Ciudadanos\FrmElegirPartidaNacimiento.cs">
+    <Compile Include="Formularios\Empleados\FrmElegirPartidaNacimiento.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\Ciudadanos\FrmElegirPartidaNacimiento.Designer.cs">
+    <Compile Include="Formularios\Empleados\FrmElegirPartidaNacimiento.Designer.cs">
       <DependentUpon>FrmElegirPartidaNacimiento.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Ciudadanos\FrmListaCiudadanos.cs">
+    <Compile Include="Formularios\Empleados\FrmListaEmpleados.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\Ciudadanos\FrmListaCiudadanos.Designer.cs">
-      <DependentUpon>FrmListaCiudadanos.cs</DependentUpon>
+    <Compile Include="Formularios\Empleados\FrmListaEmpleados.Designer.cs">
+      <DependentUpon>FrmListaEmpleados.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Ciudadanos\FrmMostrarDui.cs">
+    <Compile Include="Formularios\Empleados\FrmMostrarIdentificacion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\Ciudadanos\FrmMostrarDui.Designer.cs">
-      <DependentUpon>FrmMostrarDui.cs</DependentUpon>
+    <Compile Include="Formularios\Empleados\FrmMostrarIdentificacion.Designer.cs">
+      <DependentUpon>FrmMostrarIdentificacion.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Ciudadanos\FrmVerCiudadano.cs">
+    <Compile Include="Formularios\Empleados\FrmVerEmpleado.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\Ciudadanos\FrmVerCiudadano.Designer.cs">
-      <DependentUpon>FrmVerCiudadano.cs</DependentUpon>
+    <Compile Include="Formularios\Empleados\FrmVerEmpleado.Designer.cs">
+      <DependentUpon>FrmVerEmpleado.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\FrmTomarFoto.cs">
       <SubType>Form</SubType>
@@ -293,7 +293,7 @@
       <DependentUpon>FrmVerUsuario.cs</DependentUpon>
     </Compile>
     <Compile Include="Herramientas\Codificador.cs" />
-    <Compile Include="Modelos\Ciudadano.cs" />
+    <Compile Include="Modelos\Empleado.cs" />
     <Compile Include="Modelos\Departamento.cs" />
     <Compile Include="Modelos\Documento.cs" />
     <Compile Include="Modelos\Municipio.cs" />
@@ -301,7 +301,7 @@
     <Compile Include="Modelos\Usuario.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Servicios\CiudadanoServicio.cs" />
+    <Compile Include="Servicios\EmpleadoServicio.cs" />
     <Compile Include="Servicios\DepartamentoServicio.cs" />
     <Compile Include="Servicios\DocumentoServicio.cs" />
     <Compile Include="Servicios\MunicipioServicio.cs" />
@@ -311,23 +311,23 @@
     <Compile Include="Validaciones\AgregarUsuarioValidador.cs" />
     <Compile Include="Validaciones\ClaveValidador.cs" />
     <Compile Include="Validaciones\EditarUsuarioValidador.cs" />
-    <EmbeddedResource Include="Formularios\Ciudadanos\FrmAgregarCiudadano.resx">
-      <DependentUpon>FrmAgregarCiudadano.cs</DependentUpon>
+    <EmbeddedResource Include="Formularios\Empleados\FrmAgregarEmpleado.resx">
+      <DependentUpon>FrmAgregarEmpleado.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Ciudadanos\FrmEditarCiudadano.resx">
-      <DependentUpon>FrmEditarCiudadano.cs</DependentUpon>
+    <EmbeddedResource Include="Formularios\Empleados\FrmEditarEmpleado.resx">
+      <DependentUpon>FrmEditarEmpleado.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Ciudadanos\FrmElegirPartidaNacimiento.resx">
+    <EmbeddedResource Include="Formularios\Empleados\FrmElegirPartidaNacimiento.resx">
       <DependentUpon>FrmElegirPartidaNacimiento.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Ciudadanos\FrmListaCiudadanos.resx">
-      <DependentUpon>FrmListaCiudadanos.cs</DependentUpon>
+    <EmbeddedResource Include="Formularios\Empleados\FrmListaEmpleados.resx">
+      <DependentUpon>FrmListaEmpleados.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Ciudadanos\FrmMostrarDui.resx">
-      <DependentUpon>FrmMostrarDui.cs</DependentUpon>
+    <EmbeddedResource Include="Formularios\Empleados\FrmMostrarIdentificacion.resx">
+      <DependentUpon>FrmMostrarIdentificacion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Ciudadanos\FrmVerCiudadano.resx">
-      <DependentUpon>FrmVerCiudadano.cs</DependentUpon>
+    <EmbeddedResource Include="Formularios\Empleados\FrmVerEmpleado.resx">
+      <DependentUpon>FrmVerEmpleado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmTomarFoto.resx">
       <DependentUpon>FrmTomarFoto.cs</DependentUpon>

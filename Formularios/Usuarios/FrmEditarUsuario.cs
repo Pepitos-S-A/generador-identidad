@@ -113,7 +113,8 @@ namespace Duisv.Formularios.Usuarios
                     FechaNacimiento = DtpFechaNacimiento.Value,
                     Telefono = MtbTelefono.Text,
                     NombreUsuario = TBxUsuario.Text,
-                    RolId = CbBRoles.SelectedValue.ToString()
+                    RolId = CbBRoles.SelectedValue.ToString(),
+                    Rol = ((Rol)CbBRoles.SelectedItem).Nombre
                 };
 
                 if (ValidarDatosUsuario(usuario))

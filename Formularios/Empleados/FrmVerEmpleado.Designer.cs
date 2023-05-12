@@ -1,6 +1,6 @@
 ﻿namespace Duisv.Formularios.Ciudadanos
 {
-    partial class FrmVerCiudadano
+    partial class FrmVerEmpleado
     {
         /// <summary>
         /// Required designer variable.
@@ -47,7 +47,7 @@
             System.Windows.Forms.Label tipoSangreLabel;
             System.Windows.Forms.Label profesionLabel;
             System.Windows.Forms.Label numeroDocumentoLabel;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmVerCiudadano));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmVerEmpleado));
             System.Windows.Forms.Label soloFechaNacimientoLabel;
             this.PBxFirma = new System.Windows.Forms.PictureBox();
             this.ciudadanoBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
@@ -350,7 +350,7 @@
             // 
             // ciudadanoBindingSource
             // 
-            this.ciudadanoBindingSource.DataSource = typeof(Duisv.Modelos.Ciudadano);
+            this.ciudadanoBindingSource.DataSource = typeof(Duisv.Modelos.Empleado);
             // 
             // bindingNavigatorCountItem
             // 

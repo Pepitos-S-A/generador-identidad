@@ -3,7 +3,7 @@ using FluentValidation;
 
 namespace Duisv.Validaciones
 {
-    internal class AgregarCiudadanoValidador : AbstractValidator<Ciudadano>
+    internal class AgregarCiudadanoValidador : AbstractValidator<Empleado>
     {
         public AgregarCiudadanoValidador()
         {

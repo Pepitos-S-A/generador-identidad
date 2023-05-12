@@ -62,6 +62,7 @@ namespace Duisv.Formularios.Usuarios
                     NombreUsuario = TBxUsuario.Text,
                     Clave = TBxClave.Text,
                     RolId = CbBRoles.SelectedValue.ToString(),
+                    Rol = ((Rol)CbBRoles.SelectedItem).Nombre,
                     RepetirClave = TBxRepetirClave.Text
                 };
 

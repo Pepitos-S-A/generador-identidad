@@ -7,19 +7,19 @@ using Duisv.Servicios;
 
 namespace Duisv.Formularios.Ciudadanos
 {
-    public partial class FrmVerCiudadano : Form
+    public partial class FrmVerEmpleado : Form
     {
 
-        private readonly CiudadanoServicio _ciudadanoServicio;
+        private readonly EmpleadoServicio _ciudadanoServicio;
         private readonly DocumentoServicio _documentoServicio;
 
         private readonly string _ciudadanoId;
 
-        public FrmVerCiudadano(string ciudadanoId)
+        public FrmVerEmpleado(string ciudadanoId)
         {
             InitializeComponent();
 
-            _ciudadanoServicio = new CiudadanoServicio();
+            _ciudadanoServicio = new EmpleadoServicio();
             _documentoServicio = new DocumentoServicio();
 
             _ciudadanoId = ciudadanoId;
@@ -32,7 +32,7 @@ namespace Duisv.Formularios.Ciudadanos
 
         private void MostrarDatos()
         {
-            var ciudadano = _ciudadanoServicio.ObtenerCiudadanoPorId(_ciudadanoId);
+            var ciudadano = _ciudadanoServicio.ObtenerEmpleadoPorId(_ciudadanoId);
 
             if (ciudadano != null)
             {
@@ -45,9 +45,9 @@ namespace Duisv.Formularios.Ciudadanos
                 }
             }
 
-            var nombres = ((Ciudadano)ciudadanoBindingSource.Current).Nombres;
-            var apellidos = ((Ciudadano)ciudadanoBindingSource.Current).Apellidos;
-            var numeroDui = ((Ciudadano)ciudadanoBindingSource.Current).NumeroDocumento;
+            var nombres = ((Empleado)ciudadanoBindingSource.Current).Nombres;
+            var apellidos = ((Empleado)ciudadanoBindingSource.Current).Apellidos;
+            var numeroDui = ((Empleado)ciudadanoBindingSource.Current).NumeroDocumento;
 
             CargarFoto(numeroDui);
             CargarFirma(numeroDui);
@@ -93,7 +93,7 @@ namespace Duisv.Formularios.Ciudadanos
 
         private void BtnVerPartidaNacimiento_Click(object sender, EventArgs e)
         {
-            var numeroDui = ((Ciudadano)ciudadanoBindingSource.Current).NumeroDocumento;
+            var numeroDui = ((Empleado)ciudadanoBindingSource.Current).NumeroDocumento;
             var frmElegirPartidaNacimiento = new FrmElegirPartidaNacimiento();
             var archivo = $@"{Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)}\PepitosSA\Ciudadanos\Documentos\{numeroDui}.pdf";
 
@@ -114,10 +114,10 @@ namespace Duisv.Formularios.Ciudadanos
 
         private void BtnVerDui_Click(object sender, EventArgs e)
         {
-            var ciudadano = (Ciudadano)ciudadanoBindingSource.Current;
+            var ciudadano = (Empleado)ciudadanoBindingSource.Current;
             var documento = (Documento)DocumentoBindingSource.Current;
 
-            var frmMostrarDui = new FrmMostrarDui(ciudadano, documento);
+            var frmMostrarDui = new FrmMostrarIdentificacion(ciudadano, documento);
             frmMostrarDui.ShowDialog();
         }
 

@@ -4,7 +4,7 @@ using System;
 
 namespace Duisv.Modelos
 {
-    public class Ciudadano
+    public class Empleado
     {
         private string genero = string.Empty;
         private string tipoSangre = string.Empty;

@@ -6,21 +6,21 @@ using Microsoft.Reporting.WinForms;
 
 namespace Duisv.Formularios.Ciudadanos
 {
-    public partial class FrmMostrarDui : Form
+    public partial class FrmMostrarIdentificacion : Form
     {
-        private readonly Ciudadano _ciudadano;
+        private readonly Empleado _ciudadano;
         private readonly Documento _documento;
 
-        public List<Ciudadano> ciudadanos;
+        public List<Empleado> ciudadanos;
 
-        public FrmMostrarDui(Ciudadano ciudadano, Documento documento)
+        public FrmMostrarIdentificacion(Empleado ciudadano, Documento documento)
         {
             InitializeComponent();
 
             _ciudadano = ciudadano;
             _documento = documento; 
 
-            ciudadanos = new List<Ciudadano>();
+            ciudadanos = new List<Empleado>();
         }
 
         private void FrmMostrarDui_Load(object sender, EventArgs e)

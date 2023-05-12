@@ -1,6 +1,6 @@
 ﻿namespace Duisv.Formularios.Ciudadanos
 {
-    partial class FrmMostrarDui
+    partial class FrmMostrarIdentificacion
     {
         /// <summary>
         /// Required designer variable.
