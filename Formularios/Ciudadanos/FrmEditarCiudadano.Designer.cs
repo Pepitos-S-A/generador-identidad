@@ -147,6 +147,7 @@
             conocidoPorLabel.Size = new System.Drawing.Size(90, 15);
             conocidoPorLabel.TabIndex = 6;
             conocidoPorLabel.Text = "Conocido Por:";
+            conocidoPorLabel.Visible = false;
             // 
             // departamentoNacimientoLabel
             // 
@@ -256,9 +257,9 @@
             profesionLabel.AutoSize = true;
             profesionLabel.Location = new System.Drawing.Point(416, 289);
             profesionLabel.Name = "profesionLabel";
-            profesionLabel.Size = new System.Drawing.Size(67, 15);
+            profesionLabel.Size = new System.Drawing.Size(39, 15);
             profesionLabel.TabIndex = 34;
-            profesionLabel.Text = "Profesion:";
+            profesionLabel.Text = "Área:";
             // 
             // residenciaLabel
             // 
@@ -277,6 +278,7 @@
             tipoSangreLabel.Size = new System.Drawing.Size(82, 15);
             tipoSangreLabel.TabIndex = 38;
             tipoSangreLabel.Text = "Tipo Sangre:";
+            tipoSangreLabel.Visible = false;
             // 
             // PBxFirma
             // 
@@ -496,6 +498,7 @@
             this.conocidoPorTextBox.Name = "conocidoPorTextBox";
             this.conocidoPorTextBox.Size = new System.Drawing.Size(200, 23);
             this.conocidoPorTextBox.TabIndex = 7;
+            this.conocidoPorTextBox.Visible = false;
             // 
             // departamentoNacimientoComboBox
             // 
@@ -623,10 +626,11 @@
             this.profesionComboBox.FormattingEnabled = true;
             this.profesionComboBox.Items.AddRange(new object[] {
             "-- Seleccionar --",
-            "Profesor(a)",
-            "Programador(a)",
-            "Informatico",
-            "Vendedor(a)"});
+            "Contabilidad",
+            "IT",
+            "Gerencia",
+            "Recursos humanos",
+            "Seguridad"});
             this.profesionComboBox.Location = new System.Drawing.Point(590, 286);
             this.profesionComboBox.Name = "profesionComboBox";
             this.profesionComboBox.Size = new System.Drawing.Size(200, 23);
@@ -660,6 +664,7 @@
             this.tipoSangreComboBox.Name = "tipoSangreComboBox";
             this.tipoSangreComboBox.Size = new System.Drawing.Size(200, 23);
             this.tipoSangreComboBox.TabIndex = 39;
+            this.tipoSangreComboBox.Visible = false;
             // 
             // BtnFirma
             // 

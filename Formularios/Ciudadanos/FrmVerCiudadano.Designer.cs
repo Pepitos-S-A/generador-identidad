@@ -39,7 +39,6 @@
             System.Windows.Forms.Label ciudadanoIdLabel;
             System.Windows.Forms.Label generoLabel;
             System.Windows.Forms.Label ciudadanoPorLabel;
-            System.Windows.Forms.Label fechaNacimientoLabel;
             System.Windows.Forms.Label departamentoNacimientoLabel1;
             System.Windows.Forms.Label municipioNacimientoLabel;
             System.Windows.Forms.Label departamentoResidenciaLabel;
@@ -49,6 +48,7 @@
             System.Windows.Forms.Label profesionLabel;
             System.Windows.Forms.Label numeroDocumentoLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmVerCiudadano));
+            System.Windows.Forms.Label soloFechaNacimientoLabel;
             this.PBxFirma = new System.Windows.Forms.PictureBox();
             this.ciudadanoBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
@@ -73,7 +73,6 @@
             this.departamentoResidenciaTextBox = new System.Windows.Forms.TextBox();
             this.municipioNacimientoTextBox = new System.Windows.Forms.TextBox();
             this.departamentoNacimientoTextBox = new System.Windows.Forms.TextBox();
-            this.fechaNacimientoTextBox = new System.Windows.Forms.TextBox();
             this.ciudadanoPorTextBox = new System.Windows.Forms.TextBox();
             this.generoTextBox = new System.Windows.Forms.TextBox();
             this.ciudadanoIdTextBox = new System.Windows.Forms.TextBox();
@@ -94,6 +93,7 @@
             this.PBxAvatar = new System.Windows.Forms.PictureBox();
             this.BtnVerDui = new System.Windows.Forms.Button();
             this.DocumentoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.soloFechaNacimientoTextBox = new System.Windows.Forms.TextBox();
             apellidosLabel = new System.Windows.Forms.Label();
             conocidoPorLabel = new System.Windows.Forms.Label();
             nombreConyugueLabel = new System.Windows.Forms.Label();
@@ -104,7 +104,6 @@
             ciudadanoIdLabel = new System.Windows.Forms.Label();
             generoLabel = new System.Windows.Forms.Label();
             ciudadanoPorLabel = new System.Windows.Forms.Label();
-            fechaNacimientoLabel = new System.Windows.Forms.Label();
             departamentoNacimientoLabel1 = new System.Windows.Forms.Label();
             municipioNacimientoLabel = new System.Windows.Forms.Label();
             departamentoResidenciaLabel = new System.Windows.Forms.Label();
@@ -113,6 +112,7 @@
             tipoSangreLabel = new System.Windows.Forms.Label();
             profesionLabel = new System.Windows.Forms.Label();
             numeroDocumentoLabel = new System.Windows.Forms.Label();
+            soloFechaNacimientoLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.PBxFirma)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ciudadanoBindingNavigator)).BeginInit();
             this.ciudadanoBindingNavigator.SuspendLayout();
@@ -218,15 +218,7 @@
             ciudadanoPorLabel.Size = new System.Drawing.Size(97, 15);
             ciudadanoPorLabel.TabIndex = 42;
             ciudadanoPorLabel.Text = "Ciudadano Por:";
-            // 
-            // fechaNacimientoLabel
-            // 
-            fechaNacimientoLabel.AutoSize = true;
-            fechaNacimientoLabel.Location = new System.Drawing.Point(3, 237);
-            fechaNacimientoLabel.Name = "fechaNacimientoLabel";
-            fechaNacimientoLabel.Size = new System.Drawing.Size(118, 15);
-            fechaNacimientoLabel.TabIndex = 43;
-            fechaNacimientoLabel.Text = "Fecha Nacimiento:";
+            ciudadanoPorLabel.Visible = false;
             // 
             // departamentoNacimientoLabel1
             // 
@@ -281,15 +273,16 @@
             tipoSangreLabel.Size = new System.Drawing.Size(82, 15);
             tipoSangreLabel.TabIndex = 49;
             tipoSangreLabel.Text = "Tipo Sangre:";
+            tipoSangreLabel.Visible = false;
             // 
             // profesionLabel
             // 
             profesionLabel.AutoSize = true;
             profesionLabel.Location = new System.Drawing.Point(405, 310);
             profesionLabel.Name = "profesionLabel";
-            profesionLabel.Size = new System.Drawing.Size(67, 15);
+            profesionLabel.Size = new System.Drawing.Size(39, 15);
             profesionLabel.TabIndex = 50;
-            profesionLabel.Text = "Profesion:";
+            profesionLabel.Text = "Área:";
             // 
             // numeroDocumentoLabel
             // 
@@ -448,6 +441,8 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.soloFechaNacimientoTextBox);
+            this.panel1.Controls.Add(soloFechaNacimientoLabel);
             this.panel1.Controls.Add(numeroDocumentoLabel);
             this.panel1.Controls.Add(this.numeroDocumentoMaskedTextBox);
             this.panel1.Controls.Add(profesionLabel);
@@ -464,8 +459,6 @@
             this.panel1.Controls.Add(this.municipioNacimientoTextBox);
             this.panel1.Controls.Add(departamentoNacimientoLabel1);
             this.panel1.Controls.Add(this.departamentoNacimientoTextBox);
-            this.panel1.Controls.Add(fechaNacimientoLabel);
-            this.panel1.Controls.Add(this.fechaNacimientoTextBox);
             this.panel1.Controls.Add(ciudadanoPorLabel);
             this.panel1.Controls.Add(this.ciudadanoPorTextBox);
             this.panel1.Controls.Add(generoLabel);
@@ -522,6 +515,7 @@
             this.tipoSangreTextBox.ReadOnly = true;
             this.tipoSangreTextBox.Size = new System.Drawing.Size(198, 23);
             this.tipoSangreTextBox.TabIndex = 50;
+            this.tipoSangreTextBox.Visible = false;
             // 
             // estadoFamiliarTextBox
             // 
@@ -573,16 +567,6 @@
             this.departamentoNacimientoTextBox.Size = new System.Drawing.Size(198, 23);
             this.departamentoNacimientoTextBox.TabIndex = 45;
             // 
-            // fechaNacimientoTextBox
-            // 
-            this.fechaNacimientoTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.fechaNacimientoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ciudadanoBindingSource, "FechaNacimiento", true));
-            this.fechaNacimientoTextBox.Location = new System.Drawing.Point(177, 235);
-            this.fechaNacimientoTextBox.Name = "fechaNacimientoTextBox";
-            this.fechaNacimientoTextBox.ReadOnly = true;
-            this.fechaNacimientoTextBox.Size = new System.Drawing.Size(198, 23);
-            this.fechaNacimientoTextBox.TabIndex = 44;
-            // 
             // ciudadanoPorTextBox
             // 
             this.ciudadanoPorTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -592,6 +576,7 @@
             this.ciudadanoPorTextBox.ReadOnly = true;
             this.ciudadanoPorTextBox.Size = new System.Drawing.Size(198, 23);
             this.ciudadanoPorTextBox.TabIndex = 43;
+            this.ciudadanoPorTextBox.Visible = false;
             // 
             // generoTextBox
             // 
@@ -737,7 +722,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(999, 48);
+            this.panel2.Size = new System.Drawing.Size(1007, 48);
             this.panel2.TabIndex = 42;
             // 
             // LblTituloVentana
@@ -775,12 +760,30 @@
             // 
             this.DocumentoBindingSource.DataSource = typeof(Duisv.Modelos.Documento);
             // 
+            // soloFechaNacimientoLabel
+            // 
+            soloFechaNacimientoLabel.AutoSize = true;
+            soloFechaNacimientoLabel.Location = new System.Drawing.Point(3, 240);
+            soloFechaNacimientoLabel.Name = "soloFechaNacimientoLabel";
+            soloFechaNacimientoLabel.Size = new System.Drawing.Size(118, 15);
+            soloFechaNacimientoLabel.TabIndex = 54;
+            soloFechaNacimientoLabel.Text = "Fecha Nacimiento:";
+            // 
+            // soloFechaNacimientoTextBox
+            // 
+            this.soloFechaNacimientoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ciudadanoBindingSource, "SoloFechaNacimiento", true));
+            this.soloFechaNacimientoTextBox.Location = new System.Drawing.Point(177, 237);
+            this.soloFechaNacimientoTextBox.Name = "soloFechaNacimientoTextBox";
+            this.soloFechaNacimientoTextBox.ReadOnly = true;
+            this.soloFechaNacimientoTextBox.Size = new System.Drawing.Size(198, 23);
+            this.soloFechaNacimientoTextBox.TabIndex = 55;
+            // 
             // FrmVerCiudadano
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(999, 514);
+            this.ClientSize = new System.Drawing.Size(1007, 523);
             this.Controls.Add(this.BtnVerDui);
             this.Controls.Add(this.PBxFirma);
             this.Controls.Add(this.ciudadanoBindingNavigator);
@@ -838,7 +841,6 @@
         private System.Windows.Forms.TextBox departamentoResidenciaTextBox;
         private System.Windows.Forms.TextBox municipioNacimientoTextBox;
         private System.Windows.Forms.TextBox departamentoNacimientoTextBox;
-        private System.Windows.Forms.TextBox fechaNacimientoTextBox;
         private System.Windows.Forms.TextBox ciudadanoPorTextBox;
         private System.Windows.Forms.TextBox generoTextBox;
         private System.Windows.Forms.TextBox ciudadanoIdTextBox;
@@ -859,5 +861,6 @@
         private System.Windows.Forms.PictureBox PBxAvatar;
         private System.Windows.Forms.Button BtnVerDui;
         private System.Windows.Forms.BindingSource DocumentoBindingSource;
+        private System.Windows.Forms.TextBox soloFechaNacimientoTextBox;
     }
 }

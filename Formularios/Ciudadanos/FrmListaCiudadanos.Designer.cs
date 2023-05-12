@@ -35,6 +35,11 @@
             this.TBxBusqueda = new System.Windows.Forms.TextBox();
             this.LblPaginacion = new System.Windows.Forms.Label();
             this.DgvCiudadanos = new System.Windows.Forms.DataGridView();
+            this.ciudadanoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.BtnAgregarCiudadano = new System.Windows.Forms.Button();
+            this.LblUsuario = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.PBxAvatar = new System.Windows.Forms.PictureBox();
             this.ciudadanoIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombresDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.apellidosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -42,7 +47,6 @@
             this.generoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ciudadanoPorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechaNacimientoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.numeroDocumentoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.residenciaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.estadoFamiliarDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.profesionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -58,11 +62,6 @@
             this.Ver = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Editar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.ciudadanoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.BtnAgregarCiudadano = new System.Windows.Forms.Button();
-            this.LblUsuario = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.PBxAvatar = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.DgvCiudadanos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ciudadanoBindingSource)).BeginInit();
             this.panel1.SuspendLayout();
@@ -147,7 +146,6 @@
             this.generoDataGridViewTextBoxColumn,
             this.ciudadanoPorDataGridViewTextBoxColumn,
             this.fechaNacimientoDataGridViewTextBoxColumn,
-            this.numeroDocumentoDataGridViewTextBoxColumn,
             this.residenciaDataGridViewTextBoxColumn,
             this.estadoFamiliarDataGridViewTextBoxColumn,
             this.profesionDataGridViewTextBoxColumn,
@@ -178,6 +176,53 @@
             this.DgvCiudadanos.Size = new System.Drawing.Size(891, 397);
             this.DgvCiudadanos.TabIndex = 13;
             this.DgvCiudadanos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvCiudadanos_CellContentClick);
+            // 
+            // ciudadanoBindingSource
+            // 
+            this.ciudadanoBindingSource.DataSource = typeof(Duisv.Modelos.Ciudadano);
+            // 
+            // BtnAgregarCiudadano
+            // 
+            this.BtnAgregarCiudadano.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnAgregarCiudadano.Font = new System.Drawing.Font("Arial Black", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnAgregarCiudadano.ForeColor = System.Drawing.Color.Black;
+            this.BtnAgregarCiudadano.Location = new System.Drawing.Point(12, 60);
+            this.BtnAgregarCiudadano.Name = "BtnAgregarCiudadano";
+            this.BtnAgregarCiudadano.Size = new System.Drawing.Size(129, 38);
+            this.BtnAgregarCiudadano.TabIndex = 12;
+            this.BtnAgregarCiudadano.Text = "Agregar empleado";
+            this.BtnAgregarCiudadano.UseVisualStyleBackColor = true;
+            this.BtnAgregarCiudadano.Click += new System.EventHandler(this.BtnAgregarCiudadano_Click);
+            // 
+            // LblUsuario
+            // 
+            this.LblUsuario.AutoSize = true;
+            this.LblUsuario.Location = new System.Drawing.Point(41, 17);
+            this.LblUsuario.Name = "LblUsuario";
+            this.LblUsuario.Size = new System.Drawing.Size(123, 15);
+            this.LblUsuario.TabIndex = 1;
+            this.LblUsuario.Text = "Lista de empleados";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Salmon;
+            this.panel1.Controls.Add(this.LblUsuario);
+            this.panel1.Controls.Add(this.PBxAvatar);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(915, 48);
+            this.panel1.TabIndex = 11;
+            // 
+            // PBxAvatar
+            // 
+            this.PBxAvatar.Image = global::Duisv.Properties.Resources.FRONT_copy2;
+            this.PBxAvatar.Location = new System.Drawing.Point(12, 12);
+            this.PBxAvatar.Name = "PBxAvatar";
+            this.PBxAvatar.Size = new System.Drawing.Size(23, 23);
+            this.PBxAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.PBxAvatar.TabIndex = 0;
+            this.PBxAvatar.TabStop = false;
             // 
             // ciudadanoIdDataGridViewTextBoxColumn
             // 
@@ -228,17 +273,10 @@
             // 
             // fechaNacimientoDataGridViewTextBoxColumn
             // 
-            this.fechaNacimientoDataGridViewTextBoxColumn.DataPropertyName = "FechaNacimiento";
+            this.fechaNacimientoDataGridViewTextBoxColumn.DataPropertyName = "SoloFechaNacimiento";
             this.fechaNacimientoDataGridViewTextBoxColumn.HeaderText = "Fecha de nacimiento";
             this.fechaNacimientoDataGridViewTextBoxColumn.Name = "fechaNacimientoDataGridViewTextBoxColumn";
             this.fechaNacimientoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // numeroDocumentoDataGridViewTextBoxColumn
-            // 
-            this.numeroDocumentoDataGridViewTextBoxColumn.DataPropertyName = "NumeroDocumento";
-            this.numeroDocumentoDataGridViewTextBoxColumn.HeaderText = "DUI";
-            this.numeroDocumentoDataGridViewTextBoxColumn.Name = "numeroDocumentoDataGridViewTextBoxColumn";
-            this.numeroDocumentoDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // residenciaDataGridViewTextBoxColumn
             // 
@@ -363,53 +401,6 @@
             this.Eliminar.Text = "Eliminar";
             this.Eliminar.UseColumnTextForButtonValue = true;
             // 
-            // ciudadanoBindingSource
-            // 
-            this.ciudadanoBindingSource.DataSource = typeof(Duisv.Modelos.Ciudadano);
-            // 
-            // BtnAgregarCiudadano
-            // 
-            this.BtnAgregarCiudadano.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnAgregarCiudadano.Font = new System.Drawing.Font("Arial Black", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnAgregarCiudadano.ForeColor = System.Drawing.Color.Black;
-            this.BtnAgregarCiudadano.Location = new System.Drawing.Point(12, 60);
-            this.BtnAgregarCiudadano.Name = "BtnAgregarCiudadano";
-            this.BtnAgregarCiudadano.Size = new System.Drawing.Size(129, 38);
-            this.BtnAgregarCiudadano.TabIndex = 12;
-            this.BtnAgregarCiudadano.Text = "Agregar empleado";
-            this.BtnAgregarCiudadano.UseVisualStyleBackColor = true;
-            this.BtnAgregarCiudadano.Click += new System.EventHandler(this.BtnAgregarCiudadano_Click);
-            // 
-            // LblUsuario
-            // 
-            this.LblUsuario.AutoSize = true;
-            this.LblUsuario.Location = new System.Drawing.Point(41, 17);
-            this.LblUsuario.Name = "LblUsuario";
-            this.LblUsuario.Size = new System.Drawing.Size(123, 15);
-            this.LblUsuario.TabIndex = 1;
-            this.LblUsuario.Text = "Lista de empleados";
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.Salmon;
-            this.panel1.Controls.Add(this.LblUsuario);
-            this.panel1.Controls.Add(this.PBxAvatar);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(915, 48);
-            this.panel1.TabIndex = 11;
-            // 
-            // PBxAvatar
-            // 
-            this.PBxAvatar.Image = global::Duisv.Properties.Resources.FRONT_copy2;
-            this.PBxAvatar.Location = new System.Drawing.Point(12, 12);
-            this.PBxAvatar.Name = "PBxAvatar";
-            this.PBxAvatar.Size = new System.Drawing.Size(23, 23);
-            this.PBxAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.PBxAvatar.TabIndex = 0;
-            this.PBxAvatar.TabStop = false;
-            // 
             // FrmListaCiudadanos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -460,7 +451,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn generoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn ciudadanoPorDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaNacimientoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn numeroDocumentoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn residenciaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn estadoFamiliarDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn profesionDataGridViewTextBoxColumn;

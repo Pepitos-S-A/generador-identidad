@@ -108,5 +108,13 @@ namespace Duisv.Modelos
 
         [BsonElement("numero_documento")]
         public string NumeroDocumento { get; set; } = string.Empty;
+
+        public string SoloFechaNacimiento
+        {
+            get
+            {
+                return FechaNacimiento.Value.ToShortDateString();
+            }
+        }
     }
 }

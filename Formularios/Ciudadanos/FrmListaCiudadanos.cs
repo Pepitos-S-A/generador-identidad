@@ -72,13 +72,13 @@ namespace Duisv.Formularios.Ciudadanos
 
                 switch (e.ColumnIndex)
                 {
-                    case 20:
+                    case 19:
                         AbrirFormularioVer(ciudadanoId);
                         break;
-                    case 21:
+                    case 20:
                         AbrirFormularioEditar(ciudadanoId);
                         break;
-                    case 22:
+                    case 21:
                         ConfirmarEliminar(ciudadanoId);
                         break;
                     default:

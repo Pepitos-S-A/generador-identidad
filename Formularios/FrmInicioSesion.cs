@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 using Duisv.Herramientas;
 using Duisv.Modelos;
@@ -10,6 +11,8 @@ namespace Duisv.Formularios
     {
         private readonly UsuarioServicio _usuarioServicio;
         private readonly RolServicio _rolServicio;
+        private readonly DepartamentoServicio _departamentoServicio;
+        private readonly MunicipioServicio _municipiosServicio;
 
         private Usuario _usuario;
 
@@ -19,9 +22,49 @@ namespace Duisv.Formularios
 
             _usuarioServicio = new UsuarioServicio();
             _rolServicio = new RolServicio();
+            _departamentoServicio = new DepartamentoServicio();
+            _municipiosServicio = new MunicipioServicio();
 
             CrearRolAdministrador();
             CrearUsuarioRoot();
+            InicializarColeccionMunicipios();
+        }
+
+        private void InicializarColeccionMunicipios()
+        {
+            var departamentoId = "645dc106539085e1e6568007";
+            var departamento = _departamentoServicio.ObtenerDepartamentoPorId(departamentoId);
+
+            if (departamento == null)
+            {
+                _departamentoServicio.CrearDepartamento(new Departamento()
+                {
+                    Nombre = "Santa Ana",
+                    DepartamentoId = departamentoId
+                });
+            }
+
+            if (_municipiosServicio.ObtenerListaMunicipiosPorDepartamentoId(departamentoId).Count == 0)
+            {
+                var municipios = new List<Municipio>()
+                {
+                    new Municipio() { Nombre = "Santa Ana", DepartamentoId = "645dc106539085e1e6568007" },
+                    new Municipio() { Nombre = "Candelaria de la Frontera", DepartamentoId = "645dc106539085e1e6568007" },
+                    new Municipio() { Nombre = "Chalchuapa", DepartamentoId = "645dc106539085e1e6568007" },
+                    new Municipio() { Nombre = "Coatepeque", DepartamentoId = "645dc106539085e1e6568007" },
+                    new Municipio() { Nombre = "El Congo", DepartamentoId = "645dc106539085e1e6568007" },
+                    new Municipio() { Nombre = "El Porvenir", DepartamentoId = "645dc106539085e1e6568007" },
+                    new Municipio() { Nombre = "Masahuat", DepartamentoId = "645dc106539085e1e6568007" },
+                    new Municipio() { Nombre = "Metapán", DepartamentoId = "645dc106539085e1e6568007" },
+                    new Municipio() { Nombre = "San Antonio Pajonal", DepartamentoId = "645dc106539085e1e6568007" },
+                    new Municipio() { Nombre = "San Sebastián Salitrillo", DepartamentoId = "645dc106539085e1e6568007" },
+                    new Municipio() { Nombre = "Santa Rosa Guachipilín", DepartamentoId = "645dc106539085e1e6568007" },
+                    new Municipio() { Nombre = "Santiago de la Frontera", DepartamentoId = "645dc106539085e1e6568007" },
+                    new Municipio() { Nombre = "Texistepeque", DepartamentoId = "645dc106539085e1e6568007" }
+                };
+
+                _municipiosServicio.CrearMuchosMunicipios(municipios);
+            }
         }
 
         private void CrearRolAdministrador()

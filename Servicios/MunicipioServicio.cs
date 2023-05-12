@@ -23,6 +23,11 @@ namespace Duisv.Servicios
             return _municipios.Find(x => true).ToList();
         }
 
+        public void CrearMuchosMunicipios(List<Municipio> municipios)
+        {
+            _municipios.InsertMany(municipios);
+        }
+
         #region Métodos con ADO.NET y SQL Server
         //public List<Municipio> ObtenerListaMunicipiosPorDepartamentoId(int departamentoId)
         //{

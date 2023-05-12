@@ -23,6 +23,16 @@ namespace Duisv.Servicios
             return _departamentos.Find(x => true).ToList();
         }
 
+        public Departamento ObtenerDepartamentoPorId(string id)
+        {
+            return _departamentos.Find(x => x.DepartamentoId == id).FirstOrDefault();
+        }
+
+        public void CrearDepartamento(Departamento departamento)
+        {
+            _departamentos.InsertOne(departamento);
+        }
+
         #region Métodos con ADO.NET y SQL Server (comentados)
         //public List<Departamento> ObtenerListaDepartamentos()
         //{

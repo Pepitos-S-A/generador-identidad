@@ -173,7 +173,7 @@ namespace Duisv.Formularios.Ciudadanos
 
                             //if (frmMostrarDui.ShowDialog() == DialogResult.OK)
                             //{
-                            //    DialogResult = DialogResult.OK;
+                            DialogResult = DialogResult.OK;
                             //}
                         }
                     }
@@ -229,6 +229,7 @@ namespace Duisv.Formularios.Ciudadanos
                     PBxFoto.Image.Dispose();
                     PBxFoto.Image = Image.FromFile(OfdImportarFoto.FileName);
                     PBxFoto.ImageLocation = OfdImportarFoto.FileName;
+                    _guardarFoto = true;
                 }
             }
         }
