@@ -307,7 +307,7 @@
     <Compile Include="Servicios\MunicipioServicio.cs" />
     <Compile Include="Servicios\RolServicio.cs" />
     <Compile Include="Servicios\UsuarioServicio.cs" />
-    <Compile Include="Validaciones\AgregarCiudadanoValidador.cs" />
+    <Compile Include="Validaciones\AgregarEmpleadoValidador.cs" />
     <Compile Include="Validaciones\AgregarUsuarioValidador.cs" />
     <Compile Include="Validaciones\ClaveValidador.cs" />
     <Compile Include="Validaciones\EditarUsuarioValidador.cs" />
@@ -367,8 +367,8 @@
     <None Include="libmongocrypt.dylib" />
     <None Include="libmongocrypt.so" />
     <None Include="packages.config" />
-    <None Include="Properties\DataSources\Duisv.Modelos.Ciudadano.datasource" />
     <None Include="Properties\DataSources\Duisv.Modelos.Documento.datasource" />
+    <None Include="Properties\DataSources\Duisv.Modelos.Empleado.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

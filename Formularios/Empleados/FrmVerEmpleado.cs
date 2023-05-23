@@ -59,7 +59,7 @@ namespace Duisv.Formularios.Ciudadanos
         {
             try
             {
-                var rutaFoto = $@"{Environment.GetFolderPath(Environment.SpecialFolder.MyPictures)}\PepitosSA\Ciudadanos\Firmas\{numeroDui}.png";
+                var rutaFoto = $@"{Environment.GetFolderPath(Environment.SpecialFolder.MyPictures)}\PepitosSA\Empleados\Firmas\{numeroDui}.png";
 
                 if (File.Exists(rutaFoto))
                 {
@@ -69,7 +69,7 @@ namespace Duisv.Formularios.Ciudadanos
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Editar ciudadano: error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "Editar empleado: error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -77,7 +77,7 @@ namespace Duisv.Formularios.Ciudadanos
         {
             try
             {
-                var rutaFoto = $@"{Environment.GetFolderPath(Environment.SpecialFolder.MyPictures)}\PepitosSA\Ciudadanos\Fotos\{numeroDui}.png";
+                var rutaFoto = $@"{Environment.GetFolderPath(Environment.SpecialFolder.MyPictures)}\PepitosSA\Empleados\Fotos\{numeroDui}.png";
 
                 if (File.Exists(rutaFoto))
                 {
@@ -95,11 +95,11 @@ namespace Duisv.Formularios.Ciudadanos
         {
             var numeroDui = ((Empleado)ciudadanoBindingSource.Current).NumeroDocumento;
             var frmElegirPartidaNacimiento = new FrmElegirPartidaNacimiento();
-            var archivo = $@"{Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)}\PepitosSA\Ciudadanos\Documentos\{numeroDui}.pdf";
+            var archivo = $@"{Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)}\PepitosSA\Empleados\Documentos\{numeroDui}.pdf";
 
             frmElegirPartidaNacimiento.BtnImportarDocumento.Enabled = false;
             frmElegirPartidaNacimiento.BtnGuardarDocumento.Text = "Cerrar";
-            frmElegirPartidaNacimiento.LblUsuario.Text = "Ver partida de nacimiento del ciudadano";
+            frmElegirPartidaNacimiento.LblUsuario.Text = "Ver partida de nacimiento del empleado";
 
             if (File.Exists(archivo))
             {
@@ -108,7 +108,7 @@ namespace Duisv.Formularios.Ciudadanos
             }
             else
             {
-                MessageBox.Show("El archivo correspondiente a la partida de nacimiento no existe.", "Ver ciudadano: error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("El archivo correspondiente a la partida de nacimiento no existe.", "Ver empleado: error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

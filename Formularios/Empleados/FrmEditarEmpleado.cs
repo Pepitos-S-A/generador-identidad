@@ -106,7 +106,7 @@ namespace Duisv.Formularios.Ciudadanos
 
         private void CargarPartidaNacimiento(string numeroDui)
         {
-            var archivo = $@"{Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)}\PepitosSA\Ciudadanos\Documentos\{numeroDui}.pdf";
+            var archivo = $@"{Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)}\PepitosSA\Empleados\Documentos\{numeroDui}.pdf";
 
             if (File.Exists(archivo))
             {
@@ -118,7 +118,7 @@ namespace Duisv.Formularios.Ciudadanos
         {
             try
             {
-                var rutaFoto = $@"{Environment.GetFolderPath(Environment.SpecialFolder.MyPictures)}\PepitosSA\Ciudadanos\Fotos\{numeroDui}.png";
+                var rutaFoto = $@"{Environment.GetFolderPath(Environment.SpecialFolder.MyPictures)}\PepitosSA\Empleados\Fotos\{numeroDui}.png";
 
                 if (File.Exists(rutaFoto))
                 {
@@ -128,7 +128,7 @@ namespace Duisv.Formularios.Ciudadanos
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Editar ciudadano: error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "Editar empleado: error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -136,7 +136,7 @@ namespace Duisv.Formularios.Ciudadanos
         {
             try
             {
-                var rutaFoto = $@"{Environment.GetFolderPath(Environment.SpecialFolder.MyPictures)}\PepitosSA\Ciudadanos\Firmas\{numeroDui}.png";
+                var rutaFoto = $@"{Environment.GetFolderPath(Environment.SpecialFolder.MyPictures)}\PepitosSA\Empleados\Firmas\{numeroDui}.png";
 
                 if (File.Exists(rutaFoto))
                 {
@@ -146,7 +146,7 @@ namespace Duisv.Formularios.Ciudadanos
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Editar ciudadano: error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "Editar empleado: error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -243,7 +243,7 @@ namespace Duisv.Formularios.Ciudadanos
         {
             try
             {
-                var directorio = $@"{Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)}\PepitosSA\Ciudadanos\Documentos\";
+                var directorio = $@"{Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)}\PepitosSA\Empleados\Documentos\";
                 var archivo = string.Concat(nombre, ".pdf");
                 var ruta = string.Concat(directorio, archivo);
 
@@ -259,13 +259,13 @@ namespace Duisv.Formularios.Ciudadanos
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Agregar ciudadano: error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "Editar empleado: error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void GuardarFoto(string nombre)
         {
-            var rutaCarpeta = $@"{Environment.GetFolderPath(Environment.SpecialFolder.MyPictures)}\PepitosSA\Ciudadanos\Fotos\";
+            var rutaCarpeta = $@"{Environment.GetFolderPath(Environment.SpecialFolder.MyPictures)}\PepitosSA\Empleados\Fotos\";
             string nombreFoto = $"{nombre}.png";
             string rutaNuevaFoto = string.Concat(rutaCarpeta, nombreFoto);
 
@@ -288,7 +288,7 @@ namespace Duisv.Formularios.Ciudadanos
 
         private void GuardarFirma(string nombre)
         {
-            var directorio = $@"{Environment.GetFolderPath(Environment.SpecialFolder.MyPictures)}\PepitosSA\Ciudadanos\Firmas\";
+            var directorio = $@"{Environment.GetFolderPath(Environment.SpecialFolder.MyPictures)}\PepitosSA\Empleados\Firmas\";
             string archivo = $"{nombre}.png";
             string ruta = string.Concat(directorio, archivo);
 
@@ -312,7 +312,7 @@ namespace Duisv.Formularios.Ciudadanos
         private bool ValidarDatosCiudadano(Empleado ciudadano)
         {
             var valido = true;
-            var validador = new AgregarCiudadanoValidador();
+            var validador = new AgregarEmpleadoValidador();
             var resultado = validador.Validate(ciudadano);
             var errores = resultado.Errors;
 
@@ -320,7 +320,7 @@ namespace Duisv.Formularios.Ciudadanos
             {
                 foreach (var error in errores)
                 {
-                    MessageBox.Show(error.ErrorMessage, "Agregar ciudadano: Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show(error.ErrorMessage, "Editar empleado: Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     break;
                 }
                 valido = false;

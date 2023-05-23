@@ -31,7 +31,7 @@ namespace Duisv.Formularios.Ciudadanos
             _documentoServicio = new DocumentoServicio();
             _guardarFoto = false;
 
-            
+
         }
 
         private void MostrarListaDespartamentos(List<Departamento> departamentos, ref ComboBox comboBox)
@@ -52,11 +52,9 @@ namespace Duisv.Formularios.Ciudadanos
             MostrarListaDespartamentos(departamentos, ref departamentoResidenciaComboBox);
             MostrarListaDespartamentos(departamentos, ref departamentoNacimientoComboBox);
 
-            ciudadanoPorComboBox.SelectedIndex = 0;
             generoComboBox.SelectedIndex = 0;
             generoComboBox.BindingContext = new BindingContext();
             estadoFamiliarComboBox.SelectedIndex = 0;
-            tipoSangreComboBox.SelectedIndex = 0;
             profesionComboBox.SelectedIndex = 0;
         }
 
@@ -90,10 +88,10 @@ namespace Duisv.Formularios.Ciudadanos
             }
         }
 
-        private bool ValidarDatosCiudadano(Empleado ciudadano)
+        private bool ValidarDatos(Empleado ciudadano)
         {
             var valido = true;
-            var validador = new AgregarCiudadanoValidador();
+            var validador = new AgregarEmpleadoValidador();
             var resultado = validador.Validate(ciudadano);
             var errores = resultado.Errors;
 
@@ -101,7 +99,7 @@ namespace Duisv.Formularios.Ciudadanos
             {
                 foreach (var error in errores)
                 {
-                    MessageBox.Show(error.ErrorMessage, "Agregar ciudadano: Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show(error.ErrorMessage, "Agregar empleado: Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     break;
                 }
                 valido = false;
@@ -118,22 +116,22 @@ namespace Duisv.Formularios.Ciudadanos
             if (_guardarFoto == false)
             {
                 validos = false;
-                mensaje = "La foto del ciudadano es requerida.";
+                mensaje = "La foto del empleado es requerida.";
             }
             else if (string.IsNullOrEmpty(PBxFirma.ImageLocation))
             {
                 validos = false;
-                mensaje = "La firma del ciudadano es requerida.";
+                mensaje = "La firma del empleado es requerida.";
             }
             else if (string.IsNullOrEmpty(TBxRutaDocumento.Text))
             {
                 validos = false;
-                mensaje = "La partida de nacimiento del ciudadano es requerida.";
+                mensaje = "La partida de nacimiento del empleado es requerida.";
             }
 
             if (validos == false)
             {
-                MessageBox.Show(mensaje, "Agregar ciudadano: error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(mensaje, "Agregar empleado: error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
             return validos;
@@ -143,11 +141,11 @@ namespace Duisv.Formularios.Ciudadanos
         {
             ciudadanoBindingSource.EndEdit();
 
-            var ciudadano = ciudadanoBindingSource.Current as Empleado;
+            var empleado = ciudadanoBindingSource.Current as Empleado;
 
-            if (ciudadano != null)
+            if (empleado != null)
             {
-                if (ValidarDatosCiudadano(ciudadano) && ValidarAdjuntos())
+                if (ValidarDatos(empleado) && ValidarAdjuntos())
                 {
                     var documento = new Documento
                     {
@@ -155,7 +153,7 @@ namespace Duisv.Formularios.Ciudadanos
                         MunicipioExpedicion = "Santa Ana",
                         DepartamentoExpedicion = "Santa Ana",
                         FechaExpiracion = DateTime.Today.AddYears(8),
-                        Numero = GenerarNumeroDui(),
+                        Numero = GenerarNumero(),
                         TipoTramite = "RP-1",
                         CodigoZona = "102020000T",
                         NumeroFolio = "M04587545"
@@ -163,28 +161,28 @@ namespace Duisv.Formularios.Ciudadanos
 
                     if ((documento.DocumentoId = _documentoServicio.AgregarDocumento(documento)) != string.Empty)
                     {
-                        ciudadano.DocumentoId = documento.DocumentoId;
-                        ciudadano.NumeroDocumento = documento.Numero;
+                        empleado.DocumentoId = documento.DocumentoId;
+                        empleado.NumeroDocumento = documento.Numero;
 
-                        if (_ciudadanoServicio.AgregarEmpleado(ciudadano) > 0)
+                        if (_ciudadanoServicio.AgregarEmpleado(empleado) > 0)
                         {
-                            GuardarFoto(ciudadano.NumeroDocumento);
-                            GuardarFirma(ciudadano.NumeroDocumento);
-                            GuardarPartidaNacimiento(ciudadano.NumeroDocumento);
+                            GuardarFoto(empleado.NumeroDocumento);
+                            GuardarFirma(empleado.NumeroDocumento);
+                            GuardarPartidaNacimiento(empleado.NumeroDocumento);
 
-                            //var frmMostrarDui = new FrmMostrarDui(ciudadano, documento);
+                            var frmMostrarDui = new FrmMostrarIdentificacion(empleado, documento);
 
-                            //if (frmMostrarDui.ShowDialog() == DialogResult.OK)
-                            //{
-                            DialogResult = DialogResult.OK;
-                            //}
+                            if (frmMostrarDui.ShowDialog() == DialogResult.OK)
+                            {
+                                DialogResult = DialogResult.OK;
+                            }
                         }
                     }
                 }
             }
         }
 
-        private string GenerarNumeroDui()
+        private string GenerarNumero()
         {
             var numero = new StringBuilder(9);
             var aleatorio = new Random();
@@ -201,7 +199,7 @@ namespace Duisv.Formularios.Ciudadanos
         {
             try
             {
-                var directorio = $@"{Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)}\PepitosSA\Ciudadanos\Documentos\";
+                var directorio = $@"{Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)}\PepitosSA\Empleados\Documentos\";
                 var archivo = string.Concat(nombre, ".pdf");
                 var ruta = string.Concat(directorio, archivo);
 
@@ -217,7 +215,7 @@ namespace Duisv.Formularios.Ciudadanos
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Agregar ciudadano: error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "Agregar empleado: error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -239,7 +237,7 @@ namespace Duisv.Formularios.Ciudadanos
 
         private void GuardarFoto(string nombre)
         {
-            var rutaCarpeta = $@"{Environment.GetFolderPath(Environment.SpecialFolder.MyPictures)}\PepitosSA\Ciudadanos\Fotos\";
+            var rutaCarpeta = $@"{Environment.GetFolderPath(Environment.SpecialFolder.MyPictures)}\PepitosSA\Empleados\Fotos\";
             string nombreFoto = $"{nombre}.png";
             string rutaNuevaFoto = string.Concat(rutaCarpeta, nombreFoto);
 
@@ -262,7 +260,7 @@ namespace Duisv.Formularios.Ciudadanos
 
         private void GuardarFirma(string nombre)
         {
-            var directorio = $@"{Environment.GetFolderPath(Environment.SpecialFolder.MyPictures)}\PepitosSA\Ciudadanos\Firmas\";
+            var directorio = $@"{Environment.GetFolderPath(Environment.SpecialFolder.MyPictures)}\PepitosSA\Empleados\Firmas\";
             string archivo = $"{nombre}.png";
             string ruta = string.Concat(directorio, archivo);
 

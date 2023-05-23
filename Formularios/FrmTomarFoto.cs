@@ -1,9 +1,8 @@
-﻿using System;
-using System.Drawing;
-using System.Drawing.Printing;
-using System.Windows.Forms;
-using AForge.Video;
+﻿using AForge.Video;
 using AForge.Video.DirectShow;
+using System;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace Duisv.Formularios
 {
@@ -34,7 +33,7 @@ namespace Duisv.Formularios
             CbBxCamaras.SelectedIndex = 0;
         }
 
-        private void BtnIniciar_Click(object sender, System.EventArgs e)
+        private void BtnIniciar_Click(object sender, EventArgs e)
         {
             if (CbBxCamaras.SelectedIndex != 0)
             {
@@ -64,12 +63,12 @@ namespace Duisv.Formularios
             }
         }
 
-        private void FrmTomarFoto_Load(object sender, System.EventArgs e)
+        private void FrmTomarFoto_Load(object sender, EventArgs e)
         {
             CargarDatosCamaras();
         }
 
-        private void BtnCapturar_Click(object sender, System.EventArgs e)
+        private void BtnCapturar_Click(object sender, EventArgs e)
         {
             if (_videoCaptureDevice.IsRunning && _videoCaptureDevice != null)
             {
@@ -78,7 +77,7 @@ namespace Duisv.Formularios
             }
         }
 
-        private void BtnGuardar_Click(object sender, System.EventArgs e)
+        private void BtnGuardar_Click(object sender, EventArgs e)
         {
             try
             {

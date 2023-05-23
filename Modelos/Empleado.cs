@@ -116,5 +116,11 @@ namespace Duisv.Modelos
                 return FechaNacimiento.Value.ToShortDateString();
             }
         }
+
+        [BsonElement("cargo")]
+        public string Cargo { get; set; }
+
+        [BsonElement("salario")]
+        public double Salario { get; set; }
     }
 }

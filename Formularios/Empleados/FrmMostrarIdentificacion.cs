@@ -29,7 +29,7 @@ namespace Duisv.Formularios.Ciudadanos
 
             RpvDui.LocalReport.DataSources.Clear();
             RpvDui.LocalReport.EnableExternalImages = true;
-            RpvDui.LocalReport.DisplayName = "Documento Unico de Identidad";
+            RpvDui.LocalReport.DisplayName = "Documento de identidad";
             RpvDui.LocalReport.SetParameters(new List<ReportParameter>()
             {
                 new ReportParameter("Genero", _ciudadano.Genero == "Masculino" ? "M" : "F"),
@@ -38,9 +38,9 @@ namespace Duisv.Formularios.Ciudadanos
                 new ReportParameter("LugarExpedicion", string.Concat(_documento.MunicipioExpedicion, ", ", _documento.DepartamentoExpedicion)),
                 new ReportParameter("FechaExpiracion", _documento.FechaExpiracion.ToShortDateString()),
                 new ReportParameter("FechaNacimiento", _ciudadano.FechaNacimiento.Value.ToShortDateString()),
-                new ReportParameter("NumeroUnicoIdentidad", long.Parse(_ciudadano.NumeroDocumento).ToString("00000000-0")),
-                new ReportParameter("RutaFoto", $@"file:\{Environment.GetFolderPath(Environment.SpecialFolder.MyPictures)}\DUISV\Ciudadanos\Fotos\{_ciudadano.NumeroDocumento}.png"),
-                new ReportParameter("RutaFirma", $@"file:\{Environment.GetFolderPath(Environment.SpecialFolder.MyPictures)}\DUISV\Ciudadanos\Firmas\{_ciudadano.NumeroDocumento}.png"),
+                new ReportParameter("NumeroUnicoIdentidad", long.Parse(_ciudadano.NumeroDocumento).ToString("000000000")),
+                new ReportParameter("RutaFoto", $@"file:\{Environment.GetFolderPath(Environment.SpecialFolder.MyPictures)}\PepitosSA\Empleados\Fotos\{_ciudadano.NumeroDocumento}.png"),
+                new ReportParameter("RutaFirma", $@"file:\{Environment.GetFolderPath(Environment.SpecialFolder.MyPictures)}\PepitosSA\Empleados\Firmas\{_ciudadano.NumeroDocumento}.png"),
                 new ReportParameter("TipoTramite", _documento.TipoTramite),
                 new ReportParameter("CodigoZona", _documento.CodigoZona),
                 new ReportParameter("NumeroFolio", _documento.NumeroFolio)
