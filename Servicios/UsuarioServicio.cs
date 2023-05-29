@@ -52,10 +52,6 @@ namespace Duisv.Servicios
         {
             try
             {
-                var busqueda = ObtenerUsuarioPorId(usuario.UsuarioId);
-
-                usuario.Clave = busqueda.Clave;
-
                 var resultado = _usuarios.ReplaceOne(x => x.UsuarioId == usuario.UsuarioId, usuario);
 
                 return (int)resultado.ModifiedCount;
@@ -83,10 +79,11 @@ namespace Duisv.Servicios
 
         public int CambiarClaveUsuario(string nuevaClave, string usuarioId)
         {
+            var resultado = 0;
+
             try
             {
-                var usuario = ObtenerUsuarioPorId(usuarioId);
-                var resultado = 0;
+                var usuario = ObtenerUsuarioPorId(usuarioId);                
 
                 if (usuario != null)
                 {
@@ -99,7 +96,7 @@ namespace Duisv.Servicios
             }
             catch (Exception)
             {
-                return 0;
+                return resultado;
             }
         }
 
